@@ -247,7 +247,7 @@ $jsPacker = array(
         ),
         'gisclient_part1.all.js' =>
         array('../admin/gisclient/js/PanZoomBar.js',
-            '../admin/gisclient/external/proj4js.min.js'
+            '../admin/gisclient/external/proj4js/proj4.js'
         ),
         'gisclient_part1.all.i18n.<LANG>.js' =>
         array('../admin/gisclient/languages/lang-<LANG>.js'),
@@ -289,9 +289,8 @@ $jsPacker = array(
             '../admin/gisclient/js/gcComponent/customSearch.js',
             '../admin/gisclient_modules/dialogToPopup/dialogToPopup.js',
             '../admin/gisclient/js/gcComponent/contextHandler.js',
-            '../admin/gisclient/external/layout.js',
-            '../admin/gisclient/external/jquery.jstree.min.js',
-            '../admin/gisclient/external/jquery.maxzindex.js'
+            '../admin/gisclient/external/jstree/jquery.jstree.min.js',
+            '../admin/gisclient/external/plugin-jquery/jquery.maxzindex.js'        
         ),
     ),
     'JS_files' => array('framework.js', 'eco_app.js', 'eco_utils.js', 'menu.js', 'r3_help.js', 'openfunc.js', 'mapopenfunc.js', 'jquery_extend.js', /* 'simpletable.js', */
