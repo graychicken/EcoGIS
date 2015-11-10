@@ -1,0 +1,15 @@
+ExpiresActive On
+ExpiresByType application/javascript "now plus 1 week"
+ExpiresByType application/x-javascript "now plus 1 week"
+ExpiresByType text/javascript "now plus 1 week"
+ExpiresByType image/gif "access plus 1 week"
+ExpiresByType image/jpeg "access plus 1 week"
+ExpiresByType image/png "access plus 1 week"
+ExpiresByType text/css "access plus 1 week"
+
+RewriteEngine On
+RewriteRule ^[\x20-\xFF]*build-[0-9]+\/[\x20-\xFF]*custom\/([\x20-\xFF]*)\/([\x20-\xFF]*)$ ../admin/getfile.php?domain=$1&type=custom-js&file=$2 [QSA,L]
+RewriteRule ^[\x20-\xFF]*build-[0-9]+\/([\x20-\xFF]*)$ $1 [QSA,L]
+
+Header unset ETag
+FileETag none
