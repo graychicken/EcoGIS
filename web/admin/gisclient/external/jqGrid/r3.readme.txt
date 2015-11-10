@@ -1,0 +1,17 @@
+BUG Fix:
+Using multiple jqGrids (in jQuery UI Tabs)
+
+var endReq = function() {
+			grid.hDiv.loading = false;
+			switch(ts.p.loadui) {
+				case "disable":
+					break;
+				case "enable":
+//					$("div.loading",grid.hDiv).fadeOut("fast");
+                    $("div.loading",grid.hDiv).hide(); // Otherwise only current tab hide the loading div
+					break;
+				case "block":
+					$("#lui_"+ts.id).fadeOut("fast");
+					break;
+			}
+		};

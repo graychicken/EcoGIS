@@ -1,0 +1,268 @@
+.R3_wrapper, .R3_sidebar{
+    overflow: hidden;
+}
+.R3_main{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.R3_close, .R3_open{
+    background-color: #aaa;
+    cursor: pointer;
+}
+.R3_sidebar{          
+    position: absolute;
+}
+
+.R3_bar {
+    background-color:#ccc;
+    position: absolute;
+    overflow: hidden;
+}
+
+.R3_top{
+    width: 100%;
+    top: 0;
+}
+.R3_resize.R3_top {
+    cursor: row-resize;
+}
+.R3_bar.R3_top{
+    height: 6px;
+    -webkit-transition: .4s top;
+    -moz-transition: .4s top;
+    -ms-transition: .4s top;
+    -o-transition: .4s top;
+    transition: .4s top;            
+}
+.R3_button.R3_top{
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    right: 0;
+}
+.R3_main.R3_top{
+    -webkit-transition: .4s top;
+    -moz-transition: .4s top;
+    -ms-transition: .4s top;
+    -o-transition: .4s top;
+    transition: .4s top;
+}
+
+.R3_button.R3_top.R3_open:before, .R3_button.R3_bottom.R3_close:before{
+    content: "";
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background: url(icon/arrow.png) center center no-repeat;
+    background-size: contain;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.R3_button.R3_top.R3_close:before, .R3_button.R3_bottom.R3_open:before{
+    content: "";
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background: url(icon/arrow.png) center center no-repeat;
+    background-size: contain;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.R3_handler.R3_bottom, .R3_handler.R3_top {
+    left: 50%;
+    margin-left: -12.5px;
+}
+.R3_handler.R3_bottom:before, .R3_handler.R3_top:before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 16px;
+    left: 50%;
+    background: url('icon/drag.png') center center no-repeat;
+    background-size: contain;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: 0;
+    -moz-transform-origin: 0;
+    -ms-transform-origin: 0;
+    -o-transform-origin: 0;
+    transform-origin: 0;
+} 
+.R3_sidebar.R3_bottom, .R3_sidebar.R3_top{
+    -webkit-transition: .4s height;
+    -moz-transition: .4s height;
+    -ms-transition: .4s height;
+    -o-transition: .4s height;
+    transition: .4s height;
+}
+
+.R3_bottom{
+    width: 100%;
+    bottom: 0;
+}
+.R3_resize.R3_bottom {
+    cursor: row-resize;
+}
+.R3_bar.R3_bottom{
+    height: 6px;
+    -webkit-transition: .4s bottom;
+    transition: .4s bottom;            
+}
+.R3_button.R3_bottom{
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    right: 0;
+}
+.R3_main.R3_bottom{
+    -webkit-transition: .4s bottom;
+    -moz-transition: .4s bottom;
+    -ms-transition: .4s bottom;
+    -o-transition: .4s bottom;
+    transition: .4s bottom;
+}
+.R3_main.R3_top.R3_bottom{
+    -webkit-transition: .4s bottom, .4s top;
+    -moz-transition: .4s bottom, .4s top;
+    -ms-transition: .4s bottom, .4s top;
+    -o-transition: .4s bottom, .4s top;
+    transition: .4s bottom, .4s top;
+}
+
+.R3_right{
+    height: 100%;
+    right: 0;
+}
+.R3_resize.R3_right {
+    cursor: col-resize;
+}
+.R3_bar.R3_right{
+    width: 6px;
+    -webkit-transition: .4s right;
+    -moz-transition: .4s right;
+    -ms-transition: .4s right;
+    -o-transition: .4s right;
+    transition: .4s right;
+}
+.R3_button.R3_right{
+    position: absolute;
+    height: 25px;
+    width: 100%;
+}
+.R3_main.R3_right{
+    -webkit-transition: .4s right;
+    -moz-transition: .4s right;
+    -ms-transition: .4s right;
+    -o-transition: .4s right;
+    transition: .4s right;
+}
+
+.R3_sidebar.R3_right, .R3_sidebar.R3_left{
+    -webkit-transition: .4s width;
+    -moz-transition: .4s width;
+    -ms-transition: .4s width;
+    -o-transition: .4s width;
+    transition: .4s width;
+}
+.R3_button.R3_right.R3_open:before, .R3_button.R3_left.R3_close:before{
+    content: "";
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background: url(icon/arrow.png) center center no-repeat;
+    background-size: contain;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.R3_button.R3_right.R3_close:before, .R3_button.R3_left.R3_open:before{
+    content: "";
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background: url(icon/arrow.png) center center no-repeat;
+    background-size: contain;
+}
+.R3_handler.R3_left, .R3_handler.R3_right {
+    top: 50%;
+    margin-top: -12.5px;
+}
+.R3_handler.R3_left:before, .R3_handler.R3_right:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 16px;
+    width: 6px;
+    background: url('icon/drag.png') center center no-repeat;
+    background-size: contain;
+} 
+
+.R3_left{
+    height: 100%;
+    left: 0;
+}
+.R3_resize.R3_left {
+    cursor: col-resize;
+}
+.R3_bar.R3_left{
+    width: 6px;
+    -webkit-transition: .4s left;
+    -moz-transition: .4s left;
+    -ms-transition: .4s left;
+    -o-transition: .4s left;
+    transition: .4s left;            
+}
+.R3_button.R3_left{
+    position: absolute;
+    height: 25px;
+    width: 100%;
+}
+.R3_main.R3_left{
+    -webkit-transition: .4s left;
+    -moz-transition: .4s left;
+    -ms-transition: .4s left;
+    -o-transition: .4s left;
+    transition: .4s left;
+}
+.R3_main.R3_left.R3_right{
+    -webkit-transition: .4s left, .4s right;
+    -moz-transition: .4s left, .4s right;
+    -ms-transition: .4s left, .4s right;
+    -o-transition: .4s left, .4s right;
+    transition: .4s left, .4s right;
+}
+
+.R3_bar.R3_ghostbar{
+    opacity:0.5;
+    z-index:999;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.R3_ghostwrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 998;
+    background: url('icon/transparent.png');
+}

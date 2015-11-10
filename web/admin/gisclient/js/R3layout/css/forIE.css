@@ -1,0 +1,16 @@
+.R3_button.R3_top.R3_open:before, .R3_button.R3_bottom.R3_close:before{
+    background: url(icon/arrow90.png) center center no-repeat;
+    background-size: contain;
+}
+.R3_button.R3_top.R3_close:before, .R3_button.R3_bottom.R3_open:before{
+    background: url(icon/arrow270.png) center center no-repeat;
+    background-size: contain;
+}
+.R3_handler.R3_bottom:before, .R3_handler.R3_top:before {
+    background: url('icon/drag90.png') center center no-repeat;
+    background-size: contain;
+}
+.R3_button.R3_right.R3_open:before, .R3_button.R3_left.R3_close:before{
+    background: url(icon/arrow180.png) center center no-repeat;
+    background-size: contain;
+}

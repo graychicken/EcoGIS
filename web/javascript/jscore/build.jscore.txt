@@ -1,0 +1,7 @@
+r3.core.js
+r3.form.js
+r3.help.js
+r3.inputnumber.js
+r3.previewmap.js
+r3.print.js
+r3.thumbnail.js

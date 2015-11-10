@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<project basedir="." default="build-jscore" name="R3-Installer">
+    <includepath classpath="/data/sites/r3-common/scripts/phing-utils/closure-tasks" />
+    <taskdef name="closure" classname="ClosureTask" />
+    
+    <target name="build-jscore">
+        <closure target="build/r3jscore.js" merge="true" closurejar="/data/sites/r3-common/scripts/phing-utils/google-compiler/compiler.jar">
+            <filelist dir="." listfile="build.jscore.txt"/>
+        </closure>
+    </target>
+</project>
