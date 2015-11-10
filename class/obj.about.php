@@ -156,7 +156,7 @@ class eco_about extends R3AppBaseObject {
             $vlu['cus_name'] = $vlu['cus_name_' . $lang];
             $vlu['mu_name'] = $vlu['mu_name_' . $lang];
         } else {
-            $vlu = array();  // SS: Default value
+            $vlu = array();  // Default value
             $vlu['do_id'] = $_SESSION['do_id'];
             $vlu['cus_name'] = R3EcoGisHelper::getDomainName($_SESSION['do_id']);
             if ($this->auth->getParam('mu_id') > 0) {
