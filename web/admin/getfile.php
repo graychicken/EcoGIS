@@ -80,7 +80,7 @@ if (!file_exists($fileName)) {
           <title>404 Not Found</title>
           </head><body>
           <h1>Not Found</h1>
-          <p>The requested URL {$_SERVER['REQUEST_URI']} [{$path}] was not found on this server.</p>
+          <p>The requested URL {$_SERVER['REQUEST_URI']} was not found on this server.</p>
           <hr>
           <address>See http and application configuration</address>
           </body></html>";

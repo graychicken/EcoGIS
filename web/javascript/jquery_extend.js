@@ -71,7 +71,7 @@
  */
 jQuery.extend({
     /**
-     * Load Fraction, street, Catastal munic. data  // SS: TRY WITH LOAD MULTI DATA (not only for select!!!)
+     * Load Fraction, street, Catastal munic. data
      */
     loadMultiSelect: function (url, data, callback, type) {
         // shift arguments if data argument was ommited

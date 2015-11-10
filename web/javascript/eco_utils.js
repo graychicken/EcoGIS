@@ -102,7 +102,6 @@ function updateEnergyUDMForActionCatalog(container, select_es_id, gesType) {
 /** PAES FUNCTIONS */
 function updateEnergySourceForPAES(container, select_ges_id, gesType) {
     ajaxWait(true);
-    //var suffix = sanitarizeGlobalEnergySourceByType(gesType);
     var suffix = 'consumption';  // Fix Inventory production
 
     var select_es_id = $(select_ges_id).parent().find('select[name^=es_id_' + suffix + '_helper]');
