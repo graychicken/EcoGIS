@@ -1,0 +1,11 @@
+ExpiresActive On
+ExpiresByType image/gif "access plus 365 days"
+ExpiresByType image/jpeg "access plus 365 days"
+ExpiresByType image/png "access plus 365 days"
+
+RewriteEngine On
+RewriteRule ^[\x20-\xFF]*build-[0-9]+\/[\x20-\xFF]*logo\/([\x20-\xFF]*)\/([\x20-\xFF]*)$ ../admin/getfile.php?domain=$1&type=logo&file=$2 [QSA,L]
+RewriteRule ^[\x20-\xFF]*build-[0-9]+\/([\x20-\xFF]*)$ $1 [QSA,L]
+
+Header unset ETag
+FileETag none

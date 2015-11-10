@@ -9,7 +9,7 @@
 /* ------------------------------ DB Settings ------------------------------ */
 
 $dsn = array('dbtype' => 'pgsql',
-    'dbhost' => 'ecogis', // host
+    'dbhost' => '127.0.0.1', // host
     'dbuser' => 'ecogis', // login
     'dbpass' => 'ecogis', // Password
     'dbname' => 'ecogis', // database
