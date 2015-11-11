@@ -231,7 +231,6 @@ class R3EcoGisGlobalPlainTableHelper {
         foreach ($data['sum'] as $key => $dummy) {
             $result['sum'][$key] += $data['sum'][$key];
         }
-        // print_r($result);
     }
 
     static public function canMonitoring($do_id, $gp_id) {

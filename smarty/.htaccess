@@ -1,0 +1,7 @@
+AuthUserFile /data/htaccess_pwd/aaa/admintools.pwd
+AuthGroupFile /dev/null
+AuthName "Reserved Area"
+AuthType Basic
+<Limit GET POST>
+require user admin
+</Limit>
