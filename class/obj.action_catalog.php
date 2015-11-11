@@ -14,7 +14,6 @@ class R3EcoGisActionCatalogHelper {
                 FROM action_catalog_sub_category
                 WHERE mu_id={$mu_id} AND gc_id={$gc_id}
                 ORDER BY name_$lang, id, emo_id";
-        // echo $sql;
         $result = array();
         if ($opt['allow_empty']) {
             $result[''] = $opt['empty_text'];
@@ -435,7 +434,7 @@ class eco_action_catalog extends R3AppBaseObject {
             }
             $vlu = array_merge($vlu, R3EcoGisHelper::getChangeLogData('action_catalog', $vlu['ac_id']));
         } else {
-            $vlu = array(); 
+            $vlu = array();
             $vlu['ac_id'] = null;
             $vlu['bu_id'] = $this->bu_id;
             $mu_values = R3EcoGisHelper::getMunicipalityList($this->do_id);
@@ -582,6 +581,7 @@ class eco_action_catalog extends R3AppBaseObject {
     }
 
     public function getJSFiles() {
+        
     }
 
     public function getJSVars() {
@@ -757,7 +757,6 @@ class eco_action_catalog extends R3AppBaseObject {
                         if ($year > 1970 && $request['benefit_benefit'][$i] <> '') {
                             $sql = "INSERT INTO ecogis.action_catalog_benefit_year  (ac_id, acby_year, acby_benefit) " .
                                     "VALUES ({$id}, {$year}, {$benefit})";
-                            // echo $sql;
                             $db->exec($sql);
                         }
                     }
@@ -960,4 +959,5 @@ class eco_action_catalog extends R3AppBaseObject {
             R3Security::checkActionCatalog($this->id);
         }
     }
+
 }
