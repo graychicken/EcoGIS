@@ -104,14 +104,14 @@ class eco_action_catalog extends R3AppBaseObject {
             array('name' => 'ac_effective_cost', 'type' => 'float', 'precision' => 2, 'label' => _('Costo stimato (effettivo)')),
             array('name' => 'ac_effective_public_financing', 'type' => 'float', 'precision' => 2, 'label' => _('Finanziamento pubblico (effettivo)')),
             array('name' => 'ac_effective_other_financing', 'type' => 'float', 'precision' => 2, 'label' => _('Finanziamento terzi (effettivo)')),
-            array('name' => 'ac_expected_energy_saving', 'type' => 'float', 'label' => _('Risparmio energetico previsto'), 'calculated' => true), // DD: calculated becaus the field is not from this table (the definition here is needed to validate form)
+            array('name' => 'ac_expected_energy_saving', 'type' => 'float', 'label' => _('Risparmio energetico previsto'), 'calculated' => true),
             array('name' => 'ac_expected_renewable_energy_production', 'type' => 'float', 'label' => _('Produzione di energia rinnovabile prevista')),
             array('name' => 'ac_co2_reduction', 'type' => 'float', 'label' => _('Riduzione di CO2')),
             array('name' => 'ac_green_electricity_purchase', 'type' => 'float', 'label' => _('Acquisto energia')),
             array('name' => 'ac_green_electricity_co2_factor', 'type' => 'float', 'label' => _('Fattore conversione in t CO2 di acquisto energia')),
             array('name' => 'emo_id', 'type' => 'lookup', 'lookup' => array('table' => 'energy_meter_object')),
             array('name' => 'ac_object_id', 'type' => 'lookup'),
-            array('name' => 'esu_id_consumption', 'type' => 'lookup', 'label' => _('Risparmio energetico previsto'), 'lookup' => array('table' => 'energy_source_udm', 'field' => 'esu_id'), 'calculated' => true), // DD: calculated becaus the field is not from this table (the definition here is needed to validate form)
+            array('name' => 'esu_id_consumption', 'type' => 'lookup', 'label' => _('Risparmio energetico previsto'), 'lookup' => array('table' => 'energy_source_udm', 'field' => 'esu_id'), 'calculated' => true),
             array('name' => 'esu_id_production', 'type' => 'lookup', 'lookup' => array('table' => 'energy_source_udm', 'field' => 'esu_id')),
             array('name' => 'ft_id', 'type' => 'lookup', 'label' => _('Finanziamento'), 'lookup' => array('table' => 'funding_type')),
             array('name' => 'ft_extradata_1', 'type' => 'text', 'label' => _('Descrizione finanziamento')),

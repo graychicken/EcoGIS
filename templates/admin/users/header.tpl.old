@@ -1,0 +1,40 @@
+{* UTF-8 FILE: òàèü *}
+<html>
+<head>
+  <title>{$APPLICATION_TITLE}{if $APPLICATION_VERSION <> ''} - {$APPLICATION_VERSION}{/if} {if $APPLICATION_DEBUG_LEVEL >= 4} - [DEBUG MODE]{/if}</title>
+  {$meta_contenttype}
+  <link href="{if $smarty.const.R3_CSS_URL != ''}{$smarty.const.R3_CSS_URL}{else}{$R3_CSS_URL}{/if}user_manager.css"  rel="stylesheet" type="text/css" />
+  <link href="{if $smarty.const.R3_CSS_URL != ''}{$smarty.const.R3_CSS_URL}{else}{$R3_CSS_URL}{/if}default.css"  rel="stylesheet" type="text/css" />
+  <link href="{if $smarty.const.R3_CSS_URL != ''}{$smarty.const.R3_CSS_URL}{else}{$R3_CSS_URL}{/if}simpletable.css"  rel="stylesheet" type="text/css" />
+  {if $USER_CONFIG_SETTINGS_THEMA <> ''}
+  <link rel="stylesheet" type="text/css" href="{if $smarty.const.R3_CSS_URL != ''}{$smarty.const.R3_CSS_URL}{else}{$R3_CSS_URL}{/if}{$USER_CONFIG_SETTINGS_THEMA}.css" />
+  {/if}
+  <script type="text/javascript" language="JavaScript" src="{if $smarty.const.R3_JS_URL != ''}{$smarty.const.R3_JS_URL}{else}{$R3_JS_URL}{/if}charset.js"  charset="ISO_8859-1"></script>
+  <script type="text/javascript" language="JavaScript" src="{if $smarty.const.R3_JS_URL != ''}{$smarty.const.R3_JS_URL}{else}{$R3_JS_URL}{/if}xajax_required_tag.js"></script>
+  <script type="text/javascript" language="JavaScript" src="{if $smarty.const.R3_JS_URL != ''}{$smarty.const.R3_JS_URL}{else}{$R3_JS_URL}{/if}ajax_select.js"></script>
+  {if !defined('R3_UM_JQUERY') || !$smarty.const.R3_UM_JQUERY}
+  <!-- OLD CALENDAR -->
+  {$calendarHeader}
+  {else}
+  
+  <!-- jQuery -->
+  <script type="text/javascript" src="{if $smarty.const.R3_JS_URL != ''}{$smarty.const.R3_JS_URL}{else}{$R3_JS_URL}{/if}jquery/jquery.js" ></script>
+  <script type="text/javascript" src="{if $smarty.const.R3_JS_URL != ''}{$smarty.const.R3_JS_URL}{else}{$R3_JS_URL}{/if}jquery/plugins/jquery.cookie.js"></script>
+  <!-- jQuery Tabs -->
+  {* <link rel="stylesheet" href="{if $smarty.const.R3_JS_URL != ''}{$smarty.const.R3_JS_URL}{else}{$R3_JS_URL}{/if}jquery/themes/flora/flora.all.css" type="text/css" media="screen" title="Flora (Default)"> *}
+  {if $USER_CONFIG_SETTINGS_THEMA <> ''}
+  <link rel="stylesheet" href="{$smarty.const.R3_JS_URL}jquery/themes/r3gis/{$USER_CONFIG_SETTINGS_THEMA}/r3gis.css" type="text/css" media="screen" title="Default" />
+  {else}
+  <link rel="stylesheet" href="{$smarty.const.R3_JS_URL}jquery/themes/r3gis/r3gis.css" type="text/css" media="screen" title="Default" />
+  {/if}
+  <script type="text/javascript" src="{if $smarty.const.R3_JS_URL != ''}{$smarty.const.R3_JS_URL}{else}{$R3_JS_URL}{/if}jquery/ui/ui.core.js"></script>
+  <script type="text/javascript" src="{if $smarty.const.R3_JS_URL != ''}{$smarty.const.R3_JS_URL}{else}{$R3_JS_URL}{/if}jquery/ui/ui.tabs.js"></script>
+  <!-- jQuery Datepicker -->
+  {if $CURRENT_LANG_CODE}
+    {r3datepicker_header lang='$CURRENT_LANG_CODE'}
+  {else}
+    {r3datepicker_header lang='IT'}
+  {/if}
+  {/if}
+</head>
+<body class="border">
