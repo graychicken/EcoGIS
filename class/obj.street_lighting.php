@@ -298,7 +298,7 @@ class eco_street_lighting extends R3AppBaseObject {
         $mu_id = $this->auth->getParam('mu_id');
         if ($this->act == 'add' && count($lkp['mu_values']) == 1) {
             $mu_id = key($lkp['mu_values']);
-        } else if ($this->act == 'mod') {
+        } else if ($this->act == 'mod' || $this->act == 'show') {
             $mu_id = $this->data['mu_id'];
         }
         if ($mu_id != '') {
