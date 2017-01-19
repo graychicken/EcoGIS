@@ -1,0 +1,6501 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: R3-EcoGIS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-25 08:46+0200\n"
+"PO-Revision-Date: 2014-09-25 08:49+0100\n"
+"Last-Translator: Sergio <sergio.segala@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 1.6.9\n"
+
+msgid "Ente"
+msgstr "Körpersch."
+
+msgid "Comune"
+msgstr "Gemeinde"
+
+msgid "-- Selezionare --"
+msgstr "-- auswählen --"
+
+msgid "Via"
+msgstr "Strasse"
+
+msgid "Aggiungi"
+msgstr "Hinzufügen"
+
+msgid "Descrizione tratto"
+msgstr "Beschreibung Abschnitt"
+
+msgid "Lunghezza"
+msgstr "Länge"
+
+msgid "m"
+msgstr "m"
+
+msgid "Da controllare"
+msgstr "Zu kontrollieren"
+
+msgid "Mappa"
+msgstr "Karte öffnen"
+
+msgid "Digitalizza su mappa"
+msgstr "Auf Karte digitalisieren"
+
+msgid "Descrizione"
+msgstr "Beschreibung"
+
+msgid "Salva e continua"
+msgstr "Speichern und fortfahren"
+
+msgid "Salva"
+msgstr "Speichern"
+
+msgid "Annulla"
+msgstr "Abbrechen"
+
+msgid "Indietro"
+msgstr "Zurück"
+
+msgid "Codice edificio"
+msgstr "Gebäudekode"
+
+msgid "Nome edificio"
+msgstr "Gebäudenamen"
+
+msgid "Frazione"
+msgstr "Fraktion"
+
+msgid "Indirizzo"
+msgstr "Adresse"
+
+msgid "Nr. civico"
+msgstr "Hausnr."
+
+msgid "Apri/Chiudi"
+msgstr "Öffne/Schließe Detail Fehler"
+
+msgid "Foglio"
+msgstr "Blatt"
+
+msgid "Particella"
+msgstr "Typ Parzelle"
+
+msgid "Subalterno"
+msgstr "Subalterno"
+
+msgid "Comune catastale"
+msgstr "Katastralgemeinde"
+
+msgid "Data audit"
+msgstr "Datum Audit"
+
+msgid "Tipologia costruttiva"
+msgstr "Bauweise"
+
+msgid "Descr."
+msgstr "Beschr."
+
+msgid "Destinazione d'uso"
+msgstr "Zweckbestimmung"
+
+msgid "Periodo di costruzione"
+msgstr "Bauzeit"
+
+msgid "Periodo di ristrutturazione"
+msgstr "Sanierungszeitraum"
+
+msgid "Lingua 1"
+msgstr "Sprache 1"
+
+msgid "Lingua 2"
+msgstr "Sprache 2"
+
+msgid "Descrizione ristrutturazione"
+msgstr "Beschreibung Sanierung"
+
+msgid "Sup.utile riscaldata"
+msgstr "Beh. Nettofläche"
+
+msgid "Vol. lordo riscaldato"
+msgstr "Beheiztes Gebäudevol."
+
+msgid "Fattore di forma S/V"
+msgstr "Formfaktor A/V"
+
+msgid "Superficie vetrata"
+msgstr "Fensterfläche"
+
+msgid "Uso giornaliero edificio"
+msgstr "Tägl. Nutzungszeit"
+
+msgid "Dalle"
+msgstr "Von"
+
+msgid "alle"
+msgstr "bis"
+
+msgid "Ore al giorno"
+msgstr "Stunden pro Tag"
+
+msgid "Uso settimanale edificio"
+msgstr "Nutzungszeit wöchentlich"
+
+msgid "giorni/settimana"
+msgstr "Tage/Woche"
+
+msgid "Uso annuale edificio"
+msgstr "Gebäudenutzung jährlich"
+
+msgid "settimane/anno"
+msgstr "Woche/Jahr"
+
+msgid "Ore all'anno uso edificio"
+msgstr "Stunden jährl. Gebäudenutzung"
+
+msgid "h/anno"
+msgstr "Std/Jahr"
+
+msgid "Occupanti nell'edificio"
+msgstr "Gebäudeinsassen"
+
+msgid "N° medio occupanti/giorno"
+msgstr "Durchschnittl. Insassen/Tag"
+
+msgid "Zona climatica"
+msgstr "Klimazone"
+
+msgid "Classe energetica"
+msgstr "Energieklasse"
+
+msgid "Descrizione classe energetica"
+msgstr "Beschreibung Energieklasse"
+
+msgid "kWh/m2*anno"
+msgstr "kWh/m2*Jahr"
+
+msgid "Note"
+msgstr "Anmerkung"
+
+msgid "Immagini"
+msgstr "Bilder"
+
+msgid "Foto"
+msgstr " Bilder"
+
+msgid "Targa energetica"
+msgstr "Energiepass"
+
+msgid "Termografia"
+msgstr "Thermografie"
+
+msgid "Nome (lingua 1)"
+msgstr "Name (Sprache 1)"
+
+msgid "Nome (lingua 2)"
+msgstr "Name (Sprache 2)"
+
+msgid "Totale"
+msgstr "Gesamt"
+
+msgid "Nuovo"
+msgstr "Neu"
+
+msgid "Export"
+msgstr "Export"
+
+msgid "Filtro"
+msgstr "Filter"
+
+msgid "Provincia"
+msgstr "Provinz"
+
+msgid "Filtra"
+msgstr "Filtern"
+
+msgid "Tipo inserimento"
+msgstr "Eingabeart"
+
+msgid "Anno"
+msgstr "Jahr"
+
+msgid "Contatore"
+msgstr "Zähler"
+
+msgid "Alimentazione"
+msgstr "Energieträger"
+
+msgid "Chiudi"
+msgstr "Schließen"
+
+msgid "Salva e reinserisci"
+msgstr "Speichern und neueinfügen"
+
+msgid "Consumo"
+msgstr "Verbrauch"
+
+msgid "Produzione"
+msgstr "Herstellungs"
+
+msgid "Dominio"
+msgstr "Domain"
+
+msgid "Alias"
+msgstr "Alias"
+
+msgid "Template"
+msgstr "Template"
+
+msgid "Nome 1"
+msgstr "Name 1"
+
+msgid "Nome 2"
+msgstr "Name 2"
+
+msgid "Utente database"
+msgstr "Benutzername"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Primo utente"
+msgstr "Benutzername"
+
+msgid "Nome utente"
+msgstr "Benutzername"
+
+msgid "Ripeti password"
+msgstr "Passwort wiederholen"
+
+msgid "Gruppo"
+msgstr "Gruppe"
+
+msgid "Lingue applicativo"
+msgstr "Sprache Anwendung"
+
+msgid "Tipologia catasto"
+msgstr "Import CML Kataster"
+
+msgid "Schema geografico"
+msgstr "Geographische Position"
+
+msgid "SRID"
+msgstr "SRID"
+
+msgid "Comuni"
+msgstr "Katastralgemeinde"
+
+msgid "Frazioni"
+msgstr "Fraktionen"
+
+msgid "Strade"
+msgstr "Straßen"
+
+msgid "Comuni associati al cliente"
+msgstr "Mit dem Kunden verbundene Gemeinden"
+
+msgid "Comuni associati"
+msgstr "Angeschlossene Gemeinden"
+
+msgid "-- Filtro --"
+msgstr "Filter"
+
+msgid "X"
+msgstr "X"
+
+msgid "Loghi e stili (SOLO PNG!!!)"
+msgstr "Logos und Stile (NUR PNG!!!)"
+
+msgid "Logo login (destro)"
+msgstr "Login/Passwort (rechts)"
+
+msgid "Logo login (sinistro)"
+msgstr "Login/Passwort (links)"
+
+msgid "Logo login (centrato/sfondo)"
+msgstr "Logo Login (zentriert/Hintergrund)"
+
+msgid "Logo applicativo (sinistro)"
+msgstr "Logo Anwendung (links)"
+
+msgid "Logo applicativo (destro)"
+msgstr "Logo Anwendung (rechts)"
+
+msgid "Logo applicativo (centrato/sfondo)"
+msgstr "Logo Anwendung (zentriert/Hintergrund)"
+
+msgid "Logo mappa (sinistro)"
+msgstr "Logo Karte (links)"
+
+msgid "Logo mappa (destro)"
+msgstr "Logo Karte (rechts)"
+
+msgid "Logo mappa (centrato/sfondo)"
+msgstr "Logo Karte (zentriert/Hintergrund)"
+
+msgid "Reference map"
+msgstr "Reference map"
+
+msgid "Stile"
+msgstr "Stil"
+
+msgid "Stile (mappa)"
+msgstr "Sti (lKarte)"
+
+msgid "Tipo utenza"
+msgstr "Art Nutzer"
+
+msgid "Tipo impianto"
+msgstr "Anlagentyp"
+
+msgid "Matricola"
+msgstr "Matrikel"
+
+msgid "Data installazione"
+msgstr "Installationsdatum"
+
+msgid "Data fine esercizio"
+msgstr "Datum Bauende"
+
+msgid "Potenza"
+msgstr "Leistung"
+
+msgid "kW"
+msgstr "KW"
+
+msgid "Servizio energia"
+msgstr "Energieversorgung"
+
+msgid "Si"
+msgstr "Ja"
+
+msgid "Numero utenze"
+msgstr "Telefonnummer"
+
+msgid "Tutti i file caricati nel sistema vengono controllati con"
+msgstr "Alle ins System geladenenen Dateien werden kontrolliert mit"
+
+msgid "Titolo"
+msgstr "Titel"
+
+msgid "Data"
+msgstr "Datum"
+
+msgid "File"
+msgstr "Datei"
+
+msgid "Filtro/Carica"
+msgstr "Lade und Synchronisiere"
+
+msgid "Schema"
+msgstr "Schema"
+
+msgid "Name"
+msgstr "nome"
+
+msgid "Ente su cui caricare i dati"
+msgstr "zuständige Körper- schaft "
+
+msgid "File da caricare"
+msgstr "Datei laden"
+
+msgid "Carica"
+msgstr "Lade"
+
+msgid "Categoria"
+msgstr "Kategorie"
+
+msgid "Nome"
+msgstr "Name"
+
+msgid "Fonte"
+msgstr "Quelle"
+
+msgid "U.d.m."
+msgstr "M.E."
+
+msgid "--Selezionare--"
+msgstr "-- auswählen --"
+
+msgid "Visibile"
+msgstr "Sichtbar"
+
+msgid "Data approvazione"
+msgstr "Datum Genehmigung"
+
+msgid "Anno rif."
+msgstr "Betr. Jahr"
+
+msgid "Abitanti anno rif."
+msgstr "Einwohner betr. Jahr"
+
+msgid "Obiettivi di riduzione delle emissioni di CO<sub>2</sub>"
+msgstr "Zielwerte  CO<sub>2</sub> Reduktion"
+
+msgid "Obiettivo previsto"
+msgstr "Voraussichtliches Ziel"
+
+msgid "Riduzione"
+msgstr "Reduktion"
+
+msgid "globale"
+msgstr "global "
+
+msgid "pro-capite"
+msgstr "Pro-Kopf"
+
+msgid "Obiettivo a lungo termine"
+msgstr "Langzeitziel"
+
+msgid "Target lungo termine"
+msgstr "Langzeittarget"
+
+msgid "Procedi"
+msgstr "Weiter"
+
+msgid "Panoramica su mappa"
+msgstr "Auf Karte anzeigen"
+
+msgid "Utente"
+msgstr "Benutzer"
+
+msgid "da"
+msgstr "von"
+
+msgid "a"
+msgstr "bis"
+
+msgid "Tot costi"
+msgstr "Gesamtkosten"
+
+msgid "CO<sub>2</sub> evitata"
+msgstr "CO<sub>2</sub> Vermeidung"
+
+msgid "Stato intervento"
+msgstr "Stand Maßnahme"
+
+msgid "Proposto"
+msgstr "Vorgeschlagen"
+
+msgid "In realizzazione"
+msgstr "In Arbeit"
+
+msgid "Realizzato"
+msgstr "Realisiert"
+
+msgid "Azione"
+msgstr "Aktion"
+
+msgid ""
+"ATTENZIONE!nnBlocco dei popup attivo. Impossibile aprire la mappa. "
+"Disabilitare il blocco dei popup del browser e riprovare"
+msgstr ""
+"ACHTUNG!nnPopups blockiert. Nicht möglich Karte zu öffnen. Browser- Popup-"
+"Blockade entfernen und neu starten "
+
+msgid "Attendere..."
+msgstr "Bitte warten..."
+
+msgid "Logout"
+msgstr "Logout"
+
+msgid "HELP"
+msgstr "Hilfe"
+
+msgid "Loading..."
+msgstr "Loading..."
+
+msgid "Matricola (POD)"
+msgstr "Matrikel (POD)"
+
+msgid "Tipo contatore"
+msgstr "Zählertyp"
+
+msgid "Fornitore"
+msgstr "Lieferant"
+
+msgid "-- Standard --"
+msgstr "-- Standard --"
+
+msgid "Contratto"
+msgstr "Vertrag"
+
+msgid "Riepilogo informazioni piano di azione"
+msgstr "Auflistung Informationen Aktionsplan"
+
+msgid "Titolo del piano d'azione"
+msgstr "Name des Aktionsplanes"
+
+msgid "Aspetti organizzativi e finanziari"
+msgstr "Organisatorische und finanzielle Aspekte"
+
+msgid "Struttura organizzativa"
+msgstr "Organisationsstruktur"
+
+msgid "Personale impiegato"
+msgstr "Eingesetzte Mitarbeiter"
+
+msgid "persone"
+msgstr "Personen"
+
+msgid "Coinvolgimento dei cittadini"
+msgstr "Einbeziehung der Bürger"
+
+msgid "Stima risorse"
+msgstr "Veranschlagtes Budget "
+
+msgid "Finanziamento"
+msgstr "Finanzierung"
+
+msgid "Sviluppo e monitoraggio"
+msgstr "Entwicklung und Überwachung"
+
+msgid "Fattori di emissione"
+msgstr "Emissionsfaktoren"
+
+msgid "fattori di emissione \"standard\" in linea con i principi IPCC"
+msgstr "Emissionsfaktoren/\"standard/\"gem. IPCC"
+
+msgid "fattori LCA (valutazione del ciclo di vita)"
+msgstr "LCA-Faktoren (Lebenszyklusanalyse)"
+
+msgid "Unità di misura"
+msgstr "Maßeinheit"
+
+msgid "CO<sub>2</sub>"
+msgstr "CO<sub>2</sub>"
+
+msgid "equivalenti di CO<sub>2</sub>"
+msgstr "Äquivalenzen von CO<sub>2</sub>"
+
+msgid "Export Excel"
+msgstr "Excel Export"
+
+msgid "Tratto"
+msgstr "Straßenabschnitt"
+
+msgid "Solo da controllare"
+msgstr "Nur kontrollieren"
+
+msgid "Sensore"
+msgstr "Sensor"
+
+msgid "Tipo"
+msgstr "Typ"
+
+msgid "Data inizio"
+msgstr "Datum Beginn"
+
+msgid "Aggiorna"
+msgstr "Aktualisieren"
+
+msgid "Download"
+msgstr "Herunterladen"
+
+msgid "Legenda:"
+msgstr "Legende:"
+
+msgid "Temperatura interna"
+msgstr "Innentemperatur"
+
+msgid "Temperatura esterna"
+msgstr "Außentemperatur"
+
+msgid "Umidità"
+msgstr "Feuchtigkeit"
+
+msgid "Informazioni:"
+msgstr "Informationen:"
+
+msgid "Minimo"
+msgstr "Minimum"
+
+msgid "Massimo"
+msgstr "Maximum"
+
+msgid "Valore attuale"
+msgstr "Aktueller Wert"
+
+msgid "Dati sensori ambientali non disponibili"
+msgstr "Daten Aussensensor nicht vorhanden"
+
+msgid "Tot interventi"
+msgstr "Gesamtzahl Maßnahmen"
+
+msgid "Costo medio interventi"
+msgstr "Durchschnittl. Kosten Maßnahmen"
+
+msgid "Privato"
+msgstr "Privat"
+
+msgid "Tipologia intervento"
+msgstr "Art der Maßnahme"
+
+msgid "Interventi sulle utenze elettriche"
+msgstr "Maßnahmen Stromabnehmer"
+
+msgid "Interventi sull'impianto di riscaldamento"
+msgstr "Maßnahmen Heizanlagen"
+
+msgid "Interventi sull'involucro"
+msgstr "Maßnahmen Gebäudehülle"
+
+msgid "Interventi sul sistema di produzione di acqua calda sanitaria"
+msgstr "Maßnahmen Warmwasserbereitungssystem"
+
+msgid "Cod.edificio"
+msgstr "Zeichne Gebäude"
+
+msgid "Tipo edificio"
+msgstr "Gebäudetyp"
+
+msgid "Sup.Risc."
+msgstr "Beheizte Fläche"
+
+msgid "Stato"
+msgstr "Status"
+
+msgid "Nr."
+msgstr "Nr."
+
+msgid "Tipologia"
+msgstr "Typus"
+
+msgid "Data fine"
+msgstr "Datum Bauende"
+
+msgid "Solo privati"
+msgstr "Nur aktuelle Auswahl"
+
+msgid "Solo visibili"
+msgstr "Ansässige sind sichtbar"
+
+msgid "Mostra solo selezionati"
+msgstr "Nur aktuelle Auswahl"
+
+msgid "Deseleziona tutto"
+msgstr "Rückgängig"
+
+msgid "Aggiorna simulazione"
+msgstr "Aktualisiere Simulation"
+
+msgid "Dati generali"
+msgstr "Angezeigte Daten"
+
+msgid "Nr.intervento"
+msgstr "Manßnahmenr."
+
+msgid "Selezionare"
+msgstr "-- auswählen --"
+
+msgid "Costi / Finanziamenti"
+msgstr "Kosten/Finanzierungen"
+
+msgid "Costo stimato"
+msgstr "Geschätzte Kosten"
+
+msgid "Contributi stimati"
+msgstr "Geschätzte Beiträge"
+
+msgid "Costo netto stimato"
+msgstr "Geschätzte Nettokosten"
+
+msgid "Costo effettivo"
+msgstr "Effektive Kosten"
+
+msgid "Contributi effettivi"
+msgstr "Effektive Beiträge"
+
+msgid "Costo netto effettivo"
+msgstr "Effektive Nettokosten"
+
+msgid "Costo manut. annua"
+msgstr "Jährl. Unterhaltskosten"
+
+msgid "Tasso di sconto"
+msgstr "Zinsfuß"
+
+msgid "Vita utile investimento"
+msgstr "Dauer Investition"
+
+msgid "anni"
+msgstr "Dauer (Jahre)"
+
+msgid "Tasso interno di ritorno investimento"
+msgstr "Interner Zinsfuß"
+
+msgid "Ritorno dell'investimento"
+msgstr "Return on Investment "
+
+msgid "Valore attuale netto"
+msgstr "Wert existiert schon."
+
+msgid "Risparmio energetico e CO<sub>2</sub> annui"
+msgstr "Energieersparnis  e CO<sub>2</sub> jährl. "
+
+msgid "Energia termica annua"
+msgstr "Therm. Energie jährl."
+
+msgid "Energia elettrica annua"
+msgstr "Elektrische Energie jährl."
+
+msgid "kWh"
+msgstr "kWh"
+
+msgid "Totale annuo"
+msgstr "Gesamtmenge"
+
+msgid "kWh/anno"
+msgstr "Herstellungsjahr"
+
+msgid "kg CO2/anno"
+msgstr "kg CO2/Jahr"
+
+msgid "Totale annuo specifico"
+msgstr "Spezifische Jahresmenge"
+
+msgid "kWh/anno*m2"
+msgstr "kWh/Jahr*m2"
+
+msgid "TOTALE CO<sub>2</sub>"
+msgstr "Anzahl gefundene Zugänge: %s"
+
+msgid "Classe energetica stimata"
+msgstr "Geschätzte Energieklasse"
+
+msgid "Descrizione classe energetica stimata"
+msgstr "Beschreibung geschätzte Energieeffizienzklasse"
+
+msgid "Visualizza"
+msgstr "Anzeigen"
+
+msgid "Modifica"
+msgstr "Änderung"
+
+msgid "Cancella"
+msgstr "Löschen"
+
+msgid "Consumi energia"
+msgstr "Engerieverbrauch"
+
+msgid "Documenti"
+msgstr "Dokumente"
+
+msgid "PERMISSION DENIED [%s/%s]"
+msgstr ""
+
+msgid "Nome edificio lingua 1"
+msgstr "Name/Bezeichnung"
+
+msgid "Nome edificio lingua 2"
+msgstr "Name/Bezeichnung"
+
+msgid "Civico"
+msgstr "Hausnummer"
+
+msgid "Barrato (Civico)"
+msgstr "Schrägstrich (Hausnummer) "
+
+msgid "Anno costruzione edificio"
+msgstr "Gebäudebaujahr"
+
+msgid "Superficie"
+msgstr "Fläche"
+
+msgid "Sup.Riscaldata"
+msgstr "Beheizte Fläche"
+
+msgid "Descrizione lingua 1"
+msgstr "Beschreibung"
+
+msgid "Descrizione lingua 2"
+msgstr "Beschreibung"
+
+msgid "Nome foto"
+msgstr "Anzahl Bilder"
+
+msgid "Nome foto (termografia)"
+msgstr "Name foto (Thermografie)"
+
+msgid "Particella catastale"
+msgstr "Katasterparzelle"
+
+msgid "Part. catastale"
+msgstr "Katasterparzelle"
+
+msgid "Tipo audit"
+msgstr "Art Audit"
+
+msgid "Descrizione ristrutturazione (lingua 1)"
+msgstr "Beschreibung Renovierung"
+
+msgid "Descrizione ristrutturazione (lingua 2)"
+msgstr "Beschreibung Renovierung"
+
+msgid "Nome foto (targa)"
+msgstr "Name Foto (Enrgiepaß)"
+
+msgid "Ora utilizzo edificio (dalle)"
+msgstr "Nutzungszeit (von)"
+
+msgid "Ora utilizzo edificio (alle)"
+msgstr "Nutzungszeit (bis)"
+
+msgid "Giorni alla settimana di utilizzo edificio"
+msgstr "Wochentage Gebäudenutzung "
+
+msgid "Settimane di utilizzo edificio"
+msgstr "Wochen Gebäudenutzung"
+
+msgid "Occupanti"
+msgstr "Ansässige"
+
+msgid "Fattore di forma (S/V)"
+msgstr "Neuer Schildtyp"
+
+msgid "Nuovo edificio"
+msgstr "Neues Gebäude"
+
+msgid "Modifica edificio"
+msgstr "Ändere Gebäude"
+
+msgid "Visualizza edificio"
+msgstr "Zeige Gebäude"
+
+msgid "Elenco edifici"
+msgstr "Liste Gebäude"
+
+msgid "Visualizza su mappa"
+msgstr "Auf Karte anzeigen"
+
+msgid "Riscaldamento"
+msgstr "Heizung"
+
+msgid "Elettricità"
+msgstr "Strom"
+
+msgid "Acque"
+msgstr "Wasser"
+
+msgid "Interventi"
+msgstr "Maßnahmen"
+
+msgid "Sensori ambientali"
+msgstr "Außensensore"
+
+msgid "Aggiungi frazione"
+msgstr "Fraktion Einfügen"
+
+msgid "Aggiungi indirizzo"
+msgstr "Adresse einfügen"
+
+msgid "Aggiungi comune catastale"
+msgstr "Katastralgemeinde einfügen"
+
+msgid ""
+"ATTENZIONE!\\n\\nBlocco dei popup attivo. Impossibile aprire la mappa. "
+"Disabilitare il blocco dei popup del browser e riprovare"
+msgstr ""
+"ACHTUNG!\\nnPopups blockiert. Nicht möglich Karte zu öffnen. Browser- Popup-"
+"Blockade entfernen und neu starten "
+
+msgid "Sei sicuro di voler cancellare l'edificio \"%s\"?"
+msgstr "Möchten Sie das Gebäude \"%s\" wirklich löschen?"
+
+msgid ""
+"Impossibile cancellare questo edificio poichè vi sono dei dati ad esso legati"
+msgstr "Unmöglich dieses Gebäude zu löschen da Daten hiermit verbunden sind"
+
+msgid "PK"
+msgstr ""
+
+msgid "Guadagno"
+msgstr "Gewinn/Verdienst"
+
+msgid "Spesa"
+msgstr "Aufwand"
+
+msgid "Bolletta singola"
+msgstr "Einzelabrechnung"
+
+msgid "Bollette mensile"
+msgstr "Monatsabrechnung"
+
+msgid "Bollette annuale"
+msgstr "Jahresabrechung"
+
+msgid "Impossibile salvare. Nessun dato valido inserito"
+msgstr "Speichern unmöglich. Keine gültigen Daten eingegeben"
+
+msgid "Sei sicuro di voler cancellare il consumo selezionato?"
+msgstr "Wollen sie wirklich den ausgewählten Verbrauch löschen?"
+
+msgid "riscaldamento"
+msgstr "Heizung"
+
+msgid "elettrico"
+msgstr "Strom"
+
+msgid "acqua"
+msgstr "Wasser"
+
+msgid "Visualizza contatore %s"
+msgstr "%s: Zähler anzeigen"
+
+msgid "Aggiungi contatore %s"
+msgstr "%s: Zähler einfügen"
+
+msgid "Modifica contatore %s"
+msgstr "%s: Zähler ändern"
+
+msgid ""
+"Impossibile cancellare il contatore poichè vi sono degli impianti e/o dei "
+"consumi adesso legati"
+msgstr ""
+"Unmöglich Zähler zu löschen da Anlagen u/o Verbrauch damit verbunden sind"
+
+msgid "Visualizza impianto %s"
+msgstr "%s: Anlage anzeigen"
+
+msgid "Aggiungi impianto %s"
+msgstr "%s: Anlage einfügen"
+
+msgid "Modifica impianto %s"
+msgstr "%s: Anlage ändern"
+
+msgid "Visualizza consumo %s"
+msgstr "%s: Verbauch anzeigen"
+
+msgid "Aggiungi consumo %s"
+msgstr "%s: Verbrauch einfügen"
+
+msgid "Modifica consumo %s"
+msgstr "%s: Verbrauch ändern"
+
+msgid "PERMISSION DENIED [Not my building]"
+msgstr ""
+
+msgid "-- Nessuno --"
+msgstr "-- Kein --"
+
+msgid "Login database"
+msgstr "Login database"
+
+msgid "Password database"
+msgstr "Passwort database"
+
+msgid "Nome primo utente"
+msgstr "Name/Bezeichnung"
+
+msgid "Login primo utente"
+msgstr "Login erster Benutzer"
+
+msgid "Password primo utente"
+msgstr "Password erster Benutzer"
+
+msgid "Password primo utente (ripeti)"
+msgstr "Das Passwort erster Benutzer (wiederhole)"
+
+msgid "Nuovo ente"
+msgstr "Neue Körper- schaft"
+
+msgid "Modifica ente"
+msgstr "Körper- schaft ändern"
+
+msgid "Visualizza ente"
+msgstr "Körper- schaft anzeigen"
+
+msgid "Elenco enti"
+msgstr "Liste Körper- schaften"
+
+msgid "Monolingue"
+msgstr "Einsprachigig"
+
+msgid "Bilingue"
+msgstr "Zweisprachig"
+
+msgid "Italiano"
+msgstr "Italiano"
+
+msgid "Austriaco"
+msgstr "Österreichisch"
+
+msgid "Combo box"
+msgstr "Combo box"
+
+msgid "Autocomplete"
+msgstr "Automatische Vervollständigung"
+
+msgid "Nessuno"
+msgstr "Kein"
+
+msgid "Automatico"
+msgstr "Automatisch"
+
+msgid "Manuale"
+msgstr "Manuell"
+
+msgid ""
+"ATTENZIONE! Il cambio dello SRID ha effetto solo sui dati nuovi e nelle view "
+"standard"
+msgstr ""
+"ACHTUNG! Der Wechsel des SRID hat nur Auswirkungen auf neue Daten und auf "
+"Standardviews"
+
+msgid "dev_id"
+msgstr "dev_id"
+
+msgid "Tipo impianto (Descrizione)"
+msgstr "Anlagentyp (Beschreibung)"
+
+msgid "Numero impianto"
+msgstr "Anlagennummer"
+
+msgid "Sei sicuro di voler cancellare l'impianto \"%s\"?"
+msgstr "Möchten Sie diese Anlage  \"%s\" löschen?"
+
+msgid "doc_id"
+msgstr "doc_id"
+
+msgid "doc_file_id"
+msgstr "ESRI Shape file"
+
+msgid "doct_id"
+msgstr "doct_id"
+
+msgid "Dim."
+msgstr "Dim."
+
+msgid "Scarica"
+msgstr "Dokument herunterladen"
+
+msgid "Visualizza documento"
+msgstr "Dokument anzeigen"
+
+msgid "Aggiungi documento"
+msgstr "Dokument anfügen"
+
+msgid "Modifica documento"
+msgstr "Dokument ändern"
+
+msgid ""
+"Attenzione! Il file non può essere salvato nel sistema perchè si ritiene che "
+"possa contiene un virus."
+msgstr ""
+"Achtung! Datei kann nicht  im System gespeichert werden, da sie "
+"möglicherweise einen Virus enthält."
+
+msgid ""
+"Attenzione: una finestra di visualizzazione documento è già aperta. "
+"Chiuderla prima di proseguire"
+msgstr ""
+"Achtung: ein Fenster zur Ansicht des Dokuments ist bereits geöffnet. Vor "
+"Fortfahren schließen. "
+
+msgid ""
+"Attenzione: Impossibile aprire la fimnestra cdei documenti: blocco dei popup "
+"attivo"
+msgstr ""
+" Achtung: Dokumentenfenster kann nicht geöffnet werden: popups blockiert"
+
+msgid "Sei sicuro di voler cancellare il documento \"%s\"?"
+msgstr "Möchten Sie dieses Dokument löschen \"%s\"?"
+
+msgid "Documento non trovato"
+msgstr "Keine Daten gefunden"
+
+msgid ""
+"ATTENZIONE! E' stato impedito lo scaricamento del file desiderato in quanto "
+"si ritiene che possa contenere un virus"
+msgstr ""
+"ACHTUNG! Herunterladen der gewünschten Datei wurde verhindert da sie "
+"möglicherweise einen Virus enthält"
+
+msgid "Foglio/Comune catastale"
+msgstr "Blatt/Katastralgemeinde"
+
+msgid "Data rilievo"
+msgstr "Erhebungsdatum"
+
+msgid "Tipo edificio (altro)"
+msgstr "Gebäudetyp (andere)"
+
+msgid "Destinazione d'uso (altro)"
+msgstr "Zweckbestimmung (andere)"
+
+msgid "zip file"
+msgstr "Datei Hausnummern"
+
+msgid "shape file"
+msgstr "ESRI Shape file"
+
+msgid "file"
+msgstr "Datei"
+
+msgid "Elenco dati"
+msgstr "Angezeigte Daten"
+
+msgid "Tabella"
+msgstr "Tabelle "
+
+msgid "Owner"
+msgstr "Besitzer"
+
+msgid "Record"
+msgstr "Record fehlt bei"
+
+msgid "Dime.(MB)"
+msgstr ""
+
+msgid "Geometria"
+msgstr "Geometrie"
+
+msgid "Esporta"
+msgstr "Exportieren"
+
+msgid "Struttura"
+msgstr "Struktur"
+
+msgid "Sei sicuro di voler cancellare il file selezionato?"
+msgstr "Wollen sie wirklich die ausgewählte Datei löschen?"
+
+msgid "Valore di \"%s\" non valido"
+msgstr "Wert \"%s\" ist nicht gültig"
+
+msgid "Indicare un'alimentazione per \"%s\""
+msgstr "Energieträger für \"%s\" angeben"
+
+msgid "Sei sicuro di voler cancellare la riga \"%s\"?"
+msgstr "Wollen sie Strich \"%s\"  wirklich löschen?"
+
+msgid "Nuovo piano di azione"
+msgstr "Neuer Aktionsplan"
+
+msgid "Modifica piano di azione"
+msgstr "Aktionsplan ändern"
+
+msgid "Visualizza piano di azione"
+msgstr "Aktionsplan anzeigen"
+
+msgid "Elenco piani di azione"
+msgstr "Auflistung Aktionspläne"
+
+msgid "Titolo piano di azione"
+msgstr "Titel Aktionsplan"
+
+msgid "Anno riferimento"
+msgstr "Betr. Jahr"
+
+msgid "Metodo"
+msgstr "Methode"
+
+msgid "Emissioni CO<sub>2</sub>"
+msgstr "Emission CO<sub>2</sub>"
+
+msgid "Produzione energia"
+msgstr "Energieträger"
+
+msgid "Generazione riscaldamento e raffrescamento"
+msgstr "Erzeugung Heizung und Kühlung"
+
+msgid "Nuova inventario emissioni"
+msgstr "Neues Emissionsinventar "
+
+msgid "Modifica inventario emissioni"
+msgstr "Emissionsinventar ändern"
+
+msgid "Visualizza inventario emissioni"
+msgstr "Emissionsinventar anzeigen"
+
+msgid "Elenco inventario emissioni"
+msgstr "Liste  Emissionsinventar "
+
+msgid "Nuova simulazione"
+msgstr "Neue Simulation"
+
+msgid "Modifica simulazione"
+msgstr "Simulation ändern"
+
+msgid "Visualizza simulazione"
+msgstr "Simulation anzeigen"
+
+msgid "Elenco simulazioni"
+msgstr "Liste Simulationen"
+
+msgid "N°interventi"
+msgstr "Nr. Maßnahmen"
+
+msgid "€"
+msgstr "€"
+
+msgid "CO2"
+msgstr "CO2"
+
+msgid ""
+"ATTENZIONE! Non è possibile modificare il dettaglio di questi consumi da "
+"questa scheda. Utilizzare la relativa scheda di gestione"
+msgstr ""
+"ACHTUNG! Es ist nicht möglich Details diese Verbrauchsmengen dieser Tabelle "
+"zu ändern. Benutzen Sie die entsprechende Verwaltungstabelle."
+
+msgid "Dettaglio consumi"
+msgstr "Detail Verbrauch"
+
+msgid "Aggiungi consumi"
+msgstr "Verbrauch hinzufügen"
+
+msgid "Modifica consumi"
+msgstr "Verbrauch ändern"
+
+msgid "Aiuto (SS: DOWNLOAD)"
+msgstr "Überprüfe Änderungen"
+
+msgid "Impossibile generare la mappa"
+msgstr "Karte erstellen nicht möglich"
+
+msgid "Descrizione (Lingua 1)"
+msgstr "Beschreibung (Sprache 1)"
+
+msgid "Descrizione (Lingua 2)"
+msgstr "Beschreibung (Sprache2)"
+
+msgid "Sei sicuro di voler cancellare il contatore \"%s\"?"
+msgstr "Möchten Sie diesen Zähler \"%s\" wirklich löschen?"
+
+msgid "Sensore %s"
+msgstr "Sensor %s"
+
+msgid "Giornaliero"
+msgstr "Täglich"
+
+msgid "Settimanale"
+msgstr "Wöchentlich"
+
+msgid "Tot. costi"
+msgstr "Gesamtkosten"
+
+msgid "CO2 evitata"
+msgstr "CO2 vermieden"
+
+msgid "Nuova simulazione edifici"
+msgstr "Neue Gebäudesimulation "
+
+msgid "Modifica simulazione edifici"
+msgstr "Gebäudesimulation ändern"
+
+msgid "Visualizza simulazione edifici"
+msgstr "Gebäudesimulation anzeigen"
+
+msgid "Elenco simulazioni edifici"
+msgstr "Ergebnisliste"
+
+msgid "Priv."
+msgstr "Priv."
+
+msgid "Visualizza intervento"
+msgstr "Maßnahme anzeigen"
+
+msgid "Il comune immesso non è stato trovato"
+msgstr "Die eingegebene Gemeinde wurde nicht gefunden"
+
+msgid "Alcuni interventi inseriti non appartengono al comune selezionato"
+msgstr "Einige eingegebenen Maßnahmen gehören nicht zur gewählten Gemeinde"
+
+msgid "Sei sicuro di voler cancellare la simulazione \"%s\"?"
+msgstr "Wollen sie diese  Simulation \"%s\"  wirklich löschen?"
+
+msgid "Sup.Risc. (m2)"
+msgstr "Beheizte Fl.  (m2)"
+
+msgid "Nr"
+msgstr "Nr."
+
+msgid "Costo (€)"
+msgstr "Kosten (€)"
+
+msgid "CO2 (kg/anno)"
+msgstr "CO2 (kg/Jahr)"
+
+msgid "Mostra intervento"
+msgstr "Maßnahme anzeigen"
+
+msgid "Si desidera anche azzerare il contenuto della statistica?"
+msgstr "Wünschen Sie auch den Inhalt der Statistik auf Null zu setzen?"
+
+msgid "Illuminazione stradale - Consumi"
+msgstr "Straßenbeleuchtung - Verbrauch"
+
+msgid "Consumo [kWh]"
+msgstr "Verbrauch [kWh]"
+
+msgid "Consumo [Tep eq.]"
+msgstr "Verbrauch [ÖE]"
+
+msgid "CO<sub>2</sub> emessa [kg]"
+msgstr "CO<sub>2</sub>ausgestoßen [kg]"
+
+msgid "Spesa [€]"
+msgstr "Spesen  [€]"
+
+msgid "Prezzo unitario [€/kWh]"
+msgstr "Einheitspreis [€/kWh]"
+
+msgid "Aggiungi consumo tratto stradale"
+msgstr "Verbrauch der Straßenabschnitt"
+
+msgid "Modifica consumo tratto stradale"
+msgstr "Ändern Verbrauch Straßenabschnitt"
+
+msgid "Mostra consumo tratto stradale"
+msgstr "Zeige Verbrauch Straßenabschnitt"
+
+msgid "Lunghezza tratto"
+msgstr "Länge Straßenabschnitt"
+
+msgid "Nuova illuminazione stradale"
+msgstr "Neue Strassenbeleuchtung"
+
+msgid "Modifica illuminazione stradale"
+msgstr "Strassenbeleuchtung ändern"
+
+msgid "Visualizza illuminazione stradale"
+msgstr "Strassenbeleuchtung anzeigen"
+
+msgid "Illuminazione stradale"
+msgstr "Straßenbeleuchtung"
+
+msgid "Il campo \"Comune\" è obbligatorio"
+msgstr "Das Feld 'Anwendung' muss ausgefüllt werden"
+
+msgid ""
+"Impossibile cancellare il tratto \"%s\", poichè vi sono dei consumi associati"
+msgstr ""
+" Abschnitt \"%s\" zu löschen unmöglich, da mit Verbrauchsmengen verbunden"
+
+msgid "Sei sicuro di voler cancellare il tratto \"%s\"?"
+msgstr "Möchten Sie die Straßenbeleuchtung \"%s\" wirklich löschen?"
+
+msgid "Descrizione tipologia"
+msgstr "Typbeschreibung"
+
+msgid "Descrizione finanziamento"
+msgstr "Beschreibung Zweckbestimmung"
+
+msgid "Nuovo inrtervento"
+msgstr "Neues Dokument"
+
+msgid "Modifica inrtervento"
+msgstr "Kontakt ändern"
+
+msgid "Visualizza inrtervento"
+msgstr "Maßnahme anzeigen"
+
+msgid "Elenco inrtervento"
+msgstr "Liste Maßnahmen"
+
+msgid "Aggiungi intervento"
+msgstr "Maßnahme hinzufügen"
+
+msgid "Modifica intervento"
+msgstr "Maßnahme ändern"
+
+msgid "Almeno uno dei campi di energia annua risparmiata deve essere compilato"
+msgstr "Mind. ein Feld der jährl. ersparten Energie muß ausgefüllt werden"
+
+msgid "Indicare una fonte di alimentazione"
+msgstr "Energiequelle angeben"
+
+msgid "Sei sicuro di voler cancellare il l'intervento \"%s\"?"
+msgstr "Möchten Sie diese Maßnahme löschen \"%s\"?"
+
+msgid "Codice"
+msgstr "Kode"
+
+msgid "Nuova frazione"
+msgstr "Fehlende Fraktion"
+
+msgid "Modifica frazione"
+msgstr "Fehlende Fraktion"
+
+msgid "Visualizza frazione"
+msgstr "Fehlende Fraktion"
+
+msgid "Elenco frazioni"
+msgstr "Fraktionen von"
+
+msgid "Sei sicuro di voler cancellare la frazione \"%s\"?"
+msgstr "Möchten Sie die Fraktion \"%s\" wirklich löschen?"
+
+msgid ""
+"Impossibile cancellare questa frazione, perchè vi sono dei dati ad essa "
+"collegati"
+msgstr "Löschen dieser Fraktion unmöglich, da mit Daten verbunden"
+
+msgid "Tipo fonte"
+msgstr "Energiequelle"
+
+msgid "Colore"
+msgstr "Farbe"
+
+msgid "Colore esterno"
+msgstr "Umrissfarbe"
+
+msgid "Dati aggiuntivi"
+msgstr "Angezeigte Daten"
+
+msgid "Ordinamento"
+msgstr "Reihenfolge"
+
+msgid "Nuovo tipo alimentazione"
+msgstr "Neuer Energieträger"
+
+msgid "Modifica tipo alimentazione"
+msgstr "Energieträger ändern"
+
+msgid "Visualizza tipo alimentazione"
+msgstr "Energieträger anzeigen"
+
+msgid "Elenco tipi alimentazione"
+msgstr "Liste Energieträger"
+
+msgid "Sei sicuro di voler cancellare il tipo di alimentazione \"%s\"?"
+msgstr "Möchten Sie den Energieträger \"%s\" wirklich löschen?"
+
+msgid ""
+"Impossibile cancellare questo tipo di alimentazione, perchè vi sono dei dati "
+"ad esso collegati"
+msgstr "Löschen dieses Energieträgers verboten, da mit Daten verbunden"
+
+msgid "Tipo alimentazione"
+msgstr "Energieträger-"
+
+msgid "Fattore conversione kWh"
+msgstr "Umrechnungsfaktor kWh"
+
+msgid "Fattore conversione co<sub>2</sub>"
+msgstr "Umrechnungsfaktor co<sub>2</sub>"
+
+msgid "Prezzo standard energia"
+msgstr "Standardpreis Strom"
+
+msgid "Uso interno"
+msgstr "Zweckbestimmung"
+
+msgid "Fonte a consumo"
+msgstr "Energieträger-Input"
+
+msgid "Fonte a produzione"
+msgstr "Lokal hergestellt"
+
+msgid "Alimentazione patto sindaci"
+msgstr "Energieträger Konvent der Bürgermeister/innen "
+
+msgid "Nuovo fattore di conversione (ADMIN)"
+msgstr "Neuer Umrechnungsfaktor (ADMIN)"
+
+msgid "Modifica fattore di conversione (ADMIN)"
+msgstr "Ändere Umrechnungsfaktor (ADMIN)"
+
+msgid "Visualizza fattore di conversione (ADMIN)"
+msgstr "Zeige Umrechnungsfaktor (ADMIN)"
+
+msgid "Elenco fattori di conversione (ADMIN)"
+msgstr "Liste Umrechnungsfaktoren (ADMIN)"
+
+msgid "Sei sicuro di voler cancellare questo fattore di conversione?"
+msgstr "Möchten Sie diesen Arbeitstyp löschen?"
+
+msgid "Nuova strada"
+msgstr "Strasse einfügen"
+
+msgid "Modifica strada"
+msgstr "Strasse ändern"
+
+msgid "Visualizza strada"
+msgstr "Strasse anzeigen"
+
+msgid "Stradario"
+msgstr "Strassenverzeichnis"
+
+msgid "Sei sicuro di voler cancellare la strada \"%s\"?"
+msgstr "Wollen sie wirklich diese Straße\"%s\" löschen?"
+
+msgid ""
+"Impossibile cancellare questa strada, perchè vi sono dei dati ad essa "
+"collegati"
+msgstr "Löschen dieser Straße unmöglich, da mit Daten verbunden"
+
+msgid "Nuova unità di misura"
+msgstr "Neue Maßeinheit"
+
+msgid "Modifica unità di misura"
+msgstr "Maßeinheit ändern"
+
+msgid "Visualizza unità di misura"
+msgstr "Maßeinheit anzeigen"
+
+msgid ""
+"Impossibile cancellare questa unità di misura, perchè vi sono dei dati ad "
+"essa collegati"
+msgstr "Unmöglich diese Maßeinheit zu löschen, da Daten damit verbunden sind"
+
+msgid "Pagina"
+msgstr "Seite"
+
+msgid "Accesso"
+msgstr "Zugang"
+
+msgid "Nome/Ragione sociale / Data nascita"
+msgstr "Name/Firmenbezeichnung/Geburtsdatum"
+
+msgid "Nr. attuale"
+msgstr "Gegenwärtige Nr."
+
+msgid "Sez. censimento"
+msgstr "Zählsprengel"
+
+msgid "Cod. accesso"
+msgstr "Zugangskode"
+
+msgid "Nr. civici collegati"
+msgstr "Verbundene Hausnummern"
+
+msgid "Passo carrabile"
+msgstr "Ein- und Ausfahrt"
+
+msgid "Scheda accesso"
+msgstr "Zugang"
+
+msgid "Scheda nr. civico"
+msgstr " Hausnr."
+
+msgid "Tipo accesso"
+msgstr "Art Zugang"
+
+msgid "Attributo"
+msgstr "Eigenschaft"
+
+msgid "Presenza marciapiede"
+msgstr "Bürgersteig vorhanden"
+
+msgid "Accesso pedonale"
+msgstr "Personeneingang"
+
+msgid "Tipo apertura"
+msgstr "Öffnungstyp"
+
+msgid "Nr. divieto sosta"
+msgstr "Nr. Parkverbot"
+
+msgid "Data divieto sosta"
+msgstr "Datum Parkverbot"
+
+msgid "Larghezza"
+msgstr "Breite"
+
+msgid "Coordinate"
+msgstr "Koordinate"
+
+msgid "visualizza su mappa"
+msgstr "Zeige auf der Karte an"
+
+msgid "Particella cat."
+msgstr "Katasterparzelle"
+
+msgid "Comune cat."
+msgstr "Katastralgemeinde"
+
+msgid "Tipo part."
+msgstr "Art der Parzelle"
+
+msgid "Scala_Stiege"
+msgstr "Stiege"
+
+msgid "da controllare"
+msgstr "zu kontrollieren"
+
+msgid "Nr. storico"
+msgstr "Historische Nr."
+
+msgid "Descrizione dest. d'uso"
+msgstr "Beschreibung Zweckbestimmung"
+
+msgid "Proprietario"
+msgstr "Besitzer"
+
+msgid "Rilevatore"
+msgstr "Erheber"
+
+msgid "Data creazione"
+msgstr "Datum Erstellung"
+
+msgid "Data annullamento"
+msgstr "Datum Löschung"
+
+msgid "Data cartografia"
+msgstr "Datum der Kartographie"
+
+msgid "Nr. protocollo"
+msgstr "Protokollnr."
+
+msgid "Data protocollo"
+msgstr "Datum Protokoll"
+
+msgid "Tipo sez."
+msgstr "Typ Zählsprengel"
+
+msgid "Sez. elettorale"
+msgstr "Wahlsprengel"
+
+msgid "Nr. fattura"
+msgstr "Rechnungsnr."
+
+msgid "Data fattura"
+msgstr "Rechnungsdatum"
+
+msgid "Codice ecografico"
+msgstr "Meldeamtskode"
+
+msgid "Scala"
+msgstr "Maßstab"
+
+msgid "tedesco"
+msgstr "Deutsch"
+
+msgid "italiano"
+msgstr "Italiano"
+
+msgid "Zoom"
+msgstr "Zoom maximal"
+
+msgid "-- selezionare --"
+msgstr "-- auswählen --"
+
+msgid "Layer"
+msgstr "Layer"
+
+msgid "Legenda"
+msgstr "Legende"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Guida"
+msgstr "Hilfe"
+
+msgid "%d su 7"
+msgstr "%d von 7"
+
+msgid "Filtro:"
+msgstr "Filter"
+
+msgid "Il campo \"%s\" è obbligatorio"
+msgstr "Das Feld \"%s\" muss ausgefüllt werden"
+
+msgid "Il campo \"%s\" contiene un valore non valido"
+msgstr "Das Feld \"%s\" beinhaltet keine Zahl"
+
+msgid "Il campo \"%s\" contiene un riferimento non valido"
+msgstr "Das Feld \"%s\" beinhaltet keine Zahl"
+
+msgid "Il campo \"%s\" è di lunghezza non valida"
+msgstr "Das Feld \"%s\" hat eine ungültige Länge"
+
+msgid "Il campo \"%s\" deve essere univoco"
+msgstr "Das Feld %s muss eine Zahl enthalten"
+
+msgid "Il campo data inizio è maggiore del campo data fine"
+msgstr "Das Feld Anfangsdatum ist höher als Enddatum"
+
+msgid "Errore sconosciuto nel campo \"%s\""
+msgstr "Unbekannter Fehler im Feld \"%s\""
+
+msgid ""
+"Attenzione:\n"
+" - "
+msgstr ""
+"ACHTUNG!\n"
+" - "
+
+msgid "Layer %s non univoco"
+msgstr "Layer %s ist nicht eindeutig"
+
+msgid "Manca il file con estensione [%s] nel layer[%s]"
+msgstr "Es fehlt File mit Ausdehnung  [%s]im layer[%s]"
+
+msgid "Unknown error"
+msgstr "Unknown Error"
+
+msgid ""
+"Javascript is not enabled on jour system. Please enable it befone continue."
+msgstr ""
+
+msgid ""
+"Cookies are not enabled on jour system. Please enable it befone continue."
+msgstr ""
+
+msgid "Your screen resolution is too small. You need al least 1024x768 "
+msgstr ""
+
+msgid ""
+"Your screen resolution has not enougth colors. You need al least 32K colors"
+msgstr ""
+
+msgid ""
+"Your browser is not compatible with this software. Supported browser are "
+"Internet Explorer 6+, Safari, FireFox 2+"
+msgstr ""
+
+msgid "Your system date is invalid. Please check it before confinue"
+msgstr ""
+
+msgid "Ajax is not enabled. Please enable it befone continue."
+msgstr ""
+
+
+msgid "kind"
+msgstr ""
+
+msgid "Your screen resolution is too small. You need al least 1024x768 pixel."
+msgstr ""
+
+msgid ""
+"Your screen resolution has not enougth colors. You need al least 32K colors."
+msgstr ""
+
+msgid ""
+"Your browser is not compatible with this software. Correct operation is "
+"guaranteed with Internet Explorer 6+ and FireFox 3+."
+msgstr ""
+
+msgid "Your system date is invalid. Please check it before continue."
+msgstr ""
+
+msgid "Generale"
+msgstr "Allgemein"
+
+msgid "_Report"
+msgstr "Report"
+
+msgid "Configurazione"
+msgstr "Einstellungen"
+
+msgid "Amministrazione"
+msgstr "Verwaltung"
+
+msgid "Aiuto"
+msgstr "Hilfe"
+
+msgid "Lingua"
+msgstr "Sprache"
+
+msgid "Apri mappa"
+msgstr "Karte öffnen"
+
+msgid "Edifici"
+msgstr "Gebäude"
+
+msgid "Simulazioni edifici"
+msgstr "Gebäude Simulationen "
+
+msgid "Inventario emissioni"
+msgstr "Emissionsinventar"
+
+msgid "Piano di azione"
+msgstr "Aktionsplan"
+
+msgid "Patto dei sindaci"
+msgstr "Konvent der Bürgermeister/innen"
+
+msgid "_Ricerca"
+msgstr "Suche"
+
+msgid "_Avvisi automatici"
+msgstr "Automatische Benachrichtigung"
+
+msgid "_Lista accertamenti"
+msgstr ""
+
+msgid "_Pagamenti"
+msgstr "_Bezahlungen"
+
+msgid "_Pagamenti importati"
+msgstr "Zeige importierte Hausnummern an"
+
+msgid "_Incasso giornaliero"
+msgstr "_Tagesinkasso"
+
+msgid "_Contribuenti/via"
+msgstr "Fraktion oder Straße"
+
+msgid "_Automezzi"
+msgstr "Fahrzeuge"
+
+msgid "Comuni catastali"
+msgstr "Katastralgemeinde"
+
+msgid "Fattori di conversione"
+msgstr "Konversionsfaktoren"
+
+msgid "Tipo alimentazione (PAES)"
+msgstr "Energieträger (PAES)"
+
+msgid "_Ottimiza database"
+msgstr "_Optimiere Database"
+
+msgid "Gestione enti"
+msgstr "Verwaltung Körpersch."
+
+msgid "_Impostazioni personali"
+msgstr "Persönliche Einstellungen"
+
+msgid "Gestione utenti"
+msgstr "Benutzerverwaltung"
+
+msgid "Informazioni su..."
+msgstr "Auf Karte"
+
+msgid "Deutsch"
+msgstr "Deutsch"
+
+msgid "Risultati della richiesta"
+msgstr "Suchergebnis"
+
+msgid "Nessun dato trovato"
+msgstr "Keine Daten gefunden"
+
+msgid "Zoom sugli elementi selezionati"
+msgstr "Zoom auf ausgewählte Elemente"
+
+msgid "Limite di selezione/ricerca di"
+msgstr "Auswahl / Suche begrenzen auf"
+
+msgid " .altri records non sono visualizzati."
+msgstr ".andere Records werden nicht angezeigt."
+
+msgid "Dimensione totale (m):"
+msgstr "Gesamtgröße (m):"
+
+msgid "Dimensione segmento (m):"
+msgstr "Größe Abschnitt (m):"
+
+msgid "Area (m²):"
+msgstr "Fläche (m²)"
+
+msgid "Selection for Layer"
+msgstr "Nach Layer auswählen"
+
+msgid "Riduci"
+msgstr "Verkleinern"
+
+msgid "Ingrandisci"
+msgstr "Vergößern"
+
+msgid "Sei sicuro, di voler canellare la geometria attuale?"
+msgstr "Wollen sie wirklich die Geometrie löschen?"
+
+msgid ""
+"Attenzione, la geometria disegnata non è chiusa. Per chiudere cliccare con "
+"il tasto destro sull'ultimo vertice."
+msgstr ""
+"Achtung, geometrische Zeichnung ist nicht abgeschlossen. Mit rechter "
+"Maustaste auf letzten Schnittpunkt klicken."
+
+msgid ""
+"L'attuale disegno non è stato salvato, chiudere comunque la modalità di "
+"editing?"
+msgstr ""
+"Aktuelle Zeichnung wurde nicht gespeichert, wollen Sie editing trotzdem "
+"schließen?"
+
+msgid "Impostazioni editing"
+msgstr "Einstellungen Editing"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Stop"
+msgstr "Stop Editing"
+
+msgid "Impostazioni Snap"
+msgstr "Snap Einstellungen"
+
+msgid "Raggio"
+msgstr "Radius"
+
+msgid "Attiva Snap"
+msgstr "Snap Einstellungen"
+
+msgid "Proprietà"
+msgstr "Besitz"
+
+msgid "Attributi"
+msgstr "Attribute"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Tipo geometria"
+msgstr "Art Geometrie"
+
+msgid "Sei sicuro, di voler annullare questa operazione?"
+msgstr "Möchten Sie diese Strasse löschen?"
+
+msgid "L'oggetto si trova fuori dell'area di competenza!"
+msgstr "Das Objekt befindet sich außerhalb des Zuständigkeitsgebiets"
+
+msgid "Nessun oggetto trovato"
+msgstr "Keine Objekte gefunden"
+
+msgid "Zoom estensione massima"
+msgstr "Zoom maximal"
+
+msgid "Sposta"
+msgstr "Verschieben"
+
+msgid "Interrogazione"
+msgstr "Abfrage"
+
+msgid "Misura"
+msgstr "Messen"
+
+msgid "Stampa"
+msgstr "Drucken"
+
+msgid "Selezione multipla"
+msgstr "Mehrfache Selektion"
+
+msgid "Inserisci punto"
+msgstr "Punkt hinzufügen"
+
+msgid "Aggiungi accesso"
+msgstr "Zugang hinzufügen"
+
+msgid "Aggiungi civico"
+msgstr "Hausnummer hinzufügen"
+
+msgid "Assegna area"
+msgstr "Fläche zuweißen"
+
+msgid "Disegna edificio"
+msgstr "Zeichne Gebäude"
+
+msgid "Import geometria"
+msgstr "Import Geometrie"
+
+msgid "Nessun edificio trovato."
+msgstr "Keine Daten gefunden"
+
+msgid "Nessun edificio selezionato."
+msgstr "Keine Daten gefunden"
+
+msgid "Cancellare l'edificio disegnato?"
+msgstr "Das gezeichnete Gebäude löschen?"
+
+msgid "Inserisci privilegio"
+msgstr "Rechte hinzufügen"
+
+msgid "Visualizza privilegio"
+msgstr "Rechte anzeigen"
+
+msgid "Modifica privilegio"
+msgstr "Rechte ändern"
+
+msgid "Applicativo"
+msgstr "Anwendung"
+
+msgid "Verbo"
+msgstr "Verb"
+
+msgid "Oggetto"
+msgstr "Objekt"
+
+msgid "Attivo"
+msgstr "Aktiv"
+
+msgid "Sei sicuro, di voler cancellare questo privilegio?"
+msgstr "Möchten Sie dieses Recht löschen?"
+
+msgid "Gestione privilegi"
+msgstr "Rechteverwaltung"
+
+msgid "Inserisci applicativo"
+msgstr "Anwendung hinzufügen"
+
+msgid "Visualizza applicativo"
+msgstr "Anwendung anzeigen"
+
+msgid "Modifica applicativo"
+msgstr "Anwendung ändern"
+
+msgid "Sei sicuro, di voler cancellare questo applicativo?"
+msgstr "Möchten Sie diese Anwendung löschen?"
+
+msgid "Gestione applicativi"
+msgstr "Verwaltung Anwendungen"
+
+msgid "Timeout del server. Riprovare!"
+msgstr "Timeout des Server. Erneut versuchen!"
+
+msgid "Inserisci parametro di configurazione"
+msgstr "Einstellungsparameter hinzufügen"
+
+msgid "Visualizza parametro di configurazione"
+msgstr "Einstellungsparameter anzeigen"
+
+msgid "Modifica parametro di configurazione"
+msgstr "Einstellungsparameter ändern"
+
+msgid "Sezione"
+msgstr "Sektion"
+
+msgid "Parametro"
+msgstr "Parameter"
+
+msgid "Tipo parametro"
+msgstr "Parametertyp"
+
+msgid "Lunghezza massima"
+msgstr "Maximale Länge"
+
+msgid "Parametri"
+msgstr "Parameter"
+
+msgid "SI"
+msgstr "JA"
+
+msgid "NO"
+msgstr "NEIN"
+
+msgid "Valore"
+msgstr "Wert"
+
+msgid "Sei sicuro, di voler cancellare questa configurazione?"
+msgstr "Möchten Sie diese Einstellung löschen?"
+
+msgid "Impostazioni export"
+msgstr "Exporteinstellungen"
+
+msgid "Solo sezione corrente"
+msgstr "Nur aktuelle Auswahl"
+
+msgid "Tutto"
+msgstr "Alles"
+
+msgid "Modalità"
+msgstr "Modalität"
+
+msgid "Aggiungi solo i valori nuovi"
+msgstr "Nur neue Werte hinzufügen"
+
+msgid "Imposta tutti i valori"
+msgstr "Alle Werte einstellen"
+
+msgid "Parametero"
+msgstr "Parameter"
+
+msgid "Sei sicuro, di voler disconnettere questo utente?"
+msgstr "Möchten Sie diesen Benutzer trennen?"
+
+msgid "Utente connessi"
+msgstr "Verbundene Benutzer"
+
+msgid "Inserisci dominio"
+msgstr "Domain hinzufügen"
+
+msgid "Visualizza dominio"
+msgstr "Domain anzeigen"
+
+msgid "Modifica dominio"
+msgstr "Domain ändern"
+
+msgid "Tipo autenticazione"
+msgstr "Ermächtigungstyp"
+
+msgid "Dati autenticazione"
+msgstr "Daten Ermächtigung"
+
+msgid "Applicativi"
+msgstr "Anwendungen"
+
+msgid "Sei sicuro, di voler cancellare questo dominio?"
+msgstr "Möchten Sie diese Domain löschen?"
+
+msgid "Gestione domini"
+msgstr "Domainverwaltung"
+
+msgid "Sei sicuro, di voler cambiare l'applicativo?"
+msgstr "Möchten Sie diese Anwendung ändern?"
+
+msgid "Sei sicuro, di voler copiare i privilegi del gruppo"
+msgstr "Möchten Sie diese Gruppenrechte kopieren?"
+
+msgid "Sei sicuro, di voler aggiungere i privilegi del gruppo"
+msgstr "Möchten Sie diese Gruppenrechte hinzufügen?"
+
+msgid "Inserisci gruppo"
+msgstr "Gruppe hinzufügen"
+
+msgid "Visualizza gruppo"
+msgstr "Gruppe anzeigen"
+
+msgid "Modifica gruppo"
+msgstr "Gruppe ändern"
+
+msgid "Privilegi"
+msgstr "Privilege"
+
+msgid "Sei sicuro, di voler cancellare questo gruppo?"
+msgstr "Möchten Sie diese Gruppe löschen?"
+
+msgid "Gestione gruppi"
+msgstr "Gruppenverwaltung"
+
+msgid "Gruppo:"
+msgstr "Gruppe"
+
+msgid "-- Tutti --"
+msgstr "-- Alle --"
+
+msgid "Immettere un dominio"
+msgstr "Domain hinzufügen"
+
+msgid "Immettere un'applicazione"
+msgstr "Applikation hinzufügen"
+
+msgid "Immettere un file in formato xml da caricare"
+msgstr "Ein XML-Datei auswählen"
+
+msgid "Import"
+msgstr "Import"
+
+msgid "Esito import"
+msgstr "Ergebnis Import"
+
+msgid "Access control list importati: "
+msgstr "Importierte Access control list:"
+
+msgid "ignorati"
+msgstr "unbeachtet"
+
+msgid "Configurazioni importate: "
+msgstr "Importierte Konfigurationen:"
+
+msgid "ignorate"
+msgstr "unbeachtet"
+
+msgid "Importa"
+msgstr "Importieren"
+
+msgid "Logs"
+msgstr "Logs"
+
+msgid "Dal"
+msgstr "Von"
+
+msgid "Al"
+msgstr "Bis"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Tipo messaggio"
+msgstr "Art der Mitteilung"
+
+msgid "Errori"
+msgstr "Fehler"
+
+msgid "Avvisi"
+msgstr "Warnungen"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Debug"
+msgstr "Debug"
+
+msgid "Argomento messaggio"
+msgstr "Inhalt Meldung"
+
+msgid "Autenticazione"
+msgstr "Authentifizierung"
+
+msgid "Navigazione"
+msgstr "Navigation"
+
+msgid "Nr. righe"
+msgstr "Anzahl Zeilen"
+
+msgid "Salvataggio avvenuto con successo!"
+msgstr "Speicherung erfolgreich!"
+
+msgid "Impostazioni personali"
+msgstr "Persönliche Einstellungen"
+
+msgid "Scadenza password"
+msgstr "Ablauf Passwort"
+
+msgid "giorni"
+msgstr "Tage"
+
+msgid "Impostazione firma digitale"
+msgstr "Einstellung digitale Unterschrift"
+
+msgid "Firma attuale"
+msgstr "Aktuelle Unterschrift"
+
+msgid "Nuova Firma"
+msgstr "Neue Unterschrift"
+
+msgid ""
+"Si è verificato un errore di comunicazione col server. Riprovare a salvare i "
+"dati. Se il problema persiste contattare il supporto tecnico!"
+msgstr ""
+"Es ist ein Verbindungsfehler mit dem Server aufgetreten. Erneut versuchen, "
+"die Daten zu speichern. Wenn das Problem weiterhin besteht, kontaktieren Sie "
+"den Kundendienst."
+
+msgid "Inserisci utente"
+msgstr "Benutzer hinzufügen"
+
+msgid "Visualizza utente"
+msgstr "Benutzer anzeigen"
+
+msgid "Modifica utente"
+msgstr "Benutzer ändern"
+
+msgid "Permessi"
+msgstr "Berechtigung"
+
+msgid "Permessi negati"
+msgstr "Zugriff verweigert"
+
+msgid "Preavviso scadenza"
+msgstr "Ablaufbenachrichtigung"
+
+msgid "cambio password obbligatorio al primo collegamento"
+msgstr "Das Passwort muss bei der ersten Verbindung geändert werden"
+
+msgid "Inizio validità"
+msgstr "Gültigkeitsbeginn"
+
+msgid "Fine validità"
+msgstr "Gültigkeitsende"
+
+msgid "Non attivo"
+msgstr "Nicht aktiv"
+
+msgid "Indirizzi IP per l'accesso"
+msgstr "IP Adresse für den Zugang"
+
+msgid "Privilegi negati"
+msgstr "Privilege verweigert"
+
+msgid "Ctrl + click per selezioni multiple"
+msgstr "Mehrfache Auswahl mit Ctrl + click"
+
+msgid "Sei sicuro, di voler cancellare questo utente?"
+msgstr "Möchten Sie diesen Benutzer löschen?"
+
+msgid ""
+"Il software R3 EcoGIS 2 è stato parzialmente realizzato con un finanziamento "
+"del Programma \"Competitività regionale ed occupazione FESR 2007-2013\"."
+msgstr ""
+"Die Software R3 EcoGIS 2 wurde vom Programm Regionale Wettbewerbsfähigkeit "
+"und Beschäftigung EFRE 2007-2013 kofinanziert"
+
+msgid ""
+"Hanno contruibuito principalmente alla realizzazione del programma i "
+"seguenti partner:"
+msgstr ""
+"Folgende Partner haben hauptsächlich zur Realisierung des Programms "
+"beigetragen:"
+
+msgid "Aspetti tecnici ed energetici:"
+msgstr "Technische und energetische Aspekte"
+
+msgid "Ecoistituto Südtirol-Alto Adige ONLUS"
+msgstr "Ökoinstitut Südtirol/Alto Adige"
+
+msgid "Sviluppo software:"
+msgstr "Entwicklung Software"
+
+msgid "ID edificio"
+msgstr "ID Gebäude"
+
+msgid "Cancella foto"
+msgstr "Foto löschen"
+
+msgid "Cancella targa"
+msgstr "Plakette löschen"
+
+msgid "Cancella termografia"
+msgstr "Thermografie löschen"
+
+msgid "Altro"
+msgstr "Weiters"
+
+msgid "Anno costruzione"
+msgstr "Baujahr"
+
+msgid "Anno ristrutturazione"
+msgstr "Jahr Sanierung"
+
+msgid "Fattore forma S/V"
+msgstr "Quotient A/V"
+
+msgid "Uso giorn. edificio"
+msgstr "Tägl. Gebäudenutzung"
+
+msgid "Uso sett. edificio"
+msgstr "Wöchentl.Gebäudenutzung"
+
+msgid "Ore anno uso"
+msgstr "Jahresnutzung Std."
+
+msgid "Occupanti edificio"
+msgstr "Nutzer Gebäude"
+
+msgid "N° pers./gg"
+msgstr "Anz.Pers/Tag"
+
+msgid "--"
+msgstr ""
+
+msgid "Descrizione classe"
+msgstr "Beschreibung Klasse"
+
+msgid "kWh/m²*anno"
+msgstr " kWh/(m2*a) "
+
+msgid "Dati modifiche"
+msgstr "Daten Änderungen"
+
+msgid "Inserimento:"
+msgstr "Einfügen:"
+
+msgid "Ultima modifica"
+msgstr "Letzte Änderung"
+
+msgid "Strada"
+msgstr "Straße"
+
+msgid "ID/Codice edificio"
+msgstr "ID/Gebäudekode"
+
+msgid "Elimina anteprima di mappa"
+msgstr "Lösche Kartenvorschau"
+
+msgid "Elimina anteprima foto"
+msgstr "Lösche Vorschau Foto"
+
+msgid "Elimina mappe e file temporanei"
+msgstr "Löschen Karten und temporäre Datei"
+
+msgid "Inizio"
+msgstr "Beginn"
+
+msgid "Fine"
+msgstr "Ende"
+
+msgid "Ricavo"
+msgstr "Erlös"
+
+msgid "Costo unitario"
+msgstr "Einheitspreis"
+
+msgid "Aggiungi contatore"
+msgstr "Zähler hinzufügen"
+
+msgid "Visualizza contatore"
+msgstr "Zähler zeigen"
+
+msgid "Modifica contatore"
+msgstr "Zähler ändern"
+
+msgid "Cancella contatore"
+msgstr "Zähler löschen"
+
+msgid "Impianto"
+msgstr "Anlage"
+
+msgid "Aggiungi impianto"
+msgstr "Anlage hinzufügen"
+
+msgid "Visualizza impianto"
+msgstr "Anlage zeigen"
+
+msgid "Modifica impianto"
+msgstr "Anlage ändern"
+
+msgid "Cancella impianto"
+msgstr "Anlage löschen"
+
+msgid "emessa"
+msgstr "ausgestellt"
+
+msgid "risparmiata"
+msgstr "erspart"
+
+msgid "Prezzo unitario"
+msgstr "Einheitspreis"
+
+msgid "Periodo"
+msgstr "Zeitraum"
+
+msgid "Aggiungi consumo"
+msgstr "Verbauch hinzufügen"
+
+msgid "Aggiungi produzione"
+msgstr "Produktion hinzufügen"
+
+msgid "Visualizza consumo"
+msgstr "Verbauch zeigen"
+
+msgid "Visualizza produzione"
+msgstr "Produktion zeigen"
+
+msgid "Modifica consumo"
+msgstr "Verbrauch ändern"
+
+msgid "Modifica produzione"
+msgstr "Produktion ändern"
+
+msgid "Cancella consumo"
+msgstr "Verbrauch löschen"
+
+msgid "Cancella produzione"
+msgstr "Produktion löschen"
+
+msgid "tep"
+msgstr "ÖE"
+
+msgid "Contatore produzione"
+msgstr "Zähler Produktion"
+
+msgid "Contatore consumo"
+msgstr "Zähler Verbrauch"
+
+msgid "Dati ente"
+msgstr "Daten Körperschaft"
+
+msgid "Nome ente linguia 1"
+msgstr "Bez. Körperschaft Sprache 1"
+
+msgid "Nome ente lingua 2"
+msgstr "Bez. Körperschaft Sprache 2"
+
+msgid ""
+"Attenzione! L'untete database non ha privilegi sufficienti per creare nuovi "
+"utenti o modificare password. Creare l'utnete database manualmente prima di "
+"procedere"
+msgstr ""
+"Achtung! Nutzer Database hat kein Recht neue Nutzer anzulegen oder Passwords "
+"zu ändern. Zum Fortfahren Nutzer Database manuel anlegen "
+
+msgid "Parametri di configurazione"
+msgstr "Konfigurationsparameter"
+
+msgid "Tipologia anno edificio"
+msgstr "Typologie Jahr Gebäude"
+
+msgid "Tipologia anno ristrutturazione edificio"
+msgstr "Typologie Bauahr Gebäude"
+
+msgid "Copyright (IT)"
+msgstr "Copyright (IT)"
+
+msgid "Copyright (DE)"
+msgstr "Copyright (DE)"
+
+msgid "Visualizza ID interno edificio"
+msgstr "Zeige ID Geäude Intern"
+
+msgid "Loghi e stili"
+msgstr "Logos und Stile"
+
+msgid "Fattore conversione KWh"
+msgstr "Konversionsfaktor kWh"
+
+msgid "Fattore conversione CO2"
+msgstr "Konversionsfaktor CO2"
+
+msgid "Fattore conversione TEP"
+msgstr "Konversionsfaktor ÖE"
+
+msgid "Alimentazione PAES"
+msgstr "Versorgung PAES"
+
+msgid "Gestione dati"
+msgstr "Datenverwaltung"
+
+msgid "Grafo"
+msgstr "Graph"
+
+msgid "Campo codice"
+msgstr "Feld Kode"
+
+msgid "Genera"
+msgstr "Erzeuge"
+
+msgid "Macro-categoria"
+msgstr "Hauptkategorie"
+
+msgid "Azioni princiapli"
+msgstr "Hauptaktionen"
+
+msgid "Azioni princiapli disponibili"
+msgstr "Verfügbare Hauptaktionen"
+
+msgid "Azioni princiapli selezionate"
+msgstr "Gewählte Hauptaktionen"
+
+msgid "Totale CO<sub>2</sub>"
+msgstr "Gesamt CO<sub>2</sub>"
+
+msgid "Ente approvatore"
+msgstr "Genehmigende Körperschaft"
+
+msgid "Indirizzo sito pubblico"
+msgstr "Adresse öffentliche Website"
+
+msgid "Macro settore"
+msgstr "Hauptsektor"
+
+msgid "Settore"
+msgstr "Sektor"
+
+msgid "Azioni principali"
+msgstr "Hauptaktionen"
+
+msgid "Responsabile"
+msgstr "Verantwortlicher"
+
+msgid "Attuazione"
+msgstr "Durchführung"
+
+msgid "al"
+msgstr ""
+
+msgid "Costi stimati"
+msgstr "Geschätze Kosten"
+
+msgid "Risparmio energetico previsto"
+msgstr "Vorraussichtliche Energieeinsparung"
+
+msgid "Produzione di energia rinnovabile prevista"
+msgstr "Vorraussichtliche Produktion erneuerbarer Energie"
+
+msgid "Riduzione di CO2 prevista prevista"
+msgstr "Vorraussichtliche CO2 Einsparung"
+
+msgid "Obiettivo di risparmio energetico previsto"
+msgstr "Vorraussichtliches Ziel Energieeinsparung"
+
+msgid "Obiettivo di produzione locale di energia rinnovabile"
+msgstr "Ziel der lokalen Produktion erneuerbarer Energie"
+
+msgid "Obiettivo di riduzione di CO<sub>2</sub>"
+msgstr "Ziel der Reduktion von CO<sub>2</sub>"
+
+msgid "Settori"
+msgstr "Sektoren"
+
+msgid "Apri"
+msgstr "Öffne"
+
+msgid "Costi stimati [€]"
+msgstr "Geschätze Kosten  [€]"
+
+msgid "Risparmio energetico previsto [MWh/a]"
+msgstr "Vorraussichtliche Energieeinsparung [MWh/a]"
+
+msgid "Produzione di energia rinnovabile prevista [MWh/a]"
+msgstr "Vorraussichtliche Produktion von erneuerbarer Energie [MWh/a]"
+
+msgid "Riduzione di CO2 prevista prevista [t/a]"
+msgstr "Vorraussichtliche Reduktion von CO2 "
+
+msgid "Obiettivo di risparmio energetico [MWh] nel 2020"
+msgstr "Ziel der Energieeinsparung [MWh] 2020"
+
+msgid "Obiettivo di produzione locale di energia rinnovabile [MWh] nel 2020"
+msgstr "Ziel lokaler Produktion erneuerbarer Energie  [MWh] 2020"
+
+msgid "Obiettivo di riduzione di CO2 [t] nel 2020"
+msgstr "Ziel der CO2 Reduktion [MWh] 2020"
+
+msgid "Anno di riferimento"
+msgstr "Bezugsjahr "
+
+msgid "Fonti"
+msgstr "Energiequellen"
+
+msgid "Fonti disponibili"
+msgstr "Verfügbare Energiequellen"
+
+msgid "Fonti selezionate"
+msgstr "Gewählte Energiequellen"
+
+msgid "Categorie"
+msgstr "Kategorien"
+
+msgid "Categorie disponibili"
+msgstr "Verfügbare Kategorien"
+
+msgid "Categorie selezionate"
+msgstr "Gewählte Kategorien"
+
+msgid "Apri tutte"
+msgstr "Alle öffnen"
+
+msgid "Chiudi tutte"
+msgstr "Alle schließen"
+
+msgid "Target a lungo termine"
+msgstr "Langzeittarget"
+
+msgid "assoluta"
+msgstr "absolut"
+
+msgid "Tipologia fattori di emissione"
+msgstr "Typologie Emissionsfaktoren"
+
+msgid "Tipologia emissioni"
+msgstr "Typologie Emissionen"
+
+msgid "Personale assegnato"
+msgstr "Zugeteiltes Personal "
+
+msgid "Importo"
+msgstr "Betrag"
+
+msgid "Inventario emissioni e piano d'azione"
+msgstr "Emissionsinventar und Aktionsplan"
+
+msgid "Inv.emiss.2"
+msgstr "Emiss.inv.2"
+
+msgid "Applicazione"
+msgstr "Anwendung"
+
+msgid "Mapfile"
+msgstr "Mapfile"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Reset"
+msgstr "zurück"
+
+msgid "Selezionare la statistica desiderata e l'anno di riferimento"
+msgstr "Gewünschte Statistik und Bezugsjahr wählen "
+
+msgid "-- Statistica --"
+msgstr "Statistik"
+
+msgid "-- Anno --"
+msgstr "Jahr"
+
+msgid "Tot.costi"
+msgstr "Gesamtkosten"
+
+msgid "Torna all'ultima situazione aggiornata"
+msgstr "Zurück zu letzter aktualisierter Situation"
+
+msgid "Ripristina situazione iniziale"
+msgstr "Anfangssituation wieder herstellen"
+
+msgid "Dati fornitore"
+msgstr "Daten Lieferant"
+
+msgid "Comuni serviti"
+msgstr "Belieferte Kommunen"
+
+msgid "Comuni disponibili"
+msgstr "Verfügbare Kommunen"
+
+msgid "Prodotto"
+msgstr "Produkt"
+
+msgid "Nome prodotto"
+msgstr "Name Produkt"
+
+msgid "Fattore di conversione CO<sub>2</sub>"
+msgstr "Konversionsfaktor  CO<sub>2</sub>"
+
+msgid "Risparmio energetico e CO² annui"
+msgstr "Jährliche Energie- und CO2einsparung "
+
+msgid "Quantità risparmiata"
+msgstr "Eingesparte Menge"
+
+msgid "pari a kWh"
+msgstr "entspricht kWh"
+
+msgid "kg CO² risp."
+msgstr "Einsparg. kg CO² "
+
+msgid "Costo energia"
+msgstr "Energiekosten"
+
+msgid "kWh/anno*m²"
+msgstr "kWh/Jahr*m²"
+
+msgid "Credits"
+msgstr "Credits"
+
+msgid "Anno ristrutturazione edificio"
+msgstr "Modernisierungsjahr Gebäude"
+
+msgid "La frazione immessa non è stata trovata"
+msgstr "Die eingegebene Fraktion ist nicht vorhanden"
+
+msgid "La strada immessa non è stata trovata"
+msgstr "Die eingegebene Straße ist nicht vorhanden"
+
+msgid "Gestione cache"
+msgstr "Chacheverwaltung"
+
+msgid "No"
+msgstr "Nein"
+
+msgid "Inserimento libero"
+msgstr "Freie Eingabe"
+
+msgid "Selezione da tabella"
+msgstr "Tabellenauswahl"
+
+msgid "Almeno un comune deve essere selezionato"
+msgstr "Wenigstens eine Gemeinde muss gewählt werden"
+
+msgid "Prezzo energia"
+msgstr "Preis Energie"
+
+msgid "Nuovo fattore di conversione"
+msgstr "Neuer Konversionsfaktor"
+
+msgid "Modifica fattore di conversione"
+msgstr "Ändern Konversionsfaktor"
+
+msgid "Visualizza fattore di conversione"
+msgstr "Zeige  Konversionsfaktor"
+
+msgid "Elenco fattori di conversione"
+msgstr "Liste  Konversionsfaktoren"
+
+msgid ""
+"Salvataggio avvenuto con successo.\\nI dati di consumo precedentemente "
+"inseriti sono stati convertiti con i nuovi fattori di conversione"
+msgstr ""
+"Speichern erfolgreich abgeschlossen.\\Die vorher eingegebenen Daten sind in "
+"neue Konversionsfaktoren.."
+
+msgid "Indicare il comune su cui attivare questo fattore di conversione"
+msgstr ""
+"Gemeinde angeben auf welche dieser Konversionsfaktor angewendet werden soll"
+
+msgid "L'alimentazione e l'unità di misura immesse esistono già"
+msgstr "Eingegebene Versorgung und Maßeinheit sind bereits vorhanden"
+
+msgid ""
+"Sei sicuro di voler cancellare il fattore di conversione \"%s (%s)\" e "
+"ripristinare il valore standard per i consumi già inseriti nel comune di \"%s"
+"\"?"
+msgstr ""
+"Willst Du wirklich den Konversionsfaktor \"%s (%s)\"  löschen und den "
+"Standardwert für bereits eingegebenen Konsum \"%s\"?"
+
+msgid "Sei sicuro di voler cancellare il fattore di conversione \"%s (%s)\"?"
+msgstr "Willst Du wirklich den Konversionsfaktor \"%s (%s)\"  löschen?"
+
+msgid ""
+"Impossibile cancellare questo fattore di conversione poichè vi sono dei dati "
+"ad esso legati"
+msgstr ""
+"Nicht möglich diesen Konversionsfaktor zu löschen da mit Daten verbunden"
+
+msgid "Modifica associazione azioni principali/categoria"
+msgstr "Ändern Koppelung Hauptaktionen/Kategorie"
+
+msgid "Associazione azioni principali/categoria"
+msgstr "Koppelung Hauptaktionen/Kategorie"
+
+msgid "Indicare almeno un consumo"
+msgstr "Mindestens einen Konsum angeben"
+
+msgid "url"
+msgstr ""
+
+msgid "L'indirizzo immesso non è valido"
+msgstr "Eingegebene Adresse ungültig"
+
+msgid "Sei sicuro di voler cancellare il piano di azione \"%s\"?"
+msgstr "Willst Du wirklich den Aktionsplan \"%s\" löschen?"
+
+msgid "Piano d'azione"
+msgstr "Aktionsplan"
+
+msgid "Azione/misura principale"
+msgstr "Hauptaktion/maßnahme"
+
+msgid ""
+"Servizio, persona o società responsabile (in caso di coinvolgimento di terzi)"
+msgstr ""
+"Verantwortlicher Dienst, Person oder Firma (im Falle von Einbeziehung "
+"Dritter)"
+
+msgid "Attuazione [data di inizio e fine]"
+msgstr "Durchführung [Datum Beginn und Ende]"
+
+msgid "Costi stimati per azione/misura"
+msgstr "Geschätze Kosten pro Aktion/Maßnahme"
+
+msgid "Risparmio energetico previsto per misura [MWh/a]"
+msgstr "Vorraussichtl. Energieeinsparung pro Maßnahme  [MWh/a]"
+
+msgid "Produzione di energia rinnovabile prevista per misu [MWh/a]"
+msgstr "Voraus. Produktion von erneuerbarer Energie pro Maßn. [MWh/a]"
+
+msgid "Riduzione di CO2 prevista per misura [t/a]"
+msgstr "Vorrauss. CO2-Reduktion pro Maßn. [t/a]"
+
+msgid "Sei sicuro di voler eliminare l'azione selezioanta?"
+msgstr "Willst Du wirklich gewählte Aktion eliminieren?"
+
+msgid "Macro categoria"
+msgstr "Hauptkategorie"
+
+msgid "Obiettivo di risparmio energetico"
+msgstr "Ziel der Energieeinsparung"
+
+msgid "Obiettivo di riduzione di CO2"
+msgstr "Ziel der CO2-Reduktion"
+
+msgid "Sei sicuro di voler eliminare gli obiettivi per la categoria \"%s\"?"
+msgstr "Willst Du wirklich die Ziele für die Kategorie\"%s\" eliminieren?"
+
+msgid "Modifica obiettivi per settore"
+msgstr "Ändern Ziel pro Sektor"
+
+msgid "Aggiungi obiettivi per settore"
+msgstr "Hinzufügen Ziel pro Sektor"
+
+msgid "Descrizione 2"
+msgstr "Beschreibung 2"
+
+msgid "Abitanti"
+msgstr "Einwohner"
+
+msgid "Nuovo inventario emissioni"
+msgstr "Neues Emissionsinventar"
+
+msgid "Inventario utilizzato nel Patto dei sindaci"
+msgstr "Vom Bürgermeisterkonvent benutztes Inventar "
+
+msgid "Sei sicuro di voler cancellare l'inventario emissioni \"%s\"?"
+msgstr "Willst Du wirklich das Emissionsinventar  \"%s\" löschen?"
+
+msgid ""
+"Impossibile cancellare questo inventario emissioni poichè vi sono dei dati "
+"ad esso legati"
+msgstr ""
+"Nicht möglich dieses Emissionsinventar zu löschen da mit Daten verbunden"
+
+msgid "Nuova tabelle inventario emissioni"
+msgstr "Neue Tabelle Emissionsinventar"
+
+msgid "Modifica tabelle inventario emissioni"
+msgstr "Ändern Tabellen Emissionsinventar"
+
+msgid "Tabelle inventario emissioni"
+msgstr "Tabellen Emissionsinventar"
+
+msgid ""
+"Sei sicuro di voler cancellare la tabella di inventario emissioni \"%s\"?"
+msgstr "Wilst du wirklich die Tabelle Emissionsinventar \"%s\" löschen?"
+
+msgid ""
+"Impossibile cancellare questa tabella di inventario emissioni poichè vi sono "
+"dei dati ad essa collegati"
+msgstr "Nicht möglich löschen Tabelle Emissionsinventar da mit Daten verbunden"
+
+msgid "Consumi finali energia"
+msgstr "Endkonsum Energie"
+
+msgid "Emissioni di CO2 / Emissioni di CO2 equivalenti"
+msgstr " CO2-Emissionen /CO2-äquivalente  Emissionen"
+
+msgid "Vettori energetici"
+msgstr "Energieträger"
+
+msgid ""
+"Attenzione: Per poter aderire al Patto dei sindaci, bisogna creare e poi "
+"selezionare sia un inventario emissioni che un piano di azione"
+msgstr ""
+"Achtung: zur Beteiligung am Bürgermeisterkonvent, muß sowohl "
+"Emissionsinventar als auch Aktionsplan erstellt und dann gewählt werden"
+
+msgid ""
+"Attenzione: Per poter aderire al Patto dei sindaci, bisogna creare e poi "
+"selezionare almeno un inventario emissioni"
+msgstr ""
+"Achtung: zur Beteiligung am Bürgermeisterkonvent, muß mindestens ein "
+"Emissionsinventar erstellt und dann gewählt werden"
+
+msgid ""
+"Attenzione: Per poter aderire al Patto dei sindaci, bisogna creare e poi "
+"selezionare almeno un piano di azione"
+msgstr ""
+"Achtung: zur Beteiligung am Bürgermeisterkonvent, muß mindestens ein "
+"Aktionsplan erstellt und dann gewählt werden"
+
+msgid "Obiettivo riduzione"
+msgstr "Ziel der Reduktion"
+
+msgid "Anno obiettivo riduzione"
+msgstr "Jahr Ziel Reduktion"
+
+msgid "Creazione Patto dei sindaci"
+msgstr "Erstellen Bürgermeisterkonvent"
+
+msgid "Modifica Patto dei sindaci"
+msgstr "Ändern Bürgermeisterkonvent"
+
+msgid "Patto dei Sindaci"
+msgstr "Bürgermeisterkonvent"
+
+msgid "Descrizione obiettivi"
+msgstr "Beschreibung Ziele"
+
+msgid "Obiettivo riduzione (%)"
+msgstr "Ziel Reduktion (%)"
+
+msgid "Anno riduzione"
+msgstr "Jahr Reduktion"
+
+msgid "Riduz. assoluta"
+msgstr "Absolute Reduktion"
+
+msgid "Stima risorse (€)"
+msgstr "Schätzung Ressourcen (€)"
+
+msgid "Fatt.emiss."
+msgstr "Emiss.Fakt."
+
+msgid "Tipo emiss."
+msgstr "Art Emiss."
+
+msgid "IPCC"
+msgstr "IPCC"
+
+msgid "LCA"
+msgstr "LCA"
+
+msgid "Equivalenti di CO2"
+msgstr "CO2 Äquivalent "
+
+msgid "Salvataggio avvenuto con successo"
+msgstr "Speichern erfolgreich"
+
+msgid "Sei sicuro di voler cancellare l'adesione al Patto dei sindaci \"%s\"?"
+msgstr "Willst Du wirklich Beteiligung am Bürgermeisterkonvent \"%s\" löschen?"
+
+msgid "Annullare tutte le modifiche effettuate al mapfile?"
+msgstr "Alle Änderungen am Mapfile annulieren?"
+
+msgid "Creare un nuovo mapfile?"
+msgstr "Neue Mapfile anlegen?"
+
+msgid "Eliminare definitivamente il mapfile selezionato?"
+msgstr "Gewählte Mapfile endgültig eliminieren?"
+
+msgid "Cache error"
+msgstr ""
+
+msgid "Consumo termico specifico"
+msgstr "Spezifischer Wärmeverbrauch"
+
+msgid "Consumo elettrico specifico"
+msgstr "Spezifischer Stromverbauch"
+
+msgid "Consumo totale specifico"
+msgstr "Spezifischer Gesamtverbauch"
+
+msgid "CO2 termica specifica"
+msgstr "CO2 spezifische Wärme"
+
+msgid "CO2 elettrica specifica"
+msgstr "CO2 spezifischer Strom"
+
+msgid "CO2 specifica prodotta"
+msgstr "Erzeugte spezifische CO2"
+
+msgid "Nuovo PAES"
+msgstr "Neues PAES"
+
+msgid "Modifica PAES"
+msgstr "Ändern PAES"
+
+msgid "Visualizza PAES"
+msgstr "Zeige PAES"
+
+msgid "PAES"
+msgstr "PAES"
+
+msgid ""
+"Sei sicuro di voler ripristinare gli interventi precedentemente salvati?"
+msgstr ""
+"Willst Du wirklich die vorher gespeicherten Maßnahmen wiederherstellen?"
+
+msgid ""
+"Sei sicuro di voler ripristinare gli interventi precedentemente selezionati?"
+msgstr "Willst Du wirklich die vorher gewählten Maßnahmen wiederherstellen?"
+
+msgid "Costo"
+msgstr "Kosten"
+
+msgid "CO<sub>2</sub> emessa"
+msgstr "CO<sub>2</sub> Emission"
+
+msgid ""
+"Si desidera aggiornare la lunghezza del tratto di strada con il nuovo valore?"
+msgstr "Länge des Straßenabschnittes mit neuem Wert aktualisieren?"
+
+msgid ""
+"Impossibile cancellare il tratto \"%s\", poichè vi sono dei dati ad esso "
+"associati"
+msgstr "Nicht möglich Abschnitt  \"%s\" zu löschen, da mit Daten verbunden"
+
+msgid "Nuovo fornitore di servizi"
+msgstr "Neuer Dienstleister"
+
+msgid "Modifica fornitore di servizi"
+msgstr "Ändern Dienstleister"
+
+msgid "Visualizza fornitore di servizi"
+msgstr "Zeige Dienstleister"
+
+msgid "Elenco fornitori di servizi"
+msgstr "Liste Dienstleister"
+
+msgid "Prodotti"
+msgstr "Produkte"
+
+msgid "Elettrico"
+msgstr "Strom"
+
+msgid ""
+"Non è stato possibile eliminare alcuni prodotti, in quanto sono utilizzati"
+msgstr ""
+"Es war nicht möglich, einige Produkte zu eliminieren, da sie benutzt werden"
+
+msgid ""
+"Impossibile cancellare questo produttore di servizi poichè vi sono dei dati "
+"ad esso legati"
+msgstr "Nicht möglich diesen Hersteller zu löchen, da mit Daten verbunden"
+
+msgid "Sei sicuro di voler cancellare il produttore di servizi \"%s\"?"
+msgstr "Willst Du Hersteller i \"%s\" wirklich löschen "
+
+msgid "Nuovo intervento"
+msgstr "Neue Maßnahme"
+
+msgid "Elenco interventi"
+msgstr "Maßnahmenkatalog"
+
+msgid "Nuova tipologia costruttiva edificio"
+msgstr "Neue Bautypologie des Gebäudes"
+
+msgid "Modifica tipologia costruttiva edificio"
+msgstr "Ändern  Bautypologie des Gebäudes"
+
+msgid "Visualizza tipologia costruttiva edificio"
+msgstr "Zeige Bautypologie des Gebäudes"
+
+msgid "Elenco tipologie costruttive edifici"
+msgstr "Liste Bautypologien der Gebäude"
+
+msgid "Sei sicuro di voler cancellare la tipologia costruttiva \"%s\"?"
+msgstr "Willst Du Bautypologie des Gebäudes wirklich löschen \"%s\"?"
+
+msgid ""
+"Impossibile cancellare questa tipologia costruttiva, perchè vi sono dei dati "
+"ad esso collegati"
+msgstr ""
+"Löschen Bautypologie des Gebäudes nicht möglich, da mit Daten verbunden"
+
+msgid "Impianto a consumoi"
+msgstr "Verbrauchsanlage"
+
+msgid "Impianto a produzione"
+msgstr "Erzeugungsanlage"
+
+msgid "Nuova tipologia impianto"
+msgstr "Neue Anlangentypologie"
+
+msgid "Modifica tipologia impianto"
+msgstr "Ändern Anlagentypologie"
+
+msgid "Visualizza tipologia impianto"
+msgstr "Zeige Anlagentypologie"
+
+msgid "Elenco tipologia impianto"
+msgstr "Liste Anlagentypologie"
+
+msgid "Sei sicuro di voler cancellare la tipologia di impiano \"%s\"?"
+msgstr "Willst Du Anlagentypologie wirklich löschen \"%s\"? "
+
+msgid ""
+"Impossibile cancellare questa tipologia di impianto, perchè vi sono dei dati "
+"ad esso collegati"
+msgstr "Löschen Anlagentypologie nicht möglich, da mit Daten verbunden"
+
+msgid "Fattore conversione T.E.P."
+msgstr "Konversionsfaktor ÖE"
+
+msgid "Categoria PAES fissa"
+msgstr "Fixe PAES Kategorie"
+
+msgid "Nuova categorie tabelle"
+msgstr "Neue Kategorien Tabelle"
+
+msgid "Modifica categorie tabelle"
+msgstr "Ändern Kategorien Tabelle"
+
+msgid "Visualizza categorie tabelle"
+msgstr "Zeige Kategorien Tabelle"
+
+msgid "Elenco categorie tabelle"
+msgstr "Liste Kategorien Tabelle"
+
+msgid "Sei sicuro di voler cancellare la categoria \"%s\"?"
+msgstr "Willst Du Kategorie wirklich löschen \"%s\"?"
+
+msgid ""
+"Impossibile cancellare questa categoria, perchè vi sono dei dati ad esso "
+"collegati"
+msgstr "Löschen dieser Kategorie nicht möglich, da mit Daten verbunden"
+
+msgid "Ordinamento piano azione"
+msgstr "Anordnung Aktionsplan"
+
+msgid "Mostra label"
+msgstr "Zeige Label "
+
+msgid "Nuova macrocategoria tabelle"
+msgstr "Neue Hauptkategorie Tabelle"
+
+msgid "Modifica macrocategoria tabelle"
+msgstr "Ändern Hauptkategorie Tabelle"
+
+msgid "Visualizza macrocategoria tabelle"
+msgstr "Zeige Hauptkategorie Tabelle"
+
+msgid "Elenco macrocategoria tabelle"
+msgstr "Liste Hauptkategorie Tabelle"
+
+msgid "Sei sicuro di voler cancellare la macrocategoria \"%s\"?"
+msgstr "Hauptkategorie wirklich löschen\"%s\"?"
+
+msgid ""
+"Impossibile cancellare questa macrocategoria, perchè vi sono dei dati ad "
+"esso collegati"
+msgstr "Löschen dieser Hauptkategorie nicht möglich, da mit Daten verbunden"
+
+msgid "Solo totale"
+msgstr "Nur Summe"
+
+msgid "Daati aggiuntivi settore piano azione"
+msgstr "Zusatzdaten Sektor Aktionsplan"
+
+msgid "Mostra label categoria"
+msgstr "Zeige Label Kategorie"
+
+msgid "Nuovo tipo fonte"
+msgstr "Neue Art Energieträger"
+
+msgid "Modifica tipo fonte"
+msgstr "Ändern Energieträger"
+
+msgid "Visualizza tipo fonte"
+msgstr "Zeige Energieträger"
+
+msgid "Elenco tipi fonte"
+msgstr "Liste Energieträger"
+
+msgid "Sei sicuro di voler cancellare la fonte \"%s\"?"
+msgstr "Energieträger wirklich löschen \"%s\"?"
+
+msgid ""
+"Impossibile cancellare questa fonte, perchè vi sono dei dati ad essa "
+"collegati"
+msgstr "Löschen Energieträger nicht möglich, da mit Daten verbunden"
+
+msgid "Nuova destinazione d'uso"
+msgstr "Neue Zweckbestimmung"
+
+msgid "Modifica destinazione d'uso"
+msgstr "Ändern Zweckbestimmung"
+
+msgid "Visualizza destinazione d'uso"
+msgstr "Zeige Zweckbestimmung"
+
+msgid "Elenco destinazioni d'uso"
+msgstr "Liste Zweckbestimmung"
+
+msgid "Sei sicuro di voler cancellare la destinazione d'uso \"%s\"?"
+msgstr "Zweckbestimmung wirklich löschen \"%s\"?"
+
+msgid "Nome lookup"
+msgstr "Name lookup"
+
+msgid "UDM Elettrico"
+msgstr "M.E. Strom "
+
+msgid "Elenco unità di misura"
+msgstr "Liste Maßeinheiteb"
+
+msgid "Sei sicuro di voler cancellare l'unità di misura \"%s\"?"
+msgstr "Maßeinheit wirklich löschen  \"%s\"?"
+
+msgid "Nuova macrotipologia interventi"
+msgstr "Neue Haupttypologie Maßnahmen"
+
+msgid "Modifica macrotipologia interventi"
+msgstr "Ändern Haupttypologie Maßnahmen"
+
+msgid "Visualizza macrotipologia interventi"
+msgstr "Zeige Haupttypologie Maßnahmen"
+
+msgid "Elenco macrotipologia interventi"
+msgstr "ListeHaupttypologie Maßnahmen"
+
+msgid "Sei sicuro di voler cancellare la macrotipologia interventi \"%s\"?"
+msgstr "Haupttypologie Maßnahmen wirklich löschen \"%s\"?"
+
+msgid ""
+"Impossibile cancellare questa macrotipologia interventi, perchè vi sono dei "
+"dati ad esso collegati"
+msgstr "Haupttypologie löschen nicht möglich, da mit Daten verbunden "
+
+msgid "Macro tipologia"
+msgstr "Haupttypologie "
+
+msgid "Salvataggio energia termica annua risparmiata"
+msgstr "Speichern jährliche Einsparung Wärme"
+
+msgid "Salvataggio Energia elettrica annua risparmiata"
+msgstr "Speichern jährliche Einsparung elektrische Energie"
+
+msgid "Testo messaggio"
+msgstr "Text Mitteilung"
+
+msgid "Nuova tipologia interventi"
+msgstr "Neue Maßnahmentypologie"
+
+msgid "Modifica tipologia interventi"
+msgstr "Ändern Maßnahmentypologie"
+
+msgid "Visualizza tipologia interventi"
+msgstr "Zeige Maßnahmentypologie"
+
+msgid "Elenco tipologia interventi"
+msgstr "Liste Maßnahmentypologie"
+
+msgid "Sei sicuro di voler cancellare la tipologia interventi \"%s\"?"
+msgstr "Maßnahmentypologie wirklich löschen  \"%s\"?"
+
+msgid ""
+"Impossibile cancellare questa tipologia interventi, perchè vi sono dei dati "
+"ad esso collegati"
+msgstr ""
+"Löschen dieser Maßnahmentypologie nicht möglich, da mit Daten verbunden"
+
+msgid "Statistica"
+msgstr "Statistik"
+
+msgid "Tipologia costruttiva edificio"
+msgstr "Gebäudebauweise "
+
+msgid "Destinazioni d'uso"
+msgstr "Zweckbestimmung"
+
+msgid "Tipologia impianto"
+msgstr "Anlagentypologie"
+
+msgid "Macrotipologie interventi"
+msgstr "Haupptypologie Maßnahmen"
+
+msgid "Tipologie interventi"
+msgstr "Maßnahmentypologie"
+
+msgid "Fornitori di energia"
+msgstr "Energielieferanten "
+
+msgid "Fattori di conversione (Admin)"
+msgstr "Konversionsfaktoren (Admin)"
+
+msgid "Tipo fonte (PAES)"
+msgstr "Energieträger (PAES)"
+
+msgid "Macrocategorie tabelle (PAES)"
+msgstr "Hauptkategorie Tabelle (PAES)"
+
+msgid "Categorie tabelle (PAES)"
+msgstr "Kategorien Tabellen  (PAES)"
+
+msgid "Tabelle inventario (PAES)"
+msgstr "Tabellen Inventar  (PAES)"
+
+msgid "Azioni principali (PAES)"
+msgstr "Hauptaktionen  (PAES)"
+
+msgid "Azioni principali/categoria (PAES)"
+msgstr "Hauptaktionen/Kategorie  (PAES)"
+
+msgid "Mapfile editor"
+msgstr "Mapfile editor"
+
+msgid "Nessun poligono trovato."
+msgstr "Kein Polygon gefunden"
+
+msgid "Nessun oggetto digitalizzato trovato."
+msgstr "Kein digitalisiertes Objekt gefunden."
+
+msgid "Cancellare l'oggetto disegnato?"
+msgstr "Gezeichnetes Objekt löschen?"
+
+msgid "Fattore conversione CO2 [kg]"
+msgstr "Umrechungsfaktor CO2 [kg]"
+
+msgid "Anno inizio"
+msgstr "AnfangsJahr"
+
+msgid "Anno fine"
+msgstr "Abschlussjahr "
+
+msgid "Nuovo anno di costruzione"
+msgstr "Neues Baujahr"
+
+msgid "Modifica anno di costruzionea"
+msgstr "Baujahr ändern"
+
+msgid "Visualizza anno di costruzione"
+msgstr "Zeige Baujahr"
+
+msgid "Elenco anni di costruzione"
+msgstr "Liste Baujahre"
+
+msgid "Sei sicuro di voler cancellare l'anno di costruzione \"%s\"?"
+msgstr "Willst Du Baujahr \"%s\" wirklich löschen?"
+
+msgid ""
+"Impossibile cancellare questo anno di costruzione, perchè vi sono dei dati "
+"ad esso collegati"
+msgstr "Löschen dieses Baujahres nicht möglich, da mit Daten verbunden"
+
+msgid "Nuovo anno di ristrutturazione"
+msgstr "Neues Sanierungsjahr"
+
+msgid "Modifica anno di ristrutturazione"
+msgstr "Sanierungsjahr ändern"
+
+msgid "Visualizza anno di ristrutturazione"
+msgstr "Zeige Jahr Sanierung"
+
+msgid "Elenco anni di ristrutturazione"
+msgstr "Liste Jahre Sanierung"
+
+msgid "Sei sicuro di voler cancellare l'anno di ristrutturazione \"%s\"?"
+msgstr "Wollen Sie das Jahr der Sanierung  \"%s\" wirklich löschen?"
+
+msgid ""
+"Impossibile cancellare questo anno di ristrutturazione, perchè vi sono dei "
+"dati ad esso collegati"
+msgstr ""
+"Löschen dieses Jahres der Sanierung nicht möglich, da mit Daten verbunden?"
+
+msgid "Anni costruzione"
+msgstr "Baujahre"
+
+msgid "Anni ristrutturazione"
+msgstr "Jahre Sanierung "
+
+msgid "dummy"
+msgstr ""
+
+msgid "memorizza tutte le modifiche e chiude automaticamente la mappa."
+msgstr " Speichert alle Änderungen und schließt Karte automatisch"
+
+msgid "Annulla modifiche"
+msgstr "Änderungen annullieren"
+
+msgid "cancella la geometria in fase di disegno."
+msgstr "löscht die Geometrie während des Zeichnens"
+
+msgid "Disegna oggetto"
+msgstr "Zeichne Objekt "
+
+msgid ""
+"Disegnare direttamente sulla cartografia i poligoni che compongono un "
+"oggetto (edificio/tratto). Ad ogni click viene creato un vertice e vengono "
+"visualizzati i segmenti. ATTENZIONE è obbligatorio chiudere il poligono: "
+"cliccare sull'ultimo vertice con il tasto destro del mouse. I poligoni "
+"chiusi sono di colore giallo. È possibile disegnare piú poligoni per un "
+"oggetto."
+msgstr ""
+"Poligone, welche ein Objekt (Gebäude/Strecke) bilden, direkt auf die "
+"Karthographie zeichnen. Mit jedem Klick wird ein Eckpunkt gesetzt und es "
+"werden die Segmente gezeigt. ACHTUNG das Polygon muß geschlossen werden: "
+"letzten Eckpunkt anklicken mit rechter Maustaste. Die geschlossenen Polygone "
+"sind gelb. Es ist möglich, mehrere Polygone pro Objekt zu zeichnen.  "
+
+msgid "Seleziona oggetto"
+msgstr "Wähle Objekt "
+
+msgid ""
+"Cliccare sui poligoni degli edifici o tratti per aggiungere la geometria."
+msgstr ""
+"Auf Polygone der Gebäude oder der Abschnitte klicken, um Geometrie "
+"hinzuzufügen. "
+
+msgid "Deseleziona/cancella oggetto"
+msgstr "Objekt rückgängig/löschen"
+
+msgid ""
+"cliccare sui poligoni digitalizzati o selezionati (di colore giallo) per "
+"eliminarli dall'oggetto."
+msgstr ""
+"digitalisierete oder gewählte (gelbe) Polygone anklicken, um sie aus dem "
+"Objekt zu entfernen"
+
+msgid "questo pulsante apre la guida agli altri bottoni e funzioni."
+msgstr "diese Taste öffnet die Anleitung zu weiteren Buttons und Funktionen."
+
+msgid "Impostazioni stampa"
+msgstr "Drucker Einstellung "
+
+msgid "Informazioni sulla stampa"
+msgstr "DruckInformationen "
+
+msgid "Scala automatica"
+msgstr "Automatischer Maßstab"
+
+msgid "Stampa legenda"
+msgstr "Drucke Legende"
+
+msgid "Stampa data"
+msgstr "Drucke Datum"
+
+msgid "Formato"
+msgstr "Format"
+
+msgid "Orientamento"
+msgstr "Ausrichtung"
+
+msgid "Verticale"
+msgstr "Vertikal"
+
+msgid "Orizzontale"
+msgstr "Horizontal"
+
+msgid "Output"
+msgstr ""
+
+msgid "Indicare il nome del comune ove è ubicato l'edificio"
+msgstr "Gemeinde angeben, in der sich das Gebädue befindet"
+
+msgid ""
+"E'l'identificativo interno ed univoco dell'edificio. Non può essere "
+"modificato"
+msgstr ""
+"Ist die interne eindeutige Kennzahl des Gebäudes. Kann nicht verändert "
+"werden."
+
+msgid ""
+"E' il codice dell'edificio. Viene assegnato automaticamente dal sistema, e "
+"può essere modificato"
+msgstr ""
+"Ist der Kode des Gebäudes. Wird automatsich vom System zugeteilt, kann "
+"geändert werden"
+
+msgid ""
+"E' il nome descrittivo dell'edificio (Es. Municipio, Palazzo \"Grassi\", ecc)"
+msgstr "Ist Bezeichnung des Gebäudes (z.B.Gemeinde, Schloss\"Tirol\", usw)"
+
+msgid "E' il nome descrittivo dell'edificio nella seconda lingua"
+msgstr "Ist die Bezeichnung in der zweiten Sprache"
+
+msgid ""
+"Se indicato rappresenta il nome della frazione su cui è ubicato l'edificio. "
+"E'possibile aggiungere nuove frazioni tramite il bottone \"Aggiungi\""
+msgstr ""
+"Falls angegeben, bezeichnet es den namen der Fraktion, in welcher sich das "
+"Gebäude befindet. Es können neue Fraktionen mittels Button   \"Hinzufügen\" "
+"hinzugefügt werden"
+
+msgid ""
+"Rappresenta il nome della via, piazza, ecc su cui è ubicato l'edificio. "
+"E'possibile aggiungere nuove vie tramite il botttone \"Aggiungi\""
+msgstr ""
+"Bezeichnet den Namen der Straße, des Platzes usw. in welchem ein Gebäude "
+"steht. Es können neue Straßen mittels Button   \"Hinzufügen\" hinzugefügt "
+"werden"
+
+msgid ""
+"E' il numero civico dell'edificio.<br />Il civico ed il barrato vanno "
+"indicati separatamente"
+msgstr ""
+"Ist die Hausnummer des Gebäudes.<br />Die Hausnummer und Querstrich müssen "
+"getrennt angegeben werden"
+
+msgid ""
+"E' il comune catastale in cui è ubicato l'edificio. E'possibile aggiungere "
+"un nuovo comune catastale tramite il botttone \"Aggiungi\""
+msgstr ""
+"Ist die Katastralgemeinde in der das Gebäude steht.  Es können neue "
+"Katastralgemeinden mittels Button   \"Hinzufügen\" hinzugefügt werden"
+
+msgid "E'la particella catastale edificiale in cui è ubicato l'edificio"
+msgstr "Ist die Katasterparzelle, in welcher ein Gebäude steht"
+
+msgid "E' il foglio catastale dell'edificio"
+msgstr "Ist das K"
+
+msgid "E' la particella catastale dell'edificio"
+msgstr "Ist die Katasterparzelle des Gebäudes"
+
+msgid "E' il subalterno dell'edificio"
+msgstr ""
+
+msgid "E'la data in cui è stato effettualo l'audit dell'edificio"
+msgstr "Ist das Datum zu welchem das Audit des Gebäudes erfolgte"
+
+msgid ""
+"Indicare la tipologia costruttiva dell'edificio.<br />Per alcune di esse è "
+"possibile immettere un breve testo di speigazione nel campo \"Altro\""
+msgstr ""
+"Die Bautypologie des Gebäudes angeben.<br />Für einige ist es möglich einen "
+"erläuternden Kurztest im Feld  \"Sonstiges\""
+
+msgid ""
+"E' la destinazione d'uso dell'edificio.<br />Il valore inserito determinerà "
+"in quale categoria verrà ubicato l'edificio all'intero dell'inventario delle "
+"imissioni"
+msgstr ""
+"Ist die Zweckbestimmung des Gebäudes. <br />Der eingegebene Wert bestimmt,  "
+"welcher Kategorie das Gebäude innerhalb des Emissionsinventars zugeteilt "
+"wird."
+
+msgid "Indicare l'anno di costruzione dell'edificio"
+msgstr "Das Baujahr des Gebäudes angeben"
+
+msgid ""
+"Se l'edificio è stato ristrutturato, indicare quì l'anno di ultima "
+"ristrutturazione"
+msgstr ""
+"Wenn das Gebäude saniert worden ist, hier das Jahr der letzten Sanierung "
+"angeben"
+
+msgid ""
+"Nel caso in cui l'edificio sia stato ristrutturato, è possibile indicare qui "
+"un testo esplicativo sulla ristrutturazione effettuata"
+msgstr ""
+"Wenn das Gebäude saniert worden ist, kann hier ein erklärender Text zur "
+"ausgeführten Sanierung eingegeben werden"
+
+msgid ""
+"Nel caso in cui l'edificio sia stato ristrutturato, è possibile indicare qui "
+"un testo (nella seconda lingua) esplicativo sulla ristrutturazione effettuata"
+msgstr ""
+"Wenn das Gebäude saniert worden ist, kann hier ein erklärender Text (in der "
+"zweiten Sprache) zur Sanierung eingegeben werden "
+
+msgid ""
+"Indicare la superficie utile riscaldata dell'edificio. Questo campo è molto "
+"importante ai fini statistici per calcolare i consume e la produzione di "
+"CO<sub>2</sub> specifici"
+msgstr ""
+"Die beheizte Nutzflläche des Gebäudes angeben. Dieses Feld ist sehr wichtig "
+"für statistische Zwecke, um den spezifischen Verbrauch und die spezifische "
+"Produktion von CO<sub>2</sub> zu berechnen"
+
+msgid "Indicare il volume lordo riscaldato dell'edificio"
+msgstr "Das beheizte Bruttovolumen des Gebäudes angeben"
+
+msgid "E' il fattore di forma dell'edificio.<br />"
+msgstr "Ist der Formfaktor des Gebäudes.<br />"
+
+msgid ""
+"Fattore di forma S/V\" è il rapporto tra la \"Superficie disperdente\" che "
+"delimita verso ambienti non dotati di riscaldamento e verso l'esterno il "
+"volume lordo riscaldato V, ed il \"Volume lordo riscaldato V\""
+msgstr ""
+"Der Faktor der Gebäudehülle A/V\"  ist das Verhältnis zwischen \"Wärme "
+"übertragende Umfassungsflächen\" welche nicht beheizte Räume und Außenseite "
+"gegen das beheizte Gebäudevolumen V begrenzen,  und \"beheiztes "
+"Gebäudevolumen V\""
+
+msgid "Indicare la superficie vetrata dell'edificio"
+msgstr "Die verglaste Fläche des Gebäudes angeben"
+
+msgid ""
+"Indicare l'orario di utilizzo tipico dell'edificio. Ad esempio per un "
+"ufficio l'orario tipo potrebbe essere dalle 08:00 alle 19:00"
+msgstr ""
+"Die übliche Benutzungszeit des Gebäudes. Z.B. für ein Büro könnte die "
+"übliche Benutzungszeit von 08:00 bis 19:00 sein"
+
+msgid ""
+"Ore totali di utilizzo giornaliero dell'edificio. Questo valore viene "
+"calcolato in base all'orario di utilizzo indicato"
+msgstr ""
+"Gesamtzahl der Stundennutzung pro Tag. Dieser Wert wird aufgrund des "
+"angegebene Nutzungsdauer berechnet"
+
+msgid ""
+"Indicare per quanti giorni viene utilizzato tipicamente l'edificio. Ad "
+"esempio per un ufficio l'utilizzo tipo potrebbe essere di 5 giorni alla "
+"settimana"
+msgstr ""
+"Angeben, für wieviele Tage pro Jahr das Gebäude üblicherweise benutzt wird. "
+"Für ein Büro könnte eine übliche Nutzung 5 Tage pro Woche sein"
+
+msgid ""
+"Indicare per quante settimana viene utilizzato tipicamente l'edificio. Ad "
+"esempio per una scuola il numero di giorni potrebbe essere 200"
+msgstr ""
+"Angeben, für wieviele Wochen das Gebäude üblicherweise genutzt wird. Für "
+"eine Schule könnte die Anzahl der Tage 200 sein"
+
+msgid ""
+"Ore totali di utilizzo dell'edificio. Questo valore viene calcolato in base "
+"all'uso giornaliero, settimanale ed annuale dell'edificio"
+msgstr ""
+"Gesamtzahl der Gebäudenutzung in Stunden. Dieser Wert wird aufgrund der "
+"täglichen, wöchentlichen, und jährlichen Benutzung berechnet"
+
+msgid "Indicare il numero medio di occupanti dell'edificio"
+msgstr "Angabe der durchschnittlichen Bewohneranzahl des Gebäudes"
+
+msgid "E' possibile indicare delle note generiche sull'edificio"
+msgstr "Es ist möglich allgemeine Anmerkungen zum Gebäude einzugeben"
+
+msgid ""
+"E' possibile indicare delle note generiche nella seconda lingua sull'edificio"
+msgstr ""
+"Es ist möglich allgemeine Anmerkungen zum Gebäude in der zweiten Sprach "
+"einzugeben"
+
+msgid "Indicare se l'inserimento dell'edificio è da controllare"
+msgstr "Angeben, ob die Eingabe des Gebäudes zu überprüfen ist."
+
+msgid ""
+"E' possibile caricare una foto rappresentativa dell'edifico (ad esempio la "
+"facciata principale).<br /><b>NOTA</b>: La dimensione massima di tutte le "
+"immagini da caricare non può superare quella indicata"
+msgstr ""
+"Es kann ein darstellendes Foto des Gebäudes geladen werden (z.B. die "
+"Hauptfassade).<br /><b>NOTA</b>: Die maximale Auflösung aller Bilder darf "
+"nicht höher sein, als angegeben."
+
+msgid ""
+"E' possibile caricare un'immagine della targa energetica dell'edifico.<br /"
+"><b>NOTA</b>: La dimensione massima di tutte le immagini da caricare non può "
+"superare quella indicata"
+msgstr ""
+"Es kann ein Bild des Energieausweises des Gebäudes geladen werden. <br /"
+"><b>NOTA</b>: Die maximale Auflösung aller Bilder darf nicht höher sein, als "
+"angegeben."
+
+msgid ""
+"E' possibile caricare un'immagine della termografia dell'edifico.<br /"
+"><b>NOTA</b>: La dimensione massima di tutte le immagini da caricare non può "
+"superare quella indicata"
+msgstr ""
+"Es kann ein Bild der Thermographie geladen werden. <br /><b>NOTA</b>: Die "
+"maximale Auflösung aller Bilder darf nicht höher sein, als angegeben."
+
+msgid ""
+"Premere il bottone \"Digitalizza su mappa\" per aprire la mappa e procedere "
+"con la digitalizzazione dell'edificio"
+msgstr ""
+"Den Button \"Auf Karte digitalisieren\" um die Karte zu öffnen und das "
+"Gebäude zu digitalisieren."
+
+msgid "Tipo di inserimento desiderato:<br>"
+msgstr "Art der gewünschten Eingabe:<br>"
+
+msgid "E'il contatore al quale è allacciato l'impainto"
+msgstr "Ist der Zähler, an welchem die Anlage angeschlossen ist"
+
+msgid ""
+"E' il tipo di alimentazione dell'impianto. Coincide con quella specificata "
+"nel contatore a cui tale impianto è collegato"
+msgstr "Ist die Versorgung der Anlage"
+
+msgid ""
+"Per le bollette mensili ed annuali indica l'anno di riferimento delle "
+"bollette"
+msgstr ""
+"Für die monatlichen und jährlichen Rechnung das entsprechende Bezugsjahr "
+"angeben"
+
+msgid "E' il periodo iniziale (data) a cui la bolletta si riferisce"
+msgstr "Ist die Anfangszeit (Datum) auf welche sich die Rechnung sich bezieht"
+
+msgid "E' il periodo finale (data) a cui la bolletta si riferisce"
+msgstr "Es die Endzeit (Datum) auf welche sich die Rechnung bezieht"
+
+msgid ""
+"E' il <u>consumo totale</u> di energia indicato nella bolletta<br>Nel caso "
+"di produzione di produzione inserire il valore di produzione energia."
+msgstr ""
+"Ist der <u>Gesamtverbrauch</u> von in der Rechnung angegebenen Energie<br>Im "
+"Fall von  Energieerzeugung den Wert der Energieerzeugung angeben."
+
+msgid ""
+"E' il <u>costo totale</u> di energia indicati nella bolletta. <u>Sono "
+"pertanto esclusi eventuali costi di attivazioni o simili</u><br>Nel caso di "
+"produzione di produzione inserire il valore di produzione energia."
+msgstr ""
+"Sind  <u>Gesamtkosten</u>von in der Rechnung angegebenen Energie. <u>Daher "
+"sind evtl. Inbetriebnahmekosten o.ä. ausgeschlossen</u><br>Im Fall von  "
+"Energieerzeugung den Wert der Energieerzeugung angeben."
+
+msgid ""
+"E' il costo unitario di energia calcolato dal sistema in base all'energia "
+"consumata e alla spesa inseriti"
+msgstr ""
+"Sind die Energiegesamtkosten berechnet vom System aufgrund des eingegebenen "
+"Energieverbrauchs und Aufwandes"
+
+msgid ""
+"Il dominio è un codice (Es: MERANO) che viene assegnato al cliente e con cui "
+"quest'ultimo si dovrà loggare inserendolo dopo il proprio nome utente (Es: "
+"mario.rossi@merano).<br />"
+msgstr ""
+"Domain ist ein Kode (z.B. MERANO) welcher dem Kunden zugewiesen wird und mit "
+"dem er sich einloggen muß, indem er in nach dem Benutzernamen eingibt (mario."
+"rossi@merano).<br />"
+
+msgid ");"
+msgstr ""
+
+msgid "E' il nome dell'ente nella lingua 1 (Es: Comune di Merano)"
+msgstr ""
+"Ist die Bezeichnung der Behörde in der Sprache 1 (z.B.Comune di  Merano)"
+
+msgid "E' il nome dell'ente nella lingua 2 (Es: Gemeinde Meran)"
+msgstr "Ist die Bezeichnung der Behörde in der Sprache 2  (z.B. Gemeinde Mera)"
+
+msgid ""
+"In fase di inserimento è possibile creare un primo utente con cui entrare "
+"nel sistema. ulteriori utenti dovranno essere creati successivamente dalla "
+"gestione utenti"
+msgstr ""
+"Während der Eingabe ist es möglich einen ersten Benutzer anzulegen, mit "
+"welchem man ins System geht. Weitere Benutzer müssen danach vom "
+"Benutzerverwalter angelegt werden"
+
+msgid "E' il nome dell'utente (Es: Ing. Mario Rossi)"
+msgstr "Ist der Name des Benutzers (z.B. Ing. Mario Rossi="
+
+msgid "E' il gruppo a cui legare il primo utente (Es: ADMIN)"
+msgstr ""
+"Ist die Gruppe, mit welcher der erste Benutzer verbunden werden muss (z.B. "
+"ADMIN)"
+
+msgid "Tipo di impianto allacciato al contatore"
+msgstr "An den Zähler angeschlossene Anlageart"
+
+msgid "Numero di matricola dell'impianto"
+msgstr "Matrikelnummer der Anlage"
+
+msgid "Data di installazione dell'impianto"
+msgstr "Installationsdatum der Anlage"
+
+msgid "Data di fine esercizio dell'impianto"
+msgstr "Enddatum des Betriebes der Anlage"
+
+msgid "Potenza nominale dell'impianto espressa in kW"
+msgstr "Nominalleistung der Anlage in kW ausgedrückt"
+
+msgid "<b>Il Sevizio Energia</b><br /><br />"
+msgstr "<b>Energiedienst</b><br /><br />"
+
+msgid ""
+"Il file che si vuole caricare contiene un virus, e per questo motivo ne è "
+"stato impedito il salvataggio. Verificare che il proprio computer non sia "
+"infetto."
+msgstr ""
+"Datei, welche Sie laden wollen, enthält einen Virus, daher wurde Speichern "
+"verhindert. Überprüfen Sie, ob Ihr Computer infiziert ist"
+
+msgid ""
+"Nel caso si tratti di un <u>fattore di conversione specifico per un singolo "
+"comune</u>, indicarne il nome (Es: fattore di conversione elettrico per il "
+"Comune di Roma)"
+msgstr ""
+"Sollte es sich um einen <u> für eine einzelne Gemeinde spezifischen "
+"Umrechnungsfaktor handeln</u>, Namen angeben (z.B. Umrechnungsfaktor Strom "
+"für die Stadt Rom)"
+
+msgid ""
+"Indicare il tipo di alimentazione a cui associare il fattore di conversione"
+msgstr "Energieträger angeben, zu dem Umrechnungsfaktor zuzuteilen ist"
+
+msgid ""
+"Per alcune fonti di alimentazione è possibile indicare diverse unità di "
+"misura. Sciegliere quella per il fattore di conversione che si vuole "
+"immettere"
+msgstr ""
+"Für einige Energiequellen ist es nötig, verschiedene Maßeinheiten anzugeben. "
+"Auswählen welche man für den Umrechnungsfaktor eingeben will"
+
+msgid ""
+"Indicare il fattore di conversione tra la fonte di alimentazione e l'unità "
+"di misura scielte e i KWh"
+msgstr ""
+"Umrechnungsfaktor zwischen Energiequelle und Maßeinheit und die "
+"entsprechenden kWh"
+
+msgid ""
+"Indicare il fattore di conversione tra la fonte di alimentazione e l'unità "
+"di misura scielte e i la CO<sub>2</sub>"
+msgstr ""
+"Umrechnungsfaktor zwischen Energiequelle und Maßeinheit und die "
+"entsprechenden  CO<sub>2</sub>"
+
+msgid ""
+"Indicare il fattore di conversione tra la fonte di alimentazione e l'unità "
+"di misura scielte e i TEP (<u>T</u>onnellate <u>E</u>quivalenti di <u>P</"
+"u>etrolio)"
+msgstr ""
+"Konversionsfaktor zwischen Energiequelle und Maßeinheit und die "
+"entsprechenden  ÖE (<u>T</u>onnen<u>E</u>quivaleni von <u>E</u>rdöl)"
+
+msgid ""
+"Indicare se la fonte (e i relativi fattori di conversione) potranno essere "
+"utilizzati in contatori a consumo (Es: metano, gasolio, corrente elettrica)"
+msgstr ""
+"Angeben ob Energieträger (und die jeweiligen Umrechnungsfaktoren) in "
+"Verbrauchszählern angewendet werden können (z.B. Methan, Dieselöl, Strom)"
+
+msgid ""
+"Indicare se la fonte (e i relativi fattori di conversione) potranno essere "
+"utilizzati in contatori a produzione (Es: corrente elettrica)"
+msgstr ""
+"Angeben ob der Energieträger (und die jeweiligen Umrechnungsfaktoren) in "
+"Erzeugungszählern angewendet werden können (z.B. elektrischer Strom)"
+
+msgid "Questo campo indica la fonte equivalente nel Patto dei Sindaci"
+msgstr ""
+"Dieses Feld bezeichnet ensprechende Energiequellen des Bürgermeisterkonvents"
+
+msgid "Indica la categoria su cui si stanno inserendo i dati dell'inventario"
+msgstr ""
+"Angabe der Kategorie zu welcher die Daten des Inventars eingegeben werden"
+
+msgid "Indica il nome che varrà dato alla singola riga dell'inventario"
+msgstr ""
+"Angabe des Namens welcher jeder einzelnen Zeile des Inventars gegeben wird"
+
+msgid "GUIDA"
+msgstr "ANLEITUNG"
+
+msgid "Indica il comune su cui si vuole realizzare il pianio di azione"
+msgstr ""
+"Bezeichnet die Gemeinde, auf welche der Aktionsplan angewendet werden soll"
+
+msgid "Inserire il titolo "
+msgstr "Titel eingegben"
+
+msgid "(in italiano)"
+msgstr "(italienisch)"
+
+msgid " del piano d'azione per l'energia sostenibile."
+msgstr "des Aktionsplanes für erneuerbare Energie"
+
+msgid "(in tedesco)"
+msgstr "(deutsch)"
+
+msgid "Inserire la data di approvazione formale del Piano di azione."
+msgstr "Datum der förmlichen Genehmigung des Aktionsplanes"
+
+msgid "Inserire il nome "
+msgstr "Namen eingeben"
+
+msgid ""
+" dell'autorità che ha approvato il piano di azione che si andrà ad inserire"
+msgstr "der Behörde, welche den einzugebenden Aktionsplan genehmigt hat"
+
+msgid "E' possibile inserire un link ad un sito web pubblico "
+msgstr "Es kann ein Link zu einer öffentlichen Website eingefügt werden"
+
+msgid " in cui è spiegato il priano di azione"
+msgstr "in welchem der Aktionsplan erklärt wird"
+
+msgid "E'il settore (macro categoria) in cui indicare gli obiettivi"
+msgstr "Ist der Sektor (Hauptkategorie) in welcher die Ziele angegeben werden "
+
+msgid "Indica l'azione principale per questa entry del piano d'azione"
+msgstr "Angabe der Hauptaktion für diesen Zugang zum Aktionsplan"
+
+msgid "Indica la persona o l'ente responsabile dell'azione"
+msgstr "Angabe der verantwortlichen Person oder Behörde"
+
+msgid "Indica il periodo si attuazione dell'azione"
+msgstr "Angabe der Durchführung der Aktion"
+
+msgid "Sono i costi stimati (in Euro) previsti per l'attuazione dell'azione"
+msgstr "Sind die geschätzten Kosten (in Euro) für die Durchführung der Aktion"
+
+msgid "Risparmio energetico previsto a seguito dell'applicazione dell'azione"
+msgstr "Vorraussichtliche Energieeinsparung nach Durchführung der Maßnahme"
+
+msgid "Produzione di energia prevista a seguito dell'attuazione dell'azione"
+msgstr ""
+"Vorraussichtliche Erzeugung von Energie aufgrund der Durchführung der "
+"Maßnahme"
+
+msgid "Riduzione di CO2 prevista a seguito dell'attuazione dell'azione"
+msgstr "Vorraussichtliche Verringerung des CO2 "
+
+msgid "E'l'obiettivo di risparmio energetico espresso in MWh previsto nel 2020"
+msgstr "Ist das Energieeinsparungsziel in MWh vorgesehen im Jahr 2020"
+
+msgid ""
+"E'l'obiettivo di produzione locale di energia rinnovabileo espresso in MWh "
+"previsto nel 2020"
+msgstr ""
+"Ist das Einsparungsziel von lokaler Erzeugung erneuerbarer Energie in MWh "
+"vorgesehen für 2020"
+
+msgid ""
+"E'l'obiettivo di riduzione di CO<sub>2</sub> espresso in MWh previsto nel "
+"2020"
+msgstr "Ist das Einsparungsziel von CO<sub>2</sub> in MWh vorgesehen für 2020"
+
+msgid "E'il settore specifico in cui indicare gli obiettivi"
+msgstr "Ist der spezifische Sektor in welchem die Ziele anzugeben sind"
+
+msgid "Indice"
+msgstr "Inhaltsangabe"
+
+msgid "Titolo dell'invertario emissioni"
+msgstr "Titel des Emissionsinventars"
+
+msgid "Inserire il titolo dell'invertario emissioni."
+msgstr "Titel des Emissionsinventars einfügen."
+
+msgid ""
+"Se il campo \"Visibile\" è selezionato il relativo piano d'azione diventa "
+"visibile a tutti gli utenti abilitati."
+msgstr ""
+"Wenn Feld \"Sichtbar\" gewählt ist, wird der betreffende Aktionsplan allen "
+"ermächtigten Benutzern sichtbar"
+
+msgid "Indicare il nome del comune ove è ubicato l'edificio."
+msgstr "Name der Gemeinde angeben, wo sich das Gebäude befindet."
+
+msgid "Abitanti nell'anno di riferimento"
+msgstr "Einwohner im Bezugsjahr"
+
+msgid ""
+"Inserire il numero degli abitanti nell'anno di riferimento dell'inventario "
+"nel caso in cui siano state utilizzate le emissioni pro-capite."
+msgstr ""
+"Einwohnerzahl im Bezugsjahr des Inventars eingeben wenn pro Kopf-Emissionen "
+"verwertet wurden."
+
+msgid "E'l'anno di riferimento dell'inventario emissioni"
+msgstr "Ist das Bezugsjahr des Emissionsinventars."
+
+msgid ""
+"Indica il comune su cui si vuole realizzare il PAES (Piani di Azione per "
+"l'Energia Sostenibile)"
+msgstr ""
+"Namen der Gemeinde angeben, in welcher man den Aktionsplan für nachhaltige "
+"Energie (SEAP) verwirklichen möchte"
+
+msgid "Indicare un nome esplicativo da dare al PAES"
+msgstr "Einen bezeichnenden Namen für den SEAP angeben"
+
+msgid "In questa sezione si prega di illustrate "
+msgstr "In diesem Bereich bittet man darzulegen"
+
+msgid ""
+" la visione a lungo termine del vostro comune (almeno) fino al 2020, "
+"indicando:"
+msgstr ""
+"die langfristige Vision Ihrer Gemeinde bis (mindestens) 2020 und geben Sie "
+"an:"
+
+msgid ""
+"le aree intervento prioritarie. In quali settori prevedete di realizzare le "
+"maggiori riduzioni di CO2? Quali sono le vostre azioni principali?"
+msgstr ""
+"die vorrangigen Aktionsvereiche. In welchen Sektoren werden Sie "
+"vorraussichtlich die größten CO2-Einsparungen erzielen?"
+
+msgid ""
+"quali sono le tendenze principali in termini di emissioni di CO2 nel vostro "
+"territorio/comune e in che cosa consistono le sfide maggiori che siete "
+"chiamati ad affrontare?"
+msgstr ""
+"welche sind die wesentlichen Tendenzen bezüglich der CO2-Emissionen in Ihrem "
+"Territorium/in Ihrer Gemeinde und worin bestehen die größten "
+"Herausforderungen"
+
+msgid ""
+"Indicare qual è l'obiettivo generale di riduzione delle emissioni di "
+"CO<sub>2</sub> del vostro comune espresso in percentuale.<br />"
+msgstr ""
+"Angabe welches das allgemeine CO<sub>2</sub>Reduktionsziel Ihrer Gemeinde in "
+"Prozenten ausgedrückt.<br /> "
+
+msgid ""
+"Indicare l'anno entro il quale si vuole raggiungere l'obiettivo di riduzioni "
+"delle emissioni di CO<sub>2</sub> nel vostro comune.<br />"
+msgstr ""
+"Angabe, innerhalb welchen Jahres das  CO<sub>2</sub>Reduktionsziel Ihrer "
+"Gemeinde erreicht werden soll.<br /> "
+
+msgid ""
+"In linea di principio, occorre fissare l'obiettivo di riduzione come valore "
+"\"assoluto\" (percentuale della quantità di emissioni di CO2 calcolata per "
+"l'anno di riferimento). In alternativa, l'obiettivo può essere fissato \"pro "
+"capite\". In questo caso, le emissioni dell'anno di riferimento vengono "
+"divise per il numero di abitanti nello stesso anno e l'obiettivo di "
+"riduzione percentuale delle emissioni viene calcolato su quella base."
+msgstr ""
+"Grundsätzlich, sollte das Reduktionsziel als  \"absoluter\"  Wert "
+"(Prozentsatz der für das Basisjahr berechneten Menge an CO2-Emissionen). "
+"Alternativ dazu kann das Ziel  \"pro Kopf\" festgelegt werden. In diesem "
+"Fall werden die Emissionen des Basisjahrs durch die Einwohnerzahl desselben "
+"jahres dividiert und auf dieser Basis das Emissionsreduktionsziel in Prozent "
+"berechnet."
+
+msgid ""
+"Indicare qual è l'obiettivo generale di riduzione delle emissioni di "
+"CO<sub>2</sub> del vostro comune espresso in percentuale in un periodo di "
+"lungo termine."
+msgstr ""
+"Angeben welches langfristig das GesamtCO<sub>2</sub>Reduktionsziel Ihrer "
+"Gemeinde ausgedrückt in Prozenten ist. "
+
+msgid ""
+"Indicare l'anno entro il quale si vuole raggiungere l'obiettivo di riduzioni "
+"delle emissioni di CO<sub>2</sub> nel vostro comune in un periodo di lungo "
+"termine."
+msgstr ""
+"Angabe des Jahres innerhalb dessen man das langfristige  CO<sub>2</"
+"sub>Reduktionsziel  Ihrer Gemeinde erreichen will."
+
+msgid "Selezionare la tipologia dei fattori di conversione"
+msgstr "Die Emissionsfaktoren wählen"
+
+msgid ""
+"<b>IPCC</b> (Intergovernmental Panel on Climate Change): fattori di "
+"emissione \"standard\", che comprendono tutte le emissioni di CO<sub>2</sub> "
+"derivanti dall'energia consumata nel territorio municipale, sia "
+"direttamente, tramite la combustione di carburanti all'interno del comune, "
+"che indirettamente, attraverso la combustione di carburanti associata "
+"all'uso dell'elettricità e del riscaldamento/raffreddamento nell'area "
+"municipale."
+msgstr ""
+"<b>IPCC</b> (Intergovernmental Panel on Climate Change): Emissionsfaktoren "
+"\"standard\", welche alle CO<sub>2</sub> Emissionen betreffen, welche aus "
+"dem Energieverbrauch des Gemeindegebietes resultieren, sowohl direkt, "
+"mittels Verbrennung von Brennstoffen innerhalb der Gemeinde, als indirekt, "
+"durch Verbrennung von Brennstoffen in Zusammenhang mit der Nutzung von Strom "
+"und Wärme/Kälte im Gemeindegebiet."
+
+msgid ""
+"<b>LCA</b> (Life Cycle Assessment) fattori di conversione che prendono in "
+"considerazione l'intero ciclo di vita del vettore energetico. Tale approccio "
+"tiene conto non solo delle emissioni della combustione finale, ma anche di "
+"tutte le emissioni della catena di approvvigionamento che si verificano al "
+"di fuori del territorio comunale."
+msgstr ""
+"<b>LCA</b> (Life Cycle Assessment) Konversionsfaktoren welche den gesamten "
+"Lebenszyklus des Energetischen Vektors berücksichtigen. Dieser Ansatz "
+"berücksichtigt nicht nur die Emissionen der Endverbrennung, sondern auch "
+"alle Emissionen der Versorgungskette. die außerhalb des Gebiets anfallen. "
+
+msgid ""
+"Indicare se le emissioni indicate sono in CO<sub>2</sub> o equivalenti di "
+"CO<sub>2</sub>."
+msgstr ""
+"Angeben ob die angegebenen Emissionen in  CO<sub>2</sub> oder äquivalenten "
+"voni CO<sub>2</sub> gemeldet werden."
+
+msgid "In questa sezione si prega di indicare "
+msgstr "In diesem Bereich werden Sie gebeten, anzugeben"
+
+msgid ""
+"le strutture specifiche create dal vostro comune per attuare l'iniziativa "
+"\"Patto dei sindaci\"."
+msgstr ""
+"jene Strukturen, welche von Ihrer Gemeinde geschaffen wurden für die "
+"Umsetzung der Initiative \"Bürgermeisterkonventi\"."
+
+msgid ""
+" le strutture specifiche create dal vostro comune per attuare l'iniziativa "
+"\"Patto dei sindaci\"."
+msgstr ""
+"jene Strukturen, welche von Ihrer Gemeinde geschaffen wurden für die "
+"Umsetzung der Initiative \"Bürgermeisterkonventi\"."
+
+msgid ""
+"Si prega di indicare quante persone lavorano (nei rispettivi impieghi a "
+"tempo pieno) alla preparazione e alla realizzazione del piano d'azione per "
+"l'energia sostenibile del vostro comune."
+msgstr ""
+"Bitte geben Sie an, wieviele Personen an der Vorbereitung und Umsetzung "
+"Ihres Aktionsplanes für nachhaltige Energie arbeiten."
+
+msgid ""
+"I firmatari del Patto dei sindaci si impegnano a mobilitare la società "
+"civile all'interno del loro territorio al fine di coinvolgerla nello "
+"sviluppo del piano d'azione. Indicate "
+msgstr ""
+"Die Unterzeichner des Bürgermeisterkonvents verpflichten sich, die "
+"Zivilgesellschaft innerhalb Ihres Territoriums zu mobilisieren, damit diese "
+"sich an der Entwikclung des Aktionsplans beteiligt. Geben Sie an"
+
+msgid ""
+"in che modo avete coinvolto i cittadini e i vari gruppi di soggetti "
+"interessati nella preparazione del piano d'azione e come intendete "
+"coinvolgerli durante la sua realizzazione."
+msgstr ""
+"wie sie die Bürger und die verschiednen Interessengruppen in die "
+"Vorbereitung des Aktionsplans einbezogen wurden und wie Sie diese bei der "
+"Umsetzug einbinden werden."
+
+msgid "In questa sezione si prega di descrivere "
+msgstr "In dieser Sektion beschreiben Sie bitte"
+
+msgid ""
+" il bilancio complessivo stanziato a favore sia dello sviluppo che della "
+"realizzazione della vostra strategia generale (compreso il calendario del "
+"bilancio stimato)."
+msgstr ""
+"das bereitgestellte Gesamtbudget sowohl zur Entwicklung als auch zur "
+"Umsetzung Ihrer Gesamtstrategie (einschließlich des Zeitplans für das "
+"veranschlagte Budget)."
+
+msgid ""
+"In questa sezione si prega di indicare l'importo del bilancio complessivo "
+"stanziato a favore sia dello sviluppo che della realizzazione della vostra "
+"strategia generale (compreso il calendario del bilancio stimato)."
+msgstr ""
+"In dieser Sektion geben Sie bitte den Betrag des Gesamthaushaltes zugunsten "
+"der Entwicklung als auch der Umsetzung Ihrer Gesamtstragetie an "
+"(einschließlich des Zeitplans für das veranschlagte Budget)."
+
+msgid "Si prega di indicare "
+msgstr "Bitte geben Sie an "
+
+msgid ""
+" i principali stanziamenti (o storni) previsti nel bilancio municipale e le "
+"fonti esterne (ad esempio schemi di finanziamento europei, nazionali o "
+"regionali, sponsor, eccetera) da cui prevedete di ricevere finanziamenti per "
+"la realizzazione delle azioni principali del vostro piano d'azione."
+msgstr ""
+"die veranschlagten (Neu)-Zuweisungen von Mitteln im kommunalen Haushalt an "
+"und aus welchen externen Quellen (z.B: europäische, nationale oder regionale "
+"Finanzierungssysteme, Sponsoren usw.) Sie vorraussichtlich gelder für die "
+"Durchführung der wichtigsten Maßnahmen Ihres Aktionsplans erhalten werden "
+
+msgid ""
+" in che modo il comune intende organizzare il monitoraggio e la valutazione "
+"del piano d'azione. Si segnala inoltre che i firmatari del Patto dei sindaci "
+"dovranno presentare una relazione di attuazione su base biennale. La prima "
+"relazione dovrà essere elaborata due anni dopo la presentazione del piano "
+"d'azione sull'energia sostenibile."
+msgstr ""
+"wie wird die Gemeinde die Überwachung und Bewertung des Aktionsplns "
+"organisieren. Hinweis: Die Unterzeichner des Bürgermeisterkonvents müssen "
+"alle zwei Jahre  einen Umsetzungsbericht vorlegen. Der erste Bericht ist "
+"zwei Jahre nach der Einreichung des Aktionsplans für erneuerbare Energien "
+"fällig. "
+
+msgid "Indacare l'inventario emissioni da utilizzare per il Patto dei sindaci"
+msgstr ""
+"Angeben, welches Emissionsinventar für den Bürgermeisterkonvent angewendet "
+"wird"
+
+msgid ""
+"E' possibile indicare un secondo inventario emissioni da utilizzato per il "
+"Patto dei sindaci"
+msgstr ""
+"Es ist möglich, ein weiteres Emissionsinventar zur Benutzung für den "
+"Bürgermeisterkonvent anzugeben"
+
+msgid ""
+"Si prega di indicare il piano d'azione da utilizzare per il Patto dei sindaci"
+msgstr "Bitte geben Sie den Aktionsplan für den Bürgermeisterkonvent an"
+
+msgid ""
+"Il POD (<u>P</u>oint <u>O</u>f <u>D</u>elivery) indica il numero di presa "
+"dell'allacciamento, cioè rappresenta la locazione fisica su cui viene "
+"erogata la fornitura del servizio."
+msgstr ""
+"Derl POD (<u>P</u>oint <u>O</u>f <u>D</u>elivery)  bezeichnet den Nummer des "
+"Stromanschlusses, bzw. stellt die physiche Stelle dar, wo die  Lieferung "
+"des  Dienstes stattfindet."
+
+msgid "Titolo del piano d'azione per l'energia sostenibile."
+msgstr "Titel des Aktionsplanes für erneuerbare Energie"
+
+msgid "Il comune oggetto del piano di azione."
+msgstr "Die vom Aktionsplan betroffene Gemeinde"
+
+msgid "Data di approvazione formale."
+msgstr "Datum der formellen Bewilligung."
+
+msgid ""
+"L'anno di riferimento per il quale sono stati raccolti dati quanto più "
+"completi e affidabili possibile."
+msgstr ""
+"Basisjahr in welchem die vollständigsten und zuverlässigsten Daten erhoben "
+"worden sind. "
+
+msgid ""
+"Numero degli abitanti nell'anno di riferimento dell'inventario nel caso in "
+"cui siano state utilizzate le emissioni pro-capite."
+msgstr ""
+"Einwohnerzahl des Basisjahres im Fall von Anwendung pro Kopf Emissionen"
+
+msgid "Struttura organizzativa di coordinamento"
+msgstr "Organisatorische Koordinationsstruktur"
+
+msgid ""
+"Indicare le strutture specifiche create dal comune per attuare l'iniziativa "
+"\"Patto dei sindaci\"."
+msgstr ""
+"Angabe der spezifischen Strukturen welche von der Gmeinde geschaffen wurden "
+"um die Initiative \"Bürgermeisterkonventi\" umzusetzen."
+
+msgid ""
+"Indicare quante persone lavorano (nei rispettivi impieghi a tempo pieno) "
+"alla preparazione e alla realizzazione del piano d'azione per l'energia "
+"sostenibile del comune."
+msgstr ""
+"Angaben, wieviele Personen (in Vollzeitäquivalenten) an der vorbereitung und "
+"Umsetzung des Aktionsplans für nachhaltige Energie der Gemeinde arbeiten."
+
+msgid "Coinvolgimento di soggetti interessati e cittadini"
+msgstr "Einbeziehung von Interessensgruppen und Bürgern"
+
+msgid ""
+"Indicare in che modo sono coinvolti i cittadini e i vari gruppi di soggetti "
+"interessati nella preparazione del piano d'azione e come si intende "
+"coinvolgerli durante la sua realizzazione."
+msgstr ""
+"Angeben, in wie dieInteressensgruppen und Bürgern in der Vorbereitung des "
+"Aktionsplans einbezogen sind und wie sie bei der Umsetzung eingebunden "
+"werden. "
+
+msgid "Stima risorse disponibili"
+msgstr "Schätzung verfügbarer Ressourcen"
+
+msgid ""
+"Indicare il bilancio complessivo stanziato a favore sia dello sviluppo che "
+"della realizzazione della strategia generale."
+msgstr ""
+"Bereitsgestelltes Gesamtbudget zu Gunsten der Entwicklung und Umsetzung der "
+"Gesamtstrategie angeben. "
+
+msgid "Fonti di finanziamento previste per l'implementazione delle azioni"
+msgstr "Vorgesehene Finanzierungsquellen für die Implementierung der Aktionen"
+
+msgid ""
+"Indicare i principali stanziamenti previsti nel bilancio municipale e le "
+"fonti esterne da cui si prevede di ricevere finanziamenti per la "
+"realizzazione delle azioni principali del piano d'azione."
+msgstr ""
+"Angabe der veranschlagten Zuweisungen von Mitteln im kommunalen Haushalt an "
+"und aus welchen externen Quellen vorraussichtlich Finanzierung für die "
+"Umsetzung der Hauptaktionen des Aktionsplans erhalten werden "
+
+msgid "Pianificazione delle misure di sviluppo e monitoraggio"
+msgstr "Planung der Maßnahmen von Entwicklung und Überwachung "
+
+msgid ""
+"Indicare in che modo il comune intende organizzare il monitoraggio e la "
+"valutazione del piano d'azione."
+msgstr ""
+"Angabe wie die Gemeinde die Überwachung und Bewertung des Aktionsplanes "
+"organisieren will."
+
+msgid ""
+"Nella scelta dei fattori di emissione è possibile selezionare fra le "
+"seguenti opzioni:"
+msgstr ""
+"In der Wahl der Emissionsfaktoren kann zwischen den verschiedenen Optionen "
+"gewählt werden: "
+
+msgid ""
+"standard\" in linea con i principi IPCC, che comprendono tutte le emissioni "
+"di CO<sub>2</sub> derivanti dall'energia consumata nel territorio "
+"municipale, sia direttamente, tramite la combustione di carburanti "
+"all'interno del comune, che indirettamente, attraverso la combustione di "
+"carburanti associata all'uso dell'elettricità e del riscaldamento/"
+"raffreddamento nell'area municipale.</li>"
+msgstr ""
+"standard  gemäß IPCC, Emissionsfaktoren , welche alle CO<sub>2</sub> "
+"Emissionen betreffen, welche aus dem Energieverbrauch des Gemeindegebietes "
+"resultieren, sowohl direkt, mittels Verbrennung von Brennstoffen innerhalb "
+"der Gemeinde, als indirekt, durch Verbrennung von Brennstoffen in "
+"Zusammenhang mit der Nutzung von Strom und Wärme/Kälte im Gemeindegebiet.</"
+"li>"
+
+msgid ""
+"Specificare se le emissioni sono indicate in emissioni di CO<sub>2</sub> o "
+"equivalenti di CO<sub>2</sub>."
+msgstr ""
+"Angeben ob die Emissionen in Emissionen von CO<sub>2</sub> oder äquivalenten "
+"von CO<sub>2</sub> erhoben werden."
+
+msgid "Comune su cui si intende effettuare la simulazione"
+msgstr "Gemeinde in der die Simulation stattfindet"
+
+msgid ""
+"Titolo della simulazione. Utilizzare un titolo per poter riconoscere la "
+"simulazione dall'elenco"
+msgstr "Titel der Simulation. Benutzen Sie einen Titel um sie Simulation "
+
+msgid "Breve descrizione della simulazione"
+msgstr "Kurzbeschreibung der Simulation"
+
+msgid "Se attivo la simulazione non sarà visibile ad altri utenti"
+msgstr "Wenn aktiv, ist die Simulation für anderen Benutzern nicht sichtbar"
+
+msgid "Tot.Costi"
+msgstr "Gesamtkosten"
+
+msgid ""
+"Costo stimato per effettuare tutte le simulazioni selezionate. E'possibile "
+"modificare manualmente questo valore, ad esempio in seguito ad un offerta"
+msgstr ""
+"Geschätzte Kosten, um alle gewählten Simulationen auszuführen. Es ist "
+"möglich, diesen Wert manuel zu ändern, z.B. nach Erhalt eines Angebotes"
+
+msgid "Data simulazione"
+msgstr "Simulationsdatum"
+
+msgid "E' la data in cui è stata fatta la simulazione"
+msgstr "Datum der erfolgten Simulation"
+
+msgid ""
+"Indica il nome del comune in cui è ubicato il tratto di strada da monitorare"
+msgstr ""
+"Angabe der Gemeinde, in welcher der zu überwachende Straßenabschnitt sich "
+"befindet"
+
+msgid ""
+"Rappresenta il nome della via, piazza, ecc su cui si intende inserire i dati "
+"dei consumi. E' possibile aggiungere nuove vie tramite il botttone \"Aggiungi"
+"\""
+msgstr ""
+"Bezeichnet den Straßen- bzw. Platznamen usw. auf welchen man die "
+"Verbrachsdaten eingeben möchte. Es ist möglich neue Straßen mittels Button  "
+"\"Hinzufügen\" anzufügen"
+
+msgid "Descrizione del tratto (es da incrocio, fino alla fine della via)"
+msgstr "Beschreibung des Abschnittes (z.B. ab Kreuzung, bis Ende der Straße"
+
+msgid ""
+"Lunghezza del tratto. Viene impostato automaticamente dopo la "
+"digitalizzazione su mappa, ma può essere corretto manualmente"
+msgstr ""
+"Länge Abschnitt. Wird automatisch nach Digitalisierung auf der Karte "
+"angegeben, kann auch manuel korrigiert werden"
+
+msgid "Indicare se l'inserimento del tratto di strada è da controllare"
+msgstr "Angeben ob die Eingabe des Straßenabschnittes zu kontrolliern ist"
+
+msgid "Fornitore di servizi"
+msgstr "Lieferant"
+
+msgid ""
+"Il fornitore di servizi è l'ente che fornisce energia termica o elettrica ai "
+"comuni (es teleriscaldamento)."
+msgstr ""
+"Lieferant des Dienstes ist die Körperschaft welche thermische oder "
+"elektrische Energie an Gemeinden liefert (z.B. Fernwärme)"
+
+msgid ""
+"prodotti\", con fattori di conversione differenti, tipologie differenti "
+"(elettrico/riscaldamento) e ogni prodotto può essere associato a una delle "
+"alimentazioni previste dal Patto die Sindaci."
+msgstr ""
+"Produkte\", mit verschiedenen Konversionsfaktoren, Typologien (Strom/Wärme) "
+"und jedes Produkt kann mit einer der "
+
+msgid "E' il nome del fornitore di servizi in tedesco"
+msgstr "Bezeichnung des Lieferanten der Dienste in Deutsch"
+
+msgid ""
+"E' l'ordinamento per il fornitore di servizi. A valore uguale, viene preso "
+"il nome"
+msgstr ""
+"Die Anordnung für den Lieferanten der Dienste. Mit gleichem Wert wird der "
+"Name"
+
+msgid "E'l'elenco dei comuni dove si vuole attivare il fornitore di servizi"
+msgstr ""
+"Auflistung der Gemeinden, in dem der Lieferant der Dienste aktiviert werden "
+"soll"
+
+msgid "Elenco completo dei comuni"
+msgstr "Komplette Liste der Gemeinden "
+
+msgid ""
+"Indica il numero propgressivo dell'intervento e viene assegnato in "
+"automatico dal sistema"
+msgstr ""
+"Bezeichnet die progressive Nummer der Maßnahme, welche automatisch vom "
+"System zugeteilt wird"
+
+msgid "Indica lo stato dell'intervento"
+msgstr "Bezeichnet den Fortschritt der Maßnahme"
+
+msgid "Indicare la tipologia dell'intervento che si vuole inserire"
+msgstr "Maßnahmentypologie angeben, welche man einfügen möchte"
+
+msgid "Breve descrizione dell'intervento"
+msgstr "Kurzbeschreibung der Maßnahme"
+
+msgid ""
+"Data prevista (o effettiva nel caso di intervento in corso di realizzazione "
+"o realizzato) di inizio intervento"
+msgstr ""
+"Vorraussichtliches Datum (oder effektives im Fall daß Maßnahme getätigt ist "
+"oder angelaufen ist) "
+
+msgid ""
+"Data prevista (o effettiva nel caso di intervento realizzato) di fine "
+"intervento"
+msgstr ""
+"Vorraussichtl. (oder effektives Datum im Fall bereits getätigter Maßnahme) "
+"Abschluß Maßnahme"
+
+msgid "Costo stimato dell'intervento"
+msgstr "Geschätze Kosten der Maßnahme"
+
+msgid "Costo effettivo dell'intervento"
+msgstr "Effektive Kosten der Maßnahme"
+
+msgid "Contributi stimati che si stima di ricevere a seguito dell'intervetno"
+msgstr "Zu erwartende Beiträge aufgrund der Maßnahme"
+
+msgid "Contributi effettivi ricevuti a seguito dell'intervetno"
+msgstr "Effektiv erhaltene Beiträge aufgrund der Maßnahme"
+
+msgid ""
+"Contributo netto stimato (costo_stimano - contributo_stimato). Viene "
+"calcolato automaticamente dal sistema"
+msgstr ""
+"Geschätzter Nettobeitrag (Kosten_geschätzt-Beitrag_geschätzt). Wird "
+"automatisch vom System berechnet"
+
+msgid ""
+"Contributo netto effettivo (costo_effettivo - contributo_effettivo). Viene "
+"calcolato automaticamente dal sistema"
+msgstr ""
+"Effektiver Nettobeitrag (Kosten_effektiv-Beitrag_effektiv). Wird automatisch "
+"vom System berechnet"
+
+msgid "Costo di manutenzione annua"
+msgstr "JährlicheWartungskosten"
+
+msgid "Tasso di sconto applicato"
+msgstr "Angewender Skontosatz"
+
+msgid "Indicare il modo con cui verrà pagato il finanziamento"
+msgstr "Angeben, wie Zahlung der Finanzierung erfolgt"
+
+msgid "Specificare il modo con cui verrà pagato il finanziamento"
+msgstr "Spezifizieren, wie Zahlung der Finanzierung erfolgt"
+
+msgid "Indicare la vita utile dell'investimento (in anni)"
+msgstr "Angabe der Dauer der Investition (in Jahren9"
+
+msgid "Indicare il tasso di ritorno dell'investimento (in percentuale)"
+msgstr "Angabe des Zinssatzes des Return on Investment  (in Prozenten)"
+
+msgid ""
+"Ritorno dell'investimento espresso in anni. Viene calcolato automaticamente "
+"dal sistema"
+msgstr ""
+"Angabe des Return on Investment  in Jahren ausgedrückt. Wird automatisch vom "
+"System berechnet"
+
+msgid ""
+"Indicare l'energia annua stimata che si andrà a risparmiare a seguito "
+"dell'intervento"
+msgstr "Jährliche Energieeinsparung nach durchgeführter Maßnahme"
+
+msgid ""
+"Indicare l'energia elettrica annua che si andrà a risparmiare a seguito "
+"dell'intervento"
+msgstr "Jährliche Stromeinsparung nach durchgeführter Maßnahme angeben"
+
+msgid "Totale energia risparmiata<br />"
+msgstr "Gesamte Energieeinsparung <br />"
+
+msgid ")"
+msgstr ""
+
+msgid "Totale energia risparmiata rapportata alla superficie dell'edificio"
+msgstr "Summe Energieeinsparung im Verhältnis zur Gebäudeoberfläche "
+
+msgid ""
+"<b>Il Sevizio Energia</b><br /><br />\n"
+"Le innovazioni contenute nel Contratto di Servizio Energia sono "
+"sostanzialmente riconducibili a due aspetti: da un lato, si uniscono i "
+"concetti di comfort e di risparmio energetico, cioè si persegue la ricerca "
+"del massimo risparmio di energia possibile, fornendo comunque il livello di "
+"comfort richiesto dagli utenti; dall’altro, si individua nel miglioramento "
+"dell’efficienza degli impianti che producono e utilizzano l’energia, lo "
+"strumento per garantire comfort e risparmio energetico.<br />\n"
+"Già la legge 10/91 parlava di servizio energia e il dpr 412/93 ne dava la "
+"definizione precisa: &lt;&lt; per “contratto servizio energia” si intende "
+"l'atto contrattuale che disciplina l'erogazione dei beni e servizi necessari "
+"a mantenere le condizioni di comfort negli edifici nel rispetto delle "
+"vigenti leggi in materia di uso razionale dell'energia, di sicurezza e di "
+"salvaguardia dell'ambiente, provvedendo nel contempo al miglioramento del "
+"processo di trasformazione e di utilizzo dell'energia &gt;&gt;.<br />\n"
+"Per la prima volta il legislatore mette insieme il concetto di risparmio "
+"energetico con il concetto di comfort e indica nel processo di miglioramento "
+"dell’efficienza energetica lo strumento in grado di soddisfare queste due "
+"esigenze apparentemente contrastanti.<br />\n"
+"Successivamente sono usciti sul mercato contratti che pur chiamandosi "
+"contratti di servizio energia, in effetti, non ne applicavano appieno lo "
+"spirito. Si trattava di contratti forfettari, contratti cioè che prevedevano "
+"un costo fisso annuo di riscaldamento, indipendentemente sia dalla effettiva "
+"stagione termica, sia dalle esigenze di comfort degli utenti e raramente "
+"intervenivano sugli impianti in modo significativo.<br />\n"
+"Tutto ciò ha portato a disagi e a maggiori costi per gli utenti contribuendo "
+"pertanto a creare la cattiva fama dei contratti di servizio energia. A "
+"mettere ordine sul mercato, dopo qualche anno, sono intervenute alcune "
+"circolari del Ministero delle Finanze – Dipartimento Entrate: – Risoluzione "
+"n. 103 del 20/08/98 (applicabilità aliquota IVA 10%) – Circolare n. 273 del "
+"23/11/98 (contenuti minimali del contratto) – Circolare n. 82 del 07/04/99 "
+"(uso domestico e altri usi) – Risoluzione n. 150 del 15/12/04 (corretta "
+"attribuzione IVA) che hanno chiarito cosa effettivamente si intende per "
+"contratto di servizio energia e quali siano le caratteristiche del contratto "
+"stesso; hanno chiarito inoltre che a tali contratti, in ambito domestico si "
+"applica l’aliquota IVA al 10%. Tuttavia, nonostante ciò si è valutato che "
+"circa il 70% dei contratti in essere, in realtà non rispetta la normativa "
+"vigente e applica indebitamente l’aliquota IVA al 10%.\n"
+msgstr "<b>Energiedienst</b><br /><br />\n"
+
+msgid ""
+"Nel caso si tratti di un <u>fattore di conversione specifico per un singolo "
+"comune</u>, indicarne il nome (Es: fattore di conversione elettrico per il "
+"Comune di Roma)\n"
+"Se il comune non viene specificato, il fattore di conversione sarà valido "
+"per tutti i comuni"
+msgstr ""
+"Im Falle, dass es sich um einen Konversionsfaktor <u> für eine einzelne "
+"Gemeinde </u> handelt, Namen angeben (z.B. Konversionsfaktor Strom für Stadt "
+"Rom)\n"
+" . Wenn die Gemeinde nicht spezifiziert wird, ist der Konversionsfaktor für "
+"alle Gemeinden gültig."
+
+msgid ""
+"E' il fattore di forma dell'edificio.<br />\n"
+"Il \"Fattore di forma S/V\" è il rapporto tra la \"Superficie disperdente\" "
+"che delimita verso ambienti non dotati di riscaldamento e verso l'esterno il "
+"volume lordo riscaldato V, ed il \"Volume lordo riscaldato V\""
+msgstr ""
+"Ist der Formfaktor des Gebäudes.<br />\n"
+"Der\"Formfaktor A/V\" ist das Verhältnis der \"Wärme übertragenden Fläche\" "
+"welche das beheizte Volumen V von den nicht beheizten Räumen und der "
+"Aussenseite abgrenzt , und deml \"eingeschlossenen beheiztem Gebäudevolumen V"
+"\""
+
+msgid ""
+"Tipo di inserimento desiderato:<br>\n"
+"<b>Bolletta singola</b>: Permitte di inserire una singola bolletta per volta "
+"indicando tutti i parametri manualmente<br>\n"
+"<b>Bollette mensile</b>: Permitte un inserimento multiplo di tutte le "
+"bollette dell'anno in un unica volta. Verranno memorizzati esclusivamente "
+"valori con consumo e spesa indicati<br>\n"
+"<b>Bollette annuale</b>: Permitte di inserire un unica bolletta con i "
+"consumi da gennaio a dicembre<br>\n"
+"Per inserire bollette con periodicità diversa usare l'inserimento singolo in "
+"combinazione con il bottone \"Salva e inserisci nuovamente\""
+msgstr ""
+"Gewünschter Einfügungstyp:<br>\n"
+"<b>Bolletta singola</b>: Permitte di inserire una singola bolletta per volta "
+"indicando tutti i parametri manualmente<br>\n"
+"<b>Bollette mensile</b>: Permitte un inserimento multiplo di tutte le "
+"bollette dell'anno in un unica volta. Verranno memorizzati esclusivamente "
+"valori con consumo e spesa indicati<br>\n"
+"<b>Bollette annuale</b>: Permitte di inserire un unica bolletta con i "
+"consumi da gennaio a dicembre<br>\n"
+"Per inserire bollette con periodicità diversa usare l'inserimento singolo in "
+"combinazione con il bottone \"Salva e inserisci nuovamente\""
+
+msgid ""
+"Indicare qual è l'obiettivo generale di riduzione delle emissioni di "
+"CO<sub>2</sub> del vostro comune espresso in percentuale.<br />\n"
+"                               <b>Si ricorda che, conformemente a quanto "
+"previsto dal Patto dei sindaci, è necessario ridurre le emissioni di "
+"CO<sub>2</sub> di almeno il <u>20%</u> entro il <u>2020</u></b>"
+msgstr ""
+"Angeben, welches das Gesamt-CO<sub>2</sub>-Emissionsreduktionsziel Ihrer "
+"Gemeinde in Prozenten ausgedrückt, ist.<br />\n"
+"                               <b>Hinweis: gemäß dem Bürgermeisterkonvent "
+"sollte das CO<sub>2</sub>  2-Reduktionsziel mindestens <u>20%</u>bis zum "
+"Jahr <u>2020</u></b> betragen"
+
+msgid ""
+"Indicare l'anno entro il quale si vuole raggiungere l'obiettivo di riduzioni "
+"delle emissioni di CO<sub>2</sub> nel vostro comune.<br />\n"
+"                                    <b>Si ricorda che, conformemente a "
+"quanto previsto dal Patto dei sindaci, è necessario ridurre le emissioni di "
+"CO<sub>2</sub> di almeno il <u>20%</u> entro il <u>2020</u></b>"
+msgstr ""
+"Angabe des Jahres, innerhalb welchem man das Gesamt-CO<sub>2</"
+"sub>Emissionsreduktionsziel Ihrer Gemeinde <br />\n"
+" erreichen will.                                    <b>Si ricorda che, "
+"conformemente a quanto previsto dal Patto dei sindaci, è necessario ridurre "
+"le emissioni di CO<sub>2</sub> di almeno il <u>20%</u> entro il <u>2020</u></"
+"b>"
+
+msgid ""
+"Il POD (<u>P</u>oint <u>O</u>f <u>D</u>elivery) indica il numero di presa "
+"dell'allacciamento, cioè rappresenta la locazione fisica su cui viene "
+"erogata la fornitura del servizio.\n"
+"<br />E' possibile reperire questo numero su ogni singola bolletta o sul "
+"contratto sottoscritto con il fornitore del servizio."
+msgstr ""
+" POD (<u>P</u>oint <u>O</u>f <u>D</u>elivery) bezeichnet die Nummer des "
+"Steckverbinders, bzw. stellt den Ort dar, an dem die Stromzufuhr "
+"stattfindet.\n"
+"<br />E' possibile reperire questo numero su ogni singola bolletta o sul "
+"contratto sottoscritto con il fornitore del servizio."
+
+msgid ""
+"Nella scelta dei fattori di emissione è possibile selezionare fra le "
+"seguenti opzioni:\n"
+"<ol>\n"
+"  <li>fattori di emissione \"standard\" in linea con i principi IPCC, che "
+"comprendono tutte le emissioni di CO<sub>2</sub> derivanti dall'energia "
+"consumata nel territorio municipale, sia direttamente, tramite la "
+"combustione di carburanti all'interno del comune, che indirettamente, "
+"attraverso la combustione di carburanti associata all'uso dell'elettricità e "
+"del riscaldamento/raffreddamento nell'area municipale.</li>\n"
+"  <li>utilizzare fattori LCA (valutazione del ciclo di vita), che prendono "
+"in considerazione l'intero ciclo di vita del vettore energetico.</li>\n"
+"</ol>"
+msgstr ""
+"Bei der Auswahl der Emissionsfaktoren können zwei verschiedenene Ansätze "
+"verfolgt werden:\n"
+"<ol>\n"
+"  <li> \"standard\" -Emissionsfaltoren nach den IPCC-Grundsätzen, die alle "
+"CO<sub>2</sub> Emissionen abdecken, die durch den Energieverbrauch im "
+"Territorium  der Gemeinde entstehen, sei es direkt aufgrund der Verbrennung "
+"von Brennstoffen innerhalb der Gemeinde, sei es indirekt durch die "
+"Verbrennung von Brennstoffen im Zusammenhang mit der Nutzung von Strom und "
+"Wärme/Kälte in ihrem Gebiet. </li>\n"
+"  <li>utilizzare fattori LCA (valutazione del ciclo di vita), che prendono "
+"in considerazione l'intero ciclo di vita del vettore energetico.</li>\n"
+"</ol>"
+
+msgid ""
+"Il fornitore di servizi è l'ente che fornisce energia termica o elettrica ai "
+"comuni (es teleriscaldamento).\n"
+"Un fornitore può avere più \"prodotti\", con fattori di conversione "
+"differenti, tipologie differenti (elettrico/riscaldamento) e ogni prodotto "
+"può essere associato a una delle alimentazioni previste dal Patto die "
+"Sindaci.\n"
+"NOTA: Per eliminare un prodotto è sufficiente eliminare la descrizione ad "
+"esso associata, a patto che questo non sia stato utilizzato\n"
+msgstr ""
+"Der Dienstleister ist die Körperschaft, welche den Gemeinden thermische "
+"Energie oder Strom (z.B. Fernwärme) liefert. \n"
+
+msgid ""
+"\n"
+"Il valore attuale netto (VAN) è una metodologia tramite cui si definisce il "
+"valore attuale di una serie attesa di flussi di cassa non solo sommandoli "
+"contabilmente ma attualizzandoli sulla base del tasso di rendimento (costo "
+"opportunità dei mezzi propri).\n"
+msgstr ""
+"\n"
+"Der Kapitalwert (engl: NPV) ist eine betriebswirtschaftliche Kennziffer der "
+"dynamischen Investitionsrechnung. Durch Abzinsung auf den Beginn der "
+"Investition werden Zahlungen, die zu beliebigen Zeitpunkten anfallen, "
+"vergleichbar gemacht. Es ist die Summe der Barwerte aller durch diese "
+"Investition verusachten Zahlungen (Ein- und Auszahlungen) unter der "
+"Vorraussetzung, dass zwischenzeitliche kumulierte Überschüsse sofort zum "
+"Kalkulationszinsatz angelegt werden..\n"
+
+msgid ""
+"Totale energia risparmiata<br />\n"
+"<b>NOTA</b>: Il totale dell'energia è dato dall'energia primaria "
+"(eventualmente convertito in kWh) + (energia secondaria moltiplicato per "
+msgstr "Gesamte Energieeinsparung <br"
+
+msgid "Codice azione"
+msgstr ""
+
+msgid "Macro-settore"
+msgstr ""
+
+msgid "Sub-settore"
+msgstr ""
+
+msgid "Beneficio"
+msgstr ""
+
+msgid "Codice/Nome"
+msgstr ""
+
+msgid "Logo stampa (IT)"
+msgstr ""
+
+msgid "Stile applicativo"
+msgstr ""
+
+msgid "Stile mappa"
+msgstr ""
+
+msgid "Risparmio energetico [MWh/a]"
+msgstr ""
+
+msgid "Produzione di energia [MWh/a]"
+msgstr ""
+
+msgid "Riduzione di CO2 prevista [t/a]"
+msgstr ""
+
+msgid "Efficacia azione [%]"
+msgstr ""
+
+msgid "Azioni da selezionare"
+msgstr ""
+
+msgid "Azioni selezionate"
+msgstr ""
+
+msgid "Riepilogo"
+msgstr ""
+
+msgid "Descrizione (2)"
+msgstr ""
+
+msgid "Extra data"
+msgstr ""
+
+msgid "Azione principale"
+msgstr ""
+
+msgid "Attuazione - dal"
+msgstr ""
+
+msgid "Attuazione - al"
+msgstr ""
+
+msgid "Beneficio - dal"
+msgstr ""
+
+msgid "Beneficio - al"
+msgstr ""
+
+msgid "Nuovo catalogo azioni"
+msgstr ""
+
+msgid "Modifica catalogo azioni"
+msgstr ""
+
+msgid "Visualizza catalogo azioni"
+msgstr ""
+
+msgid "Catalogo azioni"
+msgstr ""
+
+msgid "Categoria PAES"
+msgstr ""
+
+msgid "Costo [€]"
+msgstr ""
+
+msgid "Risparmio energetico [MWh]"
+msgstr ""
+
+msgid "Produzione energetica [MWh]"
+msgstr ""
+
+msgid "Riduzione CO2 [t/a]"
+msgstr ""
+
+msgid "Il campo \"Macro-settore\" è obbligatorio"
+msgstr ""
+
+msgid "Sei sicuro di voler cancellare la voce \"%s\" dal catalogo azioni?"
+msgstr ""
+
+msgid ""
+"Impossibile cancellare questa voce dal catalogo azioni poichè vi sono dei "
+"dati ad esso legati"
+msgstr ""
+
+msgid "Riduzione di CO2 prevista[t/a]"
+msgstr ""
+
+msgid "Risparmio energetico"
+msgstr ""
+
+msgid "Produzione di energia"
+msgstr ""
+
+msgid "Riduzione di CO2 prevista"
+msgstr ""
+
+msgid "Espansa"
+msgstr ""
+
+msgid "Raggruppata"
+msgstr ""
+
+msgid "Caricamento in corso. Attendere.."
+msgstr ""
+
+msgid "Dati aggiuntivi settore piano azione"
+msgstr ""
+
+msgid "Attenzione:"
+msgstr "Achtung:"
+
+msgid "[Simulazioni edifici]"
+msgstr ""
+
+msgid "Simulazioni"
+msgstr ""
+
+msgid "Indica il comune dove si intende effetture l'azione"
+msgstr ""
+
+msgid "E' possibile assegnare un codice all'azione che si intende selezionare"
+msgstr ""
+
+msgid "Indica il settore principale del PAES in cui inserire l'azione"
+msgstr ""
+
+msgid "Indica il settore in cui inserire l'azione"
+msgstr ""
+
+msgid ""
+"Nel caso di interventi presenti in edifici, tratti di strada o inventario "
+"emissioni, è possibile indicare un ulteriore dettaglio allo scopo da poter "
+"georeferenziare l'azione stessa"
+msgstr ""
+
+msgid ""
+"E'il nome che da dare all'azione. Sarà il nome visibile nelle simulazioni "
+"che permetterà di identificarla"
+msgstr ""
+
+msgid ""
+"E'il nome che da dare all'azione (in tedesco). Sarà il nome visibile nelle "
+"simulazioni che permetterà di identificarla"
+msgstr ""
+
+msgid "Indica l'azione che si vuole intrapprendere"
+msgstr ""
+
+msgid "Indicare la persona o il dipartimento responsabile dell'aizone"
+msgstr ""
+
+msgid ""
+"Periodo di attuazione dell'azione del paes (Es: periodo di costruzione "
+"impianto fotovoltaico)"
+msgstr ""
+
+msgid ""
+"Periodo di beneficio dell'azione (tipicamente parte dalla data di fine "
+"attuazione al 2020)"
+msgstr ""
+
+msgid ""
+"Risparmio energetico che si prevede di effettuare a seguito "
+"dell'applicazione dell'azione. Selezionare la fonte e l'unità di misura e "
+"poi immettere il valore appropriato"
+msgstr ""
+
+msgid ""
+"Produzione di energia rinnovabile prevista a seguito dell'applicazione "
+"dell'azione. Selezionare la fonte e l'unità di misura e poi immettere il "
+"valore appropriato"
+msgstr ""
+
+msgid "Costi stimati per mettere in atto l'azione"
+msgstr ""
+
+msgid ""
+"Previsione di riduzione di CO2 a seguito del risparmio energetico previsto. "
+"Viene calcolata in automatico dal sistema"
+msgstr ""
+
+msgid ""
+"Titolo della simulazione in tedesco. Utilizzare un titolo per poter "
+"riconoscere la simulazione dall'elenco"
+msgstr ""
+
+msgid "performCalc"
+msgstr ""
+
+msgid "€/anno"
+msgstr "€/Jahr"
+
+msgid "Tep eq."
+msgstr "ÖE"
+
+msgid "kg"
+msgstr "kg"
+
+msgid "€/kWh"
+msgstr "€/kWh"
+
+msgid "Consumo energetico finale"
+msgstr "Endenergieverbrauch"
+
+msgid "Emissioni di CO<sub>2</sub>"
+msgstr "CO<sub>2</sub>-Emissionen"
+
+msgid "Produzione locale di elettricità"
+msgstr "Lokale Stromerzeugung"
+
+msgid "Produzione locale di calore/freddo"
+msgstr "Lokale Wärme-/Kälte-Erzeugung"
+
+msgid "Emissioni di CO<sub>2</sub> o equivalenti di CO<sub>2</sub>"
+msgstr "CO<sub>2</sub>-Emissionen oder CO<sub>2</sub>-äquivalente Emissionen"
+
+msgid ""
+"Produzione locale di elettricità e corrispondenti emissioni di CO<sub>2</sub>"
+msgstr "Lokale Stromerzeugung und entsprechende CO<sub>2</sub>-Emissionen"
+
+msgid ""
+"Produzione locale di calore/freddo e corrispondenti emissioni di CO<sub>2</"
+"sub>"
+msgstr ""
+"Lokale Wärme-/Kälte-Erzeugung und entsprechende CO<sub>2</sub>-Emissionen"
+
+msgstr "Datei \"%s\" nicht gefunden"
+
+msgstr "Datei \"%s\" fehlt"
+
+msgid "Tutti i file caricati nel sistema vengono controllati con "
+msgstr ""
+
+msgid ""
+"Attenzione! Salvando questa aizone verrà perso il legame con il relativo "
+"intervento sull'edificio"
+msgstr ""
+
+msgid "Riduzione di CO<sub>2</sub> prevista prevista"
+msgstr ""
+
+msgid "Fattore di conversione specifico fornitore di energia"
+msgstr ""
+
+msgid "Fattore conversione CO<sub>2</sub>"
+msgstr ""
+
+msgid ""
+"<b>NOTA</b>: Le eventuali modifiche effetuate sulla scheda saranno salvate"
+msgstr ""
+
+msgid "Riduzione di CO<sub>2</sub> prevista prevista [t/a]"
+msgstr ""
+
+msgid "Obiettivo di riduzione di CO<sub>2</sub> [t] nel 2020"
+msgstr ""
+
+msgid "Export PAES"
+msgstr ""
+
+msgid "Riduzione di CO<sub>2</sub> prevista [t/a]"
+msgstr ""
+
+msgid "Simulazione"
+msgstr ""
+
+msgid "Riduzione di CO<sub>2</sub> prevista"
+msgstr ""
+
+msgid "Salva e genera PAES"
+msgstr ""
+
+msgid "Confronta simulazioni"
+msgstr ""
+
+msgid "media annua nel periodo del beneficio"
+msgstr ""
+
+msgid "kg CO<sub>2</sub>/anno"
+msgstr ""
+
+msgid "kg CO<sub>2</sub>/anno*m²"
+msgstr ""
+
+msgid "Macrocategorie/macrosettori tabelle (PAES)"
+msgstr ""
+
+msgid "Categorie/settori tabelle (PAES)"
+msgstr ""
+
+msgid "Il campo 'applicazione' e' obbligatorio"
+msgstr ""
+
+msgid "Salvataggio fallito"
+msgstr ""
+
+msgid "Ora login"
+msgstr ""
+
+msgid "Ora ultima azione"
+msgstr ""
+
+msgid "Disconnetti"
+msgstr ""
+
+msgid "Caricamento fallito: problema sconosciuto."
+msgstr ""
+
+msgid "Caricamento fallito: formato immagine non supportato."
+msgstr ""
+
+msgid "Unknown Error."
+msgstr ""
+
+msgid "Data/ora"
+msgstr ""
+
+msgid "Domains list"
+msgstr ""
+
+msgid "Applications list"
+msgstr ""
+
+msgid "Access control list"
+msgstr ""
+
+msgid "Groups list"
+msgstr ""
+
+msgid "Users list"
+msgstr ""
+
+msgid "Personal settings"
+msgstr ""
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Connected users"
+msgstr ""
+
+msgid ""
+"Il campo 'applicazione' contiene caratteri non validi. Solo lettere e numeri "
+"sono accettati"
+msgstr ""
+
+msgid "Il campo 'codice' immesso esiste gia'"
+msgstr ""
+
+msgid "Il campo 'nome' e' obbligatorio"
+msgstr ""
+
+msgid "\"%s\" è obbligatorio"
+msgstr ""
+
+msgid "La stringa '%s' non può essere interpretata come intero"
+msgstr ""
+
+msgid "La stringa '%s' non può essere interpretata come float"
+msgstr ""
+
+msgid "Il campo 'Dominio' è obbligatorio."
+msgstr ""
+
+msgid "Il campo 'Dominio' non è valido."
+msgstr ""
+
+msgid "Il campo 'Applicazione' è obbligatorio."
+msgstr ""
+
+msgid ""
+"Il campo 'Applicazione' contiene caratteri non validi. Prego inserire solo "
+"lettere e numeri."
+msgstr ""
+
+msgid "Il campo 'Applicazione' immesso è già presente in banca dati."
+msgstr ""
+
+msgid "Impossibile cancellare questo utente perchè in uso."
+msgstr ""
+
+msgid "Il campo 'Login' è obbligatorio."
+msgstr ""
+
+msgid "Il campo 'Login' non è valido."
+msgstr ""
+
+msgid "Il campo 'Nome' è obbligatorio."
+msgstr ""
+
+msgid "Permesso negato"
+msgstr ""
+
+msgid "Login già presente"
+msgstr ""
+
+msgid "Attenzione!"
+msgstr ""
+
+msgid ""
+"Attenzione! L'utente selezionato ha privilegi che tu non hai. Per questo "
+"motivo non puoi modificarlo."
+msgstr ""
+
+msgid "Applicazioni"
+msgstr ""
+
+msgid "ATTIVO"
+msgstr ""
+
+msgid "NON ATTIVO"
+msgstr ""
+
+msgid ""
+"Data non valida!\\nFormati supportati:\\n- ddmmyy\\n- ddmmyyyy\\n- dd/mm/yy"
+"\\n- dd/mm/yyyy"
+msgstr ""
+
+msgid "Gennaio"
+msgstr ""
+
+msgid "Febbraio"
+msgstr ""
+
+msgid "Marzo"
+msgstr ""
+
+msgid "Aprile"
+msgstr ""
+
+msgid "Maggio"
+msgstr ""
+
+msgid "Giugno"
+msgstr ""
+
+msgid "Luglio"
+msgstr ""
+
+msgid "Agosto"
+msgstr ""
+
+msgid "Settembre"
+msgstr ""
+
+msgid "Ottobre"
+msgstr ""
+
+msgid "Novembre"
+msgstr ""
+
+msgid "Dicembre"
+msgstr ""
+
+msgid "DO"
+msgstr ""
+
+msgid "LU"
+msgstr ""
+
+msgid "MA"
+msgstr ""
+
+msgid "ME"
+msgstr ""
+
+msgid "GI"
+msgstr ""
+
+msgid "VE"
+msgstr ""
+
+msgid "SA"
+msgstr ""
+
+msgid "Avanti"
+msgstr ""
+
+msgid "Domain not found"
+msgstr ""
+
+msgid "Sessione scaduta"
+msgstr ""
+
+msgid "Ok"
+msgstr ""
+
+msgid "Password scaduta"
+msgstr ""
+
+msgid "Login / password non valide"
+msgstr ""
+
+msgid "Tipo autenticazione non supportato"
+msgstr ""
+
+msgid "Errore di sicurezza"
+msgstr ""
+
+msgid "Annullamento callback"
+msgstr ""
+
+msgid "Bisogna loggarsi/sessione scaduta"
+msgstr ""
+
+msgid "Account disabilitato"
+msgstr ""
+
+msgid "Account non ancora attivo"
+msgstr ""
+
+msgid "Account scaduto"
+msgstr ""
+
+msgid "IP di provenienza non valido"
+msgstr ""
+
+msgid "Password in scadenza"
+msgstr ""
+
+msgid "La password deve essere modificata"
+msgstr ""
+
+msgid "Parametri di autenticazione non validi"
+msgstr ""
+
+msgid "Utente disconnesso dall'amministratore"
+msgstr ""
+
+msgid "Sistema"
+msgstr ""
+
+msgid "P. ed."
+msgstr ""
+
+msgid "P. f."
+msgstr ""
+
+msgid "Il campo \"%s\" deve contenere un valore numerico"
+msgstr ""
+
+msgid "Salvataggio fallito:"
+msgstr ""
+
+msgid "Inserisci classificazione"
+msgstr ""
+
+msgid "Modifica classificazione"
+msgstr ""
+
+msgid "Classificazione"
+msgstr ""
+
+msgid "Sei sicuro, di voler cancellare questa classificazione?"
+msgstr ""
+
+msgid "Tel."
+msgstr ""
+
+msgid "E-Mail"
+msgstr ""
+
+msgid "Sei sicuro, di voler cancellare questo competente?"
+msgstr ""
+
+msgid "Descrizione codice"
+msgstr ""
+
+msgid "Cod. località"
+msgstr ""
+
+msgid "Nr. pianta"
+msgstr ""
+
+msgid "Specie"
+msgstr ""
+
+msgid "Altezza"
+msgstr ""
+
+msgid "Vigore"
+msgstr ""
+
+msgid "Materiale"
+msgstr ""
+
+msgid "Conserva"
+msgstr ""
+
+msgid "Funzione"
+msgstr ""
+
+msgid "Giacitura"
+msgstr ""
+
+msgid "Degrado"
+msgstr ""
+
+msgid "Copertura"
+msgstr ""
+
+msgid "N.soggetti"
+msgstr ""
+
+msgid "Server busy!"
+msgstr ""
+
+msgid "ESRI Shape file"
+msgstr ""
+
+msgid "Microsoft Excel"
+msgstr ""
+
+msgid "KML"
+msgstr ""
+
+msgid "Dimensione"
+msgstr ""
+
+msgid "Sei sicuro di voler cancellare il file"
+msgstr ""
+
+msgid "Zona"
+msgstr ""
+
+msgid "Nr. area"
+msgstr ""
+
+msgid "Il \"Nr.\" imesso è già presente su banca dati"
+msgstr ""
+
+msgid "Inizio tratta"
+msgstr ""
+
+msgid "Fine tratta"
+msgstr ""
+
+msgid "Superficie convenzionata"
+msgstr ""
+
+msgid "La superficie totale viene calcolata in base ai seguenti codici:"
+msgstr ""
+
+msgid "La superficie totale corrisponde al codice %s: %s"
+msgstr ""
+
+msgid ""
+"Per ottenere il calcolo della superficie totale è necessario configurare la "
+"tabella su Configurazione/Codici verde."
+msgstr ""
+
+msgid "Sei sicuro, di voler cancellare questo lavoro?"
+msgstr ""
+
+msgid "Nome località"
+msgstr ""
+
+msgid "Competenza"
+msgstr ""
+
+msgid "Piante"
+msgstr ""
+
+msgid "Altri oggetti"
+msgstr ""
+
+msgid "Sei sicuro, di voler cancellare questa area?"
+msgstr ""
+
+msgid "Quantità"
+msgstr ""
+
+msgid "Perimetro"
+msgstr ""
+
+msgid "Area"
+msgstr ""
+
+msgid "Export località"
+msgstr ""
+
+msgid "Superfici"
+msgstr ""
+
+msgid "Linee"
+msgstr ""
+
+msgid "Punti"
+msgstr ""
+
+msgid "Il codice imesso è già presente sulla banca dati"
+msgstr ""
+
+msgid "Trasparenza"
+msgstr ""
+
+msgid "Non verde punti"
+msgstr ""
+
+msgid "Verde punti"
+msgstr ""
+
+msgid "Non verde linee"
+msgstr ""
+
+msgid "Verdi linee"
+msgstr ""
+
+msgid "Aree di interesse"
+msgstr ""
+
+msgid "Non verde aree"
+msgstr ""
+
+msgid "Verde aree"
+msgstr ""
+
+msgid "Inserisci codice verde"
+msgstr ""
+
+msgid "Modifica codice verde"
+msgstr ""
+
+msgid "Il primo carattere del campo \"%s\" non può essere numerico"
+msgstr ""
+
+msgid "Il campo \"%s\" contiene caratteri non validi"
+msgstr ""
+
+msgid "Il nome DBF imesso è già presente"
+msgstr ""
+
+msgstr ""
+
+msgid "Sei sicuro, di voler cancellare questo attributo?"
+msgstr ""
+
+msgid "Codici verde"
+msgstr ""
+
+msgid "Simbolo"
+msgstr ""
+
+msgid "Sei sicuro, di voler cancellare questo codice?"
+msgstr ""
+
+msgid "Località"
+msgstr "Ort"
+
+msgid "Superficie (m²)"
+msgstr ""
+
+msgid "Lunghezza (m)"
+msgstr ""
+
+msgid "Ditta costr."
+msgstr ""
+
+msgid "Vigore veg."
+msgstr ""
+
+msgid "Disposizione"
+msgstr ""
+
+msgid "Collocazione"
+msgstr ""
+
+msgid "Conservazione"
+msgstr ""
+
+msgid "Biotici"
+msgstr ""
+
+msgid "Abiotici"
+msgstr ""
+
+msgid "Irrigazione"
+msgstr ""
+
+msgid "Intervento"
+msgstr ""
+
+msgid "Sconosciuto"
+msgstr ""
+
+msgid "Codice zona"
+msgstr ""
+
+msgid "Codice area"
+msgstr ""
+
+msgid "Descrizione località"
+msgstr ""
+
+msgid "Superficie totale"
+msgstr ""
+
+msgid "Data aggiornamento"
+msgstr ""
+
+msgid "Il campo \"%s\" contiene un numero intero non valido"
+msgstr ""
+
+msgid "Il campo \"%s\" contiene un numero non valido"
+msgstr ""
+
+msgid "Il campo \"%s\" contiene una data non valida"
+msgstr ""
+
+msgid "La località con codice %d non esiste"
+msgstr ""
+
+msgid "Immagine"
+msgstr ""
+
+msgid "Elimina"
+msgstr ""
+
+msgid ""
+"Attenzione! Salvando questa azione verrà perso il legame con il relativo "
+"intervento sull'edificio."
+msgstr ""
+
+msgid "Mostra su mappa"
+msgstr ""
+
+msgid "Azione principali"
+msgstr ""
+
+msgid "Copia in nome azione"
+msgstr ""
+
+msgid "Descrizione azione"
+msgstr ""
+
+msgid "Beneficio distribuito"
+msgstr ""
+
+msgid "Beneficio/anno"
+msgstr ""
+
+msgid "Risparmio energetico previsto all'anno"
+msgstr ""
+
+msgid "Riduzione di CO2/a"
+msgstr ""
+
+msgid "Totale riduzione di CO2 prevista"
+msgstr ""
+
+msgid "Produzione di energia rinnovabile prevista all'anno"
+msgstr ""
+
+msgid "Acquisto energia verde"
+msgstr ""
+
+msgid "Acquisto energia"
+msgstr ""
+
+msgid "Fattore conversione in t CO2"
+msgstr ""
+
+msgid "Azioni propedeutiche"
+msgstr ""
+
+msgid "Azioni interdipendenti"
+msgstr ""
+
+msgid "Finanziamento pubblico"
+msgstr ""
+
+msgid "Finanziamento terzi"
+msgstr ""
+
+msgid "Autofinanziamento"
+msgstr ""
+
+msgid "Costi effettivi"
+msgstr ""
+
+msgid "Monitoraggio azione"
+msgstr ""
+
+msgid "Configura elenco"
+msgstr ""
+
+msgid "Aggiungi azione"
+msgstr ""
+
+msgid "Note sito pubblico"
+msgstr ""
+
+msgid "Questo edificio è stato importato automaticamente"
+msgstr ""
+
+msgid "Questo consumo è stato importato automaticamente"
+msgstr ""
+
+msgid "Obblig."
+msgstr ""
+
+msgid "Univoco"
+msgstr ""
+
+msgid "Sito pubblico"
+msgstr ""
+
+msgid "Campo note aggiuntivo"
+msgstr ""
+
+msgid ""
+"Non saranno rimossi comuni presenti in: Frazioni, strade, edifici, catalogo "
+"azioni, fattori di conversione, parameri principali, inventari emissioni, "
+"simulazioni, piani d'azione, fornitori di energia"
+msgstr ""
+
+msgid "Logo stampa (DE)"
+msgstr ""
+
+msgid "Stile pubblico"
+msgstr ""
+
+msgid "Stile pubblico esterno"
+msgstr ""
+
+msgid "Non ripopolare le colonne spaziali (salvataggio più veloce)"
+msgstr ""
+
+msgid "Questo impianto è stato importato automaticamente"
+msgstr ""
+
+msgid "Alimentazione inventario"
+msgstr ""
+
+msgid "Categoria inventario fissa"
+msgstr ""
+
+msgid ""
+"<b>NOTA</b>: La generazione del template potrà richiedere fino ad un minuto "
+"di calcolo"
+msgstr ""
+
+msgid "Inizializzazione"
+msgstr ""
+
+msgid "Zoom estensione"
+msgstr ""
+
+msgid "Vista precedente"
+msgstr ""
+
+msgid "Vista successiva"
+msgstr ""
+
+msgid "Pan"
+msgstr ""
+
+msgid "Zoom in"
+msgstr ""
+
+msgid "Zoom out"
+msgstr ""
+
+msgid "Misura lunghezza"
+msgstr ""
+
+msgid "Misura area"
+msgstr ""
+
+msgid "Seleziona"
+msgstr ""
+
+msgid "Disegna"
+msgstr ""
+
+msgid "Ricarica"
+msgstr ""
+
+msgid "Annotazione"
+msgstr ""
+
+msgid "Tooltip"
+msgstr ""
+
+msgid "Seleziona Punto"
+msgstr ""
+
+msgid "Seleziona Box"
+msgstr ""
+
+msgid "Visualizza su Street View"
+msgstr ""
+
+msgid "Digitize"
+msgstr ""
+
+msgid "Edit edifici"
+msgstr ""
+
+msgid "Livelli"
+msgstr "Layer"
+
+msgid "Dati"
+msgstr "Daten"
+
+msgid "Ricerca"
+msgstr "Suche"
+
+msgid "Sto caricando..."
+msgstr ""
+
+msgid "Errore!"
+msgstr ""
+
+msgid "Fonte dei dati"
+msgstr ""
+
+msgid "Totale CO2"
+msgstr ""
+
+msgid "Elettricità prodotta localmente"
+msgstr ""
+
+msgid "Calore/freddo prodotti localmente"
+msgstr ""
+
+msgid "Emissioni di CO2"
+msgstr ""
+
+msgid "Fattori di emissione di CO2"
+msgstr ""
+
+msgid "Fonte energetica"
+msgstr ""
+
+msgid "anno di riferimento"
+msgstr ""
+
+msgid "EFE nazionale"
+msgstr ""
+
+msgid "EFE locale"
+msgstr ""
+
+msgid "Acquisto di elettricità verde certificata"
+msgstr ""
+
+msgid "Fattore di emissione di CO2 elettricità verde certificata"
+msgstr ""
+
+msgid "Fattore di emissione di CO2 elettricità non prodotta localmente"
+msgstr ""
+
+msgid ""
+"<b>NOTA</b>: Questa funzione permette di importare da un foglio excel dati "
+"dei PAES. Eventuali dati già presenti non verranno sovrascritti o "
+"modificati, ma i dati presenti nel file saranno aggiunti a quelli "
+"eventualmente già presenti"
+msgstr ""
+
+msgid "Premere"
+msgstr ""
+
+msgid "QUI"
+msgstr ""
+
+msgid "per scaricare la struttura del excel che potrà essere importata"
+msgstr ""
+
+msgid "Refresh"
+msgstr ""
+
+msgid ""
+"E' stato superato il numero massimo di elementi digitalizzati visualizzabili"
+msgstr ""
+
+msgid "Pers. assegnato"
+msgstr ""
+
+msgid "Inv. emiss. 2"
+msgstr ""
+
+msgid "Scarica PAES"
+msgstr ""
+
+msgid "Numero non valido"
+msgstr ""
+
+msgid "Anno non valido"
+msgstr ""
+
+msgid "POD"
+msgstr ""
+
+msgid "Questo contatore è stato importato automaticamente"
+msgstr ""
+
+msgid "Ultima modifica:"
+msgstr ""
+
+msgid "Colonna"
+msgstr ""
+
+msgid "Pos."
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Ripristina default"
+msgstr ""
+
+msgid "Acquisto energia verde [MWh/a]"
+msgstr ""
+
+msgid "Tabella di sintesi di emissioni, obiettivi e simulazioni"
+msgstr ""
+
+msgid "Popolazione (abitanti)"
+msgstr ""
+
+msgid "Emissioni totali CO2 [t]"
+msgstr ""
+
+msgid "Emissioni pro capite CO2 [t/ab]"
+msgstr ""
+
+msgid "Target emissioni totali CO2 [t]"
+msgstr ""
+
+msgid "Target emissioni pro capite CO2 [t/ab]"
+msgstr ""
+
+msgid "Obiettivo di riduzione [t]"
+msgstr ""
+
+msgid "Totale riduzione CO2 da azioni [t]"
+msgstr ""
+
+msgid "Emisisone totale CO2 da simulazione [t]"
+msgstr ""
+
+msgid "Emisisone pro capite CO2 da simulazione [t/ab]"
+msgstr ""
+
+msgid "Obiettivo PAES assoluto raggiunto[%]"
+msgstr ""
+
+msgid "Obiettivo PAES pro capite raggiunto [%]"
+msgstr ""
+
+msgid "Energia da fonti rinnovabili [MWh]"
+msgstr ""
+
+msgid "Energia da fonti rinnovabili [%]"
+msgstr ""
+
+msgid "Risparmio energetico [%]"
+msgstr ""
+
+msgid "Costo totale [€]"
+msgstr ""
+
+msgid "Costo pro capite [€]"
+msgstr ""
+
+msgid ""
+"Attenzione: Per poter effettuare una simulazione è necessario verificare e "
+"salvare i parametri generali"
+msgstr ""
+
+msgid ""
+"Attenzione: Per poter effettuare una simulazione è necessario avere inserito "
+"almeno un inventario emissioni e averlo associato nella scheda dei parametri "
+"principali"
+msgstr ""
+
+msgid "Parametri generali"
+msgstr ""
+
+msgid "EFE automatico"
+msgstr ""
+
+msgid "EFE - 2020"
+msgstr ""
+
+msgid "EFE"
+msgstr ""
+
+msgid "Visualizza parametri generali utilizzati per la simulazione"
+msgstr ""
+
+msgid "Visualizza parametri generali"
+msgstr ""
+
+msgid "Riepilogo simulazione"
+msgstr ""
+
+msgid "Controllo calcoli"
+msgstr ""
+
+msgid ""
+"Questo tratto di illuminazione stradale è stato importato automaticamente"
+msgstr ""
+
+msgid "Fattore di conversione CO2"
+msgstr ""
+
+msgid "kg CO<sub>2</sub> risp."
+msgstr ""
+
+msgid "kg CO2/anno*m²"
+msgstr ""
+
+msgid ""
+"Attenzione! Inserire gli interventi relativi agli interventi dell'edificio "
+"nella scheda \"Azioni\", ed eliminali da questa scheda."
+msgstr ""
+
+msgid "Stampa scala"
+msgstr ""
+
+msgid "Parametri principali"
+msgstr ""
+
+msgid "Tipologia finanziamento"
+msgstr ""
+
+msgid "Fonte dati inventario (PAES)"
+msgstr ""
+
+msgid "Destinazioni d'uso (Pubblico)"
+msgstr ""
+
+msgid "Statistiche - Definizioni"
+msgstr ""
+
+msgid "Statistiche - Definizioni classi"
+msgstr ""
+
+msgid "Accedi a G.C. Author"
+msgstr ""
+
+msgid "Costo: €%.2f"
+msgstr ""
+
+msgid "Totale costo azioni: %s [€]"
+msgstr ""
+
+msgid "Totale risparmio elettrico: %s [MWh]"
+msgstr ""
+
+msgid "Totale risparmio non elettrico: %s [MWh]"
+msgstr ""
+
+msgid "Totale CO2 elettrica risparmiata: %s [t]"
+msgstr ""
+
+msgid "Totale CO2 non elettrica risparmiata: %s [t]"
+msgstr ""
+
+msgid "Totale produzione risparmiata: %s [MWh]"
+msgstr ""
+
+msgid "Object not found"
+msgstr ""
+
+msgid "inglese"
+msgstr ""
+
+msgid "Imposta firma digitale"
+msgstr ""
+
+msgid "Seleziona statistica"
+msgstr "Statistik auswählen"
+
+msgid "Assoluto"
+msgstr "Absolut"
+
+msgid "Relativo"
+msgstr "Relativ"
+
+msgid "Versione"
+msgstr ""
+
+msgid "Emissione totale CO2 da simulazione [t]"
+msgstr ""
+
+msgid "Emissione pro capite CO2 da simulazione [t/ab]"
+msgstr ""
+
+msgid "Log simulazione"
+msgstr ""
+
+msgid "Testo superiore"
+msgstr ""
+
+msgid "Testo inferiore"
+msgstr ""
+
+msgid "Assoluti"
+msgstr ""
+
+msgid "Unitari"
+msgstr ""
+
+msgid "Statistiche - Generale"
+msgstr ""
+
+msgid "Calcolo EFE"
+msgstr ""
+
+msgid "TCE[%d]: %s"
+msgstr ""
+
+msgid "LPE[%d]: %s"
+msgstr ""
+
+msgid "GEP[%d]: %s"
+msgstr ""
+
+msgid "NEEFE[%d]: %s"
+msgstr ""
+
+msgid "CO2LPE[%d]: %s"
+msgstr ""
+
+msgid "CO2GEP[%d]: %s"
+msgstr ""
+
+msgid "EFE[%d]: %s"
+msgstr ""
+
+msgid "EFE-EXPORT[%d]: %s [€]"
+msgstr ""
+
+msgid "Totali"
+msgstr ""
+
+msgid "Totale costo azioni: %.2f [€]"
+msgstr ""
+
+msgid "Totale risparmio elettrico: %.2f [MWh]"
+msgstr ""
+
+msgid "Totale risparmio non elettrico: %.2f [MWh]"
+msgstr ""
+
+msgid "Totale CO2 elettrica risparmiata: %.2f [t]"
+msgstr ""
+
+msgid "Totale CO2 non elettrica risparmiata: %.2f [t]"
+msgstr ""
+
+msgid "Totale produzione: %.2f [MWh]"
+msgstr ""
+
+msgid "Impossibile cancellare l'utente perchè vi sono dei dati ad esso legati"
+msgstr ""
+
+msgid "ELIMINATO"
+msgstr ""
+
+msgid "Campo d'azione"
+msgstr ""
+
+msgid "Entità geometrica"
+msgstr ""
+
+msgid "Riduzione di CO2 stimata"
+msgstr ""
+
+msgid "Riduzione aggiuntiva di CO2"
+msgstr ""
+
+msgid "Azioni esclusive"
+msgstr ""
+
+msgid "Utilizza azione per simulazione comunale"
+msgstr ""
+
+msgid "Solo simulazione comunale"
+msgstr ""
+
+msgid "Utilizza edificio per simulazione comunale"
+msgstr ""
+
+msgid "Via/piazza"
+msgstr ""
+
+msgid "Anno primo consumo"
+msgstr ""
+
+msgid "Anno ultimo consumo"
+msgstr ""
+
+msgid "GisClient"
+msgstr ""
+
+msgid "Progetto"
+msgstr ""
+
+msgid "Mapset"
+msgstr ""
+
+msgid "Strumenti"
+msgstr ""
+
+msgid "Streeview"
+msgstr ""
+
+msgid "Ricerca veloce"
+msgstr ""
+
+msgid "Digitalizzazione su mappa"
+msgstr ""
+
+msgid "Ottimizza"
+msgstr ""
+
+msgid "Salva ed esporta"
+msgstr ""
+
+msgid ""
+"Attenzione! Per le azioni importate è possibile modificare solo gli "
+"indicatori"
+msgstr ""
+
+msgid "Tipo monitoraggio"
+msgstr ""
+
+msgid "Valore unitario"
+msgstr ""
+
+msgid "Tipo indicatore"
+msgstr ""
+
+msgid "Data auidt"
+msgstr ""
+
+msgid "% Completamento"
+msgstr ""
+
+msgid "Pers. assegnato (Descrizione)"
+msgstr ""
+
+msgid "Salva ed esporta PAES"
+msgstr ""
+
+msgid "Per importare i dati, bosogna scaricare il"
+msgstr ""
+
+msgid "template vuoto"
+msgstr ""
+
+msgid "in formato Microsoft Excel, compilarlo e caricarlo."
+msgstr ""
+
+msgid "Import template PAES"
+msgstr ""
+
+msgid "Template caricato"
+msgstr ""
+
+msgid "Log import"
+msgstr ""
+
+msgid "Elimina dati importati"
+msgstr ""
+
+msgid "Torna alla lista"
+msgstr ""
+
+msgid "Dettaglio azione"
+msgstr ""
+
+msgid "Elaborazione simulazione in corso."
+msgstr ""
+
+msgid "RICALCOLO"
+msgstr ""
+
+msgid "Prego attendere..."
+msgstr ""
+
+msgid "Import PAES"
+msgstr ""
+
+msgid "Azioni PAES"
+msgstr ""
+
+msgid "EFE-EXPORT[%s]: %s [€]"
+msgstr ""
+
+msgid "Totali delle azioni selezionate"
+msgstr ""
+
+msgid "Totale CO2 fissa ridotta: %.2f [t]"
+msgstr ""
+
+msgid "Riduzione: %.2f %% [pro capite / assoluta????]"
+msgstr ""
+
+msgid "Riduzione energetica"
+msgstr ""
+
+msgid "Produzione energetica"
+msgstr ""
+
+msgid "Indicatore"
+msgstr ""
+
+msgid "Percentuale"
+msgstr ""
+
+msgid "Intero territorio"
+msgstr ""
+
+msgid "Ambito regionale"
+msgstr ""
+
+msgid "Ambito provinciale"
+msgstr ""
+
+msgid "Ambito comunale"
+msgstr ""
+
+msgid "Target di riduzione deve essere numerico"
+msgstr ""
+
+msgid "Anno target di riduzione deve essere numerico"
+msgstr ""
+
+msgid "Bilancio complessivo deve essere numerico"
+msgstr ""
+
+msgid "Anno di riferimento deve essere numerico"
+msgstr ""
+
+msgid "Abitanti anno di riferimento deve essere numerico"
+msgstr ""
+
+msgid "Acquisti elettricità verda deve essere numerico"
+msgstr ""
+
+msgid "Fattore emissione elettricità verda deve essere numerico"
+msgstr ""
+
+msgid ""
+"Fattore emissione elettricità non prodotta localmente deve essere numerico"
+msgstr ""
+
+msgid "Foglio PAES mancante o incompleto"
+msgstr ""
+
+msgid "Obiettivo riduzione consumi deve essere numerico"
+msgstr ""
+
+msgid "Obiettivo produzioni  deve essere numerico"
+msgstr ""
+
+msgid "Obiettivo riduzione emissioni deve essere numerico"
+msgstr ""
+
+msgid "Costi stimati deve essere numerico"
+msgstr ""
+
+msgid "Risparmio energetico deve essere numerico"
+msgstr ""
+
+msgid "Produzione deve essere numerico"
+msgstr ""
+
+msgid "Riduzione emissioni deve essere numerico"
+msgstr ""
+
+msgid "Fattore di conversione mancante per la fonte \""
+msgstr ""
+
+msgid "Il fattore di conversione per la fonte \""
+msgstr ""
+
+msgid "Patto dei sindaci - Comune di %s"
+msgstr ""
+
+msgid "Inventario emissioni %d"
+msgstr ""
+
+msgid "Imporribile leggere il foglio con il PAES"
+msgstr ""
+
+msgid "snowMeterAnalyze-Berechnung läuft bereits."
+msgstr ""
+
+msgid "Comune/raggruppamento"
+msgstr ""
+
+msgid "Griglia statistica"
+msgstr ""
+
+msgid "Applica griglia"
+msgstr ""
+
+msgid "COMUNE, VIA, NUMERO"
+msgstr ""
+
+msgid "VIA, NUMERO"
+msgstr ""
+
+msgid "Azioni predefinite"
+msgstr ""
+
+msgid "Mostra dettaglio comuni"
+msgstr ""
+
+msgid "Nome raggruppamento"
+msgstr ""
+
+msgid "Nome/email"
+msgstr ""
+
+msgid "Categoria principale"
+msgstr ""
+
+msgid "Titolo corto"
+msgstr ""
+
+msgid "Titolo lungo"
+msgstr ""
+
+msgid "Unità di misura assoluta"
+msgstr ""
+
+msgid "Unità di misura assolut"
+msgstr ""
+
+msgid "Unità di misura relativa"
+msgstr ""
+
+msgid "Titolo dato testuale"
+msgstr ""
+
+msgid "Descrizione superiore"
+msgstr ""
+
+msgid "Descrizione inferiore"
+msgstr ""
+
+msgid "Genera automaticamente"
+msgstr ""
+
+msgid "Testo"
+msgstr ""
+
+msgid "Area privata."
+msgstr ""
+
+msgid "Accedere"
+msgstr ""
+
+msgid "per visualizzarla"
+msgstr ""
+
+msgid "Statistica privata."
+msgstr ""
+
+msgid ""
+"Attenzione l'indirizzo email indicato è già presente in banca dati. Si prega "
+"di "
+msgstr ""
+
+msgid "recuperare la password"
+msgstr ""
+
+msgid "La statistica è privata."
+msgstr ""
+
+msgid "Accedi"
+msgstr ""
+
+msgid "per visualizzarla, oppure"
+msgstr ""
+
+msgid "Registrati"
+msgstr ""
+
+msgid "Edificio"
+msgstr ""
+
+msgid "Periodo costruzione"
+msgstr ""
+
+msgid "Valore assoluto"
+msgstr ""
+
+msgid "Raggruppamenti di comuni"
+msgstr ""
+
+msgid "Utenti pubblici"
+msgstr ""
+
+msgid "Nazionale"
+msgstr ""
+
+msgid "Aggregazioni di comuni"
+msgstr ""
+
+msgid "Raggruppamenti"
+msgstr ""
+
+msgid "Emissioni di CO2 o equivalenti di CO2"
+msgstr ""
+
+msgid "Vettore energetico utilizzato"
+msgstr ""
+
+msgid "Emissioni di CO2 o equivalenti di CO2 [t]"
+msgstr ""
+
+msgid "Fattori di emissione di CO2 [t/MWh]"
+msgstr ""
+
+msgid "Totale parziale"
+msgstr ""
+
+msgid "Impossibile reperire i dati per la fonte \""
+msgstr ""
