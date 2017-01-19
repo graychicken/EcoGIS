@@ -1,0 +1,22 @@
+{
+    "name": "EcoGIS",
+    "license": "AGPLv3",
+    "type": "product",
+    "autoload": {
+        "psr-4": { "R3Gis\\": "src/" }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.4.0",
+        "smarty/smarty": "2.6.*",
+        "zetacomponents/base": "1.9.*",
+        "zetacomponents/cache": "1.6.*",
+        "zetacomponents/database": "1.5.*",
+        "zetacomponents/event-log": "1.5.*",
+        "zetacomponents/event-log-database-tiein": "1.1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.5.*"
+    }
+}
