@@ -1,9 +1,12 @@
 <?php
 
 // ezComponents autoload
-set_include_path(get_include_path() . PATH_SEPARATOR . R3_EZC_DIR . PATH_SEPARATOR . R3_PHPEXCEL_DIR);
+//set_include_path(get_include_path() . PATH_SEPARATOR . R3_EZC_DIR . PATH_SEPARATOR . R3_PHPEXCEL_DIR);
 
-require_once "Base/base.php";
+//require_once "Base/base.php";
+
+require_once R3_LIB_DIR . '/../vendor/autoload.php';
+
 require_once R3_LIB_DIR . 'obj.base_locale.php';
 require_once R3_LIB_DIR . 'eco_utils.php';
 
@@ -22,11 +25,18 @@ function R3AppInitDB() {
     }
 
     $txtDsn = $dsn['dbtype'] . '://' . $dsn['dbuser'] . ':' . $dsn['dbpass'] . '@' . $dsn['dbhost'] . '/' . $dsn['dbname'];
-    $db = ezcDbFactory::create($txtDsn);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    PEAR::setErrorHandling(PEAR_ERROR_EXCEPTION);
-    $mdb2 = MDB2::singleton($txtDsn);           // Needed by user manager and import/export
-    ezcDbInstance::set($db);
+    try {
+        $db = ezcDbFactory::create($txtDsn);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        PEAR::setErrorHandling(PEAR_ERROR_EXCEPTION);
+        $mdb2 = MDB2::singleton($txtDsn);
+        ezcDbInstance::set($db);
+    } catch (\PDOException $e) {
+        $msg = "Error connecting to database {$dsn['dbname']} on  {$dsn['dbhost']} as  {$dsn['dbuser']}: {$e->getMessage()}";
+        echo $msg;
+        error_log( $msg );
+        die();
+    }
 
     if (isset($dsn['charset'])) {
         $db->exec("SET client_encoding TO '{$dsn['charset']}'");
@@ -94,7 +104,7 @@ function R3AppInit($type = null, array $opt = array()) {
     }
 
     /* Smarty */
-    require_once R3_SMARTY_ROOT_DIR . 'Smarty.class.php';
+    //require_once R3_SMARTY_ROOT_DIR . 'Smarty.class.php';
     $smarty = new Smarty();
     $smarty->config_dir = R3_SMARTY_ROOT_DIR . 'configs/';
     $smarty->cache_dir = R3_SMARTY_ROOT_DIR . 'cache/';
