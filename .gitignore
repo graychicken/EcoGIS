@@ -1,1 +1,6 @@
-/log/
+etc/config.php
+log/
+vendor/
+templates_c/
+upload/
+
