@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/PHPExcel/PHPExcel.php';
-require_once __DIR__ . '/PHPExcel/PHPExcel/IOFactory.php';
-require_once __DIR__ . '/PHPExcel/PHPExcel/Writer/Excel5.php';
+//require_once __DIR__ . '/PHPExcel/PHPExcel.php';
+//require_once __DIR__ . '/PHPExcel/PHPExcel/IOFactory.php';
+//require_once __DIR__ . '/PHPExcel/PHPExcel/Writer/Excel5.php';
 
 require_once R3_LIB_DIR . 'logger.php';
 

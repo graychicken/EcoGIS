@@ -15,8 +15,8 @@ class R3ExportPAESDriver_jrc extends R3ExportPAESDriver {
     protected function getTemplate($templateFileName) {
         $startTime = microtime(true);
 
-        require_once __DIR__ . '/PHPExcel/PHPExcel.php';
-        require_once __DIR__ . '/PHPExcel/PHPExcel/Cell/AdvancedValueBinder.php';
+        //require_once __DIR__ . '/PHPExcel/PHPExcel.php';
+        //require_once __DIR__ . '/PHPExcel/PHPExcel/Cell/AdvancedValueBinder.php';
         PHPExcel_Cell::setValueBinder(new PHPExcel_Cell_AdvancedValueBinder());
 
         $this->logger->log(LOG_INFO, 'getTemplate()');
