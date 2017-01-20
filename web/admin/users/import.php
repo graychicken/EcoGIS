@@ -18,7 +18,7 @@ require_once R3_APP_ROOT . 'lang/lang.php';
 
 
 /** Authentication and permission check */
-$auth = new R3AuthManagerImpExp($mdb2, $auth_options, APPLICATION_CODE);
+$auth = R3AuthInstance::get();
 if (is_null($auth)) {
     $auth = new R3AuthManagerImpExp($mdb2, $auth_options, APPLICATION_CODE);
     R3AuthInstance::set($auth);
