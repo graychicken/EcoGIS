@@ -144,6 +144,7 @@ var WMTS_LAYER_TYPE = 9;
                     if(typeof(layer.options.featureTypes) != 'object') return;
                     layer.geometryType = null;
                     $.each(layer.options.featureTypes, function(e, feature) {
+                        var l = JSON.parse(JSON.stringify(layer));
                         if(typeof(feature.properties) != 'object') return;
                         var featureId = feature.typeName;
                         var showGeometry = (typeof(feature.hide_vector_geom) == 'undefined' || feature.hide_vector_geom != 1);
@@ -154,8 +155,8 @@ var WMTS_LAYER_TYPE = 9;
                         var primaryKey = null;
                         $.each(feature.properties, function(f, field) {
                             if(typeof(self.options.dataTypesMap[field.type]) != 'undefined') {
-                                layer.geometryType = self.options.dataTypesMap[field.type];
-                                layer.isMulti = (field.type.substr(0,5) == 'Multi');
+                                l.geometryType = self.options.dataTypesMap[field.type];
+                                l.isMulti = (field.type.substr(0,5) == 'Multi');
                                 return;
                             }
                             field.fieldHeader = field.header;
@@ -189,13 +190,13 @@ var WMTS_LAYER_TYPE = 9;
                             fieldsCount: count,
                             title: feature.title,
                             hidden: (typeof(feature.hidden) != 'undefined' && feature.hidden == 1) ? 1 : 0,
-                            layer: layer,
-                            groupTitle: layer.title,
+                            layer: l,
+                            groupTitle: l.title,
                             defaultFilters: defaultFilters
                         };
                         self.internalVars.queryableLayers[featureId] = queryLayer;
-                        if(countEditable > 0 && layer.geometryType != null) {
-                            queryLayer.geometryType = layer.geometryType;
+                        if(countEditable > 0 && l.geometryType != null) {
+                            queryLayer.geometryType = l.geometryType;
                             self.internalVars.editableLayers[featureId] = queryLayer;
                         }
 
@@ -235,7 +236,11 @@ var WMTS_LAYER_TYPE = 9;
             else if(self.options.layerSwitcher) self._initLayerSwitcher();
 
             if(self.options.legend) self._initLegend();
-            if(self.options.referenceMap) self._initReferenceMap();
+            if(self.options.referenceMap) {
+                setTimeout(function () {
+                    self._initReferenceMap();
+                }, 0);
+            }
             if(self.options.editingLayer) self._initEditingLayer();
             if(self.options.redlineLayer) self._initRedlineLayer();
 
@@ -524,19 +529,19 @@ var WMTS_LAYER_TYPE = 9;
             var refWidth = 250;
             var refHeight = 150;
             if (typeof gisclient.options.componentsOptions.referenceMap == 'object') {
-                var refWidth = gisclient.options.componentsOptions.referenceMap.width || 250;
-                var refHeight = gisclient.options.componentsOptions.referenceMap.height || 150;
+                refWidth = gisclient.options.componentsOptions.referenceMap.width || 250;
+                refHeight = gisclient.options.componentsOptions.referenceMap.height || 150;
             }
             var opt = {
                 layers: self.internalVars.referenceMapLayers.reverse(),
                 mapOptions: {
                     units: "m",
-                    projection: new OpenLayers.Projection(gisclient.getProjection()),
-                    maxExtent: new OpenLayers.Bounds.fromArray(gisclient.options.mapsetData.restrictedExtent),
+                    projection: gisclient.getProjection(),
+                    maxExtent: gisclient.options.mapsetData.restrictedExtent,
                     resolutions: gisclient.options.mapsetData.resolutions,
                     size: new OpenLayers.Size(refWidth, refHeight)
                 }
-            }
+            };
             if (typeof gisclient.options.componentsOptions.referenceMap == 'object') {
                 $.extend(true, opt, gisclient.options.componentsOptions.referenceMap);
             }   

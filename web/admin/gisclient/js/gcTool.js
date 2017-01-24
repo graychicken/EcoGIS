@@ -42,13 +42,18 @@
 
 		_toggleControl: function() {
 			var self = this;
-			
+
 			$.each(gisclient.toolObjects, function(tool, object) {
 				if(object.options.control == null) return;
 				if(object.options.control != null && self.options.control != null) {
 					if(object.options.control.id != self.options.control.id) object._deactivate();
 				}
 			});
+
+                        //close mapImageDialog from here if it exists, not in control list.
+                        if(typeof gisclient.componentObjects.mapImageDialog !== "undefined") {
+                            gisclient.componentObjects.mapImageDialog.closeDialog();
+                        }
 
 			// deactivate all controls first
 			var controls = gisclient.map.getControlsByClass(/OpenLayers.Control.+/);

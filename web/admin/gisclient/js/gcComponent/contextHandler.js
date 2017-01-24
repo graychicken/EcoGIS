@@ -1,8 +1,7 @@
-
 (function($, undefined) {
-	$.widget("gcComponent.contextHandler", $.ui.gcComponent, {
+    $.widget("gcComponent.contextHandler", $.ui.gcComponent, {
 
-		widgetEventPrefix: "contextHandler",
+        widgetEventPrefix: "contextHandler",
         
         options: {
             mapContextServiceUrl: null,
@@ -13,45 +12,80 @@
             timer: null
         },
 
-		_create: function() {
-			var self = this;
-			
-			$.ui.gcComponent.prototype._create.apply(self, arguments);
-			
-			self.options.mapContextServiceUrl = gisclient.getMapOptions().mapContextServiceUrl;
+        _create: function() {
+            var self = this;
+            
+            $.ui.gcComponent.prototype._create.apply(self, arguments);
+            
+            if (!self.options.mapContextServiceUrl) {
+                self.options.mapContextServiceUrl = gisclient.getMapOptions().mapContextServiceUrl;
+            }
             
             if(self.options.saveOnZoomEnd) {
                 //gisclient.map.baseLayer.events.register('loadend', self, self._zoomEnd);
                 gisclient.map.events.register('moveend', self, self._loadEnd);
             }
-		},
+        },
 
-		getContextUrl: function(contextId) {
-			var self = this;
-			
-			return gisclient.mapUrl+gisclient.getQueryStringSeparator(gisclient.mapUrl)+'context='+contextId;
-		},
-		
-		createContext: function() {
-			var self = this;
-			
-			var context = {
-				bounds: gisclient.map.getExtent().toArray(),
-				themesOrder: gisclient.componentObjects.gcLayersManager.getThemesOrder(),
-				layers: {}
-			};
-			$.each(gisclient.map.layers, function(e, layer) {
-				if(typeof(layer.gc_id) == 'undefined') return;
-				context.layers[layer.gc_id] = {
-					opacity: layer.opacity,
-					visibility: layer.getVisibility()
-				};
-				if(typeof(layer.params.REDLINEID) != 'undefined') {
-					context.layers[layer.gc_id].redlineId = layer.params.REDLINEID;
-				}
-			});
-			return context;
-		},
+        getContextUrl: function(contextId) {
+            var self = this;
+            
+            return gisclient.mapUrl+gisclient.getQueryStringSeparator(gisclient.mapUrl)+'context='+contextId;
+        },
+        
+        createContext: function() {
+            var self = this;
+            
+            var context = {
+                bounds: gisclient.map.getExtent().toArray(),
+                themesOrder: gisclient.componentObjects.gcLayersManager.getThemesOrder(),
+                layers: {}
+            };
+            $.each(gisclient.map.layers, function(e, layer) {
+                if(typeof(layer.gc_id) == 'undefined') return;
+                context.layers[layer.gc_id] = {
+                    opacity: layer.opacity,
+                    visibility: layer.getVisibility()
+                };
+                if(typeof(layer.params.REDLINEID) != 'undefined') {
+                    context.layers[layer.gc_id].redlineId = layer.params.REDLINEID;
+                }
+            });
+            return context;
+        },
+
+        list: function(params) {
+            var self = this;
+
+            var defaultParams = {
+                action:'list',
+                success: function() {},
+                error: function() {
+                    alert('Error load list');
+                },
+                mapset: gisclient.getMapOptions().mapsetName
+            };
+
+            params = $.extend(defaultParams, params);
+            var requestParams = {success:null, error:null};
+            requestParams = $.extend({}, params, requestParams);
+
+            $.ajax({
+                type: 'GET',
+                url: self.options.mapContextServiceUrl,
+                dataType: 'json',
+                data: requestParams,
+                success: function(response) {
+                    if(typeof(response) != 'object' || response == null || typeof(response.result) == 'undefined' || response.result != 'ok') {
+                        params.error();
+                    }
+                    params.success(response);
+                },
+                error: function() {
+                    params.error();
+                }
+            });
+        },
         
         replace: function() {
             var self = this;
@@ -74,21 +108,21 @@
             var requestParams = {success:null, error:null};
             requestParams = $.extend({}, params, requestParams);
             
-			$.ajax({
-				type: 'POST',
-				url: self.options.mapContextServiceUrl,
-				dataType: 'json',
-				data: requestParams,
-				success: function(response) {
-					if(typeof(response) != 'object' || response == null || typeof(response.result) == 'undefined' || response.result != 'ok') {
-						params.error.call(response);
-					}
+            $.ajax({
+                type: 'POST',
+                url: self.options.mapContextServiceUrl,
+                dataType: 'json',
+                data: requestParams,
+                success: function(response) {
+                    if(typeof(response) != 'object' || response == null || typeof(response.result) == 'undefined' || response.result != 'ok') {
+                        params.error.call(response);
+                    }
                     params.success.call(response);
-				},
-				error: function() {
-					params.error.call();
-				}
-			});
+                },
+                error: function() {
+                    params.error.call();
+                }
+            });
         },
         
         _loadEnd: function() {
@@ -108,10 +142,11 @@
 
             $.ajax({
                 type: 'GET',
-                url: gisclient.getMapOptions().mapContextServiceUrl,
+                url: self.options.mapContextServiceUrl,
                 dataType: 'json',
                 data: params,
                 success: function(response) {
+                    console.log(response);
                     if(typeof(response) != 'object' || response == null || typeof(response.result) != 'string' || response.result != 'ok' || typeof(response.context) != 'object') {
                         return alert('Error');
                     }
@@ -139,9 +174,10 @@
             }
         }
 
-	});
+    });
 
-	$.extend($.gcComponent.contextHandler, {
-		version: "3.0.0"
-	});
+    $.extend($.gcComponent.contextHandler, {
+        version: "3.0.0"
+    });
 })(jQuery);
+

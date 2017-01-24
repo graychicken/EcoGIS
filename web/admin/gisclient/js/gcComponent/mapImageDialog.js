@@ -109,10 +109,10 @@
 			$('#mapimage_dialog').html(html);
 			
 			if(self.options.displayBox) {
-				var boxHtml = '<div id="print_box" style="border:1px solid red;position:absolute;top:0px;left:0px;z-index:1000;cursor:move;display:none;"><div style="background:silver;opacity:0.1;width:100%;height:100%;filter:alpha(opacity=10);">&nbsp;</div></div>';
+				var boxHtml = '<div id="print_box" style="border:3px solid red;position:absolute;top:0px;left:0px;z-index:1000;cursor:move;display:none;"><div style="background:silver;opacity:0.1;width:100%;height:100%;filter:alpha(opacity=10);">&nbsp;</div></div>';
 				$(gisclient.element).append(boxHtml);
 				$('#print_box').draggable({containment: 'parent'}).bind('dragstop',{self:self},self._boxMoved);
-				$('#print_box').resizable({containment: 'parent'}).bind('stop',{self:self},self._boxMoved).resizable('disable');
+				$('#print_box').resizable({containment: 'parent'}).bind('resizestop',{self:self},self._boxMoved);
 			}
 			
 			if(printFormatsCount === 1) {
@@ -205,7 +205,7 @@
 		},
 		
 		closeDialog: function() {
-			$('#mapimage_dialog').dialog('open');
+			$('#mapimage_dialog').dialog('close');
 		},
 		
 		setDefault: function(field, value) {
@@ -315,7 +315,7 @@
             var vectors = [];
             
             var selectionLayer = gisclient.componentObjects.gcLayersManager.getSelectionLayer();
-            if(selectionLayer.features.length == 0) return [];
+            if(selectionLayer.features.length == 0 || selectionLayer.visibility === false) return [];
             
             
             $.each(selectionLayer.features, function(e, feature) {
@@ -349,8 +349,11 @@
 			}
 			
 			if(self.internalVars.useBox) {
-				var boxBounds = new OpenLayers.Bounds.fromArray(self.internalVars.printBox);
-				var center = boxBounds.getCenterLonLat();
+				bounds = new OpenLayers.Bounds();
+				bounds.extend(new OpenLayers.LonLat(self.internalVars.printBox[0], self.internalVars.printBox[1]));
+				bounds.extend(new OpenLayers.LonLat(self.internalVars.printBox[2], self.internalVars.printBox[3]));
+				var center = bounds.getCenterLonLat();
+				//var newbounds = bounds.toBBOX();
 			} else {
 				var center = gisclient.map.getCenter();
 			}
@@ -389,6 +392,7 @@
                 dpi = $('#mapimage_dialog select[name="dpi"]');
             }
 
+
 			var params = {
 				viewport_size: viewportSize,
 				center: [center.lon, center.lat],
@@ -399,7 +403,7 @@
 				scale: scale,
 				current_scale: currentScale,
 				text: $('#mapimage_dialog textarea[name="text"]').val(),
-				extent: gisclient.map.calculateBounds().toBBOX(),
+				extent: bounds.toBBOX(),
 				date: $('#mapimage_dialog input[name="date"]').val(),
 				dpi: dpi,
 				srid: gisclient.getProjection(),
@@ -471,6 +475,8 @@
 				'width':width,
 				'height':height
 			});
+
+			console.log(self.internalVars.printBox);
 		},
 		
 		_boxMoved: function(event) {
@@ -483,6 +489,7 @@
             var rt = gisclient.map.getLonLatFromPixel(new OpenLayers.Pixel((pos.left+$(this).width()), pos.top));
             // update the map viewport with the bounds calculated above
 			self.internalVars.printBox = [lb.lon, lb.lat, rt.lon, rt.lat];
+			console.log(self.internalVars.printBox);
 		},
 		
 		_hideBox: function() {

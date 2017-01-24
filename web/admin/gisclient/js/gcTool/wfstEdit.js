@@ -127,12 +127,18 @@
 			if(typeof(gisclient.componentObjects.snapPoint) != 'undefined')	gisclient.componentObjects.snapPoint.destroySnap();
 		},
 		
-		_saveFeature: function() {
+        // Insert or update (not delete)
+        _saveFeature: function() {
 			var self = this;
 			self.uploads = [];
 			
 			var featureData = gisclient.componentObjects.gcLayersManager.getQueryableLayer(self.internalVars.selectedFeatureType);
 			var feature = self._getEditingFeature();
+            if(self.internalVars.mode == 'edit') {
+                feature.state = OpenLayers.State.UPDATE;
+            } else {
+                feature.state = OpenLayers.State.INSERT;
+            }
 
 			$.each(featureData.editableFields, function(key, col) {
 				var newValue = $('#gc_wfstedit_dialog div.form table [name="'+key+'"]').val();
@@ -145,24 +151,17 @@
 						delete feature.attributes[key];
 					}
 				} else {
-					if(self.internalVars.mode == 'edit') {
-						if(newValue != feature.attributes[key]) feature.state = OpenLayers.State.UPDATE;
+                    if(key == self.internalVars.primaryKey) {
+                        // Don't change Primary key
+                        return;
+                    }    
+					if (newValue && newValue !== '') {
+                        feature.attributes[key] = newValue;
+                    } else {
+                        feature.attributes[key] = null;
 					}
-					if(self.internalVars.mode == 'new') {
-						if(key == self.internalVars.primaryKey) return;
-						if(newValue && newValue !== '') feature.attributes[key] = newValue;
-					} else {
-						if(newValue && newValue !== '') feature.attributes[key] = newValue;
-						else feature.attributes[key] = null;
-					}
-					
-					if(self.internalVars.mode == 'edit') {
-						if(newValue != feature.attributes[key]) feature.state = OpenLayers.State.UPDATE;
-					}
-					if(self.internalVars.mode != 'new' || key != self.internalVars.primaryKey) feature.attributes[key] = newValue;
 				}
 			});
-
 			if(self.uploads.length > 0) {
 				gisclient.componentObjects.loadingHandler.show();
 				self.processUploads();
@@ -174,7 +173,7 @@
 				self.internalVars.saveStrategy.save();
 			}
 		},
-		
+        
 		processUploads: function() {
 			var self = this;
 			var allDone = true;
@@ -256,7 +255,23 @@
 			}
 		},
 		
+        escapeHtml: function(string) {
+            var entityMap = {
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': '&quot;',
+                "'": '&#39;',
+                "/": '&#x2F;'
+            };
+            return String(string).replace(/[&<>"'\/]/g, function (s) 
+            {
+                return entityMap[s];
+            });
+        },
+  
 		startEdit: function(feature) {
+            "use strict"
 			var self = this;
 			
 			$('#gc_wfstedit_dialog div.logs').empty();
@@ -281,10 +296,9 @@
 				
 				var value = '';
 				if(self.internalVars.mode == 'edit') {
-					value = feature.attributes[key] === null ? '' : feature.attributes[key];
+					value = (feature.attributes[key]) ? feature.attributes[key] : '';
 				}
-
-				var tableRow = '<tr><td>'+col.fieldHeader+'</td><td>';
+				var tableRow = '<tr><td>'+col.fieldHeader+' </td><td>';
 				if(typeof(col.lookup) == 'object') {
 					tableRow += '<select name="'+key+'"><option value="">'+OpenLayers.i18n('Select')+'</option></select>';
 					$.ajax({
@@ -307,10 +321,14 @@
 							alert(OpenLayers.i18n('System error'));
 						}
 					});
-				} else if(col.fieldType == 8 || col.fieldType == 10) {
+				} else if(col.fieldType == 8 || col.fieldType == 10) {  // 8 = Image, 10 = File
 					tableRow += '<input type="file" name="'+key+'">';
-				} else {				
-					tableRow += '<input type="text" name="'+key+'" value="'+value+'"' +disabled+ '>';
+				} else {	
+                    if (col.dataType == 2) {  /* 2 = Number */
+                        tableRow += '<input type="number" name="'+key+'" value="'+self.escapeHtml(value)+'"' +disabled+ ' style="width: 100px;">';
+                    } else {
+                        tableRow += '<input type="text" name="'+key+'" value="'+self.escapeHtml(value)+'"' +disabled+ '>';
+                    }
 				}
 				tableRow += '</td></tr>';
 				$('#gc_wfstedit_dialog div.form table').append(tableRow);
@@ -356,7 +374,7 @@
 				})
 			});
 			var style = self.internalVars.wfstLayer.styleMap.styles.default.defaultStyle;
-			style.strokeWidth = 3;
+			style.strokeWidth = 6;
 
 
 			gisclient.map.addLayer(self.internalVars.wfstLayer);

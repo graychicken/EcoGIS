@@ -5,21 +5,21 @@
 			noResultsMsg: 'No results',
 			lastActiveTab: null
 		},
-		
+
 		customQuery: function(queries) {
 			var self = this;
-			
+
 			// populate the requests object with empty objects
 			self.options.requests = {};
 			$.each(queries, function(featureType, foo) {
 				self.options.requests[featureType] = {};
 			});
-			
+
 			self.unSelectAll();
-			
+
 			$.each(queries, function(e, query) {
 				var layer = gisclient.componentObjects.gcLayersManager.getQueryableLayer(query.featureType);
-				
+
 				if(layer.defaultFilters != null) {
 					var filters = $.extend(true, [], layer.defaultFilters);
 					filters.push(query.filter);
@@ -28,14 +28,14 @@
 						filters: filters
 					});
 				} else finalFilter = query.filter;
-				
-			
+
+
 				var filter_1_1 = new OpenLayers.Format.Filter({version: "1.1.0"});
 				var xml = new OpenLayers.Format.XML();
-				var filterValue = xml.write(filter_1_1.write(finalFilter));	
+				var filterValue = xml.write(filter_1_1.write(finalFilter));
 				var title = layer.title;
 				if(typeof title === 'undefined') title = layer.layer.title;
-				
+
 				var params = {
 					PROJECT: gisclient.getProject(),
 					MAP: layer.layer.parameters.map,
@@ -47,7 +47,7 @@
 					TYPENAME: layer.featureId,
 					FILTER: filterValue
 				};
-				
+
 				var showGeometry = true;
 				if(typeof layer.showGeometry !== 'undefined' && layer.showGeometry == false) showGeometry = false;
 
@@ -63,12 +63,12 @@
 					themeId: layer.themeId,
 					layerId: layer.layerId
 				};
-				
+
 				self.request(layer.featureId, layer.fields);
 			});
-			
+
 		},
-	
+
 		_query: function(queryLayers, filter) { // only used by selectFromMap
 			var self = this;
 
@@ -77,13 +77,13 @@
 			$.each(queryLayers, function(i, layer) {
 				self.options.requests[layer.featureId] = {};
 			});
-			
+
 			self.unSelectAll();
-			
+
 			// build the WFS requests and pass them to the countFeatures function
 			if($.isEmptyObject(queryLayers)){
 				gisclient.componentObjects.errorHandler.show(OpenLayers.i18n('No layer active'));
-			} else {			
+			} else {
 				$.each(queryLayers, function(i, layer) {
 					if(layer.defaultFilters != null) {
 						var filters = $.extend(true, [], layer.defaultFilters);
@@ -93,13 +93,13 @@
 							filters: filters
 						});
 					} else finalFilter = filter;
-				
+
 					var filter_1_1 = new OpenLayers.Format.Filter({version: "1.1.0"});
 					var xml = new OpenLayers.Format.XML();
-					var filterValue = xml.write(filter_1_1.write(finalFilter));	
+					var filterValue = xml.write(filter_1_1.write(finalFilter));
 					var title = layer.title;
 					if(typeof title === 'undefined') title = layer.layer.title;
-					
+
 					var params = {
 						PROJECT: gisclient.getProject(),
 						MAP: layer.layer.parameters.map,
@@ -111,7 +111,7 @@
 						TYPENAME: layer.featureId,
 						FILTER: filterValue
 					};
-					
+
 					var showGeometry = true;
 					if(typeof layer.showGeometry !== 'undefined' && layer.showGeometry == false) showGeometry = false;
 
@@ -131,14 +131,14 @@
 				});
 			}
 		},
-		
+
 		_countFeatures: function(featureId, fields) {
 			var self = this;
-			
+
 			var params = $.extend({}, self.options.requests[featureId].params);
 			params.RESULTTYPE = 'HITS';
 			params.VERSION = '1.1.0'; // required, because RESULTTYPE=HITS is only implemented in WFS >= 1.1.0
-			
+
 			$.ajax({
 				url: self.options.requests[featureId].url,
 				type: 'POST',
@@ -159,10 +159,10 @@
 				}
 			});
 		},
-		
+
 		_checkCount: function() {
 			var self = this;
-			
+
 			var allDone = true; // flag to know if all the requests are returned
 			var total = 0; // init the features count
 			var requests = self.options.requests;
@@ -176,7 +176,7 @@
 				// this will be executed only when all the requested are returned
 				total += request.count;
 			});
-			
+
 			// if all the requests are returned...
 			if(allDone && total > 0) {
 				// check the total number of returned features
@@ -199,7 +199,7 @@
 				gisclient.componentObjects.errorHandler.show(OpenLayers.i18n(self.internalVars.noResultsMsg));
 			}
 		},
-		
+
 		request: function(featureId, fields) {
 			var self = this;
 
@@ -217,10 +217,10 @@
 				success: function(data) {
 					var format = new OpenLayers.Format.GML();
 					var resp=format.read(data);
-					
+
 					// build the jqgrid table options
 					var links = gisclient.componentObjects.gcLayersManager.getFeatureLink(featureId);
-					
+
 					// Additional butons
 					var link = '<div class="search_results_buttons">';
 					if (self.options.additionalButtons) {
@@ -232,10 +232,10 @@
 									var title = button['title'] || '';
 									link += '<a href="#" data-action="additional_buttons_' + seq + '" data-feature_id="'+featureId+'">' + title + '</a> ';
 								}
-							}    
+							}
 						});
 					}
-					
+
 					// Export excel button
 					var hasExportExcelButton = true;
 					if (self.options.exportExcel && self.options.exportExcel.excludedLayers) {
@@ -248,7 +248,7 @@
 					if (hasExportExcelButton) {
 						link += '<a href="#" data-action="export_xls" data-feature_id="'+featureId+'">Export</a> ';
 					}
-					
+
 					// view-in-table button
 					var hasViewInTableButton = typeof gisclient.componentObjects.viewTable !== 'undefined';
 					if (self.options.viewTable && self.options.viewTable.excludedLayers) {
@@ -258,7 +258,7 @@
 							}
 						});
 					}
-					
+
 					if(hasViewInTableButton) {
 						link += '<a href="#" data-action="view_in_table" data-feature_id="'+featureId+'">'+OpenLayers.i18n('View results in a table')+'</a>';
 					}
@@ -266,7 +266,7 @@
 					var domFeatureId = featureId.replace('.','_');
 					var tableOptions = {
 						datatype:'local',
-						caption:self.options.requests[featureId].title+' <input name="show_tooltips_options_'+domFeatureId+'" type="checkbox"> Tooltips'+link,
+						caption:self.options.requests[featureId].title+' <input name="show_tooltips_options_'+domFeatureId+'" type="checkbox"> '+OpenLayers.i18n('Tooltips')+link,
 						onSelectRow: self.highlightFeature, // when the user select a table row, highlight the corresponding feature
 						ondblClickRow: self.handleDoubleClick,
 						width: 250,
@@ -307,7 +307,7 @@
 					if(links) colModel.push({name:'gc_tools',index:'gc_tools',label:OpenLayers.i18n('Tools'),sortable:false,resizable:true,width:20,fixed:true});
 					// add the colModel to the jqgrid table options
 					tableOptions.colModel = colModel;
-					
+
 					// init the data array
 					var data = [];
 					if(resp.length > 0) {
@@ -329,7 +329,7 @@
 								if(countField && typeof attributes[countField] !== 'undefined') {
 									if (featureConfig.relation1n.data_field_1 in attributes) {
 										if(attributes[countField] > 0) {
-											attributes[countField] = '<a href="#" title="'+OpenLayers.i18n('Show linked data')+'" data-action="show1ntable" data-qtrelation_id="'+featureConfig.relation1n.qtrelation_id+'" data-f_key_value="'+attributes[featureConfig.relation1n.data_field_1]+'">'+attributes[countField]+'</a>';
+											attributes[countField] = '<a href="#" title="'+OpenLayers.i18n('Show linked data')+'" data-action="show1ntable" data-relation_id="'+featureConfig.relation1n.relation_id+'" data-f_key_value="'+attributes[featureConfig.relation1n.data_field_1]+'">'+attributes[countField]+'</a>';
 										}
 									} else {
 										alert('ERROR: the field ' + featureConfig.relation1n.data_field_1 + ' is not in the feature attributes list. Please recheck your GisCient layer configuration');
@@ -358,12 +358,12 @@
 					return false;
 				}
 			});
-			
+
 		},
-		
+
 		_collectFeatures: function(featureId, table, features) {
 			var self = this;
-			
+
 			// add to the requests object the jqgrid table data
 			self.options.requests[featureId].result = table;
 			self.options.requests[featureId].features = features;
@@ -375,20 +375,20 @@
 					return;
 				}
 			});
-			
+
 			var gcLayersManager = gisclient.componentObjects.gcLayersManager;
-			
+
 			// add returned features to the selection layer
 			if(self.options.requests[featureId].showGeometry) {
 				var selectionLayer = gcLayersManager.getSelectionLayer();
 				if(self.options.displayFeatures) selectionLayer.addFeatures(features);
 			}
-			
+
 			if(!gcLayersManager.layerIsActive(self.options.requests[featureId].themeId, self.options.requests[featureId].layerId)) {
 				console.debug('Activate ' + self.options.requests[featureId].themeId + '.' + self.options.requests[featureId].layerId);
 				gcLayersManager.activateLayer(self.options.requests[featureId].themeId, self.options.requests[featureId].layerId);
 			}
-			
+
 			// Activate dependends layer
 			$.each(gisclient.options.mapQueryActivateLayers, function(themeIdAndLayerGroupId, depsLayers) {
 				if ((self.options.requests[featureId].themeId == themeIdAndLayerGroupId) ||  // themeId match
@@ -406,12 +406,12 @@
 					});
 				}
 			});
-			
+
 			// if all the requests are returned
 			if(allDone) {
-				
+
 				$.each(self.options.requests, function(featureId, request) {
-					
+
 					// Save old tab (jQuery 1.8)
 					var activeTab;
 					if($('#treeDiv > ul > li.ui-tabs-selected').length > 0){
@@ -422,19 +422,19 @@
 					if (activeTab != 'dataList') {
 						self.internalVars.lastActiveTab = activeTab;
 					}
-					
+
 					$('#dataListTab').show();
 					var table = request.result;
 					if(table == null) return;
 					// create the table element to init jqgrid
 					var domFeatureId = featureId.replace('.','_');
-					var tableElement = '<table id="searchResults_'+domFeatureId+'"></table>';
+					var tableElement = '<table class="searchResults" id="searchResults_'+domFeatureId+'"></table>';
 					// append the table element to the container element
 					$('#datalist_searchresults').append(tableElement);
 					// init the jqgrid table
 					$('#searchResults_'+domFeatureId).jqGrid(table.tableOptions);
 					var data = table.tableData;
-					
+
 					// add table rows
 					if(data.length > 0) {
 						for(var i=0;i<data.length;i++) {
@@ -485,7 +485,7 @@
 									row.gc_tools = '<a href="#" onclick="'+openFunction+'(\''+link+'\', ' + openFuncOptionsStr + ')"><img src="'+OpenLayers.ImgPath+'application_view.png" border="0"></a>';
 								}
 							}
-							$('#searchResults_'+domFeatureId).jqGrid('addRowData',row.GCfid,row); 
+							$('#searchResults_'+domFeatureId).jqGrid('addRowData',row.GCfid,row);
 						}
 					}
 
@@ -493,10 +493,10 @@
 						self._toggleToolTipOption($(this), domFeatureId);
 					});
 				});
-				
+
 								// Additional buttons
 								if (self.options.additionalButtons) {
-									$.each(self.options.additionalButtons, function(seq, button) {      
+									$.each(self.options.additionalButtons, function(seq, button) {
 										var icon = button['icon'] || 'ui-icon-info';
 										$('#datalist_searchresults a[data-action="additional_buttons_' + seq + '"]').click(function(event) {
 											event.preventDefault();
@@ -505,7 +505,7 @@
 										}).addClass('gc_ui-icon-minimized').button({ icons: { primary: icon }, text:false });
 									});
 								}
-				
+
 				$('#datalist_searchresults a[data-action="export_xls"]').click(function(event) {
 					event.preventDefault();
 					self.exportXls($(this).attr('data-feature_id'));
@@ -518,30 +518,30 @@
 				// show the data tab
 				try {
 					$('#'+self.options.idTree).tabs('select', '#'+self.options.idDataList);
-				} catch (e) {	
+				} catch (e) {
 					// Older version
 					$('#'+self.options.idTree).tabs('option', 'active', $(self.options.idDataList + "Selector").index());
 				}
-				
-				
+
+
 				$('#datalist_searchresults a[data-action="show1ntable"]').click(function(event) {
 					event.preventDefault();
-					
-					gisclient.componentObjects.detailTable.show($(this).attr('data-qtrelation_id'), $(this).attr('data-f_key_value')); 
+
+					gisclient.componentObjects.detailTable.show($(this).attr('data-relation_id'), $(this).attr('data-f_key_value'));
 				});
-				
+
 				$('#datalist_searchresults a[data-action="show-attachment"]').click(function(event) {
 					event.preventDefault();
-					
+
 					gisclient.showAttachment($(this).attr('data-filename'));
 				});
-				
+
 				$('#datalist_searchresults a[data-action="show-image"]').click(function(event) {
 					event.preventDefault();
-					
+
 					gisclient.showImage($(this).attr('data-filename'));
 				});
-				
+
 				// action after selection
 				var after_selection = $('#'+self.options.actionSelectionParent).find('input[name="after_selection_action"]:checked').val();
 				if(after_selection != 'none') {
@@ -561,11 +561,11 @@
 						gisclient.map.setCenter(center);
 					}
 				}
-				
+
 				gisclient.componentObjects.loadingHandler.hide();
 			}
 		},
-		
+
 		_highlightTableRow: function(event) {
 			// when the user hover on a selected feature, highlight the corrisponding table row
 			var self = this;
@@ -579,7 +579,7 @@
 			// show a tooltip for the selected feature
 			if(self.options.tooltips == domFeatureId) self._showPopup(feature);
 		},
-		
+
 		_showPopup: function(feature) {
 			var self = this;
 			var pixel = gisclient.map.getPixelFromLonLat(feature.geometry.getBounds().getCenterLonLat());
@@ -597,7 +597,7 @@
 			if(feature) {
 				// add vector features to selection layer
 				var selectionLayer = gisclient.componentObjects.gcLayersManager.getSelectionLayer();
-				
+
 				var cols = self.options.cols[feature.attributes.featureId];
 				$.each(cols, function(key, label) {
 					if(feature.attributes[key] === null){
@@ -624,11 +624,11 @@
 			}
 
 		},
-		
+
 		_hidePopup: function(feature) {
 			if(feature.popup != null) feature.popup.destroy();
 		},
-		
+
 		_unhighlightTableRow: function(event) {
 			var self = this;
 			var feature = event.feature;
@@ -638,7 +638,7 @@
 			$('#searchResults_'+tableId).jqGrid('resetSelection');
 			if(self.options.tooltips == tableId && feature.popup != null) self._hidePopup(feature);
 		},
-		
+
 		highlightFeature: function(id) {
 			// HACK: get self from the jqgrid object
 			var self = $(this).jqGrid('getGridParam','self');
@@ -649,51 +649,51 @@
 			self.options.hoverControl.unselectAll();
 			if(feature != null) self.options.hoverControl.select(feature);
 		},
-		
+
 		handleDoubleClick: function(id) {
 			var self = $(this).jqGrid('getGridParam', 'self');
-			
-			
+
+
 		},
-		
+
 		_toggleToolTipOption: function(checkbox, domFeatureId) {
 			var self = this;
 			var checked = checkbox.prop('checked');
-						
+
 			if(checked) {
 				var tooltipCheckboxes = $('input[name^="show_tooltips_options_"]');
 				$.each(tooltipCheckboxes, function(e, tooltipCheckbox) {
 					if($(checkbox).attr('name') != $(tooltipCheckbox).attr('name')) $(tooltipCheckbox).attr('checked', false);
 				});
 			}
-			
+
 			// get the selected features to eventually show or hide the active tooltips
 			var selectionLayer = gisclient.componentObjects.gcLayersManager.getSelectionLayer();
 			$.each(selectionLayer.selectedFeatures, function(i, feature) {
 				if(checked) self._showPopup(feature);
 				else self._hidePopup(feature);
 			});
-			
+
 			// update the tooltips option
 			if(!checked) self.options.tooltips = false;
 			else self.options.tooltips = domFeatureId;
 		},
-		
+
 		exportXls: function(featureId) {
 			var self = this;
 
 			gisclient.exportXls(featureId, self.options.requests[featureId].features);
 		},
-		
+
 		viewInTable: function(featureId) {
 			var self = this;
-			
+
 			gisclient.componentObjects.viewTable.showTable(self.options.requests[featureId], self.options.requests[featureId].features);
 		},
 
 		unSelectAll: function() {
 			var self = this;
-			
+
 			var selectionLayer = gisclient.componentObjects.gcLayersManager.getSelectionLayer();
 			selectionLayer.removeAllFeatures();
 			while(gisclient.map.popups.length > 0) {
@@ -707,7 +707,7 @@
 				self.internalVars.lastActiveTab = null;
 			} else {
 				$('#'+self.options.idTree).tabs('option', 'active', 0);
-			}			
+			}
 		}
 
 

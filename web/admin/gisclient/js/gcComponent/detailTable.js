@@ -56,7 +56,7 @@
                 url: self.options.serviceUrl,
                 dataType: 'json',
                 data: {
-                    qtrelation_id: relationId,
+                    relation_id: relationId,
                     f_key_value: value
                 },
                 success: function(response) {
@@ -71,7 +71,7 @@
                         // add fields to export list
                         exportFields.push({
                             title: field.field_header,
-                            field_name: field.qtfield_name
+                            field_name: field.field_name
                         });
                     });
                     
@@ -84,21 +84,21 @@
                             // is there a template for this query relation and key
                             // this field a?
                             if (relationId in self.options.linkTemplates &&
-                                field.qtfield_name in self.options.linkTemplates[key]) {
+                                field.field_name in self.options.linkTemplates[key]) {
                                 // yes, a specific one
                                 key = relationId;
                             } else if ('__any__' in self.options.linkTemplates &&
-                                field.qtfield_name in self.options.linkTemplates['__any__']) {
+                                field.field_name in self.options.linkTemplates['__any__']) {
                                 // yes, the generic one
                                 key = '__any__';
                             }
                             
                             var cellContent;
                             if (key) {
-                                var tpl = self.options.linkTemplates[key][field.qtfield_name];
+                                var tpl = self.options.linkTemplates[key][field.field_name];
                                 cellContent = replacePlaceholdersInTemplate(tpl, row);
                             } else {
-                                cellContent = row[field.qtfield_name];
+                                cellContent = row[field.field_name];
                             }
                             html += cellContent;
                             html += '</td>';

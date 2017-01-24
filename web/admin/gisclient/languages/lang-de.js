@@ -98,7 +98,7 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Scale': 'Maßstab',
         'Restart': 'Neu starten',
         'Start': 'Start',
-        'System Error': 'Systemfehler',
+        'System error': 'Systemfehler',
         'Export': 'Export',
         'Abort': 'Abbrechen',
         'Delete rototranslation': 'Rototraslation löschen',
@@ -110,7 +110,7 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Error': 'Fehler',
         'Type': 'Typ',
         'Code': 'Code',
-        'Degrees': 'Grade',
+        'Degrees': 'Grad',
         'Degree': 'Grad',
         'Error retrieving geometries': 'Fehler beim Laden der Geometrien',
         'Too much results': 'Zuviele Resultate',
@@ -128,7 +128,7 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Yes': 'Ja',
         'No': 'Nein',
         'Auto': 'Auto',
-        'User defined': 'Benutzerdefiniert', 
+        'User defined': 'Benutzerdefiniert',
         'Add': 'Hinzufügen',
         'Cancel': 'Abbrechen',
         'Are you sure you want to delete this geometry?': 'Sind Sie sicher, dass Sie diese Geometrie löschen möchten?',
@@ -180,7 +180,7 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Do not show this hint again': 'Diesen Hinweis nicht mehr anzeigen',
         // Export KML
         'Export Kml': 'KML exportieren',
-        'Select buildings to export': 'Die zu exportierenden Gebäude auswählen',
+        'Select buildings to export: to select, trace a rectangle that cover all the interested buildings': 'Die zu exportierenden Gebäude auswählen: ziehe ein Rechteck mit gedrückter linker Maustaste über die Gebäude die du auswählen möchtest',
         'Z correction parameter': 'Korrekturparameter Z',
         'Download KML file': 'KML-Datei runterladen',
         'Download': 'Download',
@@ -197,7 +197,7 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Street': 'Strasse',
         'Street number': 'Hausnummer',
         'Street numbers': 'Hausnummern',
-        'Search intersections': 'Suche Verschneidungen',   
+        'Search intersections': 'Suche Verschneidungen',
         'Associate': 'Verknüpfe',
         'Association': 'Verknüpfung',
         'associated': 'verknüpft',
@@ -231,10 +231,10 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Select layer': 'Layer auswählen',
         'Remove': 'Entfernen',
         'Only one feature allowed': 'Es ist nur eine einzige Geometrie erlaubt',
-        "1. Cliccare sulla mappa per inserire il primo punto.<br>2. Cliccare sulla mappa per inserire i punti successivi.<br>3. Per chiudere la geometria effettaure doppio clic sull'ultimo punto.": "1. Klicken Sie auf die Karte, um den ersten Punkt zu setzen.<br>2. Klicken Sie auf die Karte, um die nächsten Punkte zu setzen.<br>3. Um die Geometrie abzuschließen machen Sie einen Doppelklick beim letzten Punkt.",
-        "1. Selezionare l'oggetto cliccandoci sopra, l'oggetto verrà evidenziato.<br>2. Cliccare sui vertici per spostarli.<br>3. Cliccare sui punti intermedi per creare nuovi vertici.": "1. Klicken Sie das Objekt an, um es hervorzuheben.<br>2. Klicken Sie auf die Scheitel um sie zu bewegen.<br>3. Klicken Sie auf einen mittleren Scheitel um einen Neuen zu erstellen",
-        "1. Selezionare l'oggetto cliccandoci sopra, verrà evidenziato un riquadro intorno all'oggetto.<br>2. Agendo sui vertici o i bordi del riquadro è possibile allargare, spostare e ruotare l'oggetto.": "1. Klicken Sie das Objekt an, dadurch wird ein Rahmen, um das Objekt angezeigt.<br>2. Bewegen Sie die Scheitel oder den Rahmen, um das Objekt zu bewegen und  zu drehen.",
-        "1. Selezionare l'oggetto cliccandoci sopra. Si aprirà un dialogo di conferma eliminazione.<br>2. Per eliminare l'oggetto confermare e cliccare su Salva, altrimenti cliccare su annulla.":"1. Klicken Sie das Objekt an, daraufhin öffnet sich ein Fenster um das Löschen zu bestätigen.<br>2. Um das Objekt zu löschen klicken Sie auf Ok, andernfalls klicken Sie auf Abbrechen.",
+        "1. Click on the map to insert the first point.<br>2. Click on the map to insert the next point.<br>3. To close the geometry double-click the last point.": "1. Klicken Sie auf die Karte, um den ersten Punkt zu setzen.<br>2. Klicken Sie auf die Karte, um die nächsten Punkte zu setzen.<br>3. Um die Geometrie abzuschließen machen Sie einen Doppelklick beim letzten Punkt.",
+        "1. Select object clicking on it, the object will highlight.<br>2. Click on vertexes to move them.<br>3. Click on intermediate points to add new vertexes.": "1. Klicken Sie das Objekt an, um es hervorzuheben.<br>2. Klicken Sie auf die Scheitel um sie zu bewegen.<br>3. Klicken Sie auf einen mittleren Scheitel um einen Neuen zu erstellen",
+        "1. Select object by clicking on it, a box around the object will appear-<br>2. By moving the vertexes or the lines of the box you can scale, move or retate the object.": "1. Klicken Sie das Objekt an, dadurch wird ein Rahmen, um das Objekt angezeigt.<br>2. Bewegen Sie die Scheitel oder den Rahmen, um das Objekt zu bewegen und  zu drehen.",
+        "1. Select object clicking on it. A dialog box asks you to confirm the deletion.<br>2. To delete the object confirm and click SAVE, otherwise click on CANCEL.":"1. Klicken Sie das Objekt an, daraufhin öffnet sich ein Fenster um das Löschen zu bestätigen.<br>2. Um das Objekt zu löschen klicken Sie auf Ok, andernfalls klicken Sie auf Abbrechen.",
         'Open map in another window' : 'Im Hauptkartenfenster öffnen',
         "Download print file" : "Ausdruck downloaden",
         'Zoom to the desired extent and click on the Export button': 'Auf den gewünschten Ausschnitt zoomen und auf "Export" klicken',
@@ -248,14 +248,35 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Select an object from map': 'Auf die Polygone der Objekte klicken um die Geometrie hinzuzufügen',
         'Draw an object': "Die Polygone direkt einzeichnen. Um die Geometrie abzuschließen machen Sie einen Doppelklick beim letzten Punkt.",
         'Selection label': 'Editierfunktion',
+        'Back': 'Zurück',
+        'Next': 'Weiter',
+        'Select the layers to use for the intersection, then fill the form and click the Download button': 'Wähle die Layer für die Überschneidung aus, fülle das Formular aus und klicke auf Start. Danach erscheint ein Link zum Download.',
+        'Select Parcels of land': 'Wähle die Parzellen aus',
+        'Go': 'Start',
         'Layer': 'Layer',
         'Undo vertex': 'Entferne letzen Eckpunkt',
-        'Your browser is not supported': 'Sie verwenden einen Browser, welcher nicht mehr unterstüzt wird. Die Validierung der Geometrie ist daher nicht verfügbar.'
+        'Your browser is not supported': 'Sie verwenden einen Browser, welcher nicht mehr unterstüzt wird. Die Validierung der Geometrie ist daher nicht verfügbar.',
+
+        // new entries:
+        'Info': 'Info',
+        'Buffer': 'Buffer',
+        'Apply': 'Anwenden',
+        'Delete box': 'Druckbereich entfernen',
+        'Vectors': 'Vectors',
+        'Snap layer': 'Snap layer',
+        'Snap Off': 'Snap ausschalten',
+        'Highlight': 'Hervorheben',
+        'KML Export': 'KML Export',
+        'Click here to download': 'Hier klicken um herunterzuladen',
+        'Insert a title': 'Titel hinzufügen',
+        'Link': 'Link',
+        'queryToFeatures': 'queryToFeatures', // ????
+        'Unselect features': 'Unselect features', // ????
+        'Ok': 'Ok',
+        'Unknown error': 'Unbekannter Fehler',
+        'Show linked data': 'Verknüpfte Daten anzeigen',
+        'Show image': 'Bild anzeigen',
+        'Show attachment': 'Anhang anzeigen',
+        'Error opening window': 'Fehler beim öffnen des Fensters'
     }
 });
-
-
-        
-
-
-        
