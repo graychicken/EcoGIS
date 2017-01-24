@@ -1,6 +1,6 @@
 <?php
 
-require_once R3_LIB_DIR . 'r3mdb2.php';
+//require_once R3_LIB_DIR . 'r3mdb2.php';
 require_once R3_LIB_DIR . 'r3dbcatalog.php';
 
 /**

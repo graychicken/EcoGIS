@@ -1,11 +1,11 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
   
 require_once dirname(__FILE__) . '/ajax_assign.php';
   
 function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFormObj.checkError') { 
     global $lbl, $txt;
-    
+
     $auth = R3AuthInstance::get();
     
     $fieldDescr = array('app_code'=>array(MISSING_FIELD=>"Il campo 'applicazione' e' obbligatorio",
@@ -83,6 +83,7 @@ function load_select($type, $parentID=null, $selID=null, $extraParam=null) {
     global $auth, $authText;
     
 	// Output
+    $db = ezcDbInstance::get();
     $objResponse = new xajaxResponse();
 	
     if ($type == 'privileges') {
@@ -92,7 +93,7 @@ function load_select($type, $parentID=null, $selID=null, $extraParam=null) {
             $val = $authText["user_manager_acname_type_$key"];
             if ($parentID != '') {
                 try {
-                    $acNameList[$val] = $auth->mkAssociativeArray($auth->getACNamesList($parentID, array('where'=>'ac_type=' . $auth->quote($key))), 'ACNAME');
+                    $acNameList[$val] = $auth->mkAssociativeArray($auth->getACNamesList($parentID, array('where'=>'ac_type=' . $db->quote($key))), 'ACNAME');
                 } catch (EPermissionDenied $e) {
                 }
             }
@@ -161,5 +162,3 @@ function append_group($app1, $grp1, $grp2) {
     
     return $objResponse->getXML();
 }
-  
-?>

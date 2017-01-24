@@ -1,6 +1,4 @@
 <?php
-
-/* UTF-8 FILE: òàèü */
 $isUserManager = true;
 
 require_once '../../../etc/config.php';
@@ -36,9 +34,10 @@ function ISOToDate($date, $separator = '/') {
 }
 
 /** Authentication and permission check */
+$db = ezcDbInstance::get();
 $auth = R3AuthInstance::get();
 if (is_null($auth)) {
-    $auth = new R3AuthManager($mdb2, $auth_options, APPLICATION_CODE);
+    $auth = new R3AuthManager($db, $auth_options, APPLICATION_CODE);
     R3AuthInstance::set($auth);
 }
 
@@ -136,23 +135,23 @@ if ($canShowApplications) {
 
 /** login/name filter */
 if ($fltlogin_name != '') {
-    $filter_where .= ' AND (us_login ilike ' . $auth->quote('%' . $fltlogin_name . '%') . ' or us_name ilike ' . $auth->quote('%' . $fltlogin_name . '%') . ')';
+    $filter_where .= ' AND (us_login ilike ' . $db->quote('%' . $fltlogin_name . '%') . ' or us_name ilike ' . $db->quote('%' . $fltlogin_name . '%') . ')';
     $smarty->assign('fltlogin_name', $fltlogin_name);
 }
 
 /** date filter */
 $date_from = ISOToDate($fltdate_from);
 if ($date_from != '') {
-    $filter_where .= ' AND log_time>=' . $auth->quote($date_from);
+    $filter_where .= ' AND log_time>=' . $db->quote($date_from);
 }
 $date_to = ISOToDate($fltdate_to);
 if ($date_to != '') {
-    $filter_where .= ' AND log_time<=' . $auth->quote($date_to . ' 23:59:59');
+    $filter_where .= ' AND log_time<=' . $db->quote($date_to . ' 23:59:59');
 }
 
 /** ip filter */
 if ($fltip != '') {
-    $filter_where .= ' AND log_ip ilike ' . $auth->quote('%' . $fltip . '%');
+    $filter_where .= ' AND log_ip ilike ' . $db->quote('%' . $fltip . '%');
     $smarty->assign('fltip', $fltip);
 }
 
@@ -269,5 +268,3 @@ if (!defined('R3_UM_JQUERY') || !R3_UM_JQUERY) {
 }
 
 $smarty->display('users/logs.tpl');
-  
-?>

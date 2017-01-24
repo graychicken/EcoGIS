@@ -1,4 +1,4 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
   
 require_once dirname(__FILE__) . '/ajax_assign.php';
@@ -20,24 +20,16 @@ if (!function_exists('json_last_error_msg')) {
 
 function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFormObj.checkError') { 
     global $lbl, $txt, $dbini;
-    
+
     $auth = R3AuthInstance::get();
     if (!$auth->hasPerm('EDIT', 'CONFIG') && !$auth->hasPerm('MOD', 'CONFIG')) {
         die("PERMISSION DENIED [EDIT|MOD/CONFIG]\n");
     }
-
-    /*$fieldDescr = array('do_names'=>array(MISSING_FIELD=>"Il campo 'nome dominio' e' obbligatorio",
-                                          INVALID_FIELD=>"Il campo 'nome dominio' contiene caratteri non validi. Solo lettere e numeri sono accettati",
-                                          PK_ERROR=>"Il campo 'nome dominio' immesso esiste gia'"),
-                        'do_auth_type'=>array(MISSING_FIELD=>"Il campo 'tipo autenticazione' e' obbligatorio"),
-                                              INVALID_FIELD=>"Il campo 'tipo autenticazione' non è valido",);
-    */
     
     $elems = AjaxSplitArray($elems);
     if (!isset($elems['old_us_login'])) {
         $elems['old_us_login'] = '';
     }
-    // print_r($elems);
     $objResponse = new xajaxResponse();
     
     $error = array();
@@ -125,5 +117,3 @@ function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFor
 	
     return $objResponse->getXML();
 }
-  
-?>

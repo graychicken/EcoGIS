@@ -39,7 +39,7 @@ class R3UmDependenciesDefault {
                 R3_JS_URL . "jquery/ui/i18n/ui.datepicker-{$objlang}.js",
                 R3_JS_URL . "r3um.js");
         }
-        $this->jsDefaultFiles[] = R3_JS_URL . "charset.js";
+        //$this->jsDefaultFiles[] = R3_JS_URL . "charset.js";
         $this->jsDefaultFiles[] = R3_JS_URL . "xajax_required_tag.js";
         $this->jsDefaultFiles[] = R3_JS_URL . "ajax_select.js";
 

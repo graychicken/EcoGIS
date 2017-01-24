@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__FILE__) . '/r3mdb2.php';
+//require_once dirname(__FILE__) . '/r3mdb2.php';
 if (!class_exists('R3DbCatalog_Base'))
     require_once dirname(__FILE__) . '/r3dbcatalog.php';
 

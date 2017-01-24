@@ -87,7 +87,7 @@ th.grid_wrap_header  {
   color: #000000;
   font-weight: normal;
   font-size: 11px;
-  background: url("$img_path/grid_header.png");
+  background: url("../images/grid_header.png");
   background-position:bottom;
   background-repeat:repeat-x;
   background-color: #EAE9D9;
@@ -102,7 +102,7 @@ th.grid_wrap_header_sort  {
   color: #000000;
   font-weight: normal;
   font-size: 11px;
-  background: url("$img_path/grid_header.png");
+  background: url("../images/grid_header.png");
   background-position:bottom;
   background-repeat:repeat-x;
   background-color: #EAE9D9;

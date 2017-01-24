@@ -1,11 +1,11 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
   
 require_once dirname(__FILE__) . '/ajax_assign.php';
   
 function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFormObj.checkError') { 
     global $lbl, $txt;
-    
+
     $auth = R3AuthInstance::get();
     
     $fieldDescr = array('app_code'=>array(MISSING_FIELD=>"Il campo 'codice' e' obbligatorio",
@@ -59,5 +59,3 @@ function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFor
 	
     return $objResponse->getXML();
 }
-  
-?>

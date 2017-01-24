@@ -1,4 +1,4 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
 
 require_once '../../../etc/config.php';
@@ -10,9 +10,10 @@ if (!defined("__R3_AUTH__")){
 }
 require_once R3_APP_ROOT . 'lib/storevar.php';
 
+$db = ezcDbInstance::get();
 $auth = R3AuthInstance::get();
 if (is_null($auth)) {
-    $auth = new R3AuthManager($mdb2, $auth_options, APPLICATION_CODE);
+    $auth = new R3AuthManager($db, $auth_options, APPLICATION_CODE);
     R3AuthInstance::set($auth);
 }
 

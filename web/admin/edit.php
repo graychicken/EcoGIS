@@ -69,6 +69,7 @@ $tabs = $obj->getTabs();
 try {
     $vlu = $obj->getDataAsLocale();
 } catch (Exception $e) {
+    var_dump($e);
     echo "Fatal error: " . $e->getMessage();
     die();
 }

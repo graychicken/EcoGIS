@@ -1,7 +1,7 @@
 <?php
 
-require_once 'MDB2.php';
-require_once 'r3mdb2.php';
+//require_once 'MDB2.php';
+//require_once 'r3mdb2.php';
 if (defined('R3_LIB_DIR'))
     require_once R3_LIB_DIR . 'r3dbcatalog.php';
 else

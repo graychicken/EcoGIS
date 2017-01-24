@@ -1,12 +1,11 @@
 <?php
-
-/* UTF-8 FILE: òàèü */
 $isUserManager = true;
 
 require_once dirname(__FILE__) . '/ajax_assign.php';
 
 function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFormObj.checkError') {
     global $lbl, $txt, $users_extra_fields;
+    $db = ezcDbInstance::get();
     $auth = R3AuthInstance::get();
 
     $fieldDescr = array(
@@ -108,6 +107,7 @@ function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFor
 
 function checkReq($extra_fields, $elems) {
     /** checks * */
+    $db = ezcDbInstance::get();
     $parseError = null;
     $errors = array();
     foreach ($extra_fields as $key => $val) {
@@ -116,7 +116,7 @@ function checkReq($extra_fields, $elems) {
         /** check required * */
         if (isset($val['required']) && $val['required'] === true) {
             if ($elems[$key] == '' && !in_array($label, $errors)) {
-                $msg = sprintf(_("\"%s\" è obbligatorio"), $label);
+                $msg = sprintf(_("\"%s\" � obbligatorio"), $label);
                 $errors[$label] = $msg;
                 break;
             }
@@ -153,7 +153,7 @@ function checkReq($extra_fields, $elems) {
             }
 
             if ($parseError) {
-                $msg = sprintf(_("La stringa '%s' non può essere interpretata come intero"), $elems[$key]);
+                $msg = sprintf(_("La stringa '%s' non pu� essere interpretata come intero"), $elems[$key]);
                 $errors[$label] = $msg;
                 break;
             }
@@ -182,7 +182,7 @@ function checkReq($extra_fields, $elems) {
                 }
             }
             if ($parseError) {
-                $msg = sprintf(_("La stringa '%s' non può essere interpretata come float"), $elems[$key]);
+                $msg = sprintf(_("La stringa '%s' non pu� essere interpretata come float"), $elems[$key]);
                 $errors[$label] = $msg;
                 break;
             }
@@ -190,13 +190,11 @@ function checkReq($extra_fields, $elems) {
 
         /** check uniqes * */
         if (isset($val['unique']) && is_array($val['unique'])) {
-            global $mdb2;
-            $sql = "SELECT count(*) from {$val['unique']['table']} where {$val['unique']['key']} = " . $mdb2->quote($elems[$key]);
-            if (!empty($elems['us_login']))
-                $sql .= " AND us_login <> " . $mdb2->quote($elems['us_login']);
-            $result = & $mdb2->query($sql);
-            $vlu = $result->fetchRow(0);
-            if ($vlu[0] > 0) {
+            $sql = "SELECT COUNT(*) FROM {$val['unique']['table']} WHERE {$val['unique']['key']} = " . $db->quote($elems[$key]);
+            if (!empty($elems['us_login'])) {
+                $sql .= " AND us_login <> " . $db->quote($elems['us_login']);
+            }
+            if ($db->query($sql)->fetchColumn() > 0) {
                 $msg = sprintf(_("$label \"%s\" esiste già"), $elems[$key]);
                 $errors[$label] = $msg;
                 break;
@@ -206,5 +204,3 @@ function checkReq($extra_fields, $elems) {
     }
     return $errors;
 }
-
-?>

@@ -1,4 +1,4 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
 
 require_once '../../../etc/config.php';
@@ -11,7 +11,8 @@ if (!defined("__R3_AUTH__")) {
 require_once R3_APP_ROOT . 'lang/lang.php';
 
 /** Authentication and permission check */
-$auth = new R3Auth($mdb2, $auth_options, APPLICATION_CODE);
+$db = ezcDbInstance::get();
+$auth = new R3Auth($db, $auth_options, APPLICATION_CODE);
 $auth->ignoreExpiredPassword = true;  /** ignore expired password to allow user to change it */
 if (!$auth->isAuth()) {
     Header("location: logout.php?status=" . $auth->getStatusText());

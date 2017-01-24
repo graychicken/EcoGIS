@@ -9,6 +9,12 @@ require_once R3_LIB_DIR . '/../vendor/autoload.php';
 
 require_once R3_LIB_DIR . 'obj.base_locale.php';
 require_once R3_LIB_DIR . 'eco_utils.php';
+require_once R3_LIB_DIR . 'r3auth.php';
+require_once R3_LIB_DIR . 'r3auth_manager.php';
+require_once R3_LIB_DIR . 'r3auth_impexp.php';
+require_once R3_LIB_DIR . 'r3auth_text.php';
+require_once R3_LIB_DIR . 'r3dbini.php';
+
 
 function __autoload($className) {
     // EZ Component
@@ -16,7 +22,7 @@ function __autoload($className) {
 }
 
 function R3AppInitDB() {
-    global $mdb2;
+    //global $mdb2;
     global $dsn;
 
     require_once 'MDB2.php';
@@ -29,7 +35,7 @@ function R3AppInitDB() {
         $db = ezcDbFactory::create($txtDsn);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         PEAR::setErrorHandling(PEAR_ERROR_EXCEPTION);
-        $mdb2 = MDB2::singleton($txtDsn);
+        //$mdb2 = MDB2::singleton($txtDsn);
         ezcDbInstance::set($db);
     } catch (\PDOException $e) {
         $msg = "Error connecting to database {$dsn['dbname']} on  {$dsn['dbhost']} as  {$dsn['dbuser']}: {$e->getMessage()}";
@@ -40,14 +46,14 @@ function R3AppInitDB() {
 
     if (isset($dsn['charset'])) {
         $db->exec("SET client_encoding TO '{$dsn['charset']}'");
-        $mdb2->exec("SET client_encoding TO '{$dsn['charset']}'");
+        //$mdb2->exec("SET client_encoding TO '{$dsn['charset']}'");
     }
     if (isset($dsn['search_path'])) {
         $db->exec("SET search_path TO {$dsn['search_path']}, public");
-        $mdb2->exec("SET search_path TO {$dsn['search_path']}, public");
+        //$mdb2->exec("SET search_path TO {$dsn['search_path']}, public");
     }
     $db->exec("SET datestyle TO ISO");
-    $mdb2->exec("SET datestyle TO ISO");
+    //$mdb2->exec("SET datestyle TO ISO");
 }
 
 /**
@@ -126,18 +132,20 @@ function R3AppInit($type = null, array $opt = array()) {
     $smarty->load_filter('pre', 'r3quotevalue');
 
     R3AppInitDB();
+    $db = ezcDbInstance::get();
 
     /* Authentication */
     if ($opt['auth'] === true && !isset($auth_options)) {
         throw new Exception('Missing $auth_options');
     }
+
     if ($opt['auth'] === true) {
         if ($opt['auth_manager'] === true) {
             require_once R3_LIB_DIR . 'r3auth_manager.php';
-            $auth = new R3AuthManager($mdb2, $auth_options, APPLICATION_CODE);
+            $auth = new R3AuthManager($db, $auth_options, APPLICATION_CODE);
         } else {
             require_once R3_LIB_DIR . 'r3auth.php';
-            $auth = new R3Auth($mdb2, $auth_options, APPLICATION_CODE);
+            $auth = new R3Auth($db, $auth_options, APPLICATION_CODE);
         }
         R3AuthInstance::set($auth);
     }
@@ -145,7 +153,7 @@ function R3AppInit($type = null, array $opt = array()) {
     if ($opt['dbini'] === true) {
         require_once R3_LIB_DIR . 'r3dbini.php';
         $domainName = R3_IS_MULTIDOMAIN ? 'SYSTEM' : DOMAIN_NAME;
-        $dbini = new R3DBIni($mdb2, $auth_options, $domainName, APPLICATION_CODE);
+        $dbini = new R3DBIni($db, $auth_options, $domainName, APPLICATION_CODE);
     }
 }
 
@@ -184,7 +192,7 @@ function initLog() {
  *  - $auth
  */
 function R3AppStart($type = null, array $opt = array()) {
-    global $smarty, $auth, $languages, $mdb2;
+    global $smarty, $auth, $languages;// , $mdb2;
     global $lang;  // output var
 
     global $scriptStartTime;
@@ -212,7 +220,7 @@ function R3AppStart($type = null, array $opt = array()) {
         $sql = "SELECT set_session_var('R3UID', '{$auth->getUID()}')";
         $db = ezcDbInstance::get();
         $db->exec($sql);
-        $mdb2->exec($sql);
+        //$mdb2->exec($sql);
     }
 
     $_SESSION['lang'] = $auth->getParam('us_lang', 1);

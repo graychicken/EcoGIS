@@ -1,11 +1,11 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
 
 require_once dirname(__FILE__) . '/ajax_assign.php';
   
 function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFormObj.checkError') { 
     global $lbl, $txt;
-    
+
     $auth = R3AuthInstance::get();
     
     $fieldDescr = array('do_names'=>array(MISSING_FIELD=>"Il campo 'nome dominio' e' obbligatorio",
@@ -40,10 +40,10 @@ function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFor
         
         if ($elems['act'] == 'add') {
             /** add a new somain */
-            $auth->addDomain($do_names, $elems['do_auth_type'], $elems['do_auth_data'], $applications);
+            $auth->addDomain($do_names, $elems['do_auth_type'], $elems['do_auth_data'], $applications, array('description'=>$dn_descriptions));
         } else if ($elems['act'] == 'mod') {
             /** modify a domain */
-            $auth->modDomain($elems['old_do_name'], $do_names, $elems['do_auth_type'], $elems['do_auth_data'], $applications);
+            $auth->modDomain($elems['old_do_name'], $do_names, $elems['do_auth_type'], $elems['do_auth_data'], $applications, array('description'=>$dn_descriptions));
         } else if ($elems['act'] == 'del') {
             /** delete an application */
             $auth->delDomain($elems['name']);    
@@ -78,5 +78,3 @@ function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFor
 	
     return $objResponse->getXML();
 }
-  
-?>

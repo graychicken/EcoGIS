@@ -1,10 +1,9 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
 
 $time_start = microtime(true);
 
-//require_once dirname(__FILE__) . '/../../../etc/config.php';
-require_once '../../../etc/config.php';
+require_once __DIR__ . '/../../../etc/config.php';
 if (file_exists(R3_APP_ROOT . 'lib/r3_auth_gui_start.php')) {
     require_once R3_APP_ROOT . 'lib/r3_auth_gui_start.php';
 }
@@ -22,9 +21,10 @@ require_once R3_APP_ROOT . 'lang/lang.php';
 
 $performance_time[] = array('text'=>'Before auth time: ', 'time'=>microtime(true));
 /** Authentication and permission check */
+$db = ezcDbInstance::get();
 $auth = R3AuthInstance::get();
 if (is_null($auth)) {
-    $auth = new R3AuthManager($mdb2, $auth_options, APPLICATION_CODE);
+    $auth = new R3AuthManager($db, $auth_options, APPLICATION_CODE);
     R3AuthInstance::set($auth);
 }
 
@@ -162,7 +162,7 @@ try{
     if ($gr_name != '') {
         $smarty->assign('gr_name', $gr_name);
         $a = explode('|', $gr_name);
-        $group_where = "  gr_name = " . $auth->quote($a[1]);
+        $group_where = "  gr_name = " . $db->quote($a[1]);
         $group_join = "  INNER JOIN " . $auth_options['users_groups_table'] . " ON " .
                       "    " . $auth_options['users_table'] . ".us_id=" . $auth_options['users_groups_table'] . ".us_id " . 
                       "  INNER JOIN " . $auth_options['groups_table'] . " ON " .
@@ -205,11 +205,11 @@ $filter_where = ' 1=1 ';
 
 /** login_name filter */
 if ($login_name != '') {
-    $filter_where .= ' AND us_login ilike ' . $auth->quote('%' . $login_name . '%') . ' or us_name ilike ' . $auth->quote('%' . $login_name . '%');
+    $filter_where .= ' AND us_login ilike ' . $db->quote('%' . $login_name . '%') . ' or us_name ilike ' . $db->quote('%' . $login_name . '%');
     $smarty->assign('login_name', $login_name);
 }
 if ($us_status != '') {
-    $filter_where .= ' AND us_status ilike ' . $auth->quote($us_status);
+    $filter_where .= ' AND us_status ilike ' . $db->quote($us_status);
     $smarty->assign('us_status', $us_status);
 }
 
@@ -345,5 +345,3 @@ $smarty->assign('navigationBar_html', $navigationBar_html);
 $smarty->assign('tot', $tot);
 
 $smarty->display('users/users_list.tpl');
-
-?>

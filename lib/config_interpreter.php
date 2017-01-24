@@ -40,12 +40,12 @@ function tagReplace($text) {
  * Read field-configuration as array and interpret array-keys
  * this function calls tagReplace
  *
- * @param mdb2    $mdb2 database object
+ * @param db      PDO database object
  * @param R3Auth  $auth authentication object
  * @param array   $fields field-configuration
  * @param array   $data
  */
-function readFieldArray($mdb2, $auth, &$fields, &$data, $opts = array()) {
+function readFieldArray(\PDO $db, $auth, &$fields, &$data, $opts = array()) {
     $opts = array_merge(array('ignoreReadOnly' => false, 'ignoreHidden' => false), $opts);
     $isAuthManager = get_class($auth) == 'R3AuthManager' || is_subclass_of($auth, 'R3AuthManager');
     if ($isAuthManager) {

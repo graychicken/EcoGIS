@@ -1,4 +1,4 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
 
 require_once '../../../etc/config.php';
@@ -18,9 +18,10 @@ require_once R3_APP_ROOT . 'lang/lang.php';
 
 
 /** Authentication and permission check */
+$db = ezcDbInstance::get();
 $auth = R3AuthInstance::get();
 if (is_null($auth)) {
-    $auth = new R3AuthManager($mdb2, $auth_options, APPLICATION_CODE);
+    $auth = new R3AuthManager($db, $auth_options, APPLICATION_CODE);
     R3AuthInstance::set($auth);
 }
 
@@ -98,12 +99,12 @@ $smarty->assign('app_code_list', $app_code_list);
 /** verb filter */
 if ($fltac_verb != '') {
     $smarty->assign('fltac_verb', $fltac_verb);
-    $filter_where .= 'AND ac_verb=' . $auth->quote($fltac_verb);
+    $filter_where .= 'AND ac_verb=' . $db->quote($fltac_verb);
 } else {
     $fltac_verb = null;
 }
 $verb_list = array();
-foreach($auth->getDistinctACNamesList(null, 'ac_verb') as $value) {
+foreach($auth->getDistinctACNamesList($fltapp_code, 'ac_verb') as $value) {
     $verb_list[$value['ac_verb']] = $value['ac_verb'];
 }
 $smarty->assign('ac_verb_list', $verb_list);
@@ -111,12 +112,12 @@ $smarty->assign('ac_verb_list', $verb_list);
 /** name filter */
 if ($fltac_name != '') {
     $smarty->assign('fltac_name', $fltac_name);
-    $filter_where .= 'AND ac_name=' . $auth->quote($fltac_name);
+    $filter_where .= 'AND ac_name=' . $db->quote($fltac_name);
 } else {
     $fltac_name = null;
 }
 $name_list = array();
-foreach($auth->getDistinctACNamesList(null, 'ac_name') as $value) {
+foreach($auth->getDistinctACNamesList($fltapp_code, 'ac_name') as $value) {
     $name_list[$value['ac_name']] = $value['ac_name'];
 }
 $smarty->assign('ac_name_list', $name_list);
@@ -124,7 +125,7 @@ $smarty->assign('ac_name_list', $name_list);
 /** type filter */
 if ($fltac_type != '') {
     $smarty->assign('fltac_type', $fltac_type);
-    $filter_where .= 'AND ac_type=' . $auth->quote($fltac_type);
+    $filter_where .= 'AND ac_type=' . $db->quote($fltac_type);
 } else {
     $fltac_type = null;
 }
@@ -209,5 +210,3 @@ $smarty->assign('table_html', $table_html);
 $smarty->assign('navigationBar_html', $navigationBar_html);
 
 $smarty->display('users/acnames_list.tpl');
-  
-?>

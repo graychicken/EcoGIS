@@ -1,4 +1,4 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
 
 require_once '../../../etc/config.php';
@@ -17,9 +17,10 @@ require_once R3_APP_ROOT . 'lang/lang.php';
 
 
 /** Authentication and permission check */
+$db = ezcDbInstance::get();
 $auth = R3AuthInstance::get();
 if (is_null($auth)) {
-    $auth = new R3AuthManager($mdb2, $auth_options, APPLICATION_CODE);
+    $auth = new R3AuthManager($db, $auth_options, APPLICATION_CODE);
     R3AuthInstance::set($auth);
 }
 
@@ -94,7 +95,7 @@ if (!$auth->hasPerm('SHOW', 'ALL_USERS') && !$auth->hasPerm('SHOW', 'USER')) {
     $us_login = $fltus_login;
 }
 
-$dbini = new R3DBIni($mdb2, $auth_options); 
+$dbini = new R3DBIni($db, $auth_options);
 $dbini->setDomainName($dn_name, true);
 $dbini->setApplicationCode($app_code, true);
 if (($p = strpos($us_login, '|')) !== false) {
@@ -191,5 +192,3 @@ if ($auth->hasPerm('EDIT', 'CONFIG')) {
 }
 
 $smarty->display('users/config_list.tpl');
-
-?>

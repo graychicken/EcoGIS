@@ -1,4 +1,4 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
 
 require_once '../../../etc/config.php';
@@ -17,10 +17,10 @@ require_once R3_APP_ROOT . 'lang/lang.php';
 
 
 /** Authentication and permission check */
-//$auth = new R3AuthManager($mdb2, $auth_options, APPLICATION_CODE);
+$db = ezcDbInstance::get();
 $auth = R3AuthInstance::get();
 if (is_null($auth)) {
-    $auth = new R3AuthManager($mdb2, $auth_options, APPLICATION_CODE);
+    $auth = new R3AuthManager($db, $auth_options, APPLICATION_CODE);
     R3AuthInstance::set($auth);
 }
 if (!$auth->isAuth()) {
@@ -79,7 +79,7 @@ if (!isset($includeSmartyAssign) || $includeSmartyAssign === true) {
     require_once R3_WEB_ADMIN_DIR . 'smarty_assign.php';
 }
 
-$dbini = new R3DBIni($mdb2, $auth_options);
+$dbini = new R3DBIni($db, $auth_options);
 $dbini->setDomainName($dn_name, true);
 $dbini->setApplicationCode($app_code, true);
 $dbini->setUserLogin($dn_name, $us_login2, true);
@@ -172,5 +172,3 @@ $smarty->assign('act', $_REQUEST['act']);
 $smarty->assign('vlu', $data);
 
 $smarty->display('users/config_edit.tpl');
-  
-?>

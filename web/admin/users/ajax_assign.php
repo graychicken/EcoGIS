@@ -1,4 +1,4 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
 
 function AjaxSplitArray($elems, $separator='|', $trim=true) {
@@ -21,5 +21,3 @@ function AjaxSplitArray($elems, $separator='|', $trim=true) {
     }
     return $res;
 }
-
-?>

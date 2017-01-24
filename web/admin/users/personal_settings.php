@@ -1,4 +1,4 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
 
 if (file_exists('personal_settings_custom.php')) {
@@ -17,9 +17,10 @@ require_once R3_LIB_DIR . 'config_interpreter.php';
 require_once R3_APP_ROOT . 'lang/lang.php';
 
 /** Authentication and permission check */
+$db = ezcDbInstance::get();
 $auth = R3AuthInstance::get();
 if (is_null($auth)) {
-    $auth = new R3AuthManager($mdb2, $auth_options, APPLICATION_CODE);
+    $auth = new R3AuthManager($db, $auth_options, APPLICATION_CODE);
     R3AuthInstance::set($auth);
 }
 
@@ -103,7 +104,7 @@ if (isset($users_extra_fields)) {
     $extra_fields = array_merge($extra_fields, $users_extra_fields);
 }
 
-readFieldArray($mdb2, $auth, $extra_fields, $data);
+readFieldArray($db, $auth, $extra_fields, $data);
 
 $canChangePassword = $auth->canChangePassword();
 if (isset($data['as_change_password'])) {
@@ -130,5 +131,3 @@ $smarty->assign('popup', initVar('popup', 'f'));
 $smarty->assign('list_uri', initVar('list_uri'));
 
 $smarty->display('users/personal_settings.tpl');
-
-?>

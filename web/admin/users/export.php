@@ -1,4 +1,4 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
 
 require_once '../../../etc/config.php';
@@ -16,9 +16,10 @@ require_once R3_APP_ROOT . 'lib/xajax.php';
 require_once R3_APP_ROOT . 'lang/lang.php';
 
 /** Authentication and permission check */
+$db = ezcDbInstance::get();
 $auth = R3AuthInstance::get();
 if (is_null($auth)) {
-    $auth = new R3AuthManagerImpExp($mdb2, $auth_options, APPLICATION_CODE);
+    $auth = new R3AuthManagerImpExp($db, $auth_options, APPLICATION_CODE);
     R3AuthInstance::set($auth);
 }
 
@@ -117,6 +118,4 @@ header("Content-Disposition: attachment; filename=$fileName.xml");
 header("Content-Transfer-Encoding: binary");
 header("Content-Length: " . strlen($data));
 
-echo "$data";  
-
-?>
+echo $data;  

@@ -1,4 +1,4 @@
-<?php  /* UTF-8 FILE: òàèü */
+<?php
 $isUserManager = true;
   
 require_once dirname(__FILE__) . '/ajax_assign.php';
@@ -6,8 +6,6 @@ require_once dirname(__FILE__) . '/ajax_assign.php';
 function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFormObj.checkError') { 
     global $lbl, $txt;
 
-    
-    
     $auth = R3AuthInstance::get();
     $fieldDescr = array('app_code'=>array(MISSING_FIELD=>(!isset($txt['missing_fld_app']) ? _("Il campo 'applicazione' e' obbligatorio") : $txt['missing_fld_app']),
                                           INVALID_FIELD=>"Il campo 'codice' contiene caratteri non validi. Solo lettere e numeri sono accettati",
@@ -30,7 +28,7 @@ function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFor
                                  trim($elems['ac_descr']), 
                                  trim($elems['ac_order']), 
                                  strtoupper($elems['ac_active']) == 'T',
-                                 array('ac_type'=>strtoupper($elems['ac_type'])));
+                                 $elems['ac_type']);
             }
         } else if ($elems['act'] == 'mod') {
             /** modify an acname */
@@ -43,7 +41,7 @@ function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFor
                              trim($elems['ac_descr']), 
                              trim($elems['ac_order']), 
                              strtoupper($elems['ac_active']) == 'T',
-                             array('ac_type'=>strtoupper($elems['ac_type'])));
+                             $elems['ac_type']);
         } else if ($elems['act'] == 'del') {
             /** delete an acname */
             $auth->delACName($elems['app_code'], 
@@ -81,4 +79,3 @@ function submitForm($elems, $doneFunc='AjaxFormObj.checkDone', $errFunc='AjaxFor
     return $objResponse->getXML();
 }
   
-?>

@@ -1,6 +1,4 @@
 <?php
-
-/* UTF-8 FILE: òàèü */
 $isUserManager = true;
 
 require_once '../../../etc/config.php';
@@ -19,9 +17,10 @@ require_once R3_LIB_DIR . 'config_interpreter.php';
 require_once R3_APP_ROOT . 'lang/lang.php';
 
 /** Authentication and permission check */
+$db = ezcDbInstance::get();
 $auth = R3AuthInstance::get();
 if (is_null($auth)) {
-    $auth = new R3AuthManager($mdb2, $auth_options, APPLICATION_CODE);
+    $auth = new R3AuthManager($db, $auth_options, APPLICATION_CODE);
     R3AuthInstance::set($auth);
 }
 global $dbini;
@@ -144,47 +143,16 @@ if ($_REQUEST['act'] == 'add') {
     $data['us_start_date'] = ISOToDate($data['us_start_date']);
     $data['us_expire_date'] = ISOToDate($data['us_expire_date']);
 
-    /*
-      if (isset($extra_fields) && is_array($extra_fields)) {
-      foreach($extra_fields as $key=>$val) {
-      if (isset($val['inistorage'])) {
-      // Data from settings table
-      $extra_fields[$key]['value'] = $auth->getConfigValue($val['inistorage'][0], $val['inistorage'][1], null);
-      } else {
-      // Data from user table
-      $extra_fields[$key]['value'] = $data[$key];
-      }
-      }
-      }
-     */
-
     $ip_list = $auth->arrayIPToString($data['ip']);
 }
 
 
-// print_r($extra_fields);
-// DEFAULT_ROW_NUM
-
-readFieldArray($mdb2, $auth, $extra_fields, $data, array('ignoreReadOnly' => true, 'ignoreHidden' => true));
-
-//print_r($extra_fields);
-//print_r($data);
-// echo "<pre>\n";
-// echo "</pre>\n";
+readFieldArray($db, $auth, $extra_fields, $data, array('ignoreReadOnly' => true, 'ignoreHidden' => true));
 
 $domainData = $auth->getDomainData($_REQUEST['dn_name'], true);
 $appList = $domainData['applications'];
 
 $grp_perm = array();
-/* In inserimento mostro solo i gruppi validi per l'utente */
-// if ($act == 'add') {
-// $groupsList = array();
-// foreach($auth->getGroupsList() as $grp) {
-// $data = $auth->getGroupData($app_code, $gr_name, $getLockupData=false) {   
-// }
-// } else {
-// $groupsList = $auth->getGroupsList();
-// }
 
 $groupsList = $auth->getGroupsList();
 
@@ -198,7 +166,7 @@ if (is_array($appList)) {
         $perm = array();
         $perm_n = array();
 
-        $tmpini = new R3DBIni($mdb2, $auth_options, DOMAIN_NAME, $appKey);
+        $tmpini = new R3DBIni($db, $auth_options, DOMAIN_NAME, $appKey);
         $max_groups = $tmpini->getValue('USER_MANAGER', 'MAX_GROUPS', '');
         $group_mandatory = $tmpini->getValue('USER_MANAGER', 'GROUPS_MANDATORY', '');
 
@@ -309,4 +277,3 @@ if (!defined('R3_UM_JQUERY') || !R3_UM_JQUERY) {
 }
 
 $smarty->display('users/users_edit.tpl');
-?>

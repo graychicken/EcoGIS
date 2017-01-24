@@ -2,7 +2,7 @@
 
 define('DATABASE_VERSION', '1.29');
 
-require_once R3_LIB_DIR . 'r3mdb2.php';
+//require_once R3_LIB_DIR . 'r3mdb2.php';
 require_once R3_LIB_DIR . 'r3dbcatalog.php';
 require_once R3_LIB_DIR . 'log_table.php';
 require_once R3_LIB_DIR . 'view_def.php';
@@ -146,11 +146,11 @@ class R3EcoGisCustomerHelper {
      * Create a database user (if not exists), or replace its password if not empty
      */
     static public function createDBUser($login, $password) {
-        global $dsn, $mdb2;
+        //global $dsn, $mdb2;
         ezcLog::getInstance()->log("R3EcoGisCustomerHelper::createDBUser({$login}, ***)", ezcLog::DEBUG);
 
         $db = ezcDbInstance::get();
-        $catalog = R3DbCatalog::factory('pgsql', $mdb2);
+        $catalog = R3DbCatalog::factory($db);
         if (!$catalog->userExists($login)) {
             $sql = "CREATE USER $login PASSWORD '$password'";
             $db->exec($sql);
@@ -170,9 +170,9 @@ class R3EcoGisCustomerHelper {
      * Drop a database user
      */
     static public function dropDBUser($login) {
-        global $mdb2;
+        //global $mdb2;
         $db = ezcDbInstance::get();
-        $catalog = R3DbCatalog::factory('pgsql', $mdb2);
+        $catalog = R3DbCatalog::factory($db);
         if ($catalog->userExists($login)) {
             $sql = "DROP USER $login";
             $db->exec($sql);
@@ -183,10 +183,11 @@ class R3EcoGisCustomerHelper {
      * Create a schema (if not exists), and grant its access to $user
      */
     static public function createSchema($name, $accessUser = '') {
-        global $mdb2;
+        //global $mdb2;
         ezcLog::getInstance()->log("R3EcoGisCustomerHelper::createSchema(\"{$name}\")", ezcLog::DEBUG);
 
-        $catalog = R3DbCatalog::factory('pgsql', $mdb2);
+        $db = ezcDbInstance::get();
+        $catalog = R3DbCatalog::factory($db);
         if (!$catalog->schemaExists($name)) {
             $catalog->createSchema($name);
         }
@@ -204,9 +205,9 @@ class R3EcoGisCustomerHelper {
      * Drop a schema
      */
     static public function dropSchema($name) {
-        global $mdb2;
+        //global $mdb2;
         $db = ezcDbInstance::get();
-        $catalog = R3DbCatalog::factory('pgsql', $mdb2);
+        $catalog = R3DbCatalog::factory($db);
         if ($catalog->schemaExists($name)) {
             $sql = "DROP SCHEMA $name";
             $db->exec($sql);
@@ -333,7 +334,7 @@ class R3EcoGisCustomerHelper {
      * Create a domain user (if not exists)
      */
     static public function createViews($schema, $accessUser, $srid, $do_id, $opt) {
-        global $mdb2;
+        //global $mdb2;
         ezcLog::getInstance()->log("R3EcoGisCustomerHelper::createViews(\"{$schema}\", \"{$accessUser}\", {$srid}, {$do_id})", ezcLog::DEBUG);
 
         $municipalityTot = count(R3EcoGisCustomerHelper::getSelectedMunicipalityList($do_id));
@@ -345,7 +346,7 @@ class R3EcoGisCustomerHelper {
             $viewDef = array_merge($viewDef, R3EcoGisCustomerViewDef::getSingleMunicipalityViewsDef());
         }
         $db = ezcDbInstance::get();
-        $catalog = R3DbCatalog::factory('pgsql', $mdb2);
+        $catalog = R3DbCatalog::factory($db);
         $hasGeometryColumn = false;
 
         $db->beginTransaction();
@@ -430,11 +431,11 @@ class R3EcoGisCustomerHelper {
      * Create a domain user (if not exists)
      */
     static public function dropViews($schema) {
-        global $mdb2;
+        //global $mdb2;
 
         $viewDef = array_merge(R3EcoGisCustomerViewDef::getViewsDef(), R3EcoGisCustomerViewDef::getMultiMunicipalityViewsDef(), R3EcoGisCustomerViewDef::getSingleMunicipalityViewsDef());
         $db = ezcDbInstance::get();
-        $catalog = R3DbCatalog::factory('pgsql', $mdb2);
+        $catalog = R3DbCatalog::factory($db);
 
         foreach ($viewDef as $name => $def) {
             if ($catalog->viewExists("{$schema}.{$name}")) {
@@ -481,11 +482,11 @@ class R3EcoGisCustomerHelper {
 
     // Grant select to all the user table
     static public function grantTables($schema, $user) {
-        global $mdb2;
+        //global $mdb2;
 
         ezcLog::getInstance()->log("R3EcoGisCustomerHelper::grantTables(\"{$schema}\", \"{$user}\")", ezcLog::DEBUG);
         $db = ezcDbInstance::get();
-        $catalog = R3DbCatalog::factory('pgsql', $mdb2);
+        $catalog = R3DbCatalog::factory($db);
         foreach ($catalog->getTableList(array('schema' => $schema)) as $table) {
             if ($catalog->isSuperUser()) {
                 $sql = "ALTER TABLE {$table['schema']}.{$table['table']} OWNER TO {$mdb2->dsn['username']}";
@@ -501,12 +502,12 @@ class R3EcoGisCustomerHelper {
 
     // (re)Populate the geometry columns
     static public function populateGeometryColumns($schema) {
-        global $mdb2;
+        //global $mdb2;
 
         ezcLog::getInstance()->log("R3EcoGisCustomerHelper::populateGeometryColumns(\"{$schema}\")", ezcLog::DEBUG);
 
         $db = ezcDbInstance::get();
-        $catalog = R3DbCatalog::factory('pgsql', $mdb2);
+        $catalog = R3DbCatalog::factory($db);
         $geoTables = array();
         if ($schema == R3_DB_SCHEMA) {
             // Common tables
@@ -1067,7 +1068,7 @@ class eco_customer extends R3AppBaseObject {
      * Return the data for a single customer 
      */
     public function getData($id = null) {
-        global $mdb2, $dsn;
+        global /*$mdb2, */$dsn;
 
         $lang = R3Locale::getLanguageID();
         $db = ezcDbInstance::get();
@@ -1148,7 +1149,7 @@ class eco_customer extends R3AppBaseObject {
             }
         }
 
-        $catalog = R3DbCatalog::factory('pgsql', $mdb2);
+        $catalog = R3DbCatalog::factory($db);
         $data = $catalog->getUserData();
         $vlu['can_create_db_user'] = $data['rolsuper'] == 't' || $data['rolcreaterole'] == 't';
         $vlu['do_database_version'] = DATABASE_VERSION;
@@ -1212,7 +1213,7 @@ class eco_customer extends R3AppBaseObject {
      * @return text             the help text (usually html)
      */
     public function validateDomain($request) {
-        global $dsn;
+        //global $dsn;
 
         $result = array();
         $validChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_';
@@ -1313,7 +1314,7 @@ class eco_customer extends R3AppBaseObject {
      * @return array           ajax format status
      */
     public function submitFormData($request) {
-        global $dbini, $dsn, $mdb2, $languages;
+        global $dbini, $dsn, /*$mdb2, */$languages;
         if ($this->act == 'del') {
             $id = $this->deleteCustomer($request);
             return array('status' => R3_AJAX_NO_ERROR,
@@ -1324,7 +1325,8 @@ class eco_customer extends R3AppBaseObject {
         if ($request['municipality'] == '') {
             $errors['municipality'] = array('CUSTOM_ERROR' => _("Almeno un comune deve essere selezionato"));
         }
-        $catalog = R3DbCatalog::factory('pgsql', $mdb2);
+        $db = ezcDbInstance::get();
+        $catalog = R3DbCatalog::factory($db);
         $data = $catalog->getUserData();
 
         if (count($errors) > 0) {
@@ -1461,10 +1463,10 @@ class eco_customer extends R3AppBaseObject {
      * @return array            the result data
      */
     public function confirmDeleteCustomer($request) {
-        global $mdb2;
+        //global $mdb2;
 
         $db = ezcDbInstance::get();
-        $catalog = R3DbCatalog::factory('pgsql', $mdb2);
+        $catalog = R3DbCatalog::factory($db);
         $data = $this->auth->getDomainData($request['id']);
         if ($this->isMultiDomain()) {
             $schema = 'geo_' . $data['dn_name'];
