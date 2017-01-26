@@ -1,5 +1,8 @@
 <?php
 
+require_once R3_LIB_DIR.'obj.base_locale.php';
+require_once R3_LIB_DIR.'eco_utils.php';
+
 class R3EcoGisGlobalTableHelper {
 
     // Restituisce TRUE se la fojnte è energia elettrica in base a ges_id
@@ -9,8 +12,8 @@ class R3EcoGisGlobalTableHelper {
         if (!isset($cache[$ges_id])) {
             $db = ezcDbInstance::get();
             $sql = "SELECT ges_id, get_code 
-                FROM global_energy_source ges
-                INNER JOIN global_energy_type get ON ges.get_id=get.get_id";
+                FROM ecogis.global_energy_source ges
+                INNER JOIN ecogis.global_energy_type get ON ges.get_id=get.get_id";
             foreach ($db->query($sql) as $row) {
                 $cache[$row['ges_id']] = $row['get_code'];
             }
@@ -24,10 +27,11 @@ class R3EcoGisGlobalTableHelper {
      * return array                     the domain list
      */
     static public function getParameterList($kind, array $opt = array()) {
-        $lang = R3Locale::getLanguageID();
+        $lang = \R3Locale::getLanguageID();
         $opt = array_merge(array('show_udm' => false), $opt);
 
-        $sql = "SELECT gest_id, get.get_id, BOOL2TEXT(get_show_label) AS get_show_label, get_name_{$lang} AS get_name, ges.ges_id, ges_name_{$lang} AS ges_name
+        $sql = "SELECT gest_id, get.get_id, get_name_{$lang} AS get_name, ges.ges_id, ges_name_{$lang} AS ges_name,
+                       CASE get_show_label WHEN TRUE THEN 'T' WHEN FALSE THEN 'F' END AS get_show_label
                FROM ecogis.global_type gt
                INNER JOIN ecogis.global_energy_source_type gest ON gt.gt_id=gest.gt_id
                INNER JOIN ecogis.global_energy_source ges ON gest.ges_id=ges.ges_id
@@ -111,8 +115,8 @@ class R3EcoGisGlobalTableHelper {
         $db = ezcDbInstance::get();
         $lang = R3Locale::getLanguageID();
         $sql = "SELECT DISTINCT gs.gm_id, gm_name_{$lang} AS gm_name, gm_order
-                FROM global_subcategory gs
-                INNER JOIN global_method gm ON gs.gm_id=gm.gm_id
+                FROM ecogis.global_subcategory gs
+                INNER JOIN ecogis.global_method gm ON gs.gm_id=gm.gm_id
                 WHERE ge_id=? AND gc_id=?
                 ORDER BY gm_order, gm_name_{$lang}, gm_id";
         $stmt = $db->prepare($sql);
@@ -136,7 +140,7 @@ class R3EcoGisGlobalTableHelper {
 
         $em_is_production = ($kind == 'ENERGY_PRODUCTION' || $kind == 'HEATH_PRODUCTION') ? 'T' : 'F';
 
-        $sql = "SELECT mu_id, ge_year, ge_national_efe, ge_local_efe FROM global_entry WHERE ge_id={$ge_id}";
+        $sql = "SELECT mu_id, ge_year, ge_national_efe, ge_local_efe FROM ecogis.global_entry WHERE ge_id={$ge_id}";
         list($mu_id, $year, $nationalEFE, $localEFE) = $db->query($sql)->fetch(PDO::FETCH_NUM);
         $mu_id = (int) $mu_id;
         $year = (int) $year;
@@ -149,7 +153,8 @@ class R3EcoGisGlobalTableHelper {
             $efe = R3EcoGisHelper::getElectricityCO2Factor($_SESSION['do_id'], $mu_id);
         }
 
-        $sql = "SELECT gest_id, get.get_id, BOOL2TEXT(get_show_label) AS get_show_label, get_name_{$lang} AS get_name, ges.ges_id, ges_name_{$lang} AS ges_name
+        $sql = "SELECT gest_id, get.get_id, get_name_{$lang} AS get_name, ges.ges_id, ges_name_{$lang} AS ges_name,
+                       CASE get_show_label WHEN TRUE THEN 'T' WHEN FALSE THEN 'F' END AS get_show_label
                 FROM ecogis.global_type gt
                 INNER JOIN ecogis.global_energy_source_type gest ON gt.gt_id=gest.gt_id
                 INNER JOIN ecogis.global_energy_source ges ON gest.ges_id=ges.ges_id
@@ -164,10 +169,10 @@ class R3EcoGisGlobalTableHelper {
         }
         $sql = "SELECT gc1.gc_id AS main_id, gc1.gc_code AS main_code, gc1.gc_name_{$lang} AS main_name, gc1.gc_show_label AS main_show_label,
                        gc2.gc_id AS gc_id, gc2.gc_code AS gc_code, gc2.gc_name_{$lang} AS gc_name, gc2.gc_total_only
-                FROM global_category gc1
-                INNER JOIN global_category gc2 ON gc2.gc_parent_id=gc1.gc_id
+                FROM ecogis.global_category gc1
+                INNER JOIN ecogis.global_category gc2 ON gc2.gc_parent_id=gc1.gc_id
                 INNER JOIN ecogis.global_category_type gcat ON gc2.gc_id=gcat.gc_id
-                INNER JOIN global_type gt ON gt.gt_id=gcat.gt_id
+                INNER JOIN ecogis.global_type gt ON gt.gt_id=gcat.gt_id
                 WHERE gt_code='{$kind}' ";
         if ($gc_id !== null) {
             $gc_id = (int) $gc_id;
@@ -218,7 +223,7 @@ class R3EcoGisGlobalTableHelper {
 
         // Ricavo dati edifici
         $sql = "SELECT 'BUILDING' AS kind, 10000000+bu_id as bu_id, bu_name_{$lang} AS bu_name, gc_id, ges_id, co_value_kwh, co_value_co2, the_geom IS NOT NULL AS has_geometry
-                FROM consumption_year_building 
+                FROM ecogis.consumption_year_building
                 WHERE mu_id={$mu_id} AND co_year={$year} AND ges_id IS NOT NULL AND em_is_production='{$em_is_production}'
                 ORDER BY bu_name";
 
@@ -244,7 +249,7 @@ class R3EcoGisGlobalTableHelper {
         }
         //Ricavo dati illuminazione pubblica
         $sql = "SELECT 'STREET_LIGHTING' AS kind, 11000000+sl_id as sl_id, sl_full_name_{$lang} AS sl_name, gc_id, ges_id, co_value_kwh, co_value_co2, the_geom IS NOT NULL AS has_geometry
-                FROM consumption_year_street_lighting
+                FROM ecogis.consumption_year_street_lighting
                 WHERE mu_id={$mu_id} AND co_year={$year} AND ges_id IS NOT NULL AND em_is_production='{$em_is_production}'
                 ORDER BY sl_name";
         foreach ($db->query($sql, PDO::FETCH_ASSOC) as $row) {
@@ -263,10 +268,10 @@ class R3EcoGisGlobalTableHelper {
 
         // Ricavo i dati aggiuntivi per produzione elettricità e calore/freddo (Nel db i valori sono in kWH)
         $sql = "SELECT gs.gc_id, gs_id, gs_tot_production_value, gs_tot_emission_value, gs_tot_emission_factor
-                FROM global_subcategory gs
-                INNER JOIN global_category gc on gs.gc_id=gc.gc_id
-                INNER JOIN global_category_type gcat on gc.gc_id=gcat.gc_id
-                INNER JOIN global_type gt on gt.gt_id=gcat.gt_id
+                FROM ecogis.global_subcategory gs
+                INNER JOIN ecogis.global_category gc on gs.gc_id=gc.gc_id
+                INNER JOIN ecogis.global_category_type gcat on gc.gc_id=gcat.gc_id
+                INNER JOIN ecogis.global_type gt on gt.gt_id=gcat.gt_id
                 WHERE gt_code='{$kind}' AND ge_id={$ge_id} AND gs_tot_production_value IS NOT NULL";
         $productionData = array();
         $productionSum = array();
