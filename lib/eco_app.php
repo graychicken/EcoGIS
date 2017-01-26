@@ -25,7 +25,7 @@ function R3AppInitDB() {
     //global $mdb2;
     global $dsn;
 
-    require_once 'MDB2.php';
+    //require_once 'MDB2.php';
     if (!isset($dsn) || $dsn == '') {
         throw new Exception('Missing $dsn');
     }
@@ -34,7 +34,7 @@ function R3AppInitDB() {
     try {
         $db = ezcDbFactory::create($txtDsn);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        PEAR::setErrorHandling(PEAR_ERROR_EXCEPTION);
+        //PEAR::setErrorHandling(PEAR_ERROR_EXCEPTION);
         //$mdb2 = MDB2::singleton($txtDsn);
         ezcDbInstance::set($db);
     } catch (\PDOException $e) {
@@ -66,9 +66,9 @@ function R3AppInitDB() {
  *  - $auth
  */
 function R3AppInit($type = null, array $opt = array()) {
-    global $smarty, $auth, $pdo, $mdb2, $dbini;            // output object
-    global $mdb2_dsn, $lang;                               // output var
-    global $dsn, $sessionOpt, $mdb2_options;               // input vars
+    global $smarty, $auth, $pdo, /*$mdb2, */$dbini;            // output object
+    global /*$mdb2_dsn, */$lang;                               // output var
+    global $dsn, $sessionOpt/*, $mdb2_options*/;               // input vars
     global $auth_options;                                  // input vars
     global $scriptStartTime;
 
@@ -226,7 +226,8 @@ function R3AppStart($type = null, array $opt = array()) {
     $_SESSION['lang'] = $auth->getParam('us_lang', 1);
     $lang = $_SESSION['lang'];
     $smarty->assign('lang', $lang);
-    R3Locale::setLanguageID($lang);
+    \R3Locale::setLanguageID($lang);
+    \R3Locale::setLanguages($languages);
 
     /** Apply locale */
     setLang($languages[$_SESSION['lang']], LC_MESSAGES);
