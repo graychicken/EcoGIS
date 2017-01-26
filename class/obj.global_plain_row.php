@@ -15,7 +15,7 @@ class R3EcoGisGlobalPlainHelper {
         $gc_parent_id = (int) $gc_parent_id;
         $moreWhere = $gc_parent_id == '' ? 'gc_parent_id IS NULL' : 'gc_parent_id=' . (int) $gc_parent_id;
 
-        $sql = "SELECT gc_id, gc_name_$lang AS gc_name, BOOL2TEXT(gc_has_extradata) AS gc_has_extradata
+        $sql = "SELECT gc_id, gc_name_$lang AS gc_name, CASE gc_has_extradata WHEN TRUE THEN 'T' WHEN FALSE THEN 'F' END AS gc_has_extradata
                 FROM global_category
                 WHERE (do_id IS NULL OR do_id={$do_id}) AND gc_visible IS TRUE AND gc_global_plain IS TRUE AND {$moreWhere}
                 ORDER BY gc_order, gc_name";
@@ -37,7 +37,7 @@ class R3EcoGisGlobalPlainHelper {
         $lang = R3Locale::getLanguageID();
 
         $gc_id = (int) $gc_id;
-        $sql = "SELECT gc_id, gc_name_$lang AS gc_name, BOOL2TEXT(gc_has_extradata) AS gc_has_extradata
+        $sql = "SELECT gc_id, gc_name_$lang AS gc_name, CASE gc_has_extradata WHEN TRUE THEN 'T' WHEN FALSE THEN 'F' END AS gc_has_extradata
                 FROM global_category 
                 WHERE (do_id IS NULL OR do_id={$do_id}) AND gc_parent_id=(SELECT gc_parent_id FROM global_category WHERE gc_id={$gc_id})
                 ORDER BY gc_order, gc_name";
@@ -61,7 +61,7 @@ class R3EcoGisGlobalPlainHelper {
         $sql = "SELECT gpa.gpa_id,
                 CASE WHEN gpa_extradata_1 IS NULL THEN gpa_name_{$lang}
                      ELSE gpa_name_{$lang} || COALESCE(' - ' || gpa_extradata_1, '') END AS gpa_name,
-                BOOL2TEXT(gpa_has_extradata) AS gpa_has_extradata
+                CASE gpa_has_extradata WHEN TRUE THEN 'T' WHEN FALSE THEN 'F' END AS gpa_has_extradata
                 FROM global_plain_action gpa
                 INNER JOIN global_plain_action_category gpac on gpa.gpa_id=gpac.gpa_id
                 WHERE (do_id IS NULL OR do_id={$do_id}) AND gc_id={$gc_id}
@@ -247,7 +247,7 @@ class R3EcoGisGlobalPlainHelper {
 
 }
 
-class eco_global_plain_row extends R3AppBaseObject {
+class eco_global_plain_row extends \R3AppBaseObject {
 
     /**
      * Field definition
