@@ -12,6 +12,12 @@ class R3Locale {
     static private $R3LangID = 0;
 
     /**
+     * the language map (1 => 'it', 2 => 'de')
+     * @var type
+     */
+    static private $languages = array();
+
+    /**
      * Get the current language ID
      * @return integer  The language ID
      */
@@ -20,12 +26,44 @@ class R3Locale {
     }
 
     /**
-     * Set the laguage ID
+     * Set the laguage ID (1, 2)
      * @return integer  The language ID
      */
-    static public function setLanguageID($langID) {
-        R3Locale::$R3LangID = (int) $langID;
+    static public function setLanguageID($langId) {
+        R3Locale::$R3LangID = (int) $langId;
         return R3Locale::$R3LangID;
+    }
+
+    /**
+     * Set the laguage ID from the code (it, de)
+     * @return integer  The language ID
+     */
+    static public function setLanguageIDFromCode($langCode) {
+        $languages = self::getLanguages();
+        $langId =array_search($langCode, $languages);
+        if (empty($langId)) {
+            throw new Exception("Invalid language \"{$langCode}\"");
+        }
+        return self::setLanguageID($langId);
+    }
+
+    /**
+     * Set the language map
+     * @param array $languages (1 => 'it', 2 => 'de')
+     */
+    static public function setLanguages(array $languages) {
+        R3Locale::$languages = $languages;
+    }
+
+    /**
+     * Get the language map
+     * return array
+     */
+    static public function getLanguages() {
+        if (empty(R3Locale::$languages)) {
+            throw new \Exception("Missing language map");
+        }
+        return R3Locale::$languages;
     }
 
     /**
@@ -33,8 +71,8 @@ class R3Locale {
      * @return string  The language ID
      */
     static public function getLanguageCode() {
-        global $languages;
-
+        
+        $languages = self::getLanguages();
         if (isset($languages[R3Locale::$R3LangID]))
             return $languages[R3Locale::$R3LangID];
         return null;
