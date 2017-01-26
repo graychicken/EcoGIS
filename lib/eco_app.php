@@ -192,7 +192,7 @@ function initLog() {
  *  - $auth
  */
 function R3AppStart($type = null, array $opt = array()) {
-    global $smarty, $auth, $languages;// , $mdb2;
+    global $smarty, $auth, $languages, $jQueryDateFormat, $phpDateFormat, $phpDateTimeFormat;
     global $lang;  // output var
 
     global $scriptStartTime;
@@ -228,6 +228,9 @@ function R3AppStart($type = null, array $opt = array()) {
     $smarty->assign('lang', $lang);
     \R3Locale::setLanguageID($lang);
     \R3Locale::setLanguages($languages);
+    \R3Locale::setJqueryDateFormat($jQueryDateFormat);
+    \R3Locale::setPhpDateFormat($phpDateFormat);
+    \R3Locale::setPhpDateTimeFormat($phpDateTimeFormat);
 
     /** Apply locale */
     setLang($languages[$_SESSION['lang']], LC_MESSAGES);

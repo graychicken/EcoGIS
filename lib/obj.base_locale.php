@@ -17,6 +17,12 @@ class R3Locale {
      */
     static private $languages = array();
 
+    static private $jQueryDateFormat;
+
+    static private $phpDateFormat;
+
+    static private $phpDateTimeFormat;
+
     /**
      * Get the current language ID
      * @return integer  The language ID
@@ -66,6 +72,18 @@ class R3Locale {
         return R3Locale::$languages;
     }
 
+    static public function setJqueryDateFormat($jQueryDateFormat) {
+        R3Locale::$jQueryDateFormat = $jQueryDateFormat;
+    }
+
+    static public function setPhpDateFormat($phpDateFormat) {
+        R3Locale::$phpDateFormat = $phpDateFormat;
+    }
+
+    static public function setPhpDateTimeFormat($phpDateTimeFormat) {
+        R3Locale::$phpDateTimeFormat = $phpDateTimeFormat;
+    }
+
     /**
      * Get the language code
      * @return string  The language ID
@@ -73,8 +91,9 @@ class R3Locale {
     static public function getLanguageCode() {
         
         $languages = self::getLanguages();
-        if (isset($languages[R3Locale::$R3LangID]))
+        if (isset($languages[R3Locale::$R3LangID])) {
             return $languages[R3Locale::$R3LangID];
+        }
         return null;
     }
 
@@ -83,10 +102,14 @@ class R3Locale {
      * @return string  The php date format
      */
     static public function getJQueryDateFormat() {
-        global $jQueryDateFormat;
+        if (empty(R3Locale::$jQueryDateFormat)) {
+            throw new \Exception("Missing jquery date format");
+        }
+        $jQueryDateFormat = R3Locale::$jQueryDateFormat;
 
-        if (isset($jQueryDateFormat[R3Locale::getLanguageCode()]))
+        if (isset($jQueryDateFormat[R3Locale::getLanguageCode()])) {
             return $jQueryDateFormat[R3Locale::getLanguageCode()];
+        }
         return null;
     }
 
@@ -95,10 +118,13 @@ class R3Locale {
      * @return string  The php date format
      */
     static public function getPhpDateFormat() {
-        global $phpDateFormat;
-
-        if (isset($phpDateFormat[R3Locale::getLanguageCode()]))
+        if (empty(R3Locale::$phpDateFormat)) {
+            throw new \Exception("Missing php date format");
+        }
+        $phpDateFormat = R3Locale::$phpDateFormat;
+        if (isset($phpDateFormat[R3Locale::getLanguageCode()])) {
             return $phpDateFormat[R3Locale::getLanguageCode()];
+        }
         return null;
     }
 
@@ -107,10 +133,14 @@ class R3Locale {
      * @return string  The php date format
      */
     static public function getPhpDateTimeFormat() {
-        global $phpDateTimeFormat;
+        if (empty(R3Locale::$phpDateTimeFormat)) {
+            throw new \Exception("Missing php date/time format");
+        }
+        $phpDateTimeFormat = R3Locale::$phpDateTimeFormat;
 
-        if (isset($phpDateTimeFormat[R3Locale::getLanguageCode()]))
+        if (isset($phpDateTimeFormat[R3Locale::getLanguageCode()])) {
             return $phpDateTimeFormat[R3Locale::getLanguageCode()];
+        }
         return null;
     }
 
