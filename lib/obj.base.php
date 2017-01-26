@@ -152,6 +152,10 @@ abstract class R3AppBaseObject {
     // Option array
     protected $opt;
     // The auth object
+    /**
+     * User manager
+     * @var IR3Auth
+     */
     protected $auth;
     // List (simple)table
     protected $simpleTable;

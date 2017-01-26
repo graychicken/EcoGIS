@@ -88,10 +88,14 @@ function exportPAESDlg(id, save) {
     openR3Dialog('edit.php?on=global_strategy&method=exportPAESDlg&id=' + id + '&save=' + save, txtExportPAES, 500, 200);
 }
 
+var exportToken = null;
+var exportDoneUrl = null;
+
 function showExportPAESStatus() {
     $('#progressbar_container').show();
     $.getJSON('edit.php', {
         'on': $('#on').val(),
+        'token': exportToken,
         'method': 'getExportPAESStatus'
     }, function (response) {
         var repeat = true;
@@ -100,22 +104,29 @@ function showExportPAESStatus() {
                 value: response.data.progress
             });
             $('#progress_status').html(response.data.text);
-            repeat = response.data.progress < 100;
+            repeat = !response.data.done;
         }
         if (repeat) {
-            setTimeout('showExportPAESStatus()', 1000);
+            setTimeout('showExportPAESStatus()', 250);
+        } else {
+            closeR3Dialog();
+            disableButton(false);
+            $('#progress_status').html('');
+            document.location = exportDoneUrl;
         }
-
     });
 }
 
 function exportPAES(id, driver) {
+    exportToken = null;
+    exportDoneUrl = null;
     if ($('#export_paes').val() == 'T') {
         // Save data
         submitData('#modform');
     } else {
         // Export file
-        showExportPAESStatus();
+        disableButton(true);
+        ajaxWait(true);
         $.getJSON('edit.php', {
             'on': $('#on').val(),
             'id': id,
@@ -123,19 +134,11 @@ function exportPAES(id, driver) {
             'method': 'exportPAES'
         }, function (response) {
             validateDomainDone(response);
-            closeR3Dialog();
-            disableButton(false);
             ajaxWait(false);
-
-            if (!$.browser.msie || $.browser.version >= 9) {
-                // Change location only on NON-IE or IE 9
-                document.location = response.url;
-            } else {
-                $('#btnExport').prop('disabled', 'true');
-                $('#btnDownload').css('display', '');
-                $('#btnDownload').bind('click', function () {
-                    document.location = response.url
-                });
+            if (response.status == 'OK') {
+                exportToken = response.token;
+                exportDoneUrl = response.url;
+                showExportPAESStatus();
             }
         });
     }

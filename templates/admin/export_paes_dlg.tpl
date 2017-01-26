@@ -4,7 +4,8 @@ $(document).ready(function() {
     $('#popupBtnExportPAES').bind('click', function() { exportPAES($('#paes_id').val(), $('#paes_format').val()) });
     $('#popupBtnCancel').bind('click', function() { closeR3Dialog() });
     $('#paes_format').focus();
-    $("#progressbar").progressbar({value: 0 });
+    $("#progressbar").progressbar({value: 0});
+    // $('#progressbar').width(200);
 		
 });
 </script>
@@ -30,9 +31,9 @@ $(document).ready(function() {
   </table>
   
   <br />
-  <div id="progressbar_container" style="height:20px; width: 280px; display: none" class="ui-widget-default">
-    <div id="progressbar" style="height:7px;"></div>
-	<div id="progress_status">{t}Inizializzazione{/t}</div>
+  <div id="progressbar_container" style="height:40px; width: 280px; display: none" class="ui-widget-default">
+    <div id="progressbar" style="height: 10px; width: 450px"></div>
+    <div id="progress_status" style="width: 450px; margin: 5px"></div>
   </div>		
   <br />  
   <input type="button" id="popupBtnExportPAES" name="popupBtnExportPAES"  value="{if $vars.save == 'T'}{t}Salva ed esporta{/t}{else}{t}Esporta{/t}{/if}" style="width:120px;height:25px;" />&nbsp;&nbsp;&nbsp;&nbsp;

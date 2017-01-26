@@ -159,7 +159,7 @@ class R3ExportPAESDriver_jrc extends R3ExportPAESDriver {
                     $cell = $this->findCellForTag("<{$tag}>");
                     $objWorksheet = $this->xls->getActiveSheet();
                     $objWorksheet->getCell($cell)->setValue('');
-                } catch (Exception $e) {
+                } catch (\Exception $e) {
                     
                 }
             }
@@ -408,7 +408,6 @@ class R3ExportPAESDriver_jrc extends R3ExportPAESDriver {
         $objWorksheet->getStyle("{$startCell}:{$strColTo}{$borderRow}")->applyFromArray($styleArray);
         $strColTo = PHPExcel_Cell::stringFromColumnIndex(max($col - 1, $opt['min_width'] + $startCol - 2));
         $objWorksheet->getStyle("{$startCell}:{$strColTo}{$borderRow}")->applyFromArray($styleArray);
-
 
         // Apply border to the table
         if ($opt['insert_row']) {
@@ -783,7 +782,7 @@ class R3ExportPAESDriver_jrc extends R3ExportPAESDriver {
             $totSteps += 1 + count($opt["GLOBAL_PLAN"]['data']);
         }
         $this->logger = $opt['logger'];
-        $this->logger->log(LOG_INFO, 'Init');
+        $this->logger->log(LOG_INFO, 'Exporting');
         $this->logger->initProgress($totSteps);
 
         $this->getTemplate($templateFileName);

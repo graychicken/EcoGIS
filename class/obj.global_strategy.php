@@ -7,7 +7,14 @@ class R3ExportLogger implements R3ExportPAESLogger {
     private $totSteps;
     private $curSteps;
 
+    private $logFileName;
+
+    function __construct($logFileName) {
+        $this->logFileName = $logFileName;
+    }
+
     public function log($level, $text) {
+        // echo "[$level|$text]\n";
         ezcLog::getInstance()->log(sprintf("Export PAES: %s", $text), ezcLog::DEBUG);
     }
 
@@ -18,7 +25,11 @@ class R3ExportLogger implements R3ExportPAESLogger {
 
     public function step($kind, $table, $tableNo) {
         $this->curSteps++;
-        $perc = $this->curSteps / $this->totSteps * 100;
+        if ($this->totSteps > 0) {
+            $perc = round(min(100, $this->curSteps / $this->totSteps * 100), 1);
+        } else {
+            $perc = 0;
+        }
         switch ($table) {
             case '': break;
             case 'CONSUMPTION': $table = _('Consumo energetico');
@@ -32,6 +43,8 @@ class R3ExportLogger implements R3ExportPAESLogger {
             default: throw new exception("Unkonwn table {$table}");
         }
         switch ($kind) {
+            case R3_PAES_PREPARE_DATA: $text = _('Preparazione dati...');
+                break;
             case R3_PAES_READ_TEMPLATE: $text = _('Lettura template...');
                 break;
             case R3_PAES_READ_CONFIG: $text = _('Lettura configurazione...');
@@ -50,9 +63,12 @@ class R3ExportLogger implements R3ExportPAESLogger {
                 break;
             default: throw new exception("Unkonwn kind {$kind}");
         }
-        @session_start();  // Dont show session error (debug pourpose)
-        $_SESSION['PAES_EXPORT_STATUS'] = array('progress' => $perc, 'text' => $text);
-        session_write_close();
+
+        file_put_contents($this->logFileName, serialize(array('progress' => $perc, 'text' => $text)));
+
+        //@session_start();  // Dont show session error (debug pourpose)
+        //$_SESSION['PAES_EXPORT_STATUS'] = array('progress' => $perc, 'text' => $text);
+        //session_write_close();
     }
 
 }
@@ -568,115 +584,98 @@ class eco_global_strategy extends R3AppBaseObject {
     }
 
     public function exportPAES($request) {
-        require_once R3_CLASS_DIR . 'obj.global_result_table.php';
-        require_once R3_CLASS_DIR . 'obj.global_plain_table.php';
 
-        $id = empty($request['id']) ? $this->id : (int) $request['id'];
+        $console = R3_APP_ROOT . 'bin/console';
+        $id = empty($request['id']) ? (int)$this->id : (int) $request['id'];
+        $id = escapeshellarg($id);
 
-        set_time_limit(5 * 60);
-        ini_set('memory_limit', '2G');
-        ignore_user_abort(true);
+        $domain = $this->auth->getDomainName();
+        $domain = escapeshellarg($domain);
 
-        $db = ezcDbInstance::get();
+        $user = $this->auth->getLogin();
+        $user = escapeshellarg($user);
 
-        $driverInfo = $this->auth->getConfigValue('APPLICATION', 'EXPORT_PAES', array());
-        if (!isset($driverInfo[$request['driver']]['driver'])) {
-            throw new Exception(_("Invalid driver \"{$request['driver']}\""));
-        }
-        $exportDriverName = $driverInfo[$request['driver']]['driver'];
+        $lang = R3Locale::getLanguageCode();
+        $lang = escapeshellarg($lang);
 
-        $exportDriver = R3ExportPAES::factory($exportDriverName, $this->auth, isset($driverInfo[$request['driver']]['params']) ? $driverInfo[$request['driver']]['params'] : null);
+        $token = date('YmdHis') . '-' . md5(time());
+        $outputFileName = R3_TMP_DIR . "export_paes_{$token}.xls";
+        $outputFileName = escapeshellarg($outputFileName);
 
-        $q = $db->createSelectQuery();
-        $q->select('*')
-                ->from('global_strategy_data')
-                ->where("gst_id={$id}");
-        $globalStrategyData['general'] = $db->query($q)->fetch(PDO::FETCH_ASSOC);
-        $globalStrategyData['general']['gst_reduction_target_text'] = $globalStrategyData['general']['gst_reduction_target_absolute'] ? _('Riduzione assoluta') : _('Riduzione "pro capite"');
-        $budgetEuro = $globalStrategyData['general']['gst_budget'] == '' ? '' : '€' . R3NumberFormat($globalStrategyData['general']['gst_budget'], 2, true);
-        if ($globalStrategyData['general']['gst_budget_text_1'] <> '' && $globalStrategyData['general']['gst_budget'] <> '') {
-            $globalStrategyData['general']['gst_budget_text_1'] = sprintf('%s - %s', $budgetEuro, $globalStrategyData['general']['gst_budget_text_1']);
+        $outputLog = R3_TMP_DIR . "export_paes_{$token}.log";
+        $outputLog = escapeshellarg($outputLog);
+        
+        $cmd = "php {$console} ecogis:export-seap --id {$id} --domain {$domain} --user {$user} --lang {$lang} --output {$outputFileName} > {$outputLog} 2>&1 &";
+        exec($cmd, $dummy, $retVal);
+        if ($retVal == 0) {
+            $url = "getfile.php?type=tmp&file=export_paes_{$token}.xls&disposition=download&name=PAES_" . date('Y-m-d') . '.xls';
+            return array(
+                'status' => R3_AJAX_NO_ERROR,
+                'token' => $token,
+                'url' => $url);
         } else {
-            $globalStrategyData['general']['gst_budget_text_1'] = $budgetEuro . $globalStrategyData['general']['gst_budget_text_1'];
+            throw new \Exception("Error #{$retVal} exporting file");
         }
-        if ($globalStrategyData['general']['gst_budget_text_2'] <> '' && $globalStrategyData['general']['gst_budget'] <> '') {
-            $globalStrategyData['general']['gst_budget_text_2'] = sprintf('%s - %s', $budgetEuro, $globalStrategyData['general']['gst_budget_text_2']);
-        } else {
-            $globalStrategyData['general']['gst_budget_text_2'] = $budgetEuro . $globalStrategyData['general']['gst_budget_text_2'];
-        }
-
-        $q = $db->createSelectQuery();
-        $q->select('*')
-                ->from('global_plain_data')
-                ->where("gp_id=" . (int) $globalStrategyData['general']['gp_id']);
-        $actionPlanData['general'] = $db->query($q)->fetch(PDO::FETCH_ASSOC);
-        if (isset($actionPlanData['general']['gp_approval_date'])) {
-            $actionPlanData['general']['gp_approval_date'] = ' ' . SQLDateToStr($actionPlanData['general']['gp_approval_date'], 'd/m/Y');
-        }
-
-        // SHEET 2: EMISSION INVENTORY
-        $udm_divider = 1000;  // MWh (in db data are stored in kWh)
-        $inventoryTableKinds = array('CONSUMPTION', 'EMISSION', 'ENERGY_PRODUCTION', 'HEATH_PRODUCTION');
-        $emissionInventoryData = array();
-        for ($i = 1; $i <= 2; $i++) {
-            $ge_id = $i == 1 ? $globalStrategyData['general']['ge_id'] : $globalStrategyData['general']['ge_id_2'];
-            if ($ge_id <> '') {
-                $q = $db->createSelectQuery();
-                $q->select('*, ge_green_electricity_purchase/1000 AS ge_green_electricity_purchase')
-                        ->from('global_entry_data')
-                        ->where('ge_id=' . (int) $ge_id);
-                $emissionInventoryData[$i]['general'] = $db->query($q)->fetch(PDO::FETCH_ASSOC);
-                $emissionInventoryData[$i]['general']['gst_emission_factor_text'] = $globalStrategyData['general']['gst_emission_factor_type_ipcc'] ? _('Fattori di emissione standard in linea con i principi IPCC') : _('Fattori LCA (valutazione del ciclo di vita)');
-                $emissionInventoryData[$i]['general']['gst_emission_unit_text'] = $globalStrategyData['general']['gst_emission_unit_co2'] ? _('Emissioni di CO2') : _('Emissioni equivalenti di CO2');
-
-                foreach ($inventoryTableKinds as $kind) {
-                    $emissionInventoryData[$i][$kind]['header'] = R3EcoGisGlobalTableHelper::getParameterList($kind, array('show_udm' => true));
-                    $emissionInventoryData[$i][$kind]['rows'] = R3EcoGisGlobalTableHelper::getCategoriesData($ge_id, $kind, $udm_divider);
-                }
-            }
-        }
-
-        $ext = '.' . (isset($driverInfo[$request['driver']]['output_format']) ? $driverInfo[$request['driver']]['output_format'] : 'xlsx');
-        $fileName = R3_TMP_DIR . date('YmdHis') . '.' . md5(time()) . $ext;
-        $opt = array('GENERAL' => $globalStrategyData,
-            'ACTION_PLAN' => $actionPlanData);
-
-        for ($i = 1; $i <= 2; $i++) {
-            if (isset($emissionInventoryData[$i])) {
-                $opt["EMISSION_INVENTORY_{$i}"] = $emissionInventoryData[$i];
-            }
-        }
-        if ($globalStrategyData['general']['gp_id'] <> '') {
-            $opt['GLOBAL_PLAN'] = R3EcoGisGlobalPlainTableHelper::getData($this->do_id, $globalStrategyData['general']['gp_id']);
-        }
-        $opt['METADATA'] = array('creator' => $this->auth->getUserName(),
-            'title' => _('TEMPLATE') . ' - ' . _('POWER BY R3-EcoGIS 2')
-        );
-        $opt['SHEET-NAME'] = array('GENERAL' => _('Strategia generale'),
-            'EMISSION_INVENTORY_1' => _('Inventario base emissioni (1)'),
-            'EMISSION_INVENTORY_2' => _('Inventario base emissioni (2)'),
-            'ACTION_PLAN' => _("Piano d'azione SEAP")
-        );
-
-        $opt['logger'] = new R3ExportLogger();
-
-        // Close immediatly the session to allow concurrency session
-        session_write_close();
-
-        $exportDriver->export($fileName, R3_SMARTY_TEMPLATE_DIR_DOC . $driverInfo[$request['driver']]['template'], $opt);
-
-        $httpFileName = basename($fileName);
-        $url = "getfile.php?type=tmp&file={$httpFileName}&disposition=download&name=PAES_" . date('Y-m-d') . $ext;
-        return array('status' => R3_AJAX_NO_ERROR,
-            'url' => $url);
     }
 
     public function getExportPAESStatus($request) {
-        if (isset($_SESSION['PAES_EXPORT_STATUS'])) {
-            return array('status' => R3_AJAX_NO_ERROR,
-                'data' => $_SESSION['PAES_EXPORT_STATUS']);
+        $token = basename($request['token']);
+
+        $xlsFileName = R3_TMP_DIR . "export_paes_{$token}.xls" ;
+        $stsFileName = "{$xlsFileName}.sts";
+        $lockFileName = "{$xlsFileName}.lock";
+        $logFileName = "{$xlsFileName}.lock";
+
+        $isError = false;
+        if(file_exists($xlsFileName)) {
+            $data = array(
+                'done'=>true,
+                'progress'=>100,
+                'text'=>'Done');
+            if (file_exists($stsFileName)) {
+                unlink($stsFileName);
+            }
+            if (file_exists($lockFileName)) {
+                unlink($lockFileName);
+            }
+            if (file_exists($logFileName)) {
+                unlink($logFileName);
+            }
         } else {
-            return array('status' => R3_AJAX_NO_ERROR);
+            $data = array(
+                'done'=>false,
+                'progress'=>0,
+                'text'=>'');
+            if (($fp = @fopen($lockFileName, "r+"))) {
+                if (flock($fp, LOCK_EX | LOCK_NB)) {
+                    $isError = true;
+                    flock($fp, LOCK_UN); // unlock
+                }
+                fclose($fp);
+            } else {
+                $isError = true;
+            }
+        }
+
+        for($i = 0; $i <= 2; $i++) {
+            if (file_exists($stsFileName)) {
+                try {
+                    $data = array_merge($data, unserialize(file_get_contents($stsFileName)));
+                    break;
+                } catch(\Exception $e){
+                    if ($i == 2) {
+                        throw $e;
+                    }
+                    usleep(100000);
+                }
+            }
+        }
+        if ($isError) {
+            return array('status' => R3_AJAX_ERROR);
+        } else {
+            return array(
+                'status' => R3_AJAX_NO_ERROR,
+                'data' => $data);
         }
     }
 

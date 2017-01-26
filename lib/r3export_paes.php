@@ -1,13 +1,14 @@
 <?php
 
-define('R3_PAES_READ_TEMPLATE', 10);
-define('R3_PAES_READ_CONFIG', 20);
-define('R3_PAES_REPLACE', 30);
-define('R3_PAES_EMISSION_TABLE', 40);
-define('R3_PAES_ACTION_PLAN_TABLE', 50);
-define('R3_PAES_FINALYZE', 60);
-define('R3_PAES_SAVE', 70);
-define('R3_PAES_DONE', 80);
+define('R3_PAES_PREPARE_DATA', 10);
+define('R3_PAES_READ_TEMPLATE', 20);
+define('R3_PAES_READ_CONFIG', 30);
+define('R3_PAES_REPLACE', 40);
+define('R3_PAES_EMISSION_TABLE', 50);
+define('R3_PAES_ACTION_PLAN_TABLE', 60);
+define('R3_PAES_FINALYZE', 70);
+define('R3_PAES_SAVE', 80);
+define('R3_PAES_DONE', 90);
 
 abstract class R3ExportPAESDriver {
 
