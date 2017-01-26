@@ -286,6 +286,12 @@ class R3Auth extends Auth implements IR3Auth
     protected $lastAction = null;
 
     /**
+     * @var boolean
+     * If true the user is logged in as an
+     */
+    protected $isTrustedAuthentication = true;
+
+    /**
      * Location where to store session parameters for user
      *
      * @var  array
@@ -366,6 +372,7 @@ class R3Auth extends Auth implements IR3Auth
 
         // if true all the hasPerm will return true
         $this->userIsSuperuser = false;
+        $this->isTrustedAuthentication = false;
     }
 
     function __destruct() {
@@ -511,6 +518,23 @@ class R3Auth extends Auth implements IR3Auth
             $ValidMask = '255.255.255.255';
         }
         return (ip2long($ip) & ip2long($validMask)) == (ip2long($validIP) & ip2long($validMask));
+    }
+
+    /**
+     * Perform a trust login as the given user without password
+     *
+     * On success the user session data is stored to mantain the authentication valid
+     *
+     * @param string    user login (mandatory)
+     * @param string    domain (optional)
+     * @return boolean  Return true if successfully logged in
+     * @access public
+     */
+    public function performTrustLoginAsUser($login, $domain = null) {
+        //$this->session['trust_user'] = true;
+        $this->isTrustedAuthentication = true;
+        $this->log(__METHOD__ . "[".__LINE__."]: logging in as user {$login} in trusted mode.", AUTH_LOG_INFO);
+        return $this->performLogin($login, null, $domain);
     }
 
     /**
@@ -673,26 +697,25 @@ WHERE UPPER(us.us_login)=UPPER(" . $this->db->quote($this->username) . ") AND dn
         $this->log(__METHOD__ . "[".__LINE__."]: User $this->username found.", AUTH_LOG_INFO);
         $options = $this->stringToOptions($do_auth_data);
 
-        $this->log(__METHOD__ . "[".__LINE__."]: Authentication method: $do_auth_type.", AUTH_LOG_DEBUG);
-//$this->session['passwordStatus'] = 0;  //SS: da verificare
-
-        // check for authentication type and choose the right storage driver
-        if ($do_auth_type == 'DB') {
-            if (isset($this->options['options']['cryptType'])) {
-                $options['cryptType'] = $this->options['options']['cryptType'];
-            } else {
-                $options['cryptType'] = 'md5';
+        if (!$this->isTrustedAuthentication) {
+            $this->log(__METHOD__ . "[".__LINE__."]: Authentication method: $do_auth_type.", AUTH_LOG_DEBUG);
+            // check for authentication type and choose the right storage driver
+            if ($do_auth_type == 'DB') {
+                if (isset($this->options['options']['cryptType'])) {
+                    $options['cryptType'] = $this->options['options']['cryptType'];
+                } else {
+                    $options['cryptType'] = 'md5';
+                }
+                $options['db_where'] = "do_id={$userInfo['do_id']} AND us_status<>'X'";
+                $do_auth_type = new Auth_Container_PDO($this->db, $options);
+            } else if ($do_auth_type == 'POP3' || $do_auth_type == 'IMAP') {
+                if ($options['username'] != '') {
+                    $this->username = str_replace('<username>', $this->username, $options['username']);
+                }
+                if ($options['password'] != '') {
+                    $this->password = str_replace('<password>', $this->password, $options['password']);
+                }
             }
-
-            // SS: SERVE: Where passata avanti a PEAR::AUTH
-            $options['db_where'] = "do_id={$userInfo['do_id']} AND us_status<>'X'";
-
-            $do_auth_type = new Auth_Container_PDO($this->db, $options);
-        } else if ($do_auth_type == 'POP3' || $do_auth_type == 'IMAP') {
-            if ($options['username'] != '')
-                $this->username = str_replace('<username>', $this->username, $options['username']);
-            if ($options['password'] != '')
-                $this->password = str_replace('<password>', $this->password, $options['password']);
         }
 
         //Salvo parametri sessione
@@ -876,7 +899,12 @@ WHERE UPPER(us.us_login)=UPPER(" . $this->db->quote($this->username) . ") AND dn
 // reimposto i parametri di connessione
     public function start() {
 
+        if($this->isTrustedAuthentication) {
+            $this->log(__METHOD__ . "[".__LINE__."]: called for trust authentication.", AUTH_LOG_INFO, true);
+            return true;
+        }
         $this->log(__METHOD__ . "[".__LINE__."]: called.", AUTH_LOG_DEBUG, true);
+
         if (!is_object($this->session['_storage_driver']) && $this->session['_storage_driver'] == '') {
             $this->log(__METHOD__ . "[".__LINE__."]: faild: No storage defined.", AUTH_LOG_DEBUG);
             return false;  // SS: evita che parta l'autenticazione senza sapere il modo di autneticazione (che � nel db e viene caricato dopo il primo login)
@@ -950,6 +978,10 @@ WHERE UPPER(us.us_login)=UPPER(" . $this->db->quote($this->username) . ") AND dn
      */
     private function _isAuth() {
 
+        if($this->isTrustedAuthentication) {
+            $this->log(__METHOD__ . "[".__LINE__."]: called for trust authentication.", AUTH_LOG_INFO, true);
+            return true;
+        }
         $this->log(__METHOD__ . "[".__LINE__."]: called.", AUTH_LOG_DEBUG, true);
         if (!$this->start()) {
             return false;
@@ -1093,7 +1125,7 @@ WHERE UPPER(us.us_login)=UPPER(" . $this->db->quote($this->username) . ") AND dn
     }
 
     private function updateStatus($isLogin = false, $isLogout = false) {
-        if ($this->UID === null) {
+        if ($this->UID === null || $this->isTrustedAuthentication) {
             return;
         }
 
@@ -1210,6 +1242,7 @@ WHERE UPPER(us.us_login)=UPPER(" . $this->db->quote($this->username) . ") AND dn
 
 //SS: temporaneo
     public function log($message, $level = AUTH_LOG_DEBUG, $debug_backtrace = false) {
+
         if (isset($this->options['options']['log_path']) && $this->options['options']['log_path'] <> '') {
             $filename = $this->options['options']['log_path'] . '/';
             if (defined('DOMAIN_NAME')) {
