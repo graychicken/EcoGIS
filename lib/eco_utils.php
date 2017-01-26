@@ -751,7 +751,7 @@ class R3EcoGisHelper {
         }
         $opt['constraints'] = $constraints;
         $opt = array_merge(array('order' => 'udm_order, udm_name_' . R3Locale::getLanguageID()), $opt);
-        return R3Opt::getOptList('energy_source_udm_data', 'udm_id', 'udm_name_' . R3Locale::getLanguageID(), $opt);
+        return R3Opt::getOptList('ecogis.energy_source_udm_data', 'udm_id', 'udm_name_' . R3Locale::getLanguageID(), $opt);
     }
 
     /**
@@ -777,7 +777,7 @@ class R3EcoGisHelper {
             $where[] = 'mu_id=' . (int) $mu_id;
             $where[] = 'esu_is_private IS FALSE';
             $q->select('esu_id')
-                    ->from('energy_source_udm')
+                    ->from('ecogis.energy_source_udm')
                     ->where($where);
             $tot = 0;
             foreach ($db->query($q) as $row) {
@@ -804,7 +804,7 @@ class R3EcoGisHelper {
             $where[] = 'esu_is_private IS FALSE';
         }
         $q->select('esu_id')
-                ->from('energy_source_udm')
+                ->from('ecogis.energy_source_udm')
                 ->where($where);
         $tot = 0;
         foreach ($db->query($q) as $row) {
@@ -831,7 +831,7 @@ class R3EcoGisHelper {
         if ($esu_id == '') {
             throw new Exception('Electricity energy-source not found');
         }
-        $sql = "SELECT esu_co2_factor FROM energy_source_udm WHERE esu_id={$esu_id}";
+        $sql = "SELECT esu_co2_factor FROM ecogis.energy_source_udm WHERE esu_id={$esu_id}";
         return $db->query($sql)->fetchColumn();
     }
 
@@ -852,7 +852,7 @@ class R3EcoGisHelper {
             $where[] = 'mu_id=' . (int) $mu_id;
             $where[] = 'esu_is_private IS FALSE';
             $q->select('esu_id')
-                    ->from('energy_source_udm')
+                    ->from('ecogis.energy_source_udm')
                     ->where($where);
             $tot = 0;
             foreach ($db->query($q) as $row) {
@@ -873,7 +873,7 @@ class R3EcoGisHelper {
                 $where[] = 'mu_id IS NULL';
                 $where[] = 'esu_is_private IS FALSE';
                 $q->select('esu_id')
-                        ->from('energy_source_udm')
+                        ->from('ecogis.energy_source_udm')
                         ->where($where);
                 foreach ($db->query($q) as $row) {
                     $data[$i] = $row['esu_id'];
@@ -913,7 +913,7 @@ class R3EcoGisHelper {
                 $where[] = 'mu_id=' . (int) $mu_id;
                 $where[] = 'esu_is_private IS FALSE';
                 $q->select('*')
-                        ->from('energy_source_udm_data')
+                        ->from('ecogis.energy_source_udm_data')
                         ->where($where);
                 // echo "$q\n";
                 $tot = 0;
@@ -935,7 +935,7 @@ class R3EcoGisHelper {
             $where[] = 'mu_id IS NULL';
             $where[] = 'esu_is_private IS FALSE';
             $q->select('*')
-                    ->from('energy_source_udm_data')
+                    ->from('ecogis.energy_source_udm_data')
                     ->where($where);
             // echo " $q\n";
             $tot = 0;
@@ -1393,7 +1393,7 @@ class R3EcoGisHelper {
         if ($addElectricity) {
             $esu = self::getEnergySourceAndUdm($do_id, 'HEATING');
             $sql = "SELECT mu_id, esu_id, es_name_$lang || ' (' || udm_name_$lang || ')' AS esu_name, udm_name_$lang AS udm_name
-                    FROM energy_source_udm_data
+                    FROM ecogis.energy_source_udm_data
                     WHERE es_id={$esu['es_id']} AND udm_id={$esu['udm_id']} AND do_id={$do_id} 
                           AND esu_is_private IS FALSE AND esu_is_consumption IS TRUE
                     ORDER BY COALESCE(mu_id, 0) DESC
@@ -1426,7 +1426,7 @@ class R3EcoGisHelper {
         if ($addElectricity) {
             $esu = self::getEnergySourceAndUdm($do_id, 'ELECTRICITY');
             $sql = "SELECT mu_id, esu_id, es_name_$lang || ' (' || udm_name_$lang || ')' AS esu_name, udm_name_$lang AS udm_name
-                    FROM energy_source_udm_data
+                    FROM ecogis.energy_source_udm_data
                     WHERE es_id={$esu['es_id']} AND udm_id={$esu['udm_id']} AND do_id={$do_id}
                           AND esu_is_private IS FALSE AND esu_is_consumption IS TRUE
                     ORDER BY COALESCE(mu_id, 0) DESC
@@ -1882,7 +1882,7 @@ class R3EcoGisCalculatorHelper {
 
     static private function cacheEnergySourceUDM($do_id) {
         $db = ezcDbInstance::get();
-        $sql = "SELECT * FROM energy_source_udm_default WHERE do_id=" . (int) $do_id;
+        $sql = "SELECT * FROM ecogis.energy_source_udm_default WHERE do_id=" . (int) $do_id;
         foreach ($db->query($sql, PDO::FETCH_ASSOC) as $row) {
             R3EcoGisCalculatorHelper::$energySourceUDMData[$row['esu_id']] = R3Locale::convert2PHP($row);
         }
@@ -2008,7 +2008,7 @@ class R3EcoGisCalculatorHelper {
         if ($data === null) {
             $db = ezcDbInstance::get();
             $data = array();
-            $sql = "SELECT * FROM energy_source_udm where do_id={$do_id}";
+            $sql = "SELECT * FROM ecogis.energy_source_udm where do_id={$do_id}";
             foreach ($db->query($sql, PDO::FETCH_ASSOC) as $row) {
                 $data[$row['esu_id']] = $row;
             }
@@ -2047,7 +2047,7 @@ class R3EcoGisCalculatorHelper {
             }
             $q = $db->createSelectQuery();
             $q->select("esu_id")
-                    ->from('energy_source_udm esu')
+                    ->from('ecogis.energy_source_udm esu')
                     ->innerJoin('ecogis.energy_source es', 'es.es_id=esu.es_id')
                     ->innerJoin('ecogis.energy_type et', 'es.et_id=et.et_id')
                     ->where($where);
