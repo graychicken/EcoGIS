@@ -34,7 +34,7 @@ class R3EcoGisGlobalPlainTableHelper {
                        gc2.gc_code AS gc_code_main,gc2.gc_name_{$lang} AS gc_name_main,gc2.gc_order AS gc_order_main,
                        gc1.gc_code, gc1.gc_name_{$lang} AS gc_name, gc1.gc_order,
                        gps_id,gps.gp_id AS pg_id_sum,gps_expected_energy_saving,gps_expected_renewable_energy_production,gps_expected_co2_reduction,
-                       BOOL2TEXT(gc1.gc_has_extradata) AS gc_has_extradata, gpr_id,
+                       CASE gc1.gc_has_extradata WHEN TRUE THEN 'T' WHEN FALSE THEN 'F' END AS gc_has_extradata, gpr_id,
                        CASE WHEN gc_extradata_{$lang} IS NULL THEN gc1.gc_name_{$lang} ELSE gc1.gc_name_$lang || ' - ' || gc_extradata_$lang END AS gc_fullname,
                        gpr.gpa_id, gpa.gpa_code, 
                        
