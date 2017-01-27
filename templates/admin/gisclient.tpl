@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="{$smarty.const.R3_CSS_URL}{$smarty.const.BUILD|lower}/custom/{$DOMAIN_NAME|lower}/{$smarty.const.APPLICATION_CODE|lower}_orange.css" type="text/css" />
         <link type="text/css" href="{$gisclient_folder}css/main.css" rel="Stylesheet" />
         <link type="text/css" href="{$gisclient_folder}external/jquery-ui/smoothness/jquery-ui-1.10.4.custom.min.css" rel="Stylesheet" media="screen">
-            <link type="text/css" href="{$gisclient_folder}external/jquery-ui/jqueryUi.icons.css" rel="Stylesheet" />
+            <link type="text/css" href="{$gisclient_folder}css/jqueryUi.icons.css" rel="Stylesheet" />
 
             <!-- JS -->
             <script type="text/javascript" src="{$gisclient_folder}external/OpenLayers/OpenLayers.js"></script>
