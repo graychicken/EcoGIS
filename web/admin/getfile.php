@@ -36,11 +36,16 @@ switch ($type) {
         $ttl = 7 * 24 * 60 * 60; 
         break;
     case 'custom-style':
-        $path = R3_UPLOAD_DATA_DIR . $domain . 'style/';
+        $ext = strrchr($file, '.');
         $ttl = 7 * 24 * 60 * 60;
-        if (!file_exists($path . $file)) {
-            $ttl = 60;
-            $file = 'ecogis2_orange.css';
+        if (in_array($ext, array('.jpg', '.jpeg', '.png', '.gif'))) {
+            $path = R3_WEB_DIR . 'images/';
+        } else {
+            $path = R3_UPLOAD_DATA_DIR . $domain . 'style/';
+            if (!file_exists($path . $file)) {
+               $ttl = 60;
+               $file = 'ecogis2_orange.css';
+            }
         }
         break;
     case 'custom-js':
