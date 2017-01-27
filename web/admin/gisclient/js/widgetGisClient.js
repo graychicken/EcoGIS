@@ -511,6 +511,7 @@ var gisclient;
                         }
                         $(domObj).toStreetView(options);
                         break;
+
                     case 'exportKmlWms':
                         var options = {};
                         if(typeof(toolsOptions['exportKmlWms']) == 'object') {
@@ -518,6 +519,12 @@ var gisclient;
                         }
                         $(domObj).exportKmlWms(options);
                         break;
+
+                    case 'unselectFeatures':
+                        $(domObj).unselectFeatures();
+                        break;
+
+
                     default:     
                         console.warn('Undefined tool "' + key + '"');
                 }
@@ -733,7 +740,7 @@ var gisclient;
                         }
                     });
                 } else {
-                    console.log("zoomOn faild: Layer is not queryable");
+                    console.log("zoomOn failed: Layer " + featureType + " is not queryable");
                 }
                 return false;
             }
@@ -1076,7 +1083,8 @@ var gisclient;
                 type:'POST',
                 dataType:'json',
                 url:gisclient.getMapOptions().mapExportServiceUrl,
-                data: params,
+                data: JSON.stringify(params),
+                contentType: 'application/json; charset=utf-8',
                 success: function(response) {
                     if(typeof(response) != 'object' || typeof(response.result) == 'undefined' || response.result != 'ok') {
                         alert('Error');

@@ -235,7 +235,7 @@
                 if (filters.length == 1) {
                     var filter = self._buildOLFilter(featureId, filters[0]);
                 } else {
-                    var logicalValue = $('#' + self._addWidgetElementPrefix('logical')).val();
+                    var logicalValue = $('input[name=' + self._addWidgetElementPrefix('logical') +']:checked').val();
                     // default logical is AND
                     var logical = OpenLayers.Filter.Logical.AND;
                     if (logicalValue == 'OR')

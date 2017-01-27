@@ -46,7 +46,8 @@ $tools = array(
     'mapPrint' => 'print',
     'redline' => 'redline',
     'selectFromMap' => 'select',
-    'toolTip' => 'tooltip'
+    'toolTip' => 'tooltip',
+    'unselectFeatures' => 'unselect_features',
 );
 
 function hasGeometry($sql, $id) {

@@ -59,9 +59,9 @@ li.jstree-leaf {
     z-index: 2 !important;
 }
 
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+/*.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
     height: 45px !important;
-}
+}*/
 
 .ui-widget-content .ui-row-ltr {
     height: 45px !important;
@@ -145,6 +145,8 @@ li.jstree-leaf {
 .ui-button .ecogisDigitize {background-image: url(../images/icons/ecogisDigitize.png) !important; width: 25px !important; height: 25px !important; left: 16px !important; top: 17px !important; background-size: 23px 23px;}
 .ui-button .cdu {background-image: url(../images/icons/intersection_doc.png) !important; width: 25px !important; height: 25px !important; left: 16px !important; top: 17px !important; background-size: 23px 23px;}
 
+.ui-button .insert_tree {background-image: url(../images/icons/insert_tree.png) !important; width: 25px !important; height: 25px !important; left: 16px !important; top: 17px !important; background-size: 23px 23px;}
+.ui-button .edit_tree {background-image: url(../images/icons/edit_tree.png) !important; width: 25px !important; height: 25px !important; left: 16px !important; top: 17px !important; background-size: 23px 23px;}
 .ui-icon-search {background-image: url(../images/icons/search.png) !important; width: 25px !important; height: 25px !important; left: 16px !important; top: 17px !important; background-size: 23px 23px; background-position: 0 !important;}
 .ui-icon-cancel {background-image: url(../images/icons/cancel.png) !important; width: 25px !important; height: 25px !important; left: 16px !important; top: 17px !important; background-size: 23px 23px; background-position: 0 !important;}
 

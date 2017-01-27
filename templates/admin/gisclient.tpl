@@ -79,6 +79,7 @@
             <script type="text/javascript" src="{$gisclient_folder}js/gcTool/selectBox.js"></script>
             <script type="text/javascript" src="{$gisclient_folder}js/gcTool/selectPoint.js"></script>
             <script type="text/javascript" src="{$gisclient_folder}js/gcTool/selectFeatures.js"></script>
+            <script type="text/javascript" src="{$gisclient_folder}js/gcTool/unselectFeatures.js"></script>
             <script type="text/javascript" src="{$gisclient_folder}js/gcTool/toStreetView.js"></script>
             <script type="text/javascript" src="{$gisclient_folder}js/gcTool/wfstEdit.js"></script>
             <script type="text/javascript" src="{$gisclient_folder}js/NavigationHistory.js"></script>
@@ -435,6 +436,7 @@
                             {if isset($gc.tools.selectFromMap)}
                                 <input type="radio" id="select" name="gc-toolbar-button" /><label for="select">{t}Seleziona{/t}</label>
                             {/if}
+                            <button id="unselect_features">{t}Deseleziona{/t}</button>
                             {if isset($gc.tools.toolTip)}
                                 <input type="radio" id="tooltip" name="gc-toolbar-button" /><label for="tooltip">{t}Tooltip{/t}</label>
                             {/if}

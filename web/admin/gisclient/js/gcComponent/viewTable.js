@@ -196,7 +196,7 @@
 			$('table a[data-action="zoom_to_feature"]', self.element).addClass('gc_ui-icon-minimized').button({ icons: { primary: "ui-icon-search" }, text:false });
 			$('table a[data-action="show1ntable"]').click(function(event) {
 				event.preventDefault();
-				gisclient.componentObjects.detailTable.show($(this).attr('data-qtrelation_id'), $(this).attr('data-f_key_value')); 
+				gisclient.componentObjects.detailTable.show($(this).attr('data-relation_id'), $(this).attr('data-f_key_value')); 
 			});
 		},
 		

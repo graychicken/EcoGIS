@@ -86,7 +86,7 @@
             if(!gisclient.map.isValidLonLat(lonLat)) return alert('Position '+lonLat.lon+' '+lonLat.lat+' is not valid');
             if(!gisclient.map.getMaxExtent().containsLonLat(lonLat)) return alert('Position '+lonLat.lon+' '+lonLat.lat+' out of extent');
             gisclient.map.setCenter(lonLat);
-            gisclient.map.zoomToScale(1000, true);
+            gisclient.map.zoomToScale(500, true);
             
             var size = new OpenLayers.Size(21,25);
             var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);

@@ -18,9 +18,9 @@
             $.ui.gcComponent.prototype._create.apply(self, arguments);
 			
             var html = '<div id="referenceMap" style="width:250px;height:150px;position:relative;border:1px solid black; display:block; background-image: url(about:blank)">'
-            + '<div id="referenceMap_rect" style="width:250px;height:150px;border:1px solid red;position:absolute;top:0px;left:0px;z-index:1000;cursor:move"></div>'
-            + '<div id="referenceMap_vAxis" style="width:250px;height:150px;border:1px solid #a0a0a0;background-color: #505050; opacity: 0.3; position:absolute;top:0px;left:0px;z-index:999;display:none"></div>'
-            + '<div id="referenceMap_hAxis" style="width:250px;height:150px;border:1px solid #a0a0a0;background-color: #505050; opacity: 0.3; position:absolute;top:0px;left:0px;z-index:999;display:none"></div></div>'
+            + '<div id="referenceMap_rect" style="width:250px;height:150px;border:1px solid red;position:absolute;top:0px;left:0px;z-index:1050;cursor:move"></div>'
+            + '<div id="referenceMap_vAxis" style="width:250px;height:150px;border:1px solid #a0a0a0;background-color: #505050; opacity: 0.3; position:absolute;top:0px;left:0px;z-index:1049;display:none"></div>'
+            + '<div id="referenceMap_hAxis" style="width:250px;height:150px;border:1px solid #a0a0a0;background-color: #505050; opacity: 0.3; position:absolute;top:0px;left:0px;z-index:1049;display:none"></div></div>'
             + OpenLayers.i18n('Zoom to')+': <a href="#" rel="zoomToMapViewport">'+OpenLayers.i18n('map viewport')+'</a> | <a href="#" rel="zoomToMaxExtent">'+OpenLayers.i18n('max extent')+'</a>';
 			
             $(self.element).html(html);
@@ -39,6 +39,9 @@
             mapOptions.controls = [];
             mapOptions.eventListeners = null;
             mapOptions.fractionalZoom = true;
+            mapOptions.size = new OpenLayers.Size(mapOptions.size);
+            mapOptions.projection = new OpenLayers.Projection(mapOptions.projection);
+            mapOptions.maxExtent = new OpenLayers.Bounds.fromArray(mapOptions.maxExtent);
 			
 			// force the reference map to use higher resolutions, because of the smaller viewport
             var refMaxResolution = mapOptions.resolutions[0]*6;

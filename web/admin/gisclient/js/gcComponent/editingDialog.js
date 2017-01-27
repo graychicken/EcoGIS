@@ -23,10 +23,10 @@
         },
         
         help: {
-            create : OpenLayers.i18n("1. Cliccare sulla mappa per inserire il primo punto.<br>2. Cliccare sulla mappa per inserire i punti successivi.<br>3. Per chiudere la geometria effettaure doppio clic sull'ultimo punto."),
-            modify:  OpenLayers.i18n("1. Selezionare l'oggetto cliccandoci sopra, l'oggetto verrà evidenziato.<br>2. Cliccare sui vertici per spostarli.<br>3. Cliccare sui punti intermedi per creare nuovi vertici."),
-            transform: OpenLayers.i18n("1. Selezionare l'oggetto cliccandoci sopra, verrà evidenziato un riquadro intorno all'oggetto.<br>2. Agendo sui vertici o i bordi del riquadro è possibile allargare, spostare e ruotare l'oggetto."),
-            remove: OpenLayers.i18n("1. Selezionare l'oggetto cliccandoci sopra. Si aprirà un dialogo di conferma eliminazione.<br>2. Per eliminare l'oggetto confermare e cliccare su Salva, altrimenti cliccare su annulla.")
+            create : OpenLayers.i18n("1. Click on the map to insert the first point.<br>2. Click on the map to insert the next point.<br>3. To close the geometry double-click the last point."),
+            modify:  OpenLayers.i18n("1. Select object clicking on it, the object will highlight.<br>2. Click on vertexes to move them.<br>3. Click on intermediate points to add new vertexes."),
+            transform: OpenLayers.i18n("1. Select object by clicking on it, a box around the object will appear-<br>2. By moving the vertexes or the lines of the box you can scale, move or retate the object."),
+            remove: OpenLayers.i18n("1. Select object clicking on it. A dialog box asks you to confirm the deletion.<br>2. To delete the object confirm and click SAVE, otherwise click on CANCEL.")
         },
 
         _create: function() {

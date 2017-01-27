@@ -29,7 +29,8 @@ $(document).ready(function() {
 
     var callback = function(){
         window.setTimeout(function(){
-        gisclient.map.updateSize();
+            gisclient.map.updateSize();
+            $('.searchResults').setGridWidth($('#dataList').width() - 20);
         },400);
     };
 

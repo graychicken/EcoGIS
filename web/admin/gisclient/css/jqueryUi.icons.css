@@ -16,6 +16,7 @@
 .ui-button .select_box { background-image: url(../images/icons/select-box.png) !important; }
 .ui-button .print { background-image: url(../images/icons/print.png) !important; }
 .ui-button .select_features { background-image: url(../images/icons/select-features.png) !important; }
+.ui-button .unselect_features {background-image: url(../images/icons/unselect_features.png) !important; }
 .ui-button .rototraslazione { background-image: url(../images/icons/rototraslazione.png) !important; }
 .ui-button .request_parcel_owner { background-image: url(../images/icons/request_parcel_owner.png) !important; }
 .ui-button .tagliaDbTopo { background-image: url(../images/icons/cut.png) !important; }
@@ -41,3 +42,6 @@
 .ui-button .featureAttributes {background-image: url(../images/icons/feature_attributes.png) !important; }
 .ui-button .ecogisDigitize {background-image: url(../images/icons/ecogisDigitize.png) !important; }
 .ui-button .cdu {background-image: url(../images/icons/intersection_doc.png) !important; }
+.ui-button .insert_tree {background-image: url(../images/icons/insert_tree.png) !important; }
+.ui-button .edit_tree {background-image: url(../images/icons/edit_tree.png) !important; }
+.ui-button .edit_sign {background-image: url(../images/icons/edit_sign.png) !important; }

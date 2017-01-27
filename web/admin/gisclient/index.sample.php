@@ -16,8 +16,8 @@ if (!empty($_REQUEST['lang'])) {
     $lang = $_REQUEST['lang'];
 }
 
-//$mapsetName = 'gestel_2014'; 
-//$project = 'gestel_2014';
+//$mapsetName = 'r3-trees'; 
+//$project = 'demo';
 if (!empty($_REQUEST['mapset'])) {
     $mapsetName = $_REQUEST['mapset'];
 }
@@ -27,6 +27,10 @@ $stmt = $db->prepare($sql);
 $stmt->execute(array('name'=>$mapsetName));
 
 $mapset = $stmt->fetch();
+if ($mapset === false) {
+    header("HTTP/1.0 404 Not Found");
+    die("Mapset \"{$mapsetName}\" not found");
+}
 
 $project = $mapset['project_name'];
 $srid = $mapset['mapset_srid'];
@@ -53,11 +57,12 @@ $helpPage .= '.html';
 ?><!DOCTYPE html>
 <head>
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- CSS -->
         <link type="text/css" href="css/main.css" rel="Stylesheet" />
         <link type="text/css" href="external/jquery-ui/smoothness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
-        <link type="text/css" href="external/jquery-ui/jqueryUi.icons.css" rel="Stylesheet" />
+        <link type="text/css" href="css/jqueryUi.icons.css" rel="Stylesheet" />
 
     <!-- JS -->
         <script type="text/javascript" src="external/OpenLayers/OpenLayers.js"></script>
@@ -157,7 +162,7 @@ $helpPage .= '.html';
     <script type="text/javascript" src="js/gcTool/drawFeature.js?v=<?php echo $v ?>"></script>
     <script type="text/javascript" src="js/gcTool/mapContext.js?v=<?php echo $v ?>"></script>
     <script type="text/javascript" src="js/gcTool/reloadLayers.js?v=<?php echo $v ?>"></script>
-    <script type="text/javascript" src="js/gcTool/easySelectFromMap.js?v=<?php echo $v ?>"></script>
+    <!--script type="text/javascript" src="js/gcTool/easySelectFromMap.js?v=<?php echo $v ?>"></script-->
     <script type="text/javascript" src="js/gcTool/redline.js?v=<?php echo $v ?>"></script>
     <script type="text/javascript" src="js/gcTool/wfstEdit.js?v=<?php echo $v ?>"></script>
     <script type="text/javascript" src="js/gcTool/mapImageDownload.js?v=<?php echo $v ?>"></script>
@@ -166,6 +171,7 @@ $helpPage .= '.html';
     <script type="text/javascript" src="js/gcTool/selectBox.js?v=<?php echo $v ?>"></script>
     <script type="text/javascript" src="js/gcTool/selectPoint.js?v=<?php echo $v ?>"></script>
     <script type="text/javascript" src="js/gcTool/selectFeatures.js?v=<?php echo $v ?>"></script>
+    <script type="text/javascript" src="js/gcTool/unselectFeatures.js?v=<?php echo $v ?>"></script>
     <script type="text/javascript" src="js/NavigationHistory.js?v=<?php echo $v ?>"></script>
     <script type="text/javascript" src="js/gcTool/toStreetView.js?v=<?php echo $v ?>"></script>
     <script type="text/javascript" src="js/gcTool/mapHelp.js?v=<?php echo $v ?>"></script>
@@ -212,7 +218,7 @@ if (!$.ui.dialog.prototype._makeDraggableBase) {
         'mapsetURL' : '<?php echo $mapsetURL ?>',
         'showAsPublic' : <?php echo $showAsPublic ?>,
         'language':'<?php echo $lang ?>',
-                "tools":{
+        'tools':{
             'zoomFull':'zoom_full',
             'zoomPrev':'zoom_prev',
             'zoomNext':'zoom_next',
@@ -220,7 +226,8 @@ if (!$.ui.dialog.prototype._makeDraggableBase) {
             'zoomOut':'zoom_out',
             'Pan':'pan',
             'selectFromMap':'select_by_box',
-            'easySelectFromMap':'easy_select_from_map',
+            'unselectFeatures':'unselect_features',
+            // 'easySelectFromMap':'easy_select_from_map',
             'toStreetView': 'to_street_view',
             'measureLine':'measure_line',
             'measureArea':'measure_polygon',
@@ -368,14 +375,15 @@ if (!$.ui.dialog.prototype._makeDraggableBase) {
                     <input type="radio" id="measure_polygon" name="gc-toolbar-button" /><label for="measure_polygon">Misura area</label>
                 </span>
                 <span> <!-- print -->
-                    <button id="print"><?php echo $lang == 'it' ? 'Stampa' : 'Auswählen' ?></button>
+                    <button id="print"><?php echo $lang == 'it' ? 'Stampa' : 'Drucken' ?></button>
                     <button id="mapimage_download">Download geotiff</button>
                 </span>
 
                 <span> <!-- strumenti selezione -->
-                    <input type="radio" id="select_by_box" name="gc-toolbar-button"/><label for="select_by_box"><?php echo $lang == 'it' ? 'Seleziona' : 'Drucken' ?></label>
-                    <input type="radio" id="easy_select_from_map" name="gc-toolbar-button" /><label for="easy_select_from_map">Info</label>
                     <input type="radio" id="tooltip" name="gc-toolbar-button"/><label for="tooltip">Tooltip</label>
+                    <input type="radio" id="select_by_box" name="gc-toolbar-button"/><label for="select_by_box"><?php echo $lang == 'it' ? 'Seleziona' : 'Auswählen' ?></label>
+                   <!-- <input type="radio" id="easy_select_from_map" name="gc-toolbar-button" /><label for="easy_select_from_map">Info</label>-->
+                    <button id="unselect_features"><?php echo $lang == 'it' ? 'unselect_features' : 'unselect_features' ?></button>
                 </span>  
                 <span> <!-- editing WFS -->
                     <button id="edit_feature">Edit</button>
@@ -399,8 +407,8 @@ if (!$.ui.dialog.prototype._makeDraggableBase) {
                     
                 <!-- logout -->
                 <div style="float:right;">
-                    <a href="/author/"><img src="images/icons/back.png" border="0" style="position:absolute; right:35px; top: 9px;"></a>
-                    <a href="/author/index.php?logout=1"><img src="images/logout.png" border="0" style="position:absolute; right:10px; top: 9px;"></a>
+                    <a href="/"><img src="images/icons/back.png" border="0" style="position:absolute; right:35px; top: 9px;"></a>
+                    <a href="/logout.php"><img src="images/logout.png" border="0" style="position:absolute; right:10px; top: 9px;"></a>
                 </div>
                 <!-- Tasti di cambio lingua -->
                 <div style="float:right;">
@@ -490,7 +498,8 @@ if (!$.ui.dialog.prototype._makeDraggableBase) {
         
         var callback = function(){
             window.setTimeout(function(){
-            gisclient.map.updateSize();
+                gisclient.map.updateSize();
+                $('.searchResults').setGridWidth($('#dataList').width() - 20);
             },400);
         }
         

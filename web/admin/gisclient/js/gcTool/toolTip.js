@@ -15,6 +15,7 @@
 			tooltipWidth: 200,
 			delayBeforeToolTipRequest: 1000, // in milliseconds
 			selectionBuffer: 5,  //map unit at scale 1:1000
+			refScale: 1000,
 			applyBufferTo: ['point','multipoint','line','multiline'],
 			control: null,
 			queryLayers: {}, // int obj to store the queryable layers data
@@ -198,8 +199,7 @@
 			var queryLayer = self.options.queryLayers[selectedLayer];
 			var geom = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
 			if(typeof(queryLayer.layer.geometryType) !== 'undefined' && $.inArray(queryLayer.layer.geometryType, self.options.applyBufferTo) > -1) {
-				var refScale = 1000;
-				geom = OpenLayers.Geometry.Polygon.createRegularPolygon(geom, self.options.selectionBuffer * (gisclient.map.getScale()/refScale), 20, 90);
+				geom = OpenLayers.Geometry.Polygon.createRegularPolygon(geom, self.options.selectionBuffer * (gisclient.map.getScale()/self.options.refScale), 20, 90);
 			}
 
 

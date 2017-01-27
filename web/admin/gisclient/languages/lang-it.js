@@ -31,6 +31,7 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'None': 'Nessuna',
         'Undo selection': 'Annulla selezione',
         'Selection options': 'Opzioni di selezione',
+        'Tooltips': 'Tooltips',
         'Show tooltips': 'Mostra tooltip',
         'Active layers': 'Livelli attivi',
         'Invalid selection': 'Selezione non valida',
@@ -59,7 +60,7 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Area you sure you want to delete this geometry?': 'Sicuro di voler eliminare questa geometria?',
         'Zoom to max extent': 'Zoom estensione',
         'Zoom to previous': 'Zoom precedente',
-        'Zoom to next': 'Zoom successivo', 
+        'Zoom to next': 'Zoom successivo',
         'Zoom in': 'Ingrandisci',
         'Zoom out': 'Riduci',
 		'Zoom to': 'Zoom',
@@ -98,7 +99,7 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Scale': 'Scala',
         'Restart': 'Ricomincia',
         'Start': 'Comincia',
-        'System Error': 'Errore di sistema',
+        'System error': 'Errore di sistema',
         'Export': 'Esporta',
         'Abort': 'Annulla',
         'Delete rototranslation': 'Elimina rototraslazione',
@@ -168,7 +169,7 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
 		'Feature saved correctly': 'Feature salvata correttamente',
 		'Feature deleted correctly': 'Feature eliminata correttamente',
 		'Are you sure you want to delete this feature? This cannot be undone': 'Sicuro di voler eliminare questa feature? Questa operazione non può essere annullata',
-        // Taglio 
+        // Taglio
         'Cut DB Topografico': 'Taglia DB Topografico',
         'Draw a line to cut geometries': 'Traccia una lina per tagliare le geometrie',
         'Cut': 'Taglia',
@@ -193,7 +194,7 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Options': 'Opzioni',
         // Export KML
         'Export Kml': 'Esportazione in Kml',
-        'Select buildings to export': 'Seleziona gli edifici da esportare',
+        'Select buildings to export: to select, trace a rectangle that cover all the interested buildings': 'Seleziona gli edifici da esportare: per selezionare traccia un rettangolo che copre l\'area degli edifici interessati',
         'Z correction parameter': 'Parametro di correzione Z',
         'Download KML file': 'Scarica il file KML',
         // Link Catasto Db Topografico
@@ -246,10 +247,10 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Select parcels of land to remove': 'Seleziona particelle da eliminare',
         'Select layer': 'Seleziona layer',
         'Only one feature allowed': 'È possibile disegnare una sola geometria',
-        "1. Cliccare sulla mappa per inserire il primo punto.<br>2. Cliccare sulla mappa per inserire i punti successivi.<br>3. Per chiudere la geometria effettaure doppio clic sull'ultimo punto.":"1. Cliccare sulla mappa per inserire il primo punto.<br>2. Cliccare sulla mappa per inserire i punti successivi.<br>3. Per chiudere la geometria effettaure doppio clic sull'ultimo punto.",
-        "1. Selezionare l'oggetto cliccandoci sopra, l'oggetto verrà evidenziato.<br>2. Cliccare sui vertici per spostarli.<br>3. Cliccare sui punti intermedi per creare nuovi vertici.": "1. Selezionare l'oggetto cliccandoci sopra, l'oggetto verrà evidenziato.<br>2. Cliccare sui vertici per spostarli.<br>3. Cliccare sui punti intermedi per creare nuovi vertici.",
-        "1. Selezionare l'oggetto cliccandoci sopra, verrà evidenziato un riquadro intorno all'oggetto.<br>2. Agendo sui vertici o i bordi del riquadro è possibile allargare, spostare e ruotare l'oggetto.": "1. Selezionare l'oggetto cliccandoci sopra, verrà evidenziato un riquadro intorno all'oggetto.<br>2. Agendo sui vertici o i bordi del riquadro è possibile allargare, spostare e ruotare l'oggetto.",
-        "1. Selezionare l'oggetto cliccandoci sopra. Si aprirà un dialogo di conferma eliminazione.<br>2. Per eliminare l'oggetto confermare e cliccare su Salva, altrimenti cliccare su annulla.":"1. Selezionare l'oggetto cliccandoci sopra. Si aprirà un dialogo di conferma eliminazione.<br>2. Per eliminare l'oggetto confermare e cliccare su Salva, altrimenti cliccare su annulla.",
+        "1. Click on the map to insert the first point.<br>2. Click on the map to insert the next point.<br>3. To close the geometry double-click the last point.":"1. Cliccare sulla mappa per inserire il primo punto.<br>2. Cliccare sulla mappa per inserire i punti successivi.<br>3. Per chiudere la geometria effettaure doppio clic sull'ultimo punto.",
+        "1. Select object clicking on it, the object will highlight.<br>2. Click on vertexes to move them.<br>3. Click on intermediate points to add new vertexes.": "1. Selezionare l'oggetto cliccandoci sopra, l'oggetto verrà evidenziato.<br>2. Cliccare sui vertici per spostarli.<br>3. Cliccare sui punti intermedi per creare nuovi vertici.",
+        "1. Select object by clicking on it, a box around the object will appear-<br>2. By moving the vertexes or the lines of the box you can scale, move or retate the object.": "1. Selezionare l'oggetto cliccandoci sopra, verrà evidenziato un riquadro intorno all'oggetto.<br>2. Agendo sui vertici o i bordi del riquadro è possibile allargare, spostare e ruotare l'oggetto.",
+        "1. Select object clicking on it. A dialog box asks you to confirm the deletion.<br>2. To delete the object confirm and click SAVE, otherwise click on CANCEL.":"1. Selezionare l'oggetto cliccandoci sopra. Si aprirà un dialogo di conferma eliminazione.<br>2. Per eliminare l'oggetto confermare e cliccare su Salva, altrimenti cliccare su annulla.",
         'Open map in another window' : "Apri mappa in un'altra finestra",
         "Request cadastre owner" : "Richiesta proprietari particelle",
         "Select parcels to request information" : "Seleziona le particelle per le quali richiedere informazioni",
@@ -271,11 +272,31 @@ OpenLayers.Util.extend(OpenLayers.Lang, {
         'Selection label': 'Modalità',
         'Back': 'Indietro',
         'Next': 'Avanti',
-        'Select the layers to use for the intersection, then fill the form and click the Download button': 'Seleziona i livelli da usare per le intersezaioni, compila il form e clicca sul pulsante Scarica',
+        'Select the layers to use for the intersection, then fill the form and click the Download button': 'Seleziona i livelli da usare per le intersezioni, compila il form e clicca sul pulsante Scarica',
         'Select Parcels of land': 'Seleziona le particelle',
         'Go': 'Procedi',
         'Layer': 'Livello',
         'Undo vertex':'Rimuovi ultimo vertice',
-        'Your browser is not supported': 'Stai usando un browser non più supportato. La validazione delle geometrie non sarà disponibile'
+        'Your browser is not supported': 'Stai usando un browser non più supportato. La validazione delle geometrie non sarà disponibile',
+
+        // new entries:
+        'Info': 'Info',
+        'Buffer': 'Buffer',
+        'Delete box': 'Rimuovi area di stampa',
+        'Vectors': 'Vectors',
+        'Snap layer': 'Snap layer',
+        'Snap Off': 'Snap spento',
+        'Highlight': 'Evidenzia',
+        'KML Export': 'KML Export',
+        'Insert a title': 'Aggiungi titolo',
+        'Link': 'Link',
+        'queryToFeatures': 'queryToFeatures', // ????
+        'Unselect features': 'Unselect features', // ????
+        'Ok': 'Ok',
+        'Unknown error': 'Errore sconosciuto',
+        'Show linked data': 'Visualizza dati collegati',
+        'Show image': 'Visualizza immagine',
+        'Show attachment': 'Visualizza allegato',
+        'Error opening window': "Errore durante l'apertura della finesta"
     }
 });

@@ -28,6 +28,23 @@
 		
 		_click: function(event) {
 			var self = event.data.self;
+
+                        //disable other controls as in gcTool:_toggleControl()
+                        //It seems this is needed because this tool doesn't have a OLControl and is not in the toggle list.
+                        $.each(gisclient.toolObjects, function(tool, object) {
+				if(object.options.control == null) return;
+				if(object.options.control != null) {
+                                    object._deactivate();
+				}
+			});
+
+                        var controls = gisclient.map.getControlsByClass(/OpenLayers.Control.+/);
+			$.each(controls, function(i, control) {
+                            if(typeof(control.isPermanent) == 'undefined' || !control.isPermanent) {
+                                control.deactivate();
+                            }
+			});
+
 			self.initForm();
 		},
 		

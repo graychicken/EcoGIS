@@ -130,8 +130,8 @@ span.editButton{float:right;margin-top:5px;}
 .ui-dialog-content div.features table a , .ui-dialog-content div.logs a { display: block; width: 16px; height: 16px; margin: -2px 2px -2px auto; background-repeat: no-repeat; background-position: center; float:left;}
 /* .ui-dialog-content div.features table a span , .ui-dialog-content div.logs a span { display: none; } */
 
-.ui-dialog-content div.features table a.del , .ui-dialog-content div.logs a.del { background-image: url(../images/icons/del.png); background-position: left; /* width: 60px; */ text-align: right; color: transparent;}
-.ui-dialog-content div.features table a.highlight , .ui-dialog-content div.logs a.highlight { background-image: url(../images/icons/highlight.png); color: transparent;}
+.ui-dialog-content div.features table a.del , .ui-dialog-content div.logs a.del { background-image: url(../images/icons/del.png); background-position: left; /* width: 60px; */ text-align: right}
+.ui-dialog-content div.features table a.highlight , .ui-dialog-content div.logs a.highlight { background-image: url(../images/icons/highlight.png);}
 .ui-dialog-content div.features table a.edit, .ui-dialog-content div.logs a.edit { background-image: url(../images/icons/edit.png);}
 .ui-dialog-content div.logs { color: #DD0000 !important; margin: 8px 8px 12px 8px; }
 .ui-dialog-content div.logs a.del { float: left; margin: 2px; }
