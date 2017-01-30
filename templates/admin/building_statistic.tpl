@@ -27,27 +27,39 @@
                 <tr>
                     <th>{t}Anno{/t}</th>
                     <th>{t}Riscaldamento{/t} ({t}kWh/anno{/t})</th>
-                    <th>{t}Riscaldamento{/t} ({t}kWh/anno{/t}) <div style="font-size: 10px">({t}Con gradi giorno{/t})</div></th>
                     {if $vlu.data.has_heating_degree_day}
-                    <th>{$vlu.data.heating2_label} ({t}kWh/anno{/t})</th>
-                    <th>{$vlu.data.heating2_label} ({t}kWh/anno{/t}) <div style="font-size: 10px">({t}Con gradi giorno{/t})</div></th>
+                        <th>{t}Riscaldamento{/t} ({t}kWh/anno{/t}) <div style="font-size: 10px">({t}Con gradi giorno{/t})</div></th>
+                    {/if}
+                    {if $vlu.data.heating2_label<>''}
+                        <th>{$vlu.data.heating2_label} ({t}kWh/anno{/t})</th>
+                        {if $vlu.data.has_heating_degree_day}
+                            <th>{$vlu.data.heating2_label} ({t}kWh/anno{/t}) <div style="font-size: 10px">({t}Con gradi giorno{/t})</div></th>
+                        {/if}
                     {/if}
                     <th>{t}Energia elettrica{/t} ({t}kWh/anno{/t})</th>
                     <th>{t escape=no}CO<sub>2</sub> (kg CO<sub>2</sub>/anno){/t}</th>
-                    <th>{t escape=no}CO<sub>2</sub> (kg CO<sub>2</sub>/anno){/t} <div style="font-size: 10px">({t}Con gradi giorno{/t})</div></th>
+                    {if $vlu.data.has_heating_degree_day}
+                        <th>{t escape=no}CO<sub>2</sub> (kg CO<sub>2</sub>/anno){/t} <div style="font-size: 10px">({t}Con gradi giorno{/t})</div></th>
+                    {/if}
                 </tr>
                 {foreach from=$vlu.data.rows item=row}
                 <tr>
                     <td class="td_right">{$row.co_year}</td>
                     <td class="td_right">{$row.heating_fmt}</td>
-                    <td class="td_right">{$row.heating_gg_fmt}</td>
                     {if $vlu.data.has_heating_degree_day}
-                    <td class="td_right">{$row.heating_utility_fmt}</td>
-                    <td class="td_right">{$row.heating_utility_gg_fmt}</td>
+                        <td class="td_right">{$row.heating_gg_fmt}</td>
+                    {/if}
+                    {if $vlu.data.heating2_label<>''}
+                        <td class="td_right">{$row.heating_utility_fmt}</td>
+                        {if $vlu.data.has_heating_degree_day}
+                            <td class="td_right">{$row.heating_utility_gg_fmt}</td>
+                        {/if}
                     {/if}
                     <td class="td_right">{$row.electricity_fmt}</td>
                     <td class="td_right">{$row.co2_fmt}</td>
-                    <td class="td_right">{$row.co2_gg_fmt}</td>
+                    {if $vlu.data.has_heating_degree_day}
+                        <td class="td_right">{$row.co2_gg_fmt}</td>
+                    {/if}
                 </tr>
                 {/foreach}
             </table>
