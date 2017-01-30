@@ -137,7 +137,7 @@ EOQ;
                     echo file_get_contents('../../images/blank.png');
                     die();
                 }
-
+                session_write_close();
                 $imageContent = $preview->generatePreviewMap($mbr, $format, $layergroupHighlight);
             } catch (Exception $e) {
                 die($e);
