@@ -38,6 +38,7 @@ class eco_building_statistic extends R3AppBaseObject
     {
         $id = (int) $this->bu_id;
         $db = ezcDbInstance::get();
+        $lang = R3Locale::getLanguageID();
 
         // Close session (to allow other tab to be loaded)
         session_write_close();
@@ -50,8 +51,6 @@ class eco_building_statistic extends R3AppBaseObject
         $sql = "SELECT COUNT(*)
                 FROM ecogis.heating_degree_days WHERE mu_id={$this->mu_id}";
         $hasHeatingDegreeDay = $db->query($sql)->fetchColumn() > 0;
-
-        $lang = R3Locale::getLanguageID();
 
         $sql = "SELECT array_to_string(array_agg(us_name_{$lang}),' / ') AS us_name_heating
                 FROM ecogis.utility_supplier
@@ -89,14 +88,17 @@ class eco_building_statistic extends R3AppBaseObject
                         INNER JOIN ecogis.energy_type et2 ON es2.et_id = et2.et_id) ON em.up_id = up.up_id
                     WHERE bu_id={$id})
                 SELECT q1.co_year,
-                       ROUND(SUM(CASE WHEN q1.et_code='HEATING' THEN q1.co_value * q1.esu_kwh_factor ELSE NULL END)) AS heating,
-                       ROUND(SUM(CASE WHEN q1.et_code='HEATING' THEN q1.co_value * q1.esu_kwh_factor * COALESCE(hdd.hdd_factor, 1) ELSE NULL END)) AS heating_gg,
-                       ROUND(SUM(CASE WHEN q1.et_code='HEATING_UTILITY' THEN q1.co_value*q1.esu_kwh_factor ELSE NULL END)) AS heating_utility,
-                       ROUND(SUM(CASE WHEN q1.et_code='HEATING_UTILITY' THEN q1.co_value*q1.esu_kwh_factor*COALESCE(hdd.hdd_factor, 1) ELSE NULL END)) AS heating_utility_gg,
-                       ROUND(SUM(CASE WHEN q1.et_code='ELECTRICITY' THEN q1.co_value*q1.esu_kwh_factor ELSE NULL END)) AS electricity,
-                       ROUND(SUM(CASE WHEN q1.et_code='ELECTRICITY_UTILITY' THEN q1.co_value*q1.esu_kwh_factor ELSE NULL END)) AS electricity_utility,
+                       ROUND(SUM(CASE WHEN q1.et_code='HEATING' THEN q1.co_value * q1.esu_kwh_factor END)) AS heating,
+                       ROUND(SUM(CASE WHEN q1.et_code='HEATING' THEN q1.co_value * q1.esu_kwh_factor * COALESCE(hdd.hdd_factor, 1) END)) AS heating_gg,
+                       ROUND(SUM(CASE WHEN q1.et_code='HEATING_UTILITY' THEN q1.co_value*q1.esu_kwh_factor END)) AS heating_utility,
+                       ROUND(SUM(CASE WHEN q1.et_code='HEATING_UTILITY' THEN q1.co_value*q1.esu_kwh_factor*COALESCE(hdd.hdd_factor, 1) END)) AS heating_utility_gg,
+                       ROUND(SUM(CASE WHEN q1.et_code='ELECTRICITY' THEN q1.co_value*q1.esu_kwh_factor END)) AS electricity,
+                       ROUND(SUM(CASE WHEN q1.et_code='ELECTRICITY_UTILITY' THEN q1.co_value*q1.esu_kwh_factor END)) AS electricity_utility,
                        ROUND(SUM(q1.co_value * q1.esu_co2_factor)) AS co2,
-                       ROUND(SUM(q1.co_value * q1.esu_co2_factor * COALESCE(hdd.hdd_factor, 1::double precision))) AS co2_gg
+                       ROUND(SUM(q1.co_value * q1.esu_co2_factor *
+                             COALESCE(
+                                CASE WHEN q1.et_code IN ('HEATING', 'HEATING_UTILITY') THEN hdd.hdd_factor END,
+                                1))) AS co2_gg
                 FROM q1
                 LEFT JOIN ecogis.heating_degree_days hdd ON hdd.mu_id = q1.mu_id AND hdd.hdd_year::double precision = q1.co_year
                 GROUP BY q1.bu_id, q1.co_year
