@@ -45,10 +45,10 @@ class lkp_heating_degree_days extends R3LookupBaseObject {
     // The page title
     public function getPageTitle() {
         switch ($this->request['act']) {
-            case 'add': return _('Nuovo valore grado giorno');
-            case 'mod': return _('Modifica grado giorno');
-            case 'show': return _('Visualizza grado giorno');
-            case 'list': return _('Elenco gradi giorno');
+            case 'add': return _('Nuovo valore grado giorno termico');
+            case 'mod': return _('Modifica grado giorno termico');
+            case 'show': return _('Visualizza grado giorno termico');
+            case 'list': return _('Elenco gradi giorno termici');
         }
     }
 
