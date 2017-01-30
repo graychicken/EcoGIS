@@ -471,6 +471,9 @@ class eco_building extends R3AppBasePhotoObject {
         if ($this->act == 'mod' || $this->act == 'show') {
             $hasSensorData = $this->hasSensorData($this->data['bu_id']);
             $hasWork = $this->hasWork($this->data['bu_id']);
+            if ($this->auth->hasPerm('SHOW', 'STATISTIC')) {
+                $tabs[] = array('id' => 'statistic', 'label' => _('Statistiche'), 'url' => ("edit.php?on=building_statistic&bu_id={$this->id}&parent_act={$this->act}&tab_mode=$tabMode"));
+            }
             $tabs[] = array('id' => 'heating', 'label' => _('Riscaldamento'), 'url' => ("edit.php?on=consumption_tree&kind=heating&bu_id={$this->id}&parent_act={$this->act}&tab_mode=$tabMode"));
             $tabs[] = array('id' => 'electricity', 'label' => _('Elettricità'), 'url' => ("edit.php?on=consumption_tree&kind=electricity&bu_id={$this->id}&parent_act={$this->act}&tab_mode=$tabMode"));
             $tabs[] = array('id' => 'water', 'label' => _('Acque'), 'url' => ("edit.php?on=consumption_tree&kind=water&bu_id={$this->id}&parent_act={$this->act}&tab_mode=$tabMode"));
