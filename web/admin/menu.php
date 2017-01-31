@@ -17,6 +17,11 @@ if ($auth->hasPerm('SHOW', 'MAP') || $auth->hasPerm('SHOW', 'BUILDING') || $auth
     $menu->addMainItem('general', _('Generale'));
 }
 
+/* General Node */
+if ($auth->hasPerm('SHOW', 'STATISTIC')) {
+    $menu->addMainItem('statistic', _('Statistiche'));
+}
+
 
 
 /* General Node */
@@ -80,6 +85,11 @@ if ($auth->hasPerm('SHOW', 'STREET_LIGHTING')) {
     $menu->addSimpleItem('general', 'street_lighting_list', array('label' => _('Illuminazione stradale'), 'js' => R3MenuNavigate('list', 'street_lighting', 'init')));
 }
 
+
+if ($auth->hasPerm('SHOW', 'STATISTIC')) {
+    $menu->addSimpleItem('statistic', 'generic_building_statistic', array('label' => _('Statistiche edifici'), 'js' => R3MenuNavigate('edit', 'generic_building_statistic', 'init')));
+    $menu->addSimpleItem('statistic', 'to_be_defined_2', array('label' => _('Grafici'), 'js' => R3MenuNavigate('list', 'to_be_defined_2', 'init')));
+}
 // paes items
 if ($auth->hasPerm('IMPORT', 'SEAP') || $auth->hasPerm('SHOW', 'IMPORT_SEAP')) {
     if ($auth->getParam('mu_id') == '') {
@@ -145,8 +155,10 @@ if ($auth->hasPerm('SHOW', 'LOOKUP')) {
     $menu->addSimpleItem('config', 'energy_source_udm', array('label' => _('Fattori di conversione'), 'js' => R3MenuNavigate('list', 'energy_source_udm', 'init')));
     if ($auth->hasPerm('SHOW', 'ALL_DOMAINS')) {
         $menu->addSimpleItem('config', 'energy_source_udm_admin', array('label' => _('Fattori di conversione (Admin)'), 'js' => R3MenuNavigate('lookup_list', 'energy_source_udm_admin', 'init')));
-        $menu->addItem('config', '', '-');
     }
+    $menu->addSimpleItem('config', 'heating_degree_days', array('label' => _('Gradi giorno termici'), 'js' => R3MenuNavigate('lookup_list', 'heating_degree_days', 'init')));
+    $menu->addItem('config', '', '-');
+
     $menu->addSimpleItem('config', 'utility', array('label' => _('Fornitori di energia'), 'js' => R3MenuNavigate('list', 'utility', 'init')));
 
     if ($auth->hasPerm('SHOW', 'ALL_DOMAINS')) {
