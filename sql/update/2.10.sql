@@ -9,14 +9,15 @@ FROM (
 	
 ) AS foo;
 
+
 -- Add heating degree days table
-CREATE TABLE ecogis.heating_degree_days (
+CREATE TABLE ecogis.heating_degree_day (
   hdd_id SERIAL,
   mu_id integer not null,
   hdd_year INTEGER NOT NULL,
   hdd_factor DOUBLE PRECISION NOT NULL,
-  CONSTRAINT heating_degree_days_pkey PRIMARY KEY(hdd_id)
+  CONSTRAINT heating_degree_day_pkey PRIMARY KEY(hdd_id)
 );
-CREATE UNIQUE INDEX heating_degree_days_idx ON ecogis.heating_degree_days USING btree (mu_id, hdd_year);
-ALTER TABLE ecogis.heating_degree_days ADD CONSTRAINT heating_degree_days_fk FOREIGN KEY (mu_id) REFERENCES ecogis.municipality(mu_id) ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
+CREATE UNIQUE INDEX heating_degree_day_idx ON ecogis.heating_degree_day USING btree (mu_id, hdd_year);
+ALTER TABLE ecogis.heating_degree_day ADD CONSTRAINT heating_degree_day_fk FOREIGN KEY (mu_id) REFERENCES ecogis.municipality(mu_id) ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
 
