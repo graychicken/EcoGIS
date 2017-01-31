@@ -3,8 +3,8 @@
 class lkp_heating_degree_days extends R3LookupBaseObject {
 
     // Nome tabella
-    protected $table = 'heating_degree_days';
-    protected $view = 'heating_degree_days_data';
+    protected $table = 'heating_degree_day';
+    protected $view = 'heating_degree_day_data';
     protected $checkForeignKey = true;
     protected $checkDomian = true;
 
