@@ -1,8 +1,38 @@
 {if $USER_CONFIG_APPLICATION_MODE=='FRAME'}{include file="header_no_menu.tpl"}{else if $USER_CONFIG_APPLICATION_MODE=='HTML'}{include file="header_w_menu.tpl"}{/if}
 <h3 id="page_title">{$page_title}<span id="page_subtitle" style="display: none"></span></h3>
 
+<script language="JavaScript" type="text/javascript">
+    var hasData={if $vlu.data.rows|@count>0}true{else}false{/if};
+</script>
 {literal}
     <script language="JavaScript" type="text/javascript">
+        function loadGraph() {
+            var width = $(window).width(); // - $('#chartImg').offset().left - 30;
+            width = Math.min(Math.max(250, width), 1280) - 30;
+            height = width / 2;
+
+            var params = [];
+            params.push('lang='+$('#lang').val());
+            params.push('stat_type='+$('#stat_type').val());
+            params.push('mu_id='+$('#mu_id').val());
+            params.push('udm_divider='+$('#udm_divider').val());
+            params.push('bpu_id='+$('#bpu_id').val());
+            params.push('width='+width);
+            params.push('height='+height);
+
+            var chartUrl = "edit.php?on=generic_building_statistic_graph&act=list&" + params.join('&');
+            if (hasData) {
+                $('#chartImg')
+                    .prop('src', chartUrl)
+                    .one('load', function() {
+                        ajaxWait(false);
+                });
+                ajaxWait(true);
+            } else {
+                $('#chartImg').hide();
+            }
+        }
+        
         $(document).ready(function () {
             $('.consumption_tree tr').bind('mouseenter', function () {
                 $(this).addClass('tr_hover')
@@ -11,9 +41,18 @@
                 $(this).removeClass('tr_hover')
             });
             $('#stat_type,#mu_id,#udm_divider,#bpu_id').change(function() {
+                ajaxWait(true);
                 $('#modform').submit();
                 $('select').prop('disabled', true);
             });
+            loadGraph();
+        });
+        
+        var timer=null;
+        $(window).resize(function () {
+            ajaxWait(true);
+            clearTimeout(timer);
+            timer = setTimeout(function() { loadGraph() }, 500);
         });
     </script>
 {/literal}
@@ -110,7 +149,9 @@
         </li>
     </ul>
 </form>
-            
-https://ecogis-dev-ss.r3-gis.com/admin/edit.php?on=generic_building_statistic_graph&act=list&lang=1&tab_mode=&stat_type=building_purpose_use&bpu_id=39&udm_divider=1000
+
+<div style="margin-top: 25px">
+<img id="chartImg" src="../images/ajax_loader.gif" />
+</div>
 
 {if $USER_CONFIG_APPLICATION_MODE=='FRAME'}{include file="footer_no_menu.tpl"}{else if $USER_CONFIG_APPLICATION_MODE=='HTML'}{include file="footer_w_menu.tpl"}{/if}

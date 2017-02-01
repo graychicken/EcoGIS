@@ -14,6 +14,7 @@
         "zetacomponents/base": "1.9.*",
         "zetacomponents/cache": "1.6.*",
         "zetacomponents/database": "1.5.*",
+        "zetacomponents/graph": "1.5.*",
         "zetacomponents/event-log": "1.5.*",
         "zetacomponents/event-log-database-tiein": "1.1.*",
         "phpoffice/phpexcel": "1.8.*"

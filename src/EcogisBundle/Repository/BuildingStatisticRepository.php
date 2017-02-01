@@ -85,7 +85,7 @@ class BuildingStatisticRepository
      * Return an array with the statistic data for the given building
      * @param integer $muId   Municipality ID
      */
-    public function getStatisticForMunicipality($muId, $divider = 1)
+    public function getStatisticForMunicipality($muId, $divider = 1, $reverseOrder = false)
     {
 
         $muId = (int) $muId;
@@ -93,6 +93,7 @@ class BuildingStatisticRepository
 
         $q1 = $this->getStatisitcSqlFragment();
         $fields = $this->getStatisitcSumFields($divider);
+        $orderBy = $reverseOrder ? 'co_year DESC' : 'co_year';
         $sql = "WITH q1 AS (
                     {$q1}
                     WHERE {$where}
@@ -101,7 +102,7 @@ class BuildingStatisticRepository
                 FROM q1
                     LEFT JOIN ecogis.heating_degree_day hdd ON hdd.mu_id = q1.mu_id AND hdd.hdd_year=q1.co_year
                 GROUP BY co_year
-                ORDER BY co_year DESC";
+                ORDER BY {$orderBy}";
         return $this->fetchStatisticData($sql);
     }
 
@@ -112,7 +113,7 @@ class BuildingStatisticRepository
      * @param integer $bpuIdFilter   If > 0, the data is filtered by the given buoiding pourpose use
      * @param integer $divider       Divider to apply (1 or 1000)
      */
-    public function getStatisticForMunicipalityAndBpu($muId, $lang, $bpuIdFilter, $divider = 1)
+    public function getStatisticForMunicipalityAndBpu($muId, $lang, $bpuIdFilter, $divider = 1, $reverseOrder = false)
     {
         $muId = (int) $muId;
         $bpuIdFilter = (int)$bpuIdFilter;
@@ -124,6 +125,7 @@ class BuildingStatisticRepository
             $whereArray[] = "bu.bpu_id={$bpuIdFilter}";
         }
         $where = implode(' AND ', $whereArray);
+        $orderBy = $reverseOrder ? "co_year DESC, bpu_name_{$lang} ASC" : "co_year, bpu_name_{$lang} ASC";
 
         $q1 = $this->getStatisitcSqlFragment();
         $fields = $this->getStatisitcSumFields($divider);
@@ -135,7 +137,7 @@ class BuildingStatisticRepository
                 FROM q1
                     LEFT JOIN ecogis.heating_degree_day hdd ON hdd.mu_id = q1.mu_id AND hdd.hdd_year=q1.co_year
                 GROUP BY co_year, bpu_name_{$lang}
-                ORDER BY co_year DESC, bpu_name_{$lang} ASC";
+                ORDER BY {$orderBy}";
         return $this->fetchStatisticData($sql);
     }
 }

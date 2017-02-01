@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0039eb73d9bc01c10cd3950958bfa4b8",
+    "content-hash": "64be432b94824bcb202ec325193939a2",
     "packages": [
         {
             "name": "phpoffice/phpexcel",
@@ -677,6 +677,81 @@
             "description": "Contains the database writer backend for the EventLog component.",
             "homepage": "https://github.com/zetacomponents",
             "time": "2014-09-27T19:26:09+00:00"
+        },
+        {
+            "name": "zetacomponents/graph",
+            "version": "1.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zetacomponents/Graph.git",
+                "reference": "7efda09f967b92fe38a1fbf0c2090fc4fedb0c73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zetacomponents/Graph/zipball/7efda09f967b92fe38a1fbf0c2090fc4fedb0c73",
+                "reference": "7efda09f967b92fe38a1fbf0c2090fc4fedb0c73",
+                "shasum": ""
+            },
+            "require": {
+                "zetacomponents/base": "~1.8"
+            },
+            "require-dev": {
+                "zetacomponents/unit-test": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Alexeev"
+                },
+                {
+                    "name": "Sebastian Bergmann"
+                },
+                {
+                    "name": "Jan Borsodi"
+                },
+                {
+                    "name": "Raymond Bosman"
+                },
+                {
+                    "name": "Frederik Holljen"
+                },
+                {
+                    "name": "Kore Nordmann"
+                },
+                {
+                    "name": "Derick Rethans"
+                },
+                {
+                    "name": "Vadym Savchuk"
+                },
+                {
+                    "name": "Tobias Schlitt"
+                },
+                {
+                    "name": "Alexandru Stanoi"
+                },
+                {
+                    "name": "Lars Jankowski"
+                },
+                {
+                    "name": "Elger Thiele"
+                },
+                {
+                    "name": "Michael Maclean"
+                }
+            ],
+            "description": "A component for creating pie charts, line graphs and other kinds of diagrams.",
+            "homepage": "https://github.com/zetacomponents",
+            "time": "2014-09-19T03:28:59+00:00"
         }
     ],
     "packages-dev": [
@@ -1217,16 +1292,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "1.2.2",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "6a1ed12e8b2409076ab22e3897126211ff8b1f7f"
+                "reference": "2b7424b55f5047b47ac6e5ccb20b2aea4011d9be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/6a1ed12e8b2409076ab22e3897126211ff8b1f7f",
-                "reference": "6a1ed12e8b2409076ab22e3897126211ff8b1f7f",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/2b7424b55f5047b47ac6e5ccb20b2aea4011d9be",
+                "reference": "2b7424b55f5047b47ac6e5ccb20b2aea4011d9be",
                 "shasum": ""
             },
             "require": {
@@ -1277,7 +1352,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2016-11-19T09:18:40+00:00"
+            "time": "2017-01-29T09:50:25+00:00"
         },
         {
             "name": "sebastian/diff",

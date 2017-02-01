@@ -14,7 +14,7 @@ class eco_generic_building_statistic extends R3AppBaseObject
         $this->act = initVar('act', 'show');
         $this->tab_mode = initVar('tab_mode');
         $this->stat_type = initVar('stat_type', 'compact');
-        $this->udm_divider = initVar('udm_divider', 1);
+        $this->udm_divider = initVar('udm_divider', 1000);
         $this->mu_id = initVar('mu_id');
         $this->bpu_id = initVar('bpu_id');
         $this->do_id = $_SESSION['do_id'];
