@@ -21,11 +21,11 @@ class ExportBuildingsCommand extends EcoGenericCommand
             ->setDescription('Export buildings data')
             ->setHelp("Export buildings data")
             ->addOption('domain', null, InputOption::VALUE_REQUIRED, 'Domain name')
-            ->addOption('user', null, InputOption::VALUE_REQUIRED, 'User login')
             ->addOption('lang', null, InputOption::VALUE_REQUIRED, 'Language code')
             ->addOption('format', null, InputOption::VALUE_REQUIRED, 'Export format ("shp"|"xls"|"xlsx")')
             ->addOption('output', null, InputOption::VALUE_REQUIRED, 'The full output file name')
             ->addOption('zip', null, InputOption::VALUE_NONE, 'If set, zip the content')
+            ->addOption('zip-prefix', null, InputOption::VALUE_REQUIRED, 'Prefix of names inside the zip file')
             ->addOption('json-filter', null, InputOption::VALUE_REQUIRED, 'Filter to apply')
         ;
     }
@@ -160,7 +160,7 @@ class ExportBuildingsCommand extends EcoGenericCommand
      * Fix the shape text (remove special chars)
      * @param type $text
      */
-    private function zipFiles($destFile, array $files)
+    private function zipFiles($destFile, array $files, $prefix=null)
     {
         $zip = new \ZipArchive();
 
@@ -168,7 +168,13 @@ class ExportBuildingsCommand extends EcoGenericCommand
             throw new \Exception("Can't create \"{$destFile}\"");
         }
         foreach ($files as $file) {
-            $zip->addFile($file, basename($file));
+            if ($prefix == null) {
+                $zip->addFile($file, basename($file));
+            } else {
+                $parts = explode('.', basename($file), 2);
+                $nameInZip = $prefix . '.' . $parts[count($parts) - 1];
+                $zip->addFile($file, $nameInZip);
+            }
         }
         if ($zip->close() !== true) {
             throw new \Exception("Can't create \"{$destFile}\"");
@@ -391,7 +397,7 @@ class ExportBuildingsCommand extends EcoGenericCommand
         // echo "$sql\n";
         $utils = new \R3ImportUtils($db, array('schema' => R3_EXPORT_SCHEMA));
         $utils->createImportSystemTable();
-        $tmpTableName = $utils->getSchema().'.'.$utils->createTemporaryTableEntry('export_building');
+        $tmpTableName = $utils->getSchema().'.'.$utils->createTemporaryTableEntry('export_building', null, md5(rand()));
 
         $logger->log(LOG_INFO, "Materialyze final data into {$tmpTableName}");
         $db->exec("CREATE TABLE {$tmpTableName} AS {$sql}");
@@ -436,7 +442,7 @@ class ExportBuildingsCommand extends EcoGenericCommand
             } else {
                 $files[] = $fileName;
             }
-            $this->zipFiles("{$fileName}.zip", $files);
+            $this->zipFiles("{$fileName}.zip", $files, $input->getOption('zip-prefix'));
             foreach ($files as $file) {
                 if (!unlink($file)) {
                     throw new \Exceptino("Error removing \"{$file}\"");

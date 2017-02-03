@@ -140,6 +140,11 @@ class eco_building extends R3AppBasePhotoObject {
 
         $this->registerAjaxFunction('askDelBuilding');
         $this->registerAjaxFunction('submitFormData');
+        
+        $this->registerAjaxFunction('exportBuilding');
+        $this->registerAjaxFunction('getExportBuildingStatus');
+
+
     }
 
     /**
@@ -524,6 +529,7 @@ class eco_building extends R3AppBasePhotoObject {
             'txtNewCatMunic' => _('Aggiungi comune catastale'),
             'txtDeniedUpload' => _('Impossibile caricare un documento con estensione \"$ext\"'), // jQuery plugin require $ext
             'txtDuplicateUpload' => _('Un file con lo stesso nome è già stato selezionato.\nFile: \"$file\"'), // jQuery plugin require $ext
+            'txtExport' => _('Export'),
             'UserMapWidth' => $mapres[0],
             'UserMapHeight' => $mapres[1],
             'PopupErrorMsg' => _('ATTENZIONE!\n\nBlocco dei popup attivo. Impossibile aprire la mappa. Disabilitare il blocco dei popup del browser e riprovare'),
@@ -861,6 +867,104 @@ class eco_building extends R3AppBasePhotoObject {
         } else {
             return array('status' => R3_AJAX_NO_ERROR,
                 'alert' => _('Impossibile cancellare questo edificio poichè vi sono dei dati ad esso legati'));
+        }
+    }
+
+    public function exportBuilding($request) {
+        $validFilters = array('do_id', 'mu_id', 'mu_name', 'fr_id', 'fr_name', 'st_id', 'st_name', 'bu_civic',
+                              'bu_code', 'bu_name', 'bpu_id', 'bt_id', 'bby_id', 'bry_id', 'bu_to_check');
+        
+        $console = R3_APP_ROOT . 'bin/console';
+        $langCode = R3Locale::getLanguageCode();
+        $domain = $this->auth->getDomainName();
+
+
+        $token = date('YmdHis') . '-' . md5(time());
+        $zip = '';
+        $zipPrefix = '';
+        if ($request['format'] == 'shp') {
+            $format = 'shp';
+            $outFormat = 'zip';
+            $zip = '--zip --zip-prefix=export_building';
+        } else {
+            $outFormat = $format = 'xlsx';
+        }
+        $outputFileName = R3_TMP_DIR . "export_building_{$token}.{$format}";
+        $outputLogFileName = "{$outputFileName}.log";
+
+        $outputFileName = escapeshellarg($outputFileName);
+        $outputLogFileName = escapeshellarg($outputLogFileName);
+
+        $langCode = escapeshellarg($langCode);
+
+        // Sanitaryze filters
+        $filters = array();
+        $txtFilter = '';
+        if (!empty($request['filter'])) {
+            foreach($request['filter'] as $key=>$val) {
+                if (in_array($key, $validFilters) && !empty($val)) {
+                    $filters[$key] = $val;
+                }
+            }
+            if (isset($filters['bu_to_check']) && $filters['bu_to_check']=='F') {
+                unset($filters['bu_to_check']);
+            }
+        }
+        if (count($filters) > 0) {
+            $filters = json_encode($filters);
+            $txtFilter = "--json-filter " . escapeshellarg($filters);
+        }
+
+        $cmd = "php {$console} ecogis:export-buildings --domain {$domain} --lang {$langCode} " .
+               " --format={$format} --output {$outputFileName} {$txtFilter} {$zip}> {$outputLogFileName} 2>&1 &";
+        exec($cmd, $dummy, $retVal);
+        if ($retVal == 0) {
+            $url = "getfile.php?type=tmp&file=export_building_{$token}.{$outFormat}&disposition=download&name=EXPORT_BUILDING_" . date('Y-m-d') . '.' . $outFormat;
+            return array(
+                'status' => R3_AJAX_NO_ERROR,
+                'token' => $token,
+                'format' => $outFormat,
+                'url' => $url);
+        } else {
+            throw new \Exception("Error #{$retVal} exporting file");
+        }
+    }
+
+    public function getExportBuildingStatus($request) {
+        
+        $token = basename($request['token']);
+        $format = basename($request['format']);
+
+        $fileName = R3_TMP_DIR . "export_building_{$token}.{$format}" ;
+        $lockFileName = "{$fileName}.lock";
+        $logFileName = "{$fileName}.log";
+
+        $isError = false;
+        if(file_exists($fileName)) {
+            $data = array('done'=>true);
+            if (file_exists($logFileName)) {
+                unlink($logFileName);
+            }
+        } else {
+            $data = array(
+                'done'=>false);
+            if (($fp = @fopen($lockFileName, "r+"))) {
+                if (flock($fp, LOCK_EX | LOCK_NB)) {
+                    $isError = true;
+                    flock($fp, LOCK_UN); // unlock
+                }
+                fclose($fp);
+            } else {
+                $isError = true;
+            }
+        }
+
+        if ($isError) {
+            return array('status' => R3_AJAX_ERROR);
+        } else {
+            return array(
+                'status' => R3_AJAX_NO_ERROR,
+                'data' => $data);
         }
     }
 

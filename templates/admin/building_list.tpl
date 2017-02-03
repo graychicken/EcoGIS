@@ -7,7 +7,7 @@
                 addObject()
             });
             $('#btnExport').bind('click', function () {
-                exportObject()
+                showExportDlg();
             });
             $('#btnSetupTableColumn').bind('click', function () {
                 setupTableColumn()

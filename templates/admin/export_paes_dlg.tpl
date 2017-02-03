@@ -5,8 +5,6 @@ $(document).ready(function() {
     $('#popupBtnCancel').bind('click', function() { closeR3Dialog() });
     $('#paes_format').focus();
     $("#progressbar").progressbar({value: 0});
-    // $('#progressbar').width(200);
-		
 });
 </script>
 {/literal}

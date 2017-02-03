@@ -688,7 +688,6 @@ function closeR3Dialog(id, opt) {
         }
     }
     context.$("#" + id).dialog('close');
-
     hideR3Help();
     ajaxWait(false);
 }

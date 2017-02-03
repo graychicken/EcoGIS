@@ -252,3 +252,66 @@ function openBuildingMap(isGisClient) {
     }
 }
 
+// Generic list
+var exportBuildingToken = null;
+var exportBuildingFormat = null;
+var exportBuildingDoneUrl = null;
+function showExportBuildingStatus() {
+    $.getJSON('edit.php', {
+        'on': $('#on').val(),
+        'token': exportBuildingToken,
+        'format': exportBuildingFormat,
+        'method': 'getExportBuildingStatus'
+    }, function (response) {
+        var repeat = true;
+        if (response.data) {
+            repeat = !response.data.done;
+        }
+        if (repeat) {
+            setTimeout('showExportBuildingStatus()', 1000);
+        } else {
+            closeR3Dialog();
+            $('#exportform').find('input,select').prop('disabled', false);
+            document.location = exportBuildingDoneUrl;
+        }
+    });
+}
+
+function exportBuildings() {
+    exportBuildingToken = null;
+    exportBuildingFormat = null;
+    exportBuildingDoneUrl = null;
+    ajaxWait(true);
+    $('#exportform').find('input,select').prop('disabled', true);
+    
+    var filter = {};
+    $.each( $('fieldset.filter').find('input,select'), function(dummy, e) {
+        var key = e.name;
+        var val = $(e).val();
+        if (e.type == 'submit' || e.type == 'button') {
+            return;
+        }
+        if (e.type == 'checkbox') {
+            if (e.checked) {
+                filter[key] = val;
+            }
+        } else {
+            filter[key] = val;
+        }
+    });
+    
+    $.getJSON('edit.php', {
+            'on': $('#on').val(),
+            'format': $('#exportform select[name=format]').val(),
+            'method': 'exportBuilding',
+            'filter': filter
+        }, function (response) {
+            validateDomainDone(response);
+            if (response.status == 'OK') {
+                exportBuildingToken = response.token;
+                exportBuildingFormat = response.format;
+                exportBuildingDoneUrl = response.url;
+                showExportBuildingStatus();
+            }
+        });
+}

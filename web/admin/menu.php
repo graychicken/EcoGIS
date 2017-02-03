@@ -88,7 +88,6 @@ if ($auth->hasPerm('SHOW', 'STREET_LIGHTING')) {
 
 if ($auth->hasPerm('SHOW', 'STATISTIC')) {
     $menu->addSimpleItem('statistic', 'generic_building_statistic', array('label' => _('Statistiche edifici'), 'js' => R3MenuNavigate('edit', 'generic_building_statistic', 'init')));
-    $menu->addSimpleItem('statistic', 'to_be_defined_2', array('label' => _('Grafici'), 'js' => R3MenuNavigate('list', 'to_be_defined_2', 'init')));
 }
 // paes items
 if ($auth->hasPerm('IMPORT', 'SEAP') || $auth->hasPerm('SHOW', 'IMPORT_SEAP')) {
