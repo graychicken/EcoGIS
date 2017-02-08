@@ -34,3 +34,5 @@ FROM (
 	    AND ac_verb = 'SHOW' AND ac_name = 'BUILDING'
 ) AS foo;
 
+INSERT INTO ecogis.version(dbv_database_version, dbv_application_version) VALUES ('1.32', '2.10.1');
+
