@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-03 15:18+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-02-03 17:52+0100\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.11\n"
 
 #. /data/sites/ecogis/templates/admin/header_w_menu.tpl
 #. /data/sites/ecogis/templates/admin/municipality_collection_edit.tpl
@@ -2068,7 +2068,7 @@ msgstr "Dokumente"
 #: /data/sites/ecogis/lib/obj.base_lookup.php:1146
 #, php-format
 msgid "PERMISSION DENIED [%s/%s]"
-msgstr ""
+msgstr "Berechtigung verweigert [%s/%s]"
 
 msgid "Nome edificio lingua 1"
 msgstr "Name/Bezeichnung"
@@ -2206,7 +2206,7 @@ msgid ""
 msgstr "Unmöglich dieses Gebäude zu löschen da Daten hiermit verbunden sind"
 
 msgid "PK"
-msgstr ""
+msgstr "PK"
 
 msgid "Guadagno"
 msgstr "Gewinn/Verdienst"
@@ -2278,7 +2278,7 @@ msgid "Modifica consumo %s"
 msgstr "%s: Verbrauch ändern"
 
 msgid "PERMISSION DENIED [Not my building]"
-msgstr ""
+msgstr "Berechtigung verweigert [nicht mein Gebäude]"
 
 msgid "-- Nessuno --"
 msgstr "-- Kein --"
@@ -2458,7 +2458,7 @@ msgid "Record"
 msgstr "Record fehlt bei"
 
 msgid "Dime.(MB)"
-msgstr ""
+msgstr "Dime. (MB)"
 
 msgid "Geometria"
 msgstr "Geometrie"
@@ -3250,19 +3250,19 @@ msgid "Patto dei sindaci"
 msgstr "Konvent der Bürgermeister/innen"
 
 msgid "_Ricerca"
-msgstr "Suche"
+msgstr "_Suche"
 
 msgid "_Avvisi automatici"
-msgstr "Automatische Benachrichtigung"
+msgstr "_Automatische Benachrichtigung"
 
 msgid "_Lista accertamenti"
-msgstr ""
+msgstr "_Liste Ermittlungen"
 
 msgid "_Pagamenti"
 msgstr "_Bezahlungen"
 
 msgid "_Pagamenti importati"
-msgstr "Zeige importierte Hausnummern an"
+msgstr "_Importierte Zahlungen"
 
 msgid "_Incasso giornaliero"
 msgstr "_Tagesinkasso"
@@ -3271,7 +3271,7 @@ msgid "_Contribuenti/via"
 msgstr "Fraktion oder Straße"
 
 msgid "_Automezzi"
-msgstr "Fahrzeuge"
+msgstr "_Fahrzeuge"
 
 #: /data/sites/ecogis/web/admin/menu.php:132
 msgid "Comuni catastali"
@@ -4545,7 +4545,7 @@ msgstr "Durchführung"
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:1733
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:1976
 msgid "al"
-msgstr ""
+msgstr "zum"
 
 #. /data/sites/ecogis/templates/admin/action_catalog_edit.tpl
 #. /data/sites/ecogis/templates/admin/global_plain_action_edit.tpl
@@ -5653,7 +5653,7 @@ msgid "E' la particella catastale dell'edificio"
 msgstr "Ist die Katasterparzelle des Gebäudes"
 
 msgid "E' il subalterno dell'edificio"
-msgstr ""
+msgstr "Ist untergeben dem Gebäude"
 
 msgid "E'la data in cui è stato effettualo l'audit dell'edificio"
 msgstr "Ist das Datum zu welchem das Audit des Gebäudes erfolgte"
@@ -6835,13 +6835,13 @@ msgstr "Gesamte Energieeinsparung <br"
 #. /data/sites/ecogis/templates/admin/action_catalog_edit.tpl
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:47
 msgid "Codice azione"
-msgstr ""
+msgstr "Aktions Kode"
 
 msgid "Macro-settore"
-msgstr ""
+msgstr "Makro-Sektor"
 
 msgid "Sub-settore"
-msgstr ""
+msgstr "Untersektor"
 
 #. /data/sites/ecogis/templates/admin/action_catalog_edit.tpl
 #. /data/sites/ecogis/templates/admin/simulation_catalog_edit.tpl
@@ -6850,138 +6850,139 @@ msgstr ""
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:2762
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:2987
 msgid "Beneficio"
-msgstr ""
+msgstr "Vorteil"
 
 #. /data/sites/ecogis/templates/admin/action_catalog_list.tpl
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:305
 msgid "Codice/Nome"
-msgstr ""
+msgstr "Code - Name"
 
 msgid "Logo stampa (IT)"
-msgstr ""
+msgstr "Logo Druck (IT)"
 
 #. /data/sites/ecogis/templates/admin/customer_edit.tpl
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:1214
 msgid "Stile applicativo"
-msgstr ""
+msgstr "Applikationsstil"
 
 #. /data/sites/ecogis/templates/admin/customer_edit.tpl
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:1217
 msgid "Stile mappa"
-msgstr ""
+msgstr "Kartenstil"
 
 #. /data/sites/ecogis/templates/admin/simulation_catalog_edit.tpl
 #. /data/sites/ecogis/templates/admin/simulation_selected_edit.tpl
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:2768
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:2993
 msgid "Risparmio energetico [MWh/a]"
-msgstr ""
+msgstr "Energieersparnis [MWh/J]"
 
 #. /data/sites/ecogis/templates/admin/simulation_catalog_edit.tpl
 #. /data/sites/ecogis/templates/admin/simulation_selected_edit.tpl
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:2771
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:2996
 msgid "Produzione di energia [MWh/a]"
-msgstr ""
+msgstr "Energieproduktion [MWh/J]"
 
 msgid "Riduzione di CO2 prevista [t/a]"
-msgstr ""
+msgstr "Vorgesehene Senkung CO2 [T/J]"
 
 #. /data/sites/ecogis/templates/admin/simulation_catalog_edit.tpl
 #. /data/sites/ecogis/templates/admin/simulation_selected_edit.tpl
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:2780
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:3005
 msgid "Efficacia azione [%]"
-msgstr ""
+msgstr "Wirksamkeit der Aktion [%]"
 
 #. /data/sites/ecogis/templates/admin/simulation_edit.tpl
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:2906
 msgid "Azioni da selezionare"
-msgstr ""
+msgstr "Aktionen zum auswählen"
 
 #. /data/sites/ecogis/templates/admin/simulation_edit.tpl
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:2909
 msgid "Azioni selezionate"
-msgstr ""
+msgstr "Ausgewählte Aktionen"
 
 #. /data/sites/ecogis/templates/admin/simulation_edit.tpl
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:2912
 msgid "Riepilogo"
-msgstr ""
+msgstr "Zusammenfassung"
 
 msgid "Descrizione (2)"
-msgstr ""
+msgstr "Beschreibung (2)"
 
 msgid "Extra data"
-msgstr ""
+msgstr "Extra Daten"
 
 msgid "Azione principale"
-msgstr ""
+msgstr "Hauptaktion"
 
 msgid "Attuazione - dal"
-msgstr ""
+msgstr "Verwirklichung - vom"
 
 msgid "Attuazione - al"
-msgstr ""
+msgstr "Verwirklichung - zum"
 
 msgid "Beneficio - dal"
-msgstr ""
+msgstr "Vorteil - vom"
 
 msgid "Beneficio - al"
-msgstr ""
+msgstr "Vorteil - zum"
 
 msgid "Nuovo catalogo azioni"
-msgstr ""
+msgstr "Neuer Aktionskatalog"
 
 msgid "Modifica catalogo azioni"
-msgstr ""
+msgstr "Aktionskatalog ändern"
 
 msgid "Visualizza catalogo azioni"
-msgstr ""
+msgstr "Aktionskatalog anzeigen"
 
 #: /data/sites/ecogis/web/admin/menu.php:120
 msgid "Catalogo azioni"
-msgstr ""
+msgstr "Aktionskatalog "
 
 #. /data/sites/ecogis/templates/admin/action_catalog_list.tpl
 #: /data/sites/ecogis/tmp/tpl-gettext-application.c:308
 msgid "Categoria PAES"
-msgstr ""
+msgstr "APNE Kategorie"
 
 msgid "Costo [€]"
-msgstr ""
+msgstr "Kosten [€]"
 
 msgid "Risparmio energetico [MWh]"
-msgstr ""
+msgstr "Energieersparnis [MWh]"
 
 msgid "Produzione energetica [MWh]"
-msgstr ""
+msgstr "Energieproduktion [MWh]"
 
 msgid "Riduzione CO2 [t/a]"
-msgstr ""
+msgstr "CO2 Senkung [T/J]"
 
 msgid "Il campo \"Macro-settore\" è obbligatorio"
-msgstr ""
+msgstr "Das Feld \"Makro-Sektor\" ist ein Pflichtfeld\\"
 
 msgid "Sei sicuro di voler cancellare la voce \"%s\" dal catalogo azioni?"
 msgstr ""
+"Sind Sie sicher, dass Sie die Aktion \"%s\" aus dem Katalog löschen wollen? "
 
 msgid ""
 "Impossibile cancellare questa voce dal catalogo azioni poichè vi sono dei "
 "dati ad esso legati"
-msgstr ""
+msgstr "Die Aktion kann nicht gelöscht werden, da zu Ihr Daten gespeichet sind"
 
 msgid "Riduzione di CO2 prevista[t/a]"
-msgstr ""
+msgstr "Vorgesehene CO2 Senkung [T/J]"
 
 msgid "Risparmio energetico"
-msgstr ""
+msgstr "Energieersparnis"
 
 msgid "Produzione di energia"
-msgstr ""
+msgstr "Energieproduktion"
 
 msgid "Riduzione di CO2 prevista"
-msgstr ""
+msgstr "Vorgesehene CO2 Senkung"
 
 msgid "Espansa"
 msgstr ""
@@ -6990,7 +6991,7 @@ msgid "Raggruppata"
 msgstr ""
 
 msgid "Caricamento in corso. Attendere.."
-msgstr ""
+msgstr "Ladevorgang läuft. Bitte warten..."
 
 msgid "Dati aggiuntivi settore piano azione"
 msgstr ""
