@@ -83,7 +83,8 @@ class R3BaseTableConfig {
             $toSave[$key]['visible'] = isset($config[$key]['visible']);
         }
         $toSave = $this->sortConfig($toSave);
-        $this->auth->setConfigValue($this->options['section'], sprintf($this->options['param_mask'], strtoupper($table)), $toSave, array('persistent' => true, 'type' => 'array', 'description' => _("List-table settings for {$table}")));
+        $toSaveSerialyzed = serialize($toSave);
+        $this->auth->setConfigValue($this->options['section'], sprintf($this->options['param_mask'], strtoupper($table)), $toSaveSerialyzed, array('persistent' => true, 'type' => 'array', 'description' => _("List-table settings for {$table}")));
     }
 
     public function resetConfig($table) {
