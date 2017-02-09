@@ -72,7 +72,7 @@
                         {/if}
                     </div>
                 {else}
-                    <input type="hidden" id="mu_id" name="mu_id" value="{$flt.mu_values|@key}">
+                    <input type="hidden" id="mu_id" name="mu_id" value="{$flt.mu_values.data|@key}">
                 {/if}
                 <div>
                     <span>{t}Codice/Nome{/t}:</span>

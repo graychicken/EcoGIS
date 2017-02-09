@@ -10,8 +10,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 use ezcDbFactory;
 use ezcDbInstance;
 
-$autoinit = false;
-require_once __DIR__.'/../../../etc/config.php';
 require_once R3_LIB_DIR.'r3dbini.php';
 require_once R3_LIB_DIR.'r3auth.php';
 require_once R3_LIB_DIR.'r3auth_manager.php';
@@ -22,14 +20,8 @@ require_once R3_LIB_DIR.'global_result_table_helper.php';
 require_once R3_CLASS_DIR.'obj.global_plain_table.php';
 require_once R3_CLASS_DIR.'obj.global_strategy.php';
 
-ExportSeapCommand::setDsn($dsn);
-ExportSeapCommand::setAuthOptions($auth_options);
-ExportSeapCommand::setLanguageSettings($languages, $jQueryDateFormat, $phpDateFormat, $phpDateTimeFormat);
-
-class ExportSeapCommand extends Command
+class ExportSeapCommand extends EcoGenericCommand
 {
-    static $dsn;
-    static $authOptions;
 
     protected function configure()
     {
@@ -42,61 +34,14 @@ class ExportSeapCommand extends Command
             ->addOption('user', null, InputOption::VALUE_REQUIRED, 'User login')
             ->addOption('lang', null, InputOption::VALUE_REQUIRED, 'Language code')
             ->addOption('output', null, InputOption::VALUE_REQUIRED, 'The full output file name')
-            ;
-    }
-
-    public static function setDsn($dsn)
-    {
-        self::$dsn = $dsn;
-    }
-
-    public static function setAuthOptions($authOptions)
-    {
-        self::$authOptions = $authOptions;
-    }
-
-    public function setLanguageSettings($languages, $jQueryDateFormat, $phpDateFormat, $phpDateTimeFormat) {
-        \R3Locale::setLanguages($languages);
-        \R3Locale::setJqueryDateFormat($jQueryDateFormat);
-        \R3Locale::setPhpDateFormat($phpDateFormat);
-        \R3Locale::setPhpDateTimeFormat($phpDateTimeFormat);
-    }
-
-    protected function dbConnect()
-    {
-        $txtDsn = self::$dsn['dbtype'].'://'.self::$dsn['dbuser'].':'.self::$dsn['dbpass'].'@'.self::$dsn['dbhost'].'/'.self::$dsn['dbname'];
-        try {
-            $db = ezcDbFactory::create($txtDsn);
-            $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            if (isset($dsn['charset'])) {
-                $db->exec("SET client_encoding TO '{$dsn['charset']}'");
-            }
-            if (isset($dsn['search_path'])) {
-                $db->exec("SET search_path TO {$dsn['search_path']}, public");
-            }
-            $db->exec("SET datestyle TO ISO");
-            ezcDbInstance::set($db);
-        } catch (\PDOException $e) {
-            throw new \Exception("Error connecting to database {$dsn['dbname']} on  {$dsn['dbhost']} as  {$dsn['dbuser']}: {$e->getMessage()}");
-        }
-    }
-
-    protected function authLogin($user, $domain) {
-        $db = ezcDbInstance::get();
-        $auth = new \R3AuthManager($db, self::$authOptions, APPLICATION_CODE);
-        $somain = strtoupper($domain);
-        $isAuth = $auth->performTrustLoginAsUser($user, $domain);
-        if (!$isAuth) {
-            throw new \Exception("Trust authentication error for user {$user}@{$domain} ");
-        }
-
-        $auth = \R3AuthInstance::set($auth);
+        ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         error_reporting(E_ALL);
         $this->dbConnect();
+        $this->setLangOptions();
         $this->authLogin($input->getOption('user'), $input->getOption('domain'));
         $db = ezcDbInstance::get();
         $auth = \R3AuthInstance::get();
@@ -139,28 +84,33 @@ class ExportSeapCommand extends Command
 
         // SHEET 1: General data
         $logger->log(LOG_INFO, 'Preparing general data');
-        $globalStrategyData['general']['gst_reduction_target_text'] = $globalStrategyData['general']['gst_reduction_target_absolute'] ? _('Riduzione assoluta') : _('Riduzione "pro capite"');
-        $budgetEuro = $globalStrategyData['general']['gst_budget'] == '' ? '' : '€' . R3NumberFormat($globalStrategyData['general']['gst_budget'], 2, true);
+        $globalStrategyData['general']['gst_reduction_target_text'] = $globalStrategyData['general']['gst_reduction_target_absolute']
+                ? _('Riduzione assoluta') : _('Riduzione "pro capite"');
+        $budgetEuro = $globalStrategyData['general']['gst_budget'] == '' ? '' : '€'.R3NumberFormat($globalStrategyData['general']['gst_budget'],
+                2, true);
         if ($globalStrategyData['general']['gst_budget_text_1'] <> '' && $globalStrategyData['general']['gst_budget'] <> '') {
-            $globalStrategyData['general']['gst_budget_text_1'] = sprintf('%s - %s', $budgetEuro, $globalStrategyData['general']['gst_budget_text_1']);
+            $globalStrategyData['general']['gst_budget_text_1'] = sprintf('%s - %s', $budgetEuro,
+                $globalStrategyData['general']['gst_budget_text_1']);
         } else {
-            $globalStrategyData['general']['gst_budget_text_1'] = $budgetEuro . $globalStrategyData['general']['gst_budget_text_1'];
+            $globalStrategyData['general']['gst_budget_text_1'] = $budgetEuro.$globalStrategyData['general']['gst_budget_text_1'];
         }
         if ($globalStrategyData['general']['gst_budget_text_2'] <> '' && $globalStrategyData['general']['gst_budget'] <> '') {
-            $globalStrategyData['general']['gst_budget_text_2'] = sprintf('%s - %s', $budgetEuro, $globalStrategyData['general']['gst_budget_text_2']);
+            $globalStrategyData['general']['gst_budget_text_2'] = sprintf('%s - %s', $budgetEuro,
+                $globalStrategyData['general']['gst_budget_text_2']);
         } else {
-            $globalStrategyData['general']['gst_budget_text_2'] = $budgetEuro . $globalStrategyData['general']['gst_budget_text_2'];
+            $globalStrategyData['general']['gst_budget_text_2'] = $budgetEuro.$globalStrategyData['general']['gst_budget_text_2'];
         }
 
         // SHEET 4: Global plain data
         $logger->log(LOG_INFO, "Get data for \"Global plain\"");
-        $gpId = (int)$globalStrategyData['general']['gp_id'];
+        $gpId = (int) $globalStrategyData['general']['gp_id'];
         $sql = "SELECT *
                 FROM ecogis.global_plain_data
                 WHERE gp_id={$gpId}";
         $actionPlanData['general'] = $db->query($sql)->fetch(\PDO::FETCH_ASSOC);
         if (isset($actionPlanData['general']['gp_approval_date'])) {
-            $actionPlanData['general']['gp_approval_date'] = ' ' . SQLDateToStr($actionPlanData['general']['gp_approval_date'], 'd/m/Y');
+            $actionPlanData['general']['gp_approval_date'] = ' '.SQLDateToStr($actionPlanData['general']['gp_approval_date'],
+                    'd/m/Y');
         }
 
 
@@ -170,17 +120,21 @@ class ExportSeapCommand extends Command
         $emissionInventoryData = array();
         for ($i = 1; $i <= 2; $i++) {
             $logger->log(LOG_INFO, "Get data for \"Emission inventory #{$i}\"");
-            $geId = $i == 1 ? (int)$globalStrategyData['general']['ge_id'] : (int)$globalStrategyData['general']['ge_id_2'];
+            $geId = $i == 1 ? (int) $globalStrategyData['general']['ge_id'] : (int) $globalStrategyData['general']['ge_id_2'];
             if ($geId > 0) {
                 $sql = "SELECT *, ge_green_electricity_purchase/1000 AS ge_green_electricity_purchase
                         FROM ecogis.global_entry_data
                         WHERE ge_id={$geId}";
                 $emissionInventoryData[$i]['general'] = $db->query($sql)->fetch(\PDO::FETCH_ASSOC);
-                $emissionInventoryData[$i]['general']['gst_emission_factor_text'] = $globalStrategyData['general']['gst_emission_factor_type_ipcc'] ? _('Fattori di emissione standard in linea con i principi IPCC') : _('Fattori LCA (valutazione del ciclo di vita)');
-                $emissionInventoryData[$i]['general']['gst_emission_unit_text'] = $globalStrategyData['general']['gst_emission_unit_co2'] ? _('Emissioni di CO2') : _('Emissioni equivalenti di CO2');
+                $emissionInventoryData[$i]['general']['gst_emission_factor_text'] = $globalStrategyData['general']['gst_emission_factor_type_ipcc']
+                        ? _('Fattori di emissione standard in linea con i principi IPCC') : _('Fattori LCA (valutazione del ciclo di vita)');
+                $emissionInventoryData[$i]['general']['gst_emission_unit_text'] = $globalStrategyData['general']['gst_emission_unit_co2']
+                        ? _('Emissioni di CO2') : _('Emissioni equivalenti di CO2');
                 foreach ($inventoryTableKinds as $kind) {
-                    $emissionInventoryData[$i][$kind]['header'] = \R3EcoGisGlobalTableHelper::getParameterList($kind, array('show_udm' => true));
-                    $emissionInventoryData[$i][$kind]['rows'] = \R3EcoGisGlobalTableHelper::getCategoriesData($geId, $kind, $udmDivider);
+                    $emissionInventoryData[$i][$kind]['header'] = \R3EcoGisGlobalTableHelper::getParameterList($kind,
+                            array('show_udm' => true));
+                    $emissionInventoryData[$i][$kind]['rows'] = \R3EcoGisGlobalTableHelper::getCategoriesData($geId,
+                            $kind, $udmDivider);
                 }
             }
         }
@@ -195,11 +149,12 @@ class ExportSeapCommand extends Command
         // Add global plain data (if present)
         if ($globalStrategyData['general']['gp_id'] <> '') {
             $logger->log(LOG_INFO, 'Get data for \"General strategy\"');
-            $opt['GLOBAL_PLAN'] = \R3EcoGisGlobalPlainTableHelper::getData($auth->getDomainID(), $globalStrategyData['general']['gp_id']);
+            $opt['GLOBAL_PLAN'] = \R3EcoGisGlobalPlainTableHelper::getData($auth->getDomainID(),
+                    $globalStrategyData['general']['gp_id']);
         }
         // Add metadata
         $opt['METADATA'] = array('creator' => $auth->getUserName(),
-            'title' => _('TEMPLATE') . ' - ' . _('POWER BY R3-EcoGIS 2')
+            'title' => _('TEMPLATE').' - '._('POWER BY R3-EcoGIS 2')
         );
         // Rename sheet names
         $opt['SHEET-NAME'] = array('GENERAL' => _('Strategia generale'),
@@ -208,12 +163,12 @@ class ExportSeapCommand extends Command
             'ACTION_PLAN' => _("Piano d'azione SEAP")
         );
 
-        $ext = '.' . (isset($driverInfo[$lang]['output_format']) ? $driverInfo[$lang]['output_format'] : 'xlsx');
+        $ext = '.'.(isset($driverInfo[$lang]['output_format']) ? $driverInfo[$lang]['output_format'] : 'xlsx');
         $opt['GENERAL'] = $globalStrategyData;
         $opt['ACTION_PLAN'] = $actionPlanData;
         $opt['logger'] = $logger;
 
-        $exportDriver->export($fileName, R3_SMARTY_TEMPLATE_DIR_DOC . $driverInfo[$lang]['template'], $opt);
+        $exportDriver->export($fileName, R3_SMARTY_TEMPLATE_DIR_DOC.$driverInfo[$lang]['template'], $opt);
 
         fclose($fp);
         if (!unlink($lockFileName)) {

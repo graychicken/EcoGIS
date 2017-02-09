@@ -1,17 +1,26 @@
 <?php
 
-//require_once 'MDB2.php';
-//require_once 'r3mdb2.php';
-if (defined('R3_LIB_DIR'))
+/**
+ * The R3ImportUtils class provides methods for handling a catalog
+ * of temporary tables
+ *
+ * @category   Import and Export of data
+ * @package    R3ImpExp
+ * @author     Sergio Segala <sergio.segala@r3-gis.com>
+ * @copyright  R3 GIS s.r.l.
+ * @link       http://www.r3-gis.com
+ */
+if (defined('R3_LIB_DIR')) {
     require_once R3_LIB_DIR . 'r3dbcatalog.php';
-else
+} else {
     require_once 'r3dbcatalog.php';
+}
 
 
 /**
  * The import system table name
  */
-define('R3IMPORT_UTILS_VERSION', '0.2');
+define('R3IMPORT_UTILS_VERSION', '0.3');
 
 /**
  * The import system table name
@@ -33,7 +42,27 @@ define('MAX_TABLE_LENGHT', 63 - 8);
  */
 define('IMPORT_DEFAULT_LIFETIME', 3 * 24 * 60 * 60);
 
-class R3ImportUtils {
+/**
+ * R3ImportUtils collects a set of methods to handle tables
+ * that are of temporary use, typically used during import of data
+ * from external sources.
+ * typical initilization is:
+ * <code>
+ * <?php
+ *  $impUtils = new R3ImportUtils($db, array('schema'=> 'import'));
+ *  $impUtils->createImportSystemTable(); // necessary only the first time, it creates a table with a catalog of all temporary tables
+ *  $impUtils->dropTemporaryTableBySessionID(session_id());
+ *  $impUtils->cleanTemporaryTables(3600); // ttl in seconds
+ *  $tmpTableName = $impUtils->getSchema() . '.' . $impUtils->createTemporaryTableEntry('my_temp_table', 'my_temp_table', session_id());
+ *  // create your table like 'CREATE TABLE $tmpTableName' ...
+ *  // after finishing drop it and delete it from catalog with the following
+ *  $impUtils->dropTemporaryTable($tmpTableName);
+ * ?>
+ * </code>
+ *
+ */
+class R3ImportUtils
+{
 
     /**
      * Class options (?)
@@ -42,10 +71,15 @@ class R3ImportUtils {
     protected $options = null;
 
     /**
-     * MDB2 database link
+     * PDO database link
      * @private resource
      */
     private $db = null;
+
+    /**
+     * R3DbCatalog
+     * @private resource
+     */
     private $dbUtils;
 
     /**
@@ -53,19 +87,19 @@ class R3ImportUtils {
      *
      * Create the class
      *
-     * @param mixed     MDB2 class
+     * @param PDO       database
      * @param array     options (?)
      * @return void
      */
-    public function __construct(MDB2_Driver_Common $db, $options = array()) {
-
-        $defaultOptions = array('schema' => 'public',
-            'dbtype' => 'pgsql');
+    public function __construct(PDO $db, $options = array())
+    {
+        $defaultOptions = array(
+            'schema' => 'public',
+        );
         $this->options = array_merge($defaultOptions, $options);
-        $this->dbUtils = R3DbCatalog::factory($this->options['dbtype'], $db, $this->options);
+        $this->dbUtils = R3DbCatalog::factory($db, $this->options);
 
         $this->db = $db;
-        $this->db->loadModule('Extended');
     }
 
     /**
@@ -73,8 +107,8 @@ class R3ImportUtils {
      *
      * @access public
      */
-    public function getVersionString() {
-
+    public function getVersionString()
+    {
         return R3IMPORT_UTILS_VERSION;
     }
 
@@ -86,9 +120,9 @@ class R3ImportUtils {
      * @param integer   the version of the table
      * @return string   the name of the temporary table
      */
-    public function createImportSystemTable() {
-
-        if (!$this->dbUtils->tableExists(IMPORT_SYSTEM_TABLE_NAME)) {
+    public function createImportSystemTable()
+    {
+        if (!$this->dbUtils->tableExists(IMPORT_SYSTEM_TABLE_NAME, $this->options['schema'])) {
             $sql = sprintf("CREATE TABLE %s.%s (\n" .
                     "  it_table VARCHAR(63) NOT NULL, \n" .
                     "  it_session VARCHAR(63), \n" .
@@ -97,13 +131,13 @@ class R3ImportUtils {
                     "  it_date  TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP NOT NULL, \n" .
                     "  CONSTRAINT %s_it_table_key PRIMARY KEY(it_table), \n" .
                     "  CONSTRAINT %s_version_chk CHECK (it_version > 0))\n", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME, IMPORT_SYSTEM_TABLE_NAME, IMPORT_SYSTEM_TABLE_NAME);
+            //$this->log($sql);
             $res = $this->db->query($sql);
-            checkDBError($res, __LINE__);
+
             $sql = $this->dbUtils->createindexDDL($this->options['schema'], IMPORT_SYSTEM_TABLE_NAME, array('it_session', 'it_name', 'it_version'), array('unique' => 1)
             );
 
             $res = $this->db->query($sql);
-            checkDBError($res, __LINE__);
         }
         return false;
     }
@@ -114,15 +148,16 @@ class R3ImportUtils {
      * @param boolean    if true remove all the import table cascade
      * @return boolean   on successfull return true
      */
-    public function dropImportSystemTable($cascade) {
-
-        if ($this->dbUtils->tableExists(IMPORT_SYSTEM_TABLE_NAME)) {
+    public function dropImportSystemTable($cascade)
+    {
+        if ($this->dbUtils->tableExists(IMPORT_SYSTEM_TABLE_NAME, $this->options['schema'])) {
             if ($cascade) {
                 $this->cleanTemporaryTables(0);
             }
-            $sql = sprintf("DROP TABLE %s.%s", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME);
+            $sql = sprintf("DROP TABLE IF EXISTS %s.%s", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME);
+            // $this->log($sql);
             $res = $this->db->query($sql);
-            checkDBError($res, __LINE__);
+
             return true;
         }
         return false;
@@ -137,8 +172,10 @@ class R3ImportUtils {
      * @param integer   the version of the table.
      * @return string   the name of the temporary table
      */
-    public function createTemporaryTableEntry($name, $mask = null, $session = null, $version = 1) {
+    public function createTemporaryTableEntry($name, $mask = null, $session = null, $version = 1)
+    {
 
+        //CONVERTE CARATTERI NON VALIDI
         if (strlen($name) == 0) {
             throw new EDatabaseError("Missing name");
         }
@@ -155,7 +192,7 @@ class R3ImportUtils {
                 "  (it_table, it_session, it_name, it_version, it_date)\n" .
                 "  SELECT '$mask', '$session', '$name', COALESCE(MAX(it_version), 0) + 1, CURRENT_TIMESTAMP FROM %s.%s WHERE it_session='$session' AND it_name='$name'", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME, $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME);
         $res = $this->db->query($sql);
-        checkDBError($res, __LINE__);
+
         return $mask;
     }
 
@@ -168,8 +205,10 @@ class R3ImportUtils {
      * @param integer   the version of the table.
      * @return array    the name of the temporary tables
      */
-    public function createMultiTemporaryTableEntry(array $names, $mask = null, $session = null, $version = 1) {
+    public function createMultiTemporaryTableEntry(array $names, $mask = null, $session = null, $version = 1)
+    {
 
+        //CONVERTE CARATTERI NON VALIDI
         if (count($names) == 0) {
             throw new EDatabaseError("Missing name");
         }
@@ -187,8 +226,9 @@ class R3ImportUtils {
      * @param string    the table name
      * @return string   name of temporary table entry
      */
-    public function getCurrentTemporaryTablesBySessionID($session, $name) {
-        if ($this->dbUtils->tableExists(IMPORT_SYSTEM_TABLE_NAME)) {
+    public function getCurrentTemporaryTablesBySessionID($session, $name)
+    {
+        if ($this->dbUtils->tableExists(IMPORT_SYSTEM_TABLE_NAME, $this->options['schema'])) {
             $sql = sprintf("SELECT it_table from %s.%s \n" .
                     "WHERE 1=1", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME);
             if ($session !== null) {
@@ -200,26 +240,18 @@ class R3ImportUtils {
                 }
                 $sql .= " AND it_name=" . $this->db->quote(strtolower($name));
             }
-            if ($this->options['dbtype'] == 'oracle') {
+            if ($this->db->getAttribute(PDO::ATTR_DRIVER_NAME) == 'oci') {
                 $sql .= " AND ROWNUM <= 1";
             }
             $sql .= " ORDER BY it_version DESC";
-            if ($this->options['dbtype'] != 'oracle') {
+            if ($this->db->getAttribute(PDO::ATTR_DRIVER_NAME) != 'oci') {
                 $sql .= " LIMIT 1";
             }
-            $res = $this->db->query($sql);
-            checkDBError($res, __LINE__);
-            $row = $res->fetchRow(MDB2_FETCHMODE_ASSOC);
-            $res->free();
+            $row = $this->db->query($sql)->fetch(PDO::FETCH_ASSOC);
+
             return $row['it_table'];
         }
         return '';
-    }
-
-    public function dropTableEntry($schema, $table) {
-        $delete_sql = sprintf("DELETE FROM %s.%s WHERE it_table='%s'", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME, $table);
-        $delRes = $this->db->query($delete_sql);
-        checkDBError($delRes, __LINE__);
     }
 
     /**
@@ -228,37 +260,36 @@ class R3ImportUtils {
      * @param string    the real table name (returned with createTemporaryTable)
      * @return boolean  return true on success
      */
-    public function dropTemporaryTable($realname) {
+    public function dropTemporaryTable($realname)
+    {
         if (strpos($realname, '.') === false) {
             $schema = $this->options['schema'];
         } else {
             list($schema, $realname) = explode('.', $realname);
-            if ($schema != $this->options['schema'])
+            if ($schema != $this->options['schema']) {
                 throw new Exception('Invalid schema');
+            }
         }
 
-        if (!$this->dbUtils->tableExists($realname)) {
-            return false;
+        if ($this->dbUtils->tableExists($realname, $schema)) {
+            $drop_sql = sprintf("DROP TABLE IF EXISTS %s.%s", $this->options['schema'], $realname);
+            $this->db->query($drop_sql);
         }
 
-        $this->dropTableEntry($this->options['schema'], $realname);
-
-        $drop_sql = sprintf("DROP TABLE %s.%s", $this->options['schema'], $realname);
-        $res = $this->db->query($drop_sql);
-        checkDBError($res, __LINE__);
+        $delete_sql = sprintf("DELETE FROM %s.%s WHERE it_table='%s'", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME, $realname);
+        $this->db->query($delete_sql);
 
         if ($this->dbUtils->tableExists('geometry_columns', 'public')) {
             $sql = sprintf("DELETE FROM public.geometry_columns WHERE f_table_schema=" . $this->db->quote($this->options['schema']) . " AND f_table_name=" . $this->db->quote($realname));
             $this->db->exec($sql);
         }
 
-        if (!$this->dbUtils->tableExists($realname)) {
+        if (!$this->dbUtils->tableExists($realname, $schema)) {
             return false;
         }
 
-        $drop_sql = sprintf("DROP TABLE %s.%s", $this->options['schema'], $realname);
-        $res = $this->db->query($drop_sql);
-        checkDBError($res, __LINE__);
+        $drop_sql = sprintf("DROP TABLE IF EXISTS %s.%s", $this->options['schema'], $realname);
+        $this->db->query($drop_sql);
 
         return true;
     }
@@ -272,7 +303,8 @@ class R3ImportUtils {
      *
      * @return array with temporary table names
      */
-    public function getTemporaryTableByName($name, $session = null, $version = null) {
+    public function getTemporaryTableByName($name, $session = null, $version = null)
+    {
         $result = array();
 
         $sql = sprintf("SELECT it_table from %s.%s \n" .
@@ -284,22 +316,38 @@ class R3ImportUtils {
             $sql .= " AND trim(it_session)=" . $this->db->quote($session);
         }
         if ($version !== null) {
-            $sql .= " AND it_version=" . $this->db->quote($version, 'integer');
+            $sql .= " AND it_version=" . $this->db->quote($version, PDO::PARAM_INT);
         }
-        if ($name !== null) {
-            $p = strpos($name, '.');
-            if ($p !== false) {
-                $name = substr($name, $p + 1);
-            }
-            $sql .= " AND trim(it_name)=" . $this->db->quote(strtolower($name));
-        }
+        $sql .= " ORDER BY it_version ";
         $res = $this->db->query($sql);
-        checkDBError($res, __LINE__);
-        while ($row = $res->fetchRow(MDB2_FETCHMODE_ASSOC)) {
+        while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
             $result[] = $row['it_table'];
         }
-        $res->free();
+//        print_r($result);
+//        $res = $this->db->query("SELECT it_table, it_name, it_session  FROM ".IMPORT_SYSTEM_TABLE_NAME);
+//        print_r($res->fetchAll());
         return $result;
+    }
+    
+    /**
+     * Get current version from temporary table, matching the name and session
+     *
+     * @param string $name
+     * @param string $session
+     *
+     * @return integer version-number
+     */
+    public function getCurrentVersionFromTemporaryTableByName($name, $session = null)
+    {
+        $sql = sprintf("SELECT MAX(it_version) from %s.%s \n" .
+                "WHERE 1=1", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME);
+        if ($name !== null) {
+            $sql .= " AND trim(it_name)=" . $this->db->quote(strtolower($name));
+        }
+        if ($session !== null) {
+            $sql .= " AND trim(it_session)=" . $this->db->quote($session);
+        }
+        return $this->db->query($sql)->fetchColumn(0);
     }
 
     /**
@@ -311,9 +359,10 @@ class R3ImportUtils {
      * @param integer   the table version
      * @return array    return list of the table removed
      */
-    private function dropTemporaryTableBy($name, $session = null, $version = null) {
+    private function dropTemporaryTableBy($name, $session = null, $version = null)
+    {
         $tempTables = array();
-        if ($this->dbUtils->tableExists(IMPORT_SYSTEM_TABLE_NAME)) {
+        if ($this->dbUtils->tableExists(IMPORT_SYSTEM_TABLE_NAME, $this->options['schema'])) {
             $tempTables = $this->getTemporaryTableByName($name, $session, $version);
             foreach ($tempTables as $tempTable) {
                 $this->dropTemporaryTable($tempTable);
@@ -330,7 +379,8 @@ class R3ImportUtils {
      * @param integer   the table version. If not provided all tables of all versions are removed
      * @return array    return list of the table removed
      */
-    public function dropTemporaryTableByName($name, $session = null, $version = null) {
+    public function dropTemporaryTableByName($name, $session = null, $version = null)
+    {
         return $this->dropTemporaryTableBy($name, $session, $version);
     }
 
@@ -342,28 +392,31 @@ class R3ImportUtils {
      * @param integer   the table version. If not provided all tables of all versions are removed
      * @return array    return list of the table removed
      */
-    public function dropTemporaryTableBySessionID($session, $name = null, $version = null) {
+    public function dropTemporaryTableBySessionID($session, $name = null, $version = null)
+    {
         return $this->dropTemporaryTableBy($name, $session, $version);
     }
 
-    public function getTemporaryTablesByAge($seconds) {
+    public function getTemporaryTablesByAge($seconds)
+    {
         $tables = array();
-        if ($this->options['dbtype'] == 'pgsql') {
-            $sql = sprintf("SELECT it_table from %s.%s \n" .
-                    "WHERE it_date + INTERVAL '%s seconds' < CURRENT_TIMESTAMP FOR UPDATE", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME, $seconds);
-        } else if ($this->options['dbtype'] == 'oracle') {
-            $sql = sprintf("SELECT it_table from %s.%s \n" .
-                    "WHERE it_date + INTERVAL '%s' SECOND < CURRENT_TIMESTAMP", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME, $seconds);
-        } else {
-            throw new Exception("database {$this->options['dbtype']} not supported");
+        
+        switch ($this->db->getAttribute(PDO::ATTR_DRIVER_NAME)) {
+            case 'pgsql':
+                $sql = sprintf("SELECT it_table from %s.%s \n" .
+                        "WHERE it_date + INTERVAL '%s seconds' < CURRENT_TIMESTAMP FOR UPDATE", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME, $seconds);
+                break;
+            case 'oci':
+                $sql = sprintf("SELECT it_table from %s.%s \n" .
+                        "WHERE it_date + INTERVAL '%s' SECOND < CURRENT_TIMESTAMP", $this->options['schema'], IMPORT_SYSTEM_TABLE_NAME, $seconds);
+                break;
+            default:
+                throw new Exception(sprintf("database driver %s not supported", $this->db->getAttribute(PDO::ATTR_DRIVER_NAME)));
         }
-
         $res = $this->db->query($sql);
-        checkDBError($res, __LINE__);
-        while ($row = $res->fetchRow(MDB2_FETCHMODE_ASSOC)) {
+        while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
             $tables[] = $row['it_table'];
         }
-        $res->free();
         return $tables;
     }
 
@@ -373,7 +426,8 @@ class R3ImportUtils {
      * @param integer   the maximum life time of the temporary table
      * @return array    return list of the table removed
      */
-    public function cleanTemporaryTables($time = IMPORT_DEFAULT_LIFETIME) {
+    public function cleanTemporaryTables($time = IMPORT_DEFAULT_LIFETIME)
+    {
         $tables = $this->getTemporaryTablesByAge($time);
 
         foreach ($tables as $table) {
@@ -387,112 +441,26 @@ class R3ImportUtils {
      *
      * @return string
      */
-    public function getSchema() {
-
+    public function getSchema()
+    {
         return $this->options['schema'];
     }
-
+    
     /**
      * Return true if the postgresql-server supports unlogged table feature
      * 
      * @return boolean
      */
-    public function supportUnloggedTables() {
+    public function supportUnloggedTables()
+    {
         $sql = "SELECT version() ";
-
-        $versionString = & $this->db->queryOne($sql);
-        $this->checkDBError($versionString, __LINE__);
+        $versionString = $this->db->query($sql)->fetchColumn(0);
         if (preg_match("/^PostgreSQL (\d+)\.(\d+)\.(\d+)/", $versionString, $matches)) {
             if ($matches[1] > 9 || ($matches[1] == 9 && $matches[2] >= 1)) {
                 return true;
             }
         }
-
+        
         return false;
     }
-
-}
-
-class R3ArchiveHelper {
-
-    private $db;
-    private $tmpdir;
-    private $opt = array('file_re' => '/^(.*)\.(shp|shx|dbf)$/i');
-
-    public function __construct($mdb2, $opt = array()) {
-        $this->db = $mdb2;
-        $this->opt = array_merge($this->opt, $opt);
-    }
-
-    public function importArchive($archive, $tmp = null) {
-        // TODO: make a DI of this
-        $zip = new ZipArchive();
-        $zip->open($archive);
-        if (is_null($tmp)) {
-            if (defined('R3_TMP_DIR')) {
-                $tmp = R3_TMP_DIR;
-            } else {
-                $tmp = sys_get_temp_dir();
-            }
-        }
-        $this->tmpdir = tempnam($tmp, 'shape_');
-        if ($this->tmpdir === FALSE) {
-            throw new Exception("Could not create temp file");
-        }
-        unlink($this->tmpdir);
-        $rv = mkdir($this->tmpdir);
-        if ($rv === FALSE) {
-            throw new Exception("Could not create temp dir");
-        }
-        $zip->extractTo($this->tmpdir);
-        $zip->close();
-        return $this->tmpdir;
-    }
-
-    public function prepareArchive() {
-        $files = array();
-        $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($this->tmpdir));
-        foreach ($iterator as $fileInfo) {
-            $fname = $fileInfo->getFilename();
-            // /^(\d{2,4}C[SP]000)\.(shp|shx|dbf)$/i
-            if (preg_match($this->opt['file_re'], $fname, $fparts)) {
-                $layer = strtolower($fparts[1]);
-                $ext = strtolower($fparts[2]);
-                if (array_key_exists($layer, $files)) {
-                    if (in_array($ext, $files[$layer]['files'])) {
-                        throw new Exception(sprintf(_("Layer %s non univoco"), $layer));
-                    } else {
-                        $files[$layer]['files'][] = $ext;
-                    }
-                } else {
-                    $files[$layer] = array('name' => $fparts[1], 'files' => array($fparts[2]));
-                }
-                rename($fileInfo->getPathname(), $this->tmpdir . '/' . strtolower($fileInfo->getFilename()));
-            } else {
-                unlink($fileInfo->getPathname());
-            }
-        }
-        $required_files = array('shp', 'shx', 'dbf');
-        foreach ($files as $layer => $layer_files) {
-            foreach ($required_files as $req_ext) {
-                if (!in_array($req_ext, $layer_files['files'])) {
-                    throw new Exception(sprintf(_("Manca il file con estensione [%s] nel layer[%s]"), $req_ext, $layer));
-                }
-            }
-        }
-        return $files;
-    }
-
-    public function removeArchive() {
-        if (!empty($this->tmpdir)) {
-            $cmd = "rm -rf " . escapeshellarg($this->tmpdir);
-            system($cmd, $rv);
-            if ($rv !== 0) {
-                throw new Exception("Could not remove tmp dir");
-            }
-        } else {
-            throw new Exception("tmp dirname is empty");
-        }
-    }
-
 }

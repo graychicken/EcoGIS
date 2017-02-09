@@ -571,7 +571,7 @@
                                     <tr class="building_yearly_usage_data">
                                         <th><label for="bu_hour_year_use" class="help">{t}Ore anno uso{/t}:</label></th>
                                         <td colspan="2">
-                                            <input type="text" name="bu_hour_year_use" id="bu_hour_year_use" class="integer input_readonly" value="{$vlu.bu_hour_year_use}" style="width: 80px;" readonly tabindex="9999999999" />
+                                            <input type="text" name="bu_hour_year_use" id="bu_hour_year_use" class="input_readonly" value="{$vlu.bu_hour_year_use}" style="width: 80px;" readonly tabindex="9999999999" />
                                             {t}h/anno{/t}
                                         </td>
                                         <th><label for="bu_persons" class="help">{t}Occupanti edificio{/t}:</label></th>

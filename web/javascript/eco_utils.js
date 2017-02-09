@@ -162,6 +162,11 @@ function performPAESEnergySourceCalc(container) {
     });
 }
 
+function showExportDlg() {
+    var url = 'edit.php?on=building_export_dlg&act=show&';
+    openR3Dialog(url, txtExport, 300, 180);
+}
+
 // get cookie/html5 storage
 function getPersistentValue(key) {
     return null;

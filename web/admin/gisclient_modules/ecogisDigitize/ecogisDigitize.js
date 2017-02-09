@@ -377,7 +377,7 @@
             
             if(typeof(attributes.id) == 'undefined') attributes.id = '';
             
-            var html = '<tr data-role="row_'+id+'"><td style="display:none;">'+attributes.type+'</td><td>'+attributes.id+'</td><td><a href="#" data-role="highlight" rel="'+id+'" class="highlight"><span>'+OpenLayers.i18n('Highlight')+'</span></a><a href="#" data-role="elimina_feature" rel="'+id+'" class="del"><span>'+OpenLayers.i18n('Delete')+'</span></a></td></tr>';
+            var html = '<tr data-role="row_'+id+'"><td style="display:none;">'+attributes.type+'</td><td>'+attributes.id+'</td><td><a href="#" data-role="highlight" rel="'+id+'" class="highlight" title="'+OpenLayers.i18n('Highlight')+'"><span> </span></a><a href="#" data-role="elimina_feature" rel="'+id+'" class="del" title="'+OpenLayers.i18n('Delete')+'"><span> </span></a></td></tr>';
             //var html = '<tr data-role="row_'+id+'"><td style="display:none;">'+attributes.type+'</td><td>'+attributes.id+'</td><td><a href="#" data-role="highlight" rel="'+id+'"><img src="'+OpenLayers.ImgPath+'highlight.png" border="0"></a> <a href="#" data-role="elimina_feature" rel="'+id+'" class="del"><span>'+OpenLayers.i18n('Delete')+'</span></a></td></tr>';
             $('#gc_ecogis_select div.features > table').append(html);
         
