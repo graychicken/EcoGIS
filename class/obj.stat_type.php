@@ -401,9 +401,8 @@ class eco_stat_type extends R3AppBaseObject {
                 INNER JOIN ecogis.stat_data sd ON sd.sd_id=sdt.sd_id
                 INNER JOIN ecogis.stat_type st ON sd.st_id=st.st_id
                 INNER JOIN  ecogis.stat_context sc ON sdt.sc_id=sc.sc_id
-                WHERE st.do_id={$this->do_id} AND sd.st_id={$id} AND sc_code='MUNICIPALITY' AND gc_id IS NULL AND ges_id IS NULL AND sbpu_id IS NULL AND bby_id IS NULL";
+                WHERE st.do_id={$this->do_id} AND sd.st_id={$id} AND sc_code='BUILDING' AND gc_id IS NULL AND ges_id IS NULL AND sbpu_id IS NULL AND bby_id IS NULL";
         $data = $db->query($sql)->fetchAll(PDO::FETCH_COLUMN);
-
         $capabilities = $this->getStatisticCapabilitiesByCode($statData['st_code']);
         if ($capabilities['is_value_stat']) {
             $limits = $capabilities['default_class_no'];
