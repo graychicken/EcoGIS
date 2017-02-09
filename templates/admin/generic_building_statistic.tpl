@@ -113,9 +113,9 @@
                     {/if}
                     <th>{t}Energia elettrica{/t} ({$vlu.consumption_unit})</th>
                     <th>{t escape=no}CO<sub>2</sub>{/t} ({$vlu.emission_unit})</th>
-                    {* if $vlu.data.has_heating_degree_day *}
+                    {if $vlu.data.has_heating_degree_day}
                         <th>{t escape=no}CO<sub>2</sub>{/t} ({$vlu.emission_unit}) <div style="font-size: 10px">({t}Con gradi giorno{/t})</div></th>
-                    {* /if *}
+                    {/if}
                 </tr>
                 {foreach from=$vlu.data.rows item=row}
                 <tr>
