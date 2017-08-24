@@ -5,10 +5,8 @@ BASE_DIR=`pwd`
 popd > /dev/null
 BASE_DIR=`/usr/bin/realpath $BASE_DIR/..`
 
+mkdir -p $BASE_DIR/tmp
 
-#BASE_DIR=/data/sites/R3-EcoGIS2se
-#R3UM_DIR=/data/sites/R3-UserManager
-#R3COMMON_DIR=/data/sites/r3-common
 lang="de_DE it_IT"
 php $BASE_DIR/script/tsmarty2c.php $BASE_DIR/templates/admin/*.tpl $BASE_DIR/templates/admin/users/*.tpl > $BASE_DIR/tmp/tpl-gettext-application.c
 
