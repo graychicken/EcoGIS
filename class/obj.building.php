@@ -759,7 +759,7 @@ class eco_building extends R3AppBasePhotoObject {
                     $session_id = session_id();
                     $sql = "UPDATE building
                             SET the_geom=foo.the_geom
-                            FROM (SELECT MULTI(ST_Force_2d(ST_union(ST_Buffer(the_geom, 0.0)))) AS the_geom FROM edit_tmp_polygon WHERE session_id='{$session_id}') AS foo
+                            FROM (SELECT ST_Multi(ST_Force_2d(ST_union(ST_Buffer(the_geom, 0.0)))) AS the_geom FROM edit_tmp_polygon WHERE session_id='{$session_id}') AS foo
                             WHERE bu_id=$id";
                     $db->exec($sql);
                 }

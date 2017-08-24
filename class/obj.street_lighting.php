@@ -388,7 +388,7 @@ class eco_street_lighting extends R3AppBaseObject {
                 $session_id = session_id();
                 $sql = "UPDATE street_lighting
                         SET the_geom=foo.the_geom
-                        FROM (SELECT MULTI(ST_Force_2d(ST_union(ST_Buffer(the_geom, 0.0)))) AS the_geom FROM edit_tmp_polygon WHERE session_id='{$session_id}') AS foo
+                        FROM (SELECT ST_Multi(ST_Force_2d(ST_union(ST_Buffer(the_geom, 0.0)))) AS the_geom FROM edit_tmp_polygon WHERE session_id='{$session_id}') AS foo
                         WHERE sl_id=$id";
                 $db->exec($sql);
                 // Remove cache
@@ -441,7 +441,7 @@ class eco_street_lighting extends R3AppBaseObject {
         $buffer = isset($streetLightingTableDef['buffer']) ? $streetLightingTableDef['buffer'] : 0;
         if (isset($request['useTempGeometry']) && $request['useTempGeometry'] == 'T') {
             $session_id = session_id();
-            $perimeter = $db->query("SELECT st_perimeter(MULTI(ST_Force_2d(ST_union(the_geom)))) FROM edit_tmp_polygon WHERE session_id='{$session_id}'")->fetchColumn();
+            $perimeter = $db->query("SELECT st_perimeter(ST_Multi(ST_Force_2d(ST_union(the_geom)))) FROM edit_tmp_polygon WHERE session_id='{$session_id}'")->fetchColumn();
         } else {
             $perimeter = $db->query("SELECT st_perimeter(the_geom) FROM street_lighting WHERE sl_id=" . (int) $request['id'])->fetchColumn();
         }
