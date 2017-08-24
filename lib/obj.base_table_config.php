@@ -21,7 +21,7 @@ class R3BaseTableConfig {
         $defaultRow = array('label' => '', 'type' => 'text', 'width' => null, 'visible' => true, 'position' => null, 'sort_order' => null, 'sort_dir' => 'A', 'options' => array('sortable' => true));
 
         $data = $this->auth->getConfigValue($this->options['section'], sprintf($this->options['param_mask'], strtoupper($table)));
-        if ($data === null || $data === false || count($data) == 0) {
+        if (empty($data)) {
             $data = $defaultConfig;
         } else {
             foreach ($data as $key => $val) {
