@@ -274,7 +274,7 @@ class ExportBuildingsCommand extends EcoGenericCommand
                     INNER JOIN ecogis.energy_type et2 on es2.et_id=et2.et_id ) ON em.up_id = up.up_id
                 ORDER BY ord, es_name";
         $sources = $db->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
-        $totSource = array('HEATING' => 0, 'ELECTRICITY' => 0);
+        $totSource = array('HEATING' => 0, 'ELECTRICITY' => 0, 'WATER' => 0);
         foreach ($sources as $source) {
             $totSource[$source['et_code']] ++;
         }
